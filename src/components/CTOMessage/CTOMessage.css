@@ -1,0 +1,154 @@
+.cto-message-section {
+    padding: 30px 0;
+    background: #fcfdfe;
+    /* Slightly cleaner blue-white */
+    overflow: hidden;
+}
+
+.cto-header {
+    margin-bottom: 4rem;
+    text-align: left;
+}
+
+.cto-main-title {
+    font-size: 2.25rem;
+    font-weight: 800;
+    color: var(--codeifyy-navy);
+    font-family: 'Outfit', sans-serif;
+    letter-spacing: -0.02em;
+}
+
+.cto-card-wrapper {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.cto-card {
+    display: flex;
+    background: white;
+    border-radius: 12px;
+    border: 1px solid #eef2f6;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.04);
+}
+
+.cto-info-col {
+    flex: 0 0 280px;
+    /* Reduced from 320px */
+    padding: 3rem 2rem;
+    background: #f8fbff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border-right: 1px solid #eef2f6;
+}
+
+.cto-image-container {
+    width: 180px;
+    /* Force smaller size */
+    height: 180px;
+    margin-bottom: 1.5rem;
+    border-radius: 50%;
+    /* Circular portrait for premium feel */
+    overflow: hidden;
+    border: 4px solid white;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.cto-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.cto-details {
+    width: 100%;
+}
+
+.cto-name {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--codeifyy-navy);
+    margin-bottom: 0.4rem;
+    display: inline-block;
+}
+
+.cto-name.underline {
+    border-bottom: 2px solid var(--codeifyy-green);
+    padding-bottom: 2px;
+}
+
+.cto-title {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.4;
+    font-weight: 500;
+}
+
+.cto-quote-col {
+    flex: 1;
+    padding: 4rem 5rem;
+    display: flex;
+    align-items: center;
+    background: white;
+}
+
+.quote-content {
+    position: relative;
+}
+
+.quote-icon {
+    font-size: 3rem;
+    color: var(--codeifyy-green);
+    position: absolute;
+    top: -30px;
+    left: -60px;
+    opacity: 0.15;
+}
+
+.quote-text {
+    font-size: 1.25rem;
+    line-height: 1.8;
+    color: var(--codeifyy-navy);
+    font-weight: 500;
+    font-style: italic;
+    /* Added for emphasis */
+}
+
+@media (max-width: 991px) {
+    .cto-quote-col {
+        padding: 3rem 3rem;
+    }
+
+    .quote-icon {
+        left: -40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .cto-card {
+        flex-direction: column;
+    }
+
+    .cto-info-col {
+        flex: 1;
+        border-right: none;
+        border-bottom: 1px solid #eef2f6;
+        padding: 3rem 2rem;
+    }
+
+    .cto-quote-col {
+        padding: 3rem 2rem;
+    }
+
+    .quote-icon {
+        left: 0;
+        top: -45px;
+        font-size: 2rem;
+    }
+
+    .quote-text {
+        font-size: 1.1rem;
+    }
+}

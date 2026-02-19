@@ -1,0 +1,213 @@
+/* Industries Page Styles */
+.industries-page {
+    background: var(--background);
+    overflow-x: hidden;
+}
+
+/* Reusing global Hero styles */
+
+/* Industry Grid Section */
+.industry-grid-section {
+    padding: 3rem 0;
+    background: #fff;
+}
+
+.industry-card-detailed {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    /* Matched to SoftwareDevelopment */
+    padding: 3rem;
+    /* Matched to SoftwareDevelopment */
+    height: 100%;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 1;
+}
+
+.industry-card-detailed:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+    border-color: var(--codeifyy-green);
+}
+
+.industry-number {
+    position: absolute;
+    top: 1rem;
+    right: 2rem;
+    font-size: 3rem;
+    font-weight: 800;
+    color: #f1f5f9;
+    /* Subtle gray/white for watermark */
+    line-height: 1;
+    z-index: 0;
+}
+
+.industry-card-title,
+.industry-card-desc,
+.industry-capabilities,
+.industry-card-footer {
+    position: relative;
+    z-index: 1;
+}
+
+.industry-card-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 1rem;
+    font-family: 'Outfit', sans-serif;
+    padding-right: 3rem;
+    /* Space for number */
+}
+
+.industry-card-desc {
+    color: #64748b;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+}
+
+
+.industry-capabilities {
+    margin-top: auto;
+    /* Aligns capabilities to bottom */
+}
+
+.industry-capabilities h5 {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    color: #94a3b8;
+    letter-spacing: 0.05em;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.industry-capabilities ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* 2 Column Grid */
+    gap: 1rem;
+    /* Increased gap for better spacing */
+}
+
+.industry-capabilities li {
+    display: flex;
+    align-items: flex-start;
+    /* Align top if multi-line */
+    color: #334155;
+    font-size: 0.9rem;
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+
+.industry-bullet-icon {
+    color: var(--codeifyy-green);
+    margin-right: 8px;
+    font-size: 0.9rem;
+    margin-top: 4px;
+    flex-shrink: 0;
+}
+
+/* Footer styles removed as feature requested to be removed */
+
+/* Cross Industry Capabilities */
+.cross-industry-section {
+    padding: 2rem 0;
+    background: #f1f5f9;
+    position: relative;
+    overflow: hidden;
+}
+
+.cross-industry-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.capability-card {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s;
+}
+
+.capability-card:hover {
+    transform: translateY(-5px);
+}
+
+.capability-icon {
+    font-size: 2rem;
+    color: var(--codeifyy-green);
+}
+
+.capability-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin: 0;
+}
+
+/* Approach Section */
+.industry-approach-section {
+    padding: 6rem 0;
+    background: #0f172a;
+    color: #fff;
+    text-align: center;
+}
+
+.industry-approach-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+    margin-top: 4rem;
+}
+
+.approach-card-simple {
+    text-align: left;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.approach-card-simple:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: var(--codeifyy-green);
+    transform: translateY(-5px);
+}
+
+.approach-number {
+    font-size: 3rem;
+    font-weight: 800;
+    color: rgba(255, 255, 255, 0.1);
+    line-height: 1;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.approach-title-simple {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 0.75rem;
+}
+
+.approach-desc-simple {
+    font-size: 0.95rem;
+    color: #cbd5e1;
+    line-height: 1.6;
+}

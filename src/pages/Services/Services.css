@@ -1,0 +1,256 @@
+/* Services Page Styles */
+.services-page {
+    background: var(--background);
+    overflow-x: hidden;
+}
+
+/* Service Page Hero overrides if needed, otherwise uses global Hero.css */
+
+/* Core Services Section */
+.core-services-section {
+    padding: 2rem 0 4rem;
+    background: #fff;
+}
+
+.service-overview-card {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 24px;
+    padding: 3rem;
+    transition: all 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+}
+
+.service-number {
+    position: absolute;
+    top: 1.5rem;
+    right: 2rem;
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: #e2e8f0;
+    line-height: 1;
+    z-index: 0;
+}
+
+.service-overview-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+    border-color: var(--codeifyy-green);
+}
+
+.service-overview-icon {
+    width: 80px;
+    height: 80px;
+    background: rgba(16, 185, 129, 0.1);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    color: var(--codeifyy-green);
+    margin-bottom: 2rem;
+}
+
+.service-overview-title {
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: var(--codeifyy-navy);
+    margin-bottom: 1rem;
+    font-family: 'Outfit', sans-serif;
+}
+
+.service-overview-desc {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.service-features-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2rem 0;
+}
+
+.service-features-list li {
+    display: flex;
+    align-items: flex-start;
+    /* Align top for multi-line */
+    margin-bottom: 0.8rem;
+    color: #475569;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.bullet-dot {
+    font-size: 1.2rem;
+    line-height: 1.2;
+    margin-right: 8px;
+    color: var(--codeifyy-green);
+}
+
+.explore-link {
+    margin-top: auto;
+    /* Push to bottom */
+    font-weight: 700;
+    color: var(--codeifyy-green);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    transition: gap 0.2s ease;
+}
+
+.explore-link:hover {
+    gap: 0.8rem;
+    color: var(--codeifyy-dark-green);
+}
+
+/* Business Solutions Section */
+.business-solutions-section {
+    padding: 4rem 0;
+    background: #f8fafc;
+}
+
+.solution-card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.solution-card {
+    background: #fff;
+    padding: 2.5rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    border-top: 4px solid #cbd5e1;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.solution-number {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #e2e8f0;
+    z-index: 0;
+}
+
+.solution-card:hover {
+    border-top-color: var(--codeifyy-green);
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.solution-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 1rem;
+}
+
+.solution-desc {
+    color: #64748b;
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.solution-features li {
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+    color: #334155;
+    display: flex;
+    align-items: center;
+}
+
+.solution-features .bullet-dot {
+    font-size: 1rem;
+    color: #94a3b8;
+    /* Muted bullet for this section */
+}
+
+/* Approach Section - reusing AI approach style code structure but customized classes if needed */
+.services-approach-section {
+    padding: 3rem 0;
+    background: #0f172a;
+    color: #fff;
+    text-align: center;
+}
+
+.approach-timeline {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 4rem;
+    position: relative;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.approach-timeline::before {
+    content: '';
+    position: absolute;
+    top: 30px;
+    left: 50px;
+    right: 50px;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.1);
+    z-index: 0;
+    display: none;
+    /* Hide on mobile/wrap, show on large screens via media query */
+}
+
+@media(min-width: 992px) {
+    .approach-timeline::before {
+        display: block;
+    }
+
+    .approach-step {
+        flex: 1;
+    }
+}
+
+.approach-step {
+    position: relative;
+    /* z-index > line */
+    z-index: 1;
+    padding: 0 1rem;
+    width: 100%;
+}
+
+.services-step-circle {
+    width: 60px;
+    height: 60px;
+    background: #1e293b;
+    border: 2px solid var(--codeifyy-green);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #fff;
+    margin: 0 auto 1.5rem;
+    box-shadow: 0 0 20px rgba(16, 185, 129, 0.2);
+}
+
+.step-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: #fff;
+}
+
+.step-desc {
+    font-size: 0.95rem;
+    color: #cbd5e1;
+    line-height: 1.5;
+}

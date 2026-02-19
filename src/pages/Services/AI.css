@@ -1,0 +1,367 @@
+.ai-page {
+    background: var(--background);
+    overflow-x: hidden;
+}
+
+
+
+/* Reusing Hero Styles from Hero.css generally */
+
+/* --- Hero Graphic Styles (Specific to this page, could be reused or new graphic) --- */
+.hero-graphic-wrapper {
+    position: relative;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    perspective: 1000px;
+}
+
+/* AI Graphic Placeholder or Style if differernt from Code Window */
+/* Using Code Window style for now as it looks techy */
+.code-window {
+    background: #1e293b;
+    border-radius: 12px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    max-width: 480px;
+    border: 1px solid #334155;
+    overflow: hidden;
+    transform: rotateY(-5deg) rotateX(2deg);
+    transition: transform 0.5s ease;
+    z-index: 5;
+    position: relative;
+}
+
+.code-window:hover {
+    transform: rotateY(0) rotateX(0);
+}
+
+.window-header {
+    background: #0f172a;
+    padding: 12px 16px;
+    display: flex;
+    gap: 8px;
+    border-bottom: 1px solid #334155;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.dot.red {
+    background: #ef4444;
+}
+
+.dot.yellow {
+    background: #f59e0b;
+}
+
+.dot.green {
+    background: #10b981;
+}
+
+.window-body {
+    padding: 20px;
+    font-family: 'Fira Code', 'Courier New', monospace;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #e2e8f0;
+}
+
+.code-line {
+    display: block;
+}
+
+.c-gray {
+    color: #64748b;
+    font-style: italic;
+}
+
+.c-purple {
+    color: #c084fc;
+}
+
+.c-blue {
+    color: #60a5fa;
+}
+
+.c-green {
+    color: #4ade80;
+}
+
+.c-yellow {
+    color: #fcd34d;
+}
+
+.c-white {
+    color: #f8fafc;
+}
+
+
+/* Floating Badges */
+.floating-badge {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(8px);
+    padding: 12px 20px;
+    border-radius: 50px;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+    color: #1e293b;
+    font-size: 0.9rem;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    z-index: 10;
+    animation: float 4s ease-in-out infinite;
+}
+
+.badge-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 0.9rem;
+}
+
+.badge-security {
+    top: 10%;
+    right: 0;
+    animation-delay: 0s;
+}
+
+.badge-cloud {
+    bottom: 15%;
+    left: -20px;
+    animation-delay: 1.5s;
+}
+
+.badge-performance {
+    bottom: 30%;
+    right: -30px;
+    animation-delay: 0.8s;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Services Grid Section */
+.services-grid-section {
+    background: #fff;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+    margin-top: 4rem;
+}
+
+.service-card {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 3rem;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.02);
+    border-color: var(--codeifyy-green);
+}
+
+.service-number {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #f1f5f9;
+    position: absolute;
+    top: 1rem;
+    right: 2rem;
+    line-height: 1;
+}
+
+.service-content {
+    position: relative;
+    z-index: 1;
+}
+
+.service-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 1rem;
+    font-family: 'Outfit', sans-serif;
+    padding-right: 3rem;
+}
+
+.service-desc {
+    color: #64748b;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+}
+
+.service-capabilities h5 {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    color: #94a3b8;
+    letter-spacing: 0.05em;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.service-capabilities ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    /* Keep single column or 2? Usually 1 or 2. SoftwareDev had 2 */
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+}
+
+.service-capabilities li {
+    display: flex;
+    align-items: center;
+    /**/
+    gap: 0.5rem;
+    color: #334155;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.service-capabilities li svg {
+    color: var(--codeifyy-green);
+    font-size: 0.8rem;
+}
+
+/* Challenges and Delivery specifically for AI page if needed slightly different styling */
+.challenges-list li svg {
+    color: #ef4444;
+}
+
+/* Red check or cross for challenges maybe? Or keep green check */
+/* Actually user provided bullets for challenges: "Unclear AI use cases", etc. Usually challenges are problems. Maybe use a different icon or color? */
+/* But let's stick to standard style unless forced. */
+
+
+/* Engagement Models Section */
+.engagement-section {
+    padding-top: 1rem;
+    padding-bottom: 5rem;
+    background: #f8fafc;
+}
+
+.engagement-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 4rem;
+}
+
+.engagement-card {
+    background: #fff;
+    padding: 2.5rem;
+    border-radius: 12px;
+    border-top: 4px solid var(--codeifyy-green);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    height: 100%;
+}
+
+.engagement-card h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #0f172a;
+}
+
+.engagement-card p {
+    color: #64748b;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* Development Approach */
+.approach-section {
+    padding: 5rem 0;
+    background: #0f172a;
+    color: #fff;
+    text-align: center;
+}
+
+.approach-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 2rem;
+    margin-top: 4rem;
+    position: relative;
+}
+
+.approach-step-card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 2rem 1rem;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s;
+}
+
+.approach-step-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.08);
+    border-color: var(--codeifyy-green);
+}
+
+.step-icon {
+    font-size: 2rem;
+    color: var(--codeifyy-green);
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.step-name {
+    font-weight: 700;
+    font-size: 1rem;
+    color: #fff;
+}
+
+/* Integrated Components Spacing */
+.integrated-tech-stack {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .engagement-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .service-capabilities ul {
+        grid-template-columns: 1fr;
+    }
+}

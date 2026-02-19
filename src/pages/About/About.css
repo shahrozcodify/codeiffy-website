@@ -1,0 +1,367 @@
+/* About Page Styles - Matched to Services Page */
+.about-page {
+    background: var(--background);
+    overflow-x: hidden;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Hero Section - Inherits from global Hero.css but specific overrides here */
+.about-hero-graphic {
+    position: relative;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Stats Section / Flexible Wrapper Style */
+.about-stats-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4rem;
+    padding: 2rem 0;
+}
+
+.about-stats-content {
+    flex: 1;
+    max-width: 600px;
+}
+
+.about-stats-grid-wrapper {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.about-stat-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    /* Matches service cards */
+    text-align: center;
+    border: 1px solid #f1f5f9;
+    min-width: 140px;
+    transition: transform 0.3s ease;
+}
+
+.about-stat-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--codeifyy-green);
+}
+
+.about-stat-value {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--codeifyy-green);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+}
+
+.about-stat-label {
+    font-size: 0.9rem;
+    color: var(--codeifyy-navy);
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+/* Vision & Mission Split Section */
+.vision-section {
+    /* padding: 6rem 0; */
+    position: relative;
+    background: #fff;
+    overflow: hidden;
+}
+
+.mission-section {
+    padding: 2rem 0;
+    position: relative;
+    background: linear-gradient(to right, #f8fafc, #fff);
+    /* Subtle gradient */
+    overflow: hidden;
+}
+
+.vision-text-content {
+    padding-right: 3rem;
+}
+
+.mission-section .vision-text-content {
+    padding-left: 3rem;
+    padding-right: 0;
+}
+
+.vision-section .section-title,
+.mission-section .section-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--codeifyy-navy);
+    margin-bottom: 1.5rem;
+    position: relative;
+    display: inline-block;
+}
+
+/* Decorative accent line for titles */
+.vision-section .section-title::after,
+.mission-section .section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: var(--codeifyy-green);
+    margin-top: 10px;
+    border-radius: 2px;
+}
+
+.vision-section .section-subtitle,
+.mission-section .section-subtitle {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-muted);
+    font-weight: 400;
+}
+
+.vision-image-wrapper {
+    position: relative;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+    /* Softer, deeper shadow */
+    max-width: 80%;
+    /* Increased size */
+    margin: 0 auto;
+    transition: transform 0.4s ease;
+}
+
+/* Specific override for Mission (CTO) Image to be smaller */
+.mission-section .vision-image-wrapper {
+    max-width: 65%;
+}
+
+.vision-image-wrapper img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.vision-image-wrapper:hover {
+    transform: translateY(-10px);
+}
+
+.vision-image-wrapper:hover img {
+    transform: scale(1.05);
+}
+
+@media (max-width: 991px) {
+
+    .vision-text-content,
+    .mission-section .vision-text-content {
+        padding: 0;
+        margin-bottom: 3rem;
+        text-align: center;
+    }
+
+    .vision-section .section-title,
+    .vision-section .section-subtitle,
+    .mission-section .section-title,
+    .mission-section .section-subtitle {
+        text-align: center !important;
+    }
+
+    /* Center the accent line on mobile */
+    .vision-section .section-title::after,
+    .mission-section .section-title::after {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+/* Core Values Section - Specific Screenshot Match */
+.core-value-card {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid #eaecf0;
+    transition: all 0.3s ease;
+    height: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    overflow: hidden;
+}
+
+.core-value-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--codeifyy-green);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+.core-value-card:hover::before {
+    transform: scaleX(1);
+}
+
+.core-value-card:hover {
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    border-color: transparent;
+    transform: translateY(-4px);
+}
+
+.core-value-icon-box {
+    width: 48px;
+    height: 48px;
+    background: #ecfdf5;
+    /* Tailwind emerald-50 equiv */
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    color: var(--codeifyy-green);
+    margin-bottom: 1.5rem;
+}
+
+.core-value-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--codeifyy-navy);
+    margin-bottom: 0.5rem;
+    font-family: 'Outfit', sans-serif;
+}
+
+.core-value-desc {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.values-grid-row {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1.5rem;
+}
+
+@media (max-width: 1200px) {
+    .values-grid-row {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .values-grid-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Expertise / Services Grid - Simplified */
+.expertise-grid-section {
+    padding: 4rem 0;
+    background: #fff;
+}
+
+/* Matching SoftwareDevelopment.css .service-card styles */
+.expertise-col-card {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    /* Matched to service-card */
+    padding: 3rem;
+    /* Matched to service-card */
+    transition: all 0.3s ease;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.expertise-number {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #f1f5f9;
+    position: absolute;
+    top: 1rem;
+    right: 2rem;
+    line-height: 1;
+}
+
+.expertise-col-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.02);
+    border-color: var(--codeifyy-green);
+}
+
+.expertise-col-card h3 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--codeifyy-navy);
+    margin-bottom: 1.5rem;
+    font-family: 'Outfit', sans-serif;
+    /* Matched to service-title */
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--codeifyy-green);
+    /* Kept per user screenshot */
+    display: inline-block;
+    /* Ensure underline only spans text width? Screenshot looks like it might span specific width. Using inline-block or width: fit-content */
+    min-width: 100px;
+}
+
+.expertise-list-styled {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.expertise-list-styled li {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-size: 1.05rem;
+    /* Matched to service-desc/list */
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+    font-weight: 500;
+    line-height: 1.6;
+}
+
+.expertise-list-styled li svg {
+    color: var(--codeifyy-green);
+    font-size: 1rem;
+    min-width: 20px;
+    /* Ensure alignment */
+}
+
+/* Location Section - Keeping distinct but aligned typography */
+.location-section-styled {
+    padding: 4rem 0;
+    background-color: #f0f4f8;
+    background-image: radial-gradient(#e2e8f0 1px, transparent 1px);
+    background-size: 24px 24px;
+    position: relative;
+}
+
+.location-flex-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4rem;
+}
+
+@media (max-width: 992px) {
+    .about-stats-wrapper {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .location-flex-container {
+        flex-direction: column;
+        text-align: center;
+    }
+}
