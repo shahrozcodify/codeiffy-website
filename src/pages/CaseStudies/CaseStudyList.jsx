@@ -1,13 +1,23 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import CTA from '../../components/cta/CTA';
 import { FaArrowRight } from 'react-icons/fa';
 import { caseStudies as caseStudiesData } from '../../data/caseStudies';
+import CaseStudyCardSkeleton from '../../components/Skeleton/CaseStudyCardSkeleton';
 import './CaseStudies.css';
 
 const CaseStudyList = () => {
+    const [isLoading, setIsLoading] = useState(true);
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setIsLoading(false);
+        }, 1200);
+        return () => clearTimeout(timer);
+    }, []);
+
     // Use data directly as it now contains images
     const caseStudies = caseStudiesData;
 
@@ -42,25 +52,31 @@ const CaseStudyList = () => {
 
             <main className="container pb-5">
                 <div className="case-study-grid">
-                    {caseStudies.map((study) => (
-                        <Link to={`/case-studies/${study.id}`} key={study.id} style={{ textDecoration: 'none' }}>
-                            <div className="case-study-card-simple">
-                                <div className="case-study-img-wrapper">
-                                    <img src={study.image} alt={study.title} className="case-study-img-top" />
-                                </div>
+                    {isLoading ? (
+                        [...Array(6)].map((_, index) => (
+                            <CaseStudyCardSkeleton key={index} />
+                        ))
+                    ) : (
+                        caseStudies.map((study) => (
+                            <Link to={`/case-studies/${study.id}`} key={study.id} style={{ textDecoration: 'none' }}>
+                                <div className="case-study-card-simple">
+                                    <div className="case-study-img-wrapper">
+                                        <img src={study.image} alt={study.title} className="case-study-img-top" />
+                                    </div>
 
-                                <div className="case-study-simple-content">
-                                    <h3 className="case-study-simple-title">
-                                        {study.title}
-                                    </h3>
+                                    <div className="case-study-simple-content">
+                                        <h3 className="case-study-simple-title">
+                                            {study.title}
+                                        </h3>
 
-                                    <div className="read-more-btn">
-                                        Read More <FaArrowRight size={14} />
+                                        <div className="read-more-btn">
+                                            Read More <FaArrowRight size={14} />
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </Link>
-                    ))}
+                            </Link>
+                        ))
+                    )}
                 </div>
             </main>
 

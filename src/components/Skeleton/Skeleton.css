@@ -1,0 +1,158 @@
+/* Base Skeleton Styles */
+.skeleton-base {
+    background: #f0f0f0;
+    background: linear-gradient(90deg,
+            #f0f0f0 25%,
+            #e0e0e0 50%,
+            #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: skeleton-loading 1.5s infinite ease-in-out;
+    position: relative;
+    overflow: hidden;
+}
+
+@keyframes skeleton-loading {
+    0% {
+        background-position: 200% 0;
+    }
+
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+/* Skeleton Layout Utilities */
+.d-flex {
+    display: flex !important;
+}
+
+.justify-content-center {
+    justify-content: center !important;
+}
+
+.flex-wrap {
+    flex-wrap: wrap !important;
+}
+
+.gap-4 {
+    gap: 1.5rem !important;
+}
+
+.gap-2 {
+    gap: 0.5rem !important;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.col-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+    padding: 0 15px;
+}
+
+.col-md-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+    padding: 0 15px;
+}
+
+.col-md-4 {
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+    padding: 0 15px;
+}
+
+.col-md-5 {
+    flex: 0 0 41.666667%;
+    max-width: 41.666667%;
+    padding: 0 15px;
+}
+
+.offset-md-1 {
+    margin-left: 8.333333%;
+}
+
+.skeleton-rectangular {
+    border-radius: 8px;
+}
+
+.skeleton-circular {
+    border-radius: 50%;
+}
+
+.skeleton-text {
+    border-radius: 4px;
+    height: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Helper Classes */
+.mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.mb-2 {
+    margin-bottom: 0.5rem;
+}
+
+.mb-3 {
+    margin-bottom: 1rem;
+}
+
+.mb-4 {
+    margin-bottom: 1.5rem;
+}
+
+.mb-5 {
+    margin-bottom: 3rem;
+}
+
+.section-padding {
+    padding: 80px 0;
+}
+
+/* Page Skeleton Layout */
+.page-skeleton {
+    width: 100%;
+    min-height: 100vh;
+    background: #fff;
+}
+
+/* Card Skeleton Wrappers */
+.blog-card-skeleton {
+    background: #fff;
+    border-radius: 16px;
+    border: 1px solid #edf2f7;
+    overflow: hidden;
+    height: 100%;
+    padding-bottom: 20px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.hero-section {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    .skeleton-base {
+        background: #1e293b;
+        background: linear-gradient(90deg,
+                #1e293b 25%,
+                #334155 50%,
+                #1e293b 75%);
+    }
+
+    .page-skeleton,
+    .blog-card-skeleton {
+        background: #0f172a;
+        border-color: #1e293b;
+    }
+}

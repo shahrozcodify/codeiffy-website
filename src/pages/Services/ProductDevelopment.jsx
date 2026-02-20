@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import {
@@ -14,9 +14,23 @@ import CustomerStories from '../../components/CustomerStories/CustomerStories';
 import ArticleCarousel from '../../components/ArticleCarousel/ArticleCarousel';
 import ProductDeliveryApproach from '../../components/ProductDeliveryApproach/ProductDeliveryApproach';
 import CTA from '../../components/cta/CTA';
+import PageSkeleton from '../../components/Skeleton/PageSkeleton';
 
 
 const ProductDevelopment = () => {
+    const [isLoading, setIsLoading] = useState(true);
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setIsLoading(false);
+        }, 1200);
+        return () => clearTimeout(timer);
+    }, []);
+
+    if (isLoading) {
+        return <PageSkeleton includeHeader={true} includeFooter={true} />;
+    }
+
     const services = [
         {
             title: "Development Consulting",
