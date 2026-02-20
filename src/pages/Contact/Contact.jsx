@@ -1,14 +1,73 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
-import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaHeadset, FaComments, FaPaperPlane } from 'react-icons/fa';
+import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaHeadset, FaComments, FaPaperPlane, FaCheckCircle, FaExclamationCircle, FaTimes } from 'react-icons/fa';
+import ReCAPTCHA from 'react-google-recaptcha';
 import './Contact.css';
 import '../../components/Hero/Hero.css';
 
+const Popup = ({ message, type, onClose }) => {
+    if (!message) return null;
+
+    return (
+        <div className="popup-overlay">
+            <div className={`popup-content ${type}`}>
+                <button className="popup-close" onClick={onClose}><FaTimes /></button>
+                <div className="popup-icon">
+                    {type === 'success' ? <FaCheckCircle /> : <FaExclamationCircle />}
+                </div>
+                <p className="popup-message">{message}</p>
+                <button className="popup-btn" onClick={onClose}>Okay</button>
+            </div>
+        </div>
+    );
+};
+
 const Contact = () => {
+    const [captchaValue, setCaptchaValue] = useState(null);
+    const [popup, setPopup] = useState({ show: false, message: '', type: 'success' });
+
+    const handleCaptchaChange = (value) => {
+        setCaptchaValue(value);
+    };
+
+    const closePopup = () => {
+        setPopup({ ...popup, show: false });
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        if (!captchaValue) {
+            setPopup({
+                show: true,
+                message: "Please complete the reCAPTCHA verification to proceed.",
+                type: 'error'
+            });
+            return;
+        }
+        // Proceed with form submission
+        console.log("Form submitted with captcha:", captchaValue);
+
+        // Simulate successful submission
+        setPopup({
+            show: true,
+            message: "Thank you! Your message has been sent successfully. We will get back to you soon.",
+            type: 'success'
+        });
+        // Add your real form submission logic here
+    };
+
     return (
         <div className="contact-page">
             <Header />
+
+            {popup.show && (
+                <Popup
+                    message={popup.message}
+                    type={popup.type}
+                    onClose={closePopup}
+                />
+            )}
 
             {/* HERO SECTION */}
             <section className="hero-section py-5">
@@ -103,7 +162,7 @@ const Contact = () => {
                         </div>
 
                         <div className="contact-form-container animate-up delay-2">
-                            <form className="contact-form">
+                            <form className="contact-form" onSubmit={handleSubmit}>
                                 <div className="form-row">
                                     <div className="form-group">
                                         <label className="form-label">First Name</label>
@@ -121,6 +180,12 @@ const Contact = () => {
                                 <div className="form-group">
                                     <label className="form-label">How can we help?</label>
                                     <textarea className="form-textarea" placeholder="Tell us more about your needs..."></textarea>
+                                </div>
+                                <div className="form-group" style={{ marginBottom: '20px' }}>
+                                    <ReCAPTCHA
+                                        sitekey="6Lf03nEsAAAAAG2ka1oA9KIVx-mYL2WkPymjVhd1"
+                                        onChange={handleCaptchaChange}
+                                    />
                                 </div>
                                 <button className="btn-submit">Send Message</button>
                             </form>

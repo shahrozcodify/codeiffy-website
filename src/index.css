@@ -522,7 +522,7 @@ h4 {
 
 .header-cta-btn:hover {
   background: var(--codeifyy-green);
-  color: var(--codeifyy-navy);
+  /* color: var(--codeifyy-navy); */
   transform: translateY(-2px);
   box-shadow: 0 8px 20px rgba(0, 240, 132, 0.3);
 }
