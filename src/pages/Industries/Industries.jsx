@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
+import PageSkeleton from '../../components/Skeleton/PageSkeleton';
 import {
     FaCar, FaLaptopCode, FaIndustry, FaOilCan,
     FaShoppingCart, FaGraduationCap, FaCoins,
@@ -15,6 +16,15 @@ import '../../components/Hero/Hero.css';
 import '../../components/BenefitSection/BenefitSection.css';
 
 const Industries = () => {
+    const [isLoading, setIsLoading] = useState(true);
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setIsLoading(false);
+        }, 1200);
+        return () => clearTimeout(timer);
+    }, []);
+
     const industryData = [
         {
             name: 'Automobile',
@@ -133,6 +143,10 @@ const Industries = () => {
         { title: 'Staff Augmentation', icon: <FaUserCog /> },
         { title: 'Cloud & Infrastructure Services', icon: <FaCloud /> },
     ];
+
+    if (isLoading) {
+        return <PageSkeleton includeHeader={true} includeFooter={true} />;
+    }
 
     return (
         <div className="industries-page">

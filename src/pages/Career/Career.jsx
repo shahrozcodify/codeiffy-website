@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import CTA from '../../components/cta/CTA';
+import PageSkeleton from '../../components/Skeleton/PageSkeleton';
 import {
     FaCheckCircle, FaGlobe, FaUsers, FaLaptopCode, FaRocket,
     FaShieldAlt, FaLightbulb, FaUserTie, FaNetworkWired
@@ -9,6 +10,15 @@ import {
 import './Career.css';
 
 const Career = () => {
+    const [isLoading, setIsLoading] = useState(true);
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setIsLoading(false);
+        }, 1200);
+        return () => clearTimeout(timer);
+    }, []);
+
     const roles = [
         { title: 'Senior Backend Engineer', location: 'Remote / Hybrid', department: 'Engineering', status: 'Coming Soon' },
         { title: 'Product Manager', location: 'Remote', department: 'Product', status: 'Coming Soon' },
@@ -34,6 +44,10 @@ const Career = () => {
             icon: <FaLaptopCode />,
         }
     ];
+
+    if (isLoading) {
+        return <PageSkeleton includeHeader={true} includeFooter={true} />;
+    }
 
     return (
         <div className="career-page">

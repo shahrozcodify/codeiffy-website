@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from '../../components/Header/Header';
 import Hero from '../../components/Hero/Hero';
 import Features from '../../components/Features/Features-services';
@@ -15,8 +15,22 @@ import Industries from '../../components/Industries/Industries';
 import WhyChooseCodeifyy from '../../components/WhyChooseCodeifyy/WhyChooseCodeifyy';
 import Footer from '../../components/Footer/Footer';
 import CTA from '../../components/cta/CTA';
+import PageSkeleton from '../../components/Skeleton/PageSkeleton';
 
 const Home = () => {
+    const [isLoading, setIsLoading] = useState(true);
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setIsLoading(false);
+        }, 1200); // Simulate data fetch
+        return () => clearTimeout(timer);
+    }, []);
+
+    if (isLoading) {
+        return <PageSkeleton includeHeader={true} includeFooter={true} />;
+    }
+
     return (
         <div className="home-page">
             <Header />
