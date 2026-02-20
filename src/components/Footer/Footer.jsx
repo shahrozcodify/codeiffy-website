@@ -50,21 +50,23 @@ const Footer = () => {
                             {/* <a href="#" className="social-link"><FaYoutube /></a> */}
                         </div>
                         <div className="footer-contact-info">
-                            <p className="contact-item">
+                            <div className="contact-item">
+                                <FaEnvelope className="contact-icon" />
+                                <span>hello@codeifyy.com</span>
+                            </div>
+                            <div className="contact-item">
+                                <FaPhoneAlt className="contact-icon" />
+                                <span>+92 311 2601310</span>
+                            </div>
+                            <div className="contact-item">
                                 <FaMapMarkerAlt className="contact-icon" />
                                 <div>
                                     <div style={{ fontWeight: '700', fontSize: '0.9rem', opacity: 0.8 }}>Headquarter</div>
                                     <div style={{ fontSize: '0.95rem' }}>National Town, Lahore, 05453, Pakistan</div>
                                 </div>
-                            </p>
-                            <p className="contact-item">
-                                <FaPhoneAlt className="contact-icon" />
-                                <span>+92 311 2601310</span>
-                            </p>
-                            <p className="contact-item">
-                                <FaEnvelope className="contact-icon" />
-                                <span>hello@codeifyy.com</span>
-                            </p>
+                            </div>
+
+
                         </div>
                     </div>
 
