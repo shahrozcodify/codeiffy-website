@@ -1,6 +1,7 @@
 export const blogData = [
     {
         id: 1,
+        slug: 'software-scalability-building-systems-that-grow-without-breaking',
         title: 'Software Scalability: Building Systems That Grow Without Breaking',
         date: 'January 1, 2026',
         label: 'Software',
@@ -22,6 +23,7 @@ export const blogData = [
     },
     {
         id: 2,
+        slug: 'effective-software-development-strategy',
         title: 'Questions to Create an Effective Software Development Strategy',
         date: 'December 19, 2025',
         label: 'Strategy',
@@ -62,6 +64,7 @@ export const blogData = [
     },
     {
         id: 3,
+        slug: 'building-the-right-software-development-team',
         title: 'Building the Right Software Development Team',
         date: 'December 18, 2025',
         label: 'Management',
@@ -85,6 +88,7 @@ export const blogData = [
     },
     {
         id: 4,
+        slug: 'how-to-choose-a-software-development-partner',
         title: 'How to Choose a Software Development Partner That Truly Delivers',
         date: 'December 17, 2025',
         label: 'Partnership',
@@ -108,6 +112,7 @@ export const blogData = [
     },
     {
         id: 5,
+        slug: 'designing-for-growth-software-architecture-principles',
         title: 'Designing for Growth: Practical Principles for Software Architecture',
         date: 'December 15, 2025',
         label: 'Architecture',
@@ -148,6 +153,7 @@ export const blogData = [
     },
     {
         id: 6,
+        slug: 'designing-saas-products-that-scale',
         title: 'Designing SaaS Products That Scale: Practical Principles',
         date: 'December 1, 2025',
         label: 'SaaS',

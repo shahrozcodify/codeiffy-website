@@ -247,20 +247,20 @@ const Industries = () => {
                         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                             <div className="benefit-cards-grid">
                                 <div className="stat-card animate-up delay-1">
-                                    <div className="stat-value">10+</div>
-                                    <div className="stat-label">Industries Served</div>
+                                    <div className="stat-value">30+</div>
+                                    <div className="stat-label">IT Professionals</div>
                                 </div>
                                 <div className="stat-card animate-up delay-2">
-                                    <div className="stat-value">200+</div>
-                                    <div className="stat-label">Enterprise Solutions</div>
+                                    <div className="stat-value">15+</div>
+                                    <div className="stat-label">Countries Served</div>
                                 </div>
                                 <div className="stat-card animate-up delay-3">
-                                    <div className="stat-value">98%</div>
-                                    <div className="stat-label">Compliance Rate</div>
+                                    <div className="stat-value">90%</div>
+                                    <div className="stat-label">Retention Rate</div>
                                 </div>
                                 <div className="stat-card animate-up delay-4">
                                     <div className="stat-value">Global</div>
-                                    <div className="stat-label">Delivery Network</div>
+                                    <div className="stat-label">Platform Experts</div>
                                 </div>
                             </div>
                         </div>

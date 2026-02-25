@@ -12,7 +12,7 @@ const Industries = () => {
         { name: 'Fintech', icon: <FaCoins /> },
         { name: 'Accounting', icon: <FaCalculator /> },
         { name: 'Real Estate', icon: <FaBuilding /> },
-        { name: 'Immigration', icon: <FaPassport /> },
+        { name: 'Telecommunication', icon: <FaPassport /> },
         // { name: 'Gaming', icon: <FaGamepad /> }
     ];
 
@@ -53,7 +53,7 @@ const Industries = () => {
                 </div>
 
                 <div style={{ textAlign: 'center', marginTop: '4rem' }}>
-                    <a href="#" className="btn btn-codeifyy-primary">Explore Industry Solutions →</a>
+                    <a href="/industries" className="btn btn-codeifyy-primary">Explore Industry Solutions</a>
                 </div>
             </div>
         </section>

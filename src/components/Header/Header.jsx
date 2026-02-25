@@ -193,8 +193,8 @@ const Header = () => {
                         <div className={`nav-item ${activeMobileDropdown === 'resources' ? 'mobile-dropdown-active' : ''}`}>
                             <span className="nav-link-secondary" onClick={() => toggleMobileDropdown('resources')}>Resources <FiChevronDown className="header-caret" /></span>
                             <div className="dropdown-content" style={{ minWidth: '220px', padding: '1.5rem' }}>
-                                <Link to="/blogs" className="mega-link" onClick={() => setIsMobileMenuOpen(false)} style={{ fontSize: '0.95rem', marginBottom: '0.8rem' }}>Blogs</Link>
-                                <Link to="/case-studies" className="mega-link" onClick={() => setIsMobileMenuOpen(false)} style={{ fontSize: '0.95rem', marginBottom: '0.8rem' }}>Case Studies</Link>
+                                <Link to="/blog" className="mega-link" onClick={() => setIsMobileMenuOpen(false)} style={{ fontSize: '0.95rem', marginBottom: '0.8rem' }}>Blogs</Link>
+                                <Link to="/casestudy" className="mega-link" onClick={() => setIsMobileMenuOpen(false)} style={{ fontSize: '0.95rem', marginBottom: '0.8rem' }}>Case Studies</Link>
                                 <Link to="/career" className="mega-link" onClick={() => setIsMobileMenuOpen(false)} style={{ fontSize: '0.95rem', marginBottom: 0 }}>Career</Link>
                             </div>
                         </div>

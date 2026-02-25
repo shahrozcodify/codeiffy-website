@@ -49,7 +49,7 @@ const BenefitSection = () => {
                         <div className="stat-metric-desc">Successfully delivered to global clients</div>
                     </div>
                     <div className="stat-metric-item">
-                        <div className="stat-metric-value">Global HQ</div>
+                        <div className="stat-metric-value">HQ</div>
                         <div className="stat-metric-desc">Lahore, Pakistan</div>
                     </div>
                 </div>

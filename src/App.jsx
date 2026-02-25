@@ -35,10 +35,10 @@ function App() {
           <Route path="/services/software-development" element={<SoftwareDevelopment />} />
           <Route path="/services/product-development" element={<ProductDevelopment />} />
           <Route path="/industries" element={<Industries />} />
-          <Route path="/blogs" element={<BlogList />} />
-          <Route path="/blogs/:id" element={<BlogDetails />} />
-          <Route path="/case-studies" element={<CaseStudyList />} />
-          <Route path="/case-studies/:id" element={<CaseStudyDetails />} />
+          <Route path="/blog" element={<BlogList />} />
+          <Route path="/blog/:slug" element={<BlogDetails />} />
+          <Route path="/casestudy" element={<CaseStudyList />} />
+          <Route path="/casestudy/:slug" element={<CaseStudyDetails />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/career" element={<Career />} />

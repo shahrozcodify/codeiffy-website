@@ -6,9 +6,9 @@ import { blogData } from './blogData';
 import './Blogs.css';
 
 const BlogDetails = () => {
-    const { id } = useParams();
+    const { slug } = useParams();
     const navigate = useNavigate();
-    const blog = blogData.find(b => b.id === parseInt(id));
+    const blog = blogData.find(b => b.slug === slug);
     const [relatedBlogs, setRelatedBlogs] = useState([]);
 
     useEffect(() => {
@@ -23,9 +23,9 @@ const BlogDetails = () => {
         const shuffled = [...otherBlogs].sort(() => 0.5 - Math.random());
         setRelatedBlogs(shuffled.slice(0, 3));
 
-        // Scroll to top when id changes
+        // Scroll to top when slug changes
         window.scrollTo(0, 0);
-    }, [blog, navigate, id]);
+    }, [blog, navigate, slug]);
 
     if (!blog) {
         return (
@@ -45,7 +45,7 @@ const BlogDetails = () => {
             <Header />
             <main style={{ padding: '120px 0 0 0' }}>
                 <div className="container">
-                    <Link to="/blogs" className="back-link">
+                    <Link to="/blog" className="back-link">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
                         Back to Insights
                     </Link>
@@ -94,7 +94,7 @@ const BlogDetails = () => {
                                     <h3 className="related-title">More Insights</h3>
                                     <div className="blog-grid">
                                         {relatedBlogs.map((related) => (
-                                            <Link to={`/blogs/${related.id}`} key={related.id} className="blog-card-link">
+                                            <Link to={`/blog/${related.slug}`} key={related.id} className="blog-card-link">
                                                 <div className="blog-card">
                                                     <div className="blog-card-image-wrapper">
                                                         {related.image ? (
