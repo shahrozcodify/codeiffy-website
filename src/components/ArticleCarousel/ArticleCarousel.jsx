@@ -2,32 +2,40 @@ import React from 'react';
 
 const CarouselRow = ({ title, testimonials }) => {
     const scrollRef = React.useRef(null);
-    const [progress, setProgress] = React.useState(0);
 
-    const handleScroll = () => {
-        const element = scrollRef.current;
-        if (!element) return;
-
-        const windowScroll = element.scrollLeft;
-        const totalWidth = element.scrollWidth - element.clientWidth;
-
-        if (totalWidth === 0) return setProgress(0);
-
-        const scrolled = (windowScroll / totalWidth) * 100;
-        setProgress(scrolled);
-    };
+    const [currentIndex, setCurrentIndex] = React.useState(0);
 
     const handleNext = () => {
         const element = scrollRef.current;
-        if (element) {
-            element.scrollBy({ left: 320, behavior: 'smooth' });
+        if (element && currentIndex < testimonials.length - 1) {
+            const nextIndex = currentIndex + 1;
+            const targetCard = element.children[nextIndex];
+
+            if (targetCard) {
+                // Use manual scrollTo instead of scrollIntoView 
+                // to prevent the entire page from shifting
+                element.scrollTo({
+                    left: targetCard.offsetLeft - element.offsetLeft,
+                    behavior: 'smooth'
+                });
+                setCurrentIndex(nextIndex);
+            }
         }
     };
 
     const handlePrev = () => {
         const element = scrollRef.current;
-        if (element) {
-            element.scrollBy({ left: -320, behavior: 'smooth' });
+        if (element && currentIndex > 0) {
+            const prevIndex = currentIndex - 1;
+            const targetCard = element.children[prevIndex];
+
+            if (targetCard) {
+                element.scrollTo({
+                    left: targetCard.offsetLeft - element.offsetLeft,
+                    behavior: 'smooth'
+                });
+                setCurrentIndex(prevIndex);
+            }
         }
     };
 
@@ -39,54 +47,60 @@ const CarouselRow = ({ title, testimonials }) => {
                     Discover how we've helped leading global brands and organizations achieve their digital transformation goals.
                 </p>
             </div>
-            <div className="carousel-container">
-                <button
-                    className="carousel-prev-btn"
-                    aria-label="Previous"
-                    onClick={handlePrev}
-                >
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
-                        <polyline points="15 18 9 12 15 6"></polyline>
-                    </svg>
-                </button>
-                <div
-                    className="article-carousel-wrapper"
-                    ref={scrollRef}
-                    onScroll={handleScroll}
-                >
-                    {testimonials.map((testimonial, index) => (
-                        <div className="article-card testimonial-card" key={index}>
-                            <div className="article-card-accent"></div>
-                            <div className="testimonial-logo-wrapper">
-                                <img
-                                    src={testimonial.logo}
-                                    alt={`${testimonial.client} Logo`}
-                                    className="testimonial-logo"
-                                />
+            <div className="carousel-wrapper-main" style={{ flex: 1, minWidth: 0 }}>
+                <div className="carousel-container">
+                    <div
+                        className="article-carousel-wrapper"
+                        ref={scrollRef}
+                    >
+                        {testimonials.map((testimonial, index) => (
+                            <div className="article-card testimonial-card" key={index}>
+                                <div className="article-card-accent"></div>
+                                <div className="testimonial-logo-wrapper">
+                                    <img
+                                        src={testimonial.logo}
+                                        alt={`${testimonial.client} Logo`}
+                                        className="testimonial-logo"
+                                    />
+                                </div>
+                                <p className="article-card-desc testimonial-text">"{testimonial.text}"</p>
+                                <div className="testimonial-client-name">{testimonial.client}</div>
                             </div>
-                            <p className="article-card-desc testimonial-text">"{testimonial.text}"</p>
-                            <div className="testimonial-client-name">{testimonial.client}</div>
-                        </div>
-                    ))}
+                        ))}
+                    </div>
                 </div>
-                <button
-                    className="carousel-next-btn"
-                    aria-label="Next"
-                    onClick={handleNext}
-                >
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
-                        <polyline points="9 18 15 12 9 6"></polyline>
-                    </svg>
-                </button>
+
+                {/* Progress Bar */}
                 <div className="carousel-scroll-track">
                     <div
                         className="carousel-scroll-bar"
                         style={{
-                            width: '40%',
-                            left: `${Math.min(progress, 60)}%`,
-                            transition: 'left 0.1s ease-out'
+                            width: `${100 / testimonials.length}%`,
+                            transform: `translateX(${currentIndex * 100}%)`,
+                            transition: 'transform 0.3s ease'
                         }}
                     ></div>
+                </div>
+
+                <div className="carousel-controls">
+                    <button
+                        className="carousel-prev-btn"
+                        aria-label="Previous"
+                        onClick={handlePrev}
+                    >
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                            <polyline points="15 18 9 12 15 6"></polyline>
+                        </svg>
+                    </button>
+                    <button
+                        className="carousel-next-btn"
+                        aria-label="Next"
+                        onClick={handleNext}
+                    >
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                            <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg>
+                    </button>
                 </div>
             </div>
         </div>

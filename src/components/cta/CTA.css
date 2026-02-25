@@ -5,6 +5,13 @@
     border-radius: 16px;
 }
 
+@media (max-width: 480px) {
+    .cta-container {
+        padding: 1rem;
+        text-align: left;
+    }
+}
+
 .cta-title {
     font-size: 2rem;
     font-weight: 800;

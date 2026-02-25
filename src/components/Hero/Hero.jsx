@@ -5,12 +5,12 @@ import './Hero.css';
 
 const Hero = () => {
     return (
-        <section className="hero-section py-5">
+        <section className="hero-section">
             <div className="container">
-                <div className="row align-items-center" style={{ minHeight: '650px' }}>
+                <div className="row align-items-center hero-row">
 
                     {/* LEFT COLUMN: Value Proposition */}
-                    <div className="col-lg-6 mb-5 mb-lg-0">
+                    <div className="col-12 col-md-6 mb-3 mb-md-0">
                         {/* Label */}
                         <div className="hero-label">
                             Engineering Excellence
@@ -18,8 +18,8 @@ const Hero = () => {
 
                         {/* Main Title */}
                         <h1 className="hero-title">
-                            Software Solutions <br />
-                            for <span style={{ color: 'var(--codeifyy-green)' }}>Mission-Critical</span> <br />
+                            Software Solutions <span className="d-none d-md-inline"><br /></span>
+                            for <span style={{ color: 'var(--codeifyy-green)' }}>Mission-Critical</span> <span className="d-none d-md-inline"><br /></span>
                             Organizations.
                         </h1>
 
@@ -27,12 +27,12 @@ const Hero = () => {
                         <p className="hero-description">
                             We combine engineering precision, strategic thinking, and agile execution to deliver scalable software products that accelerate business transformation.
                         </p>
-                        <a href="/contact" className=" btn btn-codeifyy-primary mb-3">
+                        <a href="/contact" className=" btn btn-codeifyy-primary mb-2">
                             Start Your Project <FaArrowRight />
                         </a>
                         {/* Trust Badges */}
-                        <div className="hero-trust-line">
-                            <div className="d-flex flex-column gap-3">
+                        <div className="hero-trust-line d-none">
+                            <div className="d-flex flex-column gap-3 hero-trust-badges">
                                 <div className="hero-trust-badge">
                                     <FaCheckCircle className="trust-check" />
                                     <span>Enterprise-Grade Security</span>
@@ -50,7 +50,7 @@ const Hero = () => {
                     </div>
 
                     {/* RIGHT COLUMN: Code Window Visual */}
-                    <div className="col-lg-5 d-none d-lg-block">
+                    <div className="col-12 col-md-5 offset-md-1">
                         <div className="hero-graphic-wrapper">
                             {/* Base Layer: Code Window */}
                             <div className="code-window">
