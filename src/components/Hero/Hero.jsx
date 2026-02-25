@@ -12,7 +12,7 @@ const Hero = () => {
                     {/* LEFT COLUMN: Value Proposition */}
                     <div className="col-12 col-md-6 mb-3 mb-md-0">
                         {/* Label */}
-                        <div className="hero-label">
+                        <div className="hero-label d-none">
                             Engineering Excellence
                         </div>
 

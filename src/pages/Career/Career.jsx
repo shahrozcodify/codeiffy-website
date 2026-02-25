@@ -24,7 +24,7 @@ const Career = () => {
         { title: 'Product Manager', location: 'Remote', department: 'Product', status: 'Coming Soon' },
         { title: 'Head of Business Development', location: 'Remote / Global', department: 'Business & Growth', status: 'Coming Soon' },
         { title: 'Head of Content', location: 'Remote', department: 'Marketing', status: 'Coming Soon' },
-        { title: 'HR & Admin Officer', location: 'Onsite (Lahore)', department: 'Operations', status: 'Coming Soon' },
+        // { title: 'HR & Admin Officer', location: 'Onsite (Lahore)', department: 'Operations', status: 'Coming Soon' },
     ];
 
     const philosophy = [

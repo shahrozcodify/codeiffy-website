@@ -22,7 +22,7 @@ const CTOMessage = () => {
                             </div>
                             <div className="cto-details">
                                 <h3 className="cto-name underline">Muhammad Ahmed</h3>
-                                <p className="cto-title">Co-Founder & CTO of Codeifyy</p>
+                                <p className="cto-title">Co-Founder & CTO Codeifyy</p>
                             </div>
                         </div>
 

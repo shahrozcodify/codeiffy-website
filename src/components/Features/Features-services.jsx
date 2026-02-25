@@ -7,7 +7,7 @@ const Features = () => {
     const services = [
         {
             category: 'Software Development',
-            title: 'Custom Enterprise Software',
+            title: 'Software Development',
             desc: 'We design and develop secure, scalable, and high-performance software tailored to your operational and strategic needs.',
             points: ['Bespoke Software Development', 'ERP Software Development', 'Cloud Application Development', 'Software Modernization'],
             link: '/services/software-development'

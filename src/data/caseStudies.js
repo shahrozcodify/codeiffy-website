@@ -72,7 +72,7 @@ export const caseStudies = [
             'Secure multi-location data management'
         ],
         results: [
-            '30% improvement in lead conversion tracking accuracy',
+            '30% improvement in lead conversion tracking',
             '25% faster follow-up response times',
             'Centralized reporting across dealership operations',
             'Improved sales pipeline visibility',
