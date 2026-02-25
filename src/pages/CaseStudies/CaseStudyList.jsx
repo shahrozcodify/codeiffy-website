@@ -58,7 +58,7 @@ const CaseStudyList = () => {
                         ))
                     ) : (
                         caseStudies.map((study) => (
-                            <Link to={`/case-studies/${study.id}`} key={study.id} style={{ textDecoration: 'none' }}>
+                            <Link to={`/casestudy/${study.slug}`} key={study.id} style={{ textDecoration: 'none' }}>
                                 <div className="case-study-card-simple">
                                     <div className="case-study-img-wrapper">
                                         <img src={study.image} alt={study.title} className="case-study-img-top" />

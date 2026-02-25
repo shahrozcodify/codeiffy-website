@@ -12,11 +12,11 @@
     display: flex;
     width: max-content;
     gap: 3rem;
-    animation: marquee-scroll 60s linear infinite;
+    animation: marquee-scroll 150s linear infinite;
 }
 
 .tech-marquee-track.reverse {
-    animation: marquee-scroll-reverse 60s linear infinite;
+    animation: marquee-scroll-reverse 150s linear infinite;
 }
 
 .tech-marquee-track:hover {

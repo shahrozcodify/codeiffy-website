@@ -1,6 +1,7 @@
 export const caseStudies = [
     {
         id: 1,
+        slug: 'custom-cms-it-services',
         title: 'Custom Content Management System for an IT Services Company',
         industry: 'Information Technology',
         companySize: '50–200 Employees',
@@ -27,6 +28,7 @@ export const caseStudies = [
     },
     {
         id: 2,
+        slug: 'staff-augmentation-it-company',
         title: 'Staff Augmentation for an IT Company',
         industry: 'Information Technology',
         companySize: '50–200 Employees',
@@ -52,6 +54,7 @@ export const caseStudies = [
     },
     {
         id: 3,
+        slug: 'crm-transformation-kia-motors',
         title: 'CRM Transformation for Kia Motors',
         industry: 'Automotive',
         companySize: 'Enterprise',
@@ -78,6 +81,7 @@ export const caseStudies = [
     },
     {
         id: 4,
+        slug: 'web-application-development-jetour',
         title: 'Web Application Development for Jetour',
         industry: 'Automotive / Mobility',
         companySize: 'Enterprise',

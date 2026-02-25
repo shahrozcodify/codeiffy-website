@@ -9,21 +9,21 @@ const Features = () => {
             category: 'Software Development',
             title: 'Custom Enterprise Software',
             desc: 'We design and develop secure, scalable, and high-performance software tailored to your operational and strategic needs.',
-            points: ['Web & mobile apps', 'API integrations', 'Legacy modernization'],
+            points: ['Bespoke Software Development', 'ERP Software Development', 'Cloud Application Development', 'Software Modernization'],
             link: '/services/software-development'
         },
         {
             category: 'Artificial Intelligence',
             title: 'Intelligent Solutions',
             desc: 'Harness the power of AI to automate operations and unlock data-driven growth.',
-            points: ['AI strategy', 'Chatbots & Assistants', 'ML models', 'GenAI integration'],
+            points: ['AI Strategy & Consulting', 'Machine Learning Development', 'Generative AI Integration', 'AI Chatbots & Virtual Assistants', 'Natural Language Processing (NLP)', 'AI Automation & Workflows'],
             link: '/services/artificial-intelligence'
         },
         {
             category: 'Staff Augmentation',
             title: 'Extend Your Team',
             desc: 'Scale resources on demand with pre-vetted developers and engineers.',
-            points: ['Flexible engagement models', 'Rapid onboarding', 'Seamless team integration'],
+            points: ['IT Staff Augmentation', 'Dedicated Development Team', 'Full-Project Outsourcing', 'Software Outsourcing'],
             link: '/services/staff-augmentation'
         },
 
@@ -31,7 +31,7 @@ const Features = () => {
             category: 'Product Development',
             title: 'Idea to Scale',
             desc: 'Build market-ready digital products with a focus on user experience and scalability.',
-            points: ['MVP development', 'UX/UI design', 'Product engineering', 'Continuous optimization'],
+            points: ['Development Consulting', 'Product Development', 'Product Design', 'Architecture Design', 'UI & UX Design', 'API Development', 'Testing & QA', 'Support & Maintenance'],
             link: '/services/product-development'
         }
     ];

@@ -8,18 +8,18 @@ import { caseStudies } from '../../data/caseStudies';
 import './CaseStudies.css';
 
 const CaseStudyDetails = () => {
-    const { id } = useParams();
-    const study = caseStudies.find(s => s.id === parseInt(id));
+    const { slug } = useParams();
+    const study = caseStudies.find(s => s.slug === slug);
 
     // Get suggested case studies (exclude current one, take 3)
     const suggestedStudies = caseStudies
-        .filter(s => s.id !== parseInt(id))
+        .filter(s => s.slug !== slug)
         .slice(0, 3);
 
     // Scroll to top on mount
     useEffect(() => {
         window.scrollTo(0, 0);
-    }, [id]);
+    }, [slug]);
 
     if (!study) {
         return (
@@ -57,7 +57,7 @@ const CaseStudyDetails = () => {
 
                 <div className="container" style={{ position: 'relative', zIndex: 1 }}>
                     <div style={{ marginBottom: '2rem', textAlign: 'left' }}>
-                        <Link to="/case-studies" style={{
+                        <Link to="/casestudy" style={{
                             display: 'inline-flex',
                             alignItems: 'center',
                             gap: '8px',
@@ -148,7 +148,7 @@ const CaseStudyDetails = () => {
                     <h3 className="more-section-title">More Case Studies</h3>
                     <div className="more-case-studies-grid">
                         {suggestedStudies.map(suggested => (
-                            <Link to={`/case-studies/${suggested.id}`} key={suggested.id} style={{ textDecoration: 'none' }}>
+                            <Link to={`/casestudy/${suggested.slug}`} key={suggested.id} style={{ textDecoration: 'none' }}>
                                 <div className="case-study-card-simple">
                                     <div className="case-study-img-wrapper" style={{ height: '180px' }}>
                                         <img

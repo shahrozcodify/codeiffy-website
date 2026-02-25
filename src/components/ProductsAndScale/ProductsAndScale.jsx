@@ -57,7 +57,7 @@ const ProductsAndScale = () => {
 
                 </div>
                 <div className="section-cta-wrapper animate-up delay-1" style={{ marginBottom: '3rem' }}>
-                    <a href="#contact" className="btn btn-codeifyy-primary">
+                    <a href="/contact" className="btn btn-codeifyy-primary">
                         Request a Proposal
                     </a>
                 </div>

@@ -76,7 +76,6 @@ const Footer = () => {
                         <ul>
                             <li><Link to="/services">Services</Link></li>
                             <li><Link to="/industries">Industries</Link></li>
-                            <li><Link to="/case-studies">Case Studies</Link></li>
                             <li><Link to="/services/staff-augmentation">Staff Augmentation</Link></li>
                             <li><Link to="/services/software-development">Software Development</Link></li>
                         </ul>
@@ -86,16 +85,16 @@ const Footer = () => {
                         <h4>About Codeifyy</h4>
                         <ul>
                             <li><Link to="/about">Our Story</Link></li>
+                            <li><Link to="/casestudy">Case Studies</Link></li>
                             <li><Link to="/career">Careers</Link></li>
-                            <li><Link to="/blogs">Blog <FaExternalLinkAlt className="ext-icon" /></Link></li>
-
-                            <li><Link to="/contact">Contact Us</Link></li>
+                            <li><Link to="/blog">Blog <FaExternalLinkAlt className="ext-icon d-none" /></Link></li>
                         </ul>
                     </div>
 
                     <div className="footer-links-col">
                         <h4>Support</h4>
                         <ul>
+                            <li><Link to="/contact">Contact Us</Link></li>
                             <li><Link to="/privacy-policy">Privacy Information</Link></li>
                             <li><Link to="/terms-of-use">Terms of Use</Link></li>
                         </ul>

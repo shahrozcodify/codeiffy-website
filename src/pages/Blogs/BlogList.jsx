@@ -59,7 +59,7 @@ const BlogList = () => {
                         ) : (
                             // Show real data once loaded
                             blogData.map((blog) => (
-                                <Link to={`/blogs/${blog.id}`} key={blog.id} className="blog-card-link">
+                                <Link to={`/blog/${blog.slug}`} key={blog.id} className="blog-card-link">
                                     <div className="blog-card">
                                         <div className="blog-card-image-wrapper">
                                             {/* Overlay handled in CSS */}

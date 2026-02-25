@@ -30,7 +30,7 @@ const CustomerStories = () => {
                 <div className="customer-stories-grid animate-up">
                     {featuredStories.map((study) => (
                         <div key={study.id} className="customer-story-card">
-                            <div className="customer-story-img-wrapper" onClick={() => navigate(`/case-studies/${study.id}`)}>
+                            <div className="customer-story-img-wrapper" onClick={() => navigate(`/casestudy/${study.slug}`)}>
                                 <img src={study.image} alt={study.title} className="customer-story-image" />
                                 <div className="customer-story-overlay"></div>
                             </div>
@@ -39,9 +39,9 @@ const CustomerStories = () => {
                                     <span className="badge-result">{study.industry}</span>
                                     <span className="badge-result">{study.result}</span>
                                 </div>
-                                <h3 className="customer-story-title" onClick={() => navigate(`/case-studies/${study.id}`)}>{study.title}</h3>
+                                <h3 className="customer-story-title" onClick={() => navigate(`/casestudy/${study.slug}`)}>{study.title}</h3>
                                 <p className="customer-story-summary">{study.summary}</p>
-                                <span className="read-more-link" onClick={() => navigate(`/case-studies/${study.id}`)}>
+                                <span className="read-more-link" onClick={() => navigate(`/casestudy/${study.slug}`)}>
                                     Read Case Study <FaArrowRight style={{ marginLeft: '8px' }} />
                                 </span>
                             </div>
@@ -50,7 +50,7 @@ const CustomerStories = () => {
                 </div>
 
                 <div className="center-btn-wrapper animate-up" style={{ marginTop: '4rem' }}>
-                    <button onClick={() => navigate('/case-studies')} className="btn btn-codeifyy-primary">
+                    <button onClick={() => navigate('/casestudy')} className="btn btn-codeifyy-primary">
                         View All Case Studies
                     </button>
                 </div>
