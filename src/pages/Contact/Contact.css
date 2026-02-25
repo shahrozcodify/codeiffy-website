@@ -90,6 +90,15 @@
     box-shadow: var(--card-shadow);
     border: 1px solid rgba(0, 0, 0, 0.05);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    z-index: 10;
+}
+
+/* Ensure reCAPTCHA badge is always on top and smaller */
+.grecaptcha-badge {
+    z-index: 9999 !important;
+    transform: scale(0.6);
+    transform-origin: bottom right;
 }
 
 .contact-form-container:hover {
