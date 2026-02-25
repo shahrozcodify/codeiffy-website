@@ -313,6 +313,16 @@
     min-width: 100px;
 }
 
+.expertise-col-card h3 a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.expertise-col-card h3 a:hover {
+    color: var(--codeifyy-green);
+}
+
 .expertise-list-styled {
     list-style: none;
     padding: 0;

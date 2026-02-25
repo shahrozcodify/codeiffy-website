@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import CTA from '../../components/cta/CTA';
@@ -204,7 +205,7 @@ const About = () => {
                             <div className="col-lg-4">
                                 <div className="expertise-col-card">
                                     <span className="expertise-number">01</span>
-                                    <h3>Services</h3>
+                                    <h3><Link to="/services" className="text-decoration-none">Services</Link></h3>
                                     <ul className="expertise-list-styled">
                                         <li><FaCheckCircle /> Software Development</li>
                                         <li><FaCheckCircle /> Artificial Intelligence</li>
@@ -229,7 +230,7 @@ const About = () => {
                             <div className="col-lg-4">
                                 <div className="expertise-col-card">
                                     <span className="expertise-number">03</span>
-                                    <h3>Industries</h3>
+                                    <h3><Link to="/industries" className="text-decoration-none">Industries</Link></h3>
                                     <ul className="expertise-list-styled">
                                         <li><FaCheckCircle /> Automobile & Manufacturing</li>
                                         <li><FaCheckCircle /> Oil & Gas</li>

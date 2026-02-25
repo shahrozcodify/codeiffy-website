@@ -11,6 +11,7 @@ import {
 import ClientLogos from '../../components/ClientLogos/ClientLogos';
 import CustomerStories from '../../components/CustomerStories/CustomerStories';
 import ArticleCarousel from '../../components/ArticleCarousel/ArticleCarousel';
+import BenefitSection from '../../components/BenefitSection/BenefitSection';
 import './Industries.css';
 import '../../components/Hero/Hero.css';
 import '../../components/BenefitSection/BenefitSection.css';
@@ -228,45 +229,33 @@ const Industries = () => {
             </section >
 
             {/* STATS SECTION - FLEXIBLE TALENT STYLE */}
-            < section className="section-padding" style={{ background: '#fff' }}>
-                <div className="container">
-                    <div className="flexible-talent-wrapper">
-                        <div className="flexible-content">
-                            <h2>Deep Industry <br />Expertise.</h2>
-                            <p className="hero-description">
-                                We combine technical excellence with domain knowledge to solve sector-specific challenges.
-                                Codeifyy delivers solutions that are not just technically sound, but operationally effective.
-                            </p>
-                            <ul className="model-features">
-                                <li><FaCheckCircle /> Compliance & Security First</li>
-                                <li><FaCheckCircle /> Tailored for Regulated Sectors</li>
-                                <li><FaCheckCircle /> Scalable Architecture</li>
-                            </ul>
-                            <a href="/contact" className="btn btn-codeifyy-primary">Talk to an Expert</a>
-                        </div>
-                        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                            <div className="benefit-cards-grid">
-                                <div className="stat-card animate-up delay-1">
-                                    <div className="stat-value">30+</div>
-                                    <div className="stat-label">IT Professionals</div>
-                                </div>
-                                <div className="stat-card animate-up delay-2">
-                                    <div className="stat-value">15+</div>
-                                    <div className="stat-label">Countries Served</div>
-                                </div>
-                                <div className="stat-card animate-up delay-3">
-                                    <div className="stat-value">90%</div>
-                                    <div className="stat-label">Retention Rate</div>
-                                </div>
-                                <div className="stat-card animate-up delay-4">
-                                    <div className="stat-value">Global</div>
-                                    <div className="stat-label">Platform Experts</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section >
+            <BenefitSection
+                title={
+                    <>
+                        Deep Industry <br />Expertise.
+                    </>
+                }
+                description={
+                    <>
+                        We combine technical excellence with domain knowledge to solve sector-specific challenges.
+                        Codeifyy delivers solutions that are not just technically sound, but operationally effective.
+                    </>
+                }
+                features={[
+                    <><FaCheckCircle /> Compliance & Security First</>,
+                    <><FaCheckCircle /> Tailored for Regulated Sectors</>,
+                    <><FaCheckCircle /> Scalable Architecture</>
+                ]}
+                buttonText="Talk to an Expert"
+                buttonLink="/contact"
+                stats={[
+                    { value: "30+", label: "IT Professionals" },
+                    { value: "15+", label: "Countries Served" },
+                    { value: "90%", label: "Retention Rate" },
+                    { value: "Global", label: "Platform Experts" }
+                ]}
+                showBottomMetrics={false}
+            />
 
             {/* INDUSTRIES GRID */}
             < section className="industry-grid-section" >
