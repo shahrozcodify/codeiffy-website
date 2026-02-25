@@ -138,13 +138,6 @@ const Contact = () => {
                             <h2 className="contact-info-title">Global Offices</h2>
                             <div className="contact-details-list">
                                 <div className="contact-detail-item">
-                                    <div className="contact-icon-box"><FaMapMarkerAlt /></div>
-                                    <div className="contact-item-content">
-                                        <h4>Headquarter</h4>
-                                        <p>National Town, Lahore, 05453, Pakistan</p>
-                                    </div>
-                                </div>
-                                <div className="contact-detail-item">
                                     <div className="contact-icon-box"><FaPhoneAlt /></div>
                                     <div className="contact-item-content">
                                         <h4>Sales Inquiry</h4>
@@ -158,6 +151,14 @@ const Contact = () => {
                                         <p>hello@codeifyy.com</p>
                                     </div>
                                 </div>
+                                <div className="contact-detail-item">
+                                    <div className="contact-icon-box"><FaMapMarkerAlt /></div>
+                                    <div className="contact-item-content">
+                                        <h4>Headquarter</h4>
+                                        <p>National Town, Lahore, 05453, Pakistan</p>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
 

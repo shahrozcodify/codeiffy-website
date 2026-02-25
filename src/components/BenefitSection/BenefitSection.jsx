@@ -18,7 +18,7 @@ const BenefitSection = ({
         { value: "Certified", label: "Platform Experts" }
     ],
     bottomMetrics = [
-        { value: "8+ Years", desc: "In software engineering and IT consulting" },
+        { value: "8+ Years", desc: "In software engineering" },
         { value: "100+ Projects", desc: "Successfully delivered to global clients" },
         { value: "HQ", desc: "Lahore, Pakistan" }
     ],
