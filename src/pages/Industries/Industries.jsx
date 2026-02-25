@@ -12,6 +12,7 @@ import ClientLogos from '../../components/ClientLogos/ClientLogos';
 import CustomerStories from '../../components/CustomerStories/CustomerStories';
 import ArticleCarousel from '../../components/ArticleCarousel/ArticleCarousel';
 import BenefitSection from '../../components/BenefitSection/BenefitSection';
+import CTA from '../../components/cta/CTA';
 import './Industries.css';
 import '../../components/Hero/Hero.css';
 import '../../components/BenefitSection/BenefitSection.css';
@@ -348,13 +349,14 @@ const Industries = () => {
             < ArticleCarousel />
 
             {/* FINAL CTA */}
-            < section className="final-cta-section mt-5" >
-                <div className="container">
-                    <h2 className="section-title">Let’s Build a Solution for Your Industry</h2>
-                    <p className="section-subtitle mb-5">Whether you operate in a regulated sector or a fast-scaling digital environment, we deliver technology aligned with your industry challenges.</p>
-                    <a href="/contact" className="btn btn-codeifyy-primary btn-lg px-5 py-3">Discuss Your Industry Needs</a>
-                </div>
-            </section >
+            <div className="container mt-5">
+                <CTA
+                    title="Let’s Build a Solution for Your Industry"
+                    text="Whether you operate in a regulated sector or a fast-scaling digital environment, we deliver technology aligned with your industry challenges."
+                    btnText="Discuss Your Industry Needs"
+                    link="/contact"
+                />
+            </div>
 
             <Footer />
         </div >
