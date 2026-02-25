@@ -1,12 +1,20 @@
 /* Codeifyy CRM Unified Header Component - Top tier removed per branding refinement */
 import React, { useState, useEffect, useRef } from 'react';
-import { FiSearch, FiGlobe, FiUser, FiChevronDown, FiPhone } from 'react-icons/fi';
+import { FiSearch, FiGlobe, FiUser, FiChevronDown, FiPhone, FiMenu, FiX } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
 
 const Header = () => {
     const [isScrolled, setIsScrolled] = useState(false);
     const [showTop, setShowTop] = useState(true);
     const [showRegionMenu, setShowRegionMenu] = useState(false);
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const [activeMobileDropdown, setActiveMobileDropdown] = useState(null);
+
+    const toggleMobileDropdown = (name) => {
+        if (window.innerWidth <= 992) {
+            setActiveMobileDropdown(activeMobileDropdown === name ? null : name);
+        }
+    };
 
     const lastScrollY = useRef(0);
     const isScrolledRef = useRef(false);
@@ -78,10 +86,16 @@ const Header = () => {
                         </div>
                     </div>
 
-                    <div className="nav-links-wrap" style={{ display: 'flex', gap: '1.5rem', flex: 1, height: '100%', justifyContent: 'center' }}>
-                        <Link to="/" className="nav-link-secondary" style={{ fontSize: '1rem' }}>Home</Link>
-                        <div className="nav-item">
-                            <span className="nav-link-secondary" style={{ fontSize: '1rem' }}>Services <FiChevronDown className="header-caret" /></span>
+                    <div className={`nav-links-wrap ${isMobileMenuOpen ? 'mobile-active' : ''}`}>
+                        <div className="mobile-menu-header">
+                            <img src="/full-Logo.png" alt="Codeifyy" style={{ height: '40px' }} />
+                            <button className="mobile-menu-close" onClick={() => setIsMobileMenuOpen(false)}>
+                                <FiX />
+                            </button>
+                        </div>
+                        <Link to="/" className="nav-link-secondary" onClick={() => setIsMobileMenuOpen(false)}>Home</Link>
+                        <div className={`nav-item ${activeMobileDropdown === 'services' ? 'mobile-dropdown-active' : ''}`}>
+                            <span className="nav-link-secondary" onClick={() => toggleMobileDropdown('services')}>Services <FiChevronDown className="header-caret" /></span>
                             <div className="dropdown-content mega-menu-small" style={{ width: '800px', display: 'grid', gridTemplateColumns: '1.2fr 1.8fr', padding: 0 }}>
                                 <div className="mega-column" style={{ padding: '2.5rem' }}>
                                     <div className="mega-title">Our Expertise</div>
@@ -149,8 +163,8 @@ const Header = () => {
                                 </div>
                             </div>
                         </div>
-                        <Link to="/about" className="nav-link-secondary" style={{ fontSize: '1rem' }}>About</Link>
-                        <Link to="/industries" className="nav-link-secondary" style={{ fontSize: '1rem' }}>Industries</Link>
+                        <Link to="/about" className="nav-link-secondary" onClick={() => setIsMobileMenuOpen(false)}>About</Link>
+                        <Link to="/industries" className="nav-link-secondary" onClick={() => setIsMobileMenuOpen(false)}>Industries</Link>
 
 
                         {/* <div className="nav-item">
@@ -176,18 +190,28 @@ const Header = () => {
                             </div>
                         </div> */}
 
-                        <div className="nav-item">
-                            <span className="nav-link-secondary" style={{ fontSize: '1rem' }}>Resources <FiChevronDown className="header-caret" /></span>
+                        <div className={`nav-item ${activeMobileDropdown === 'resources' ? 'mobile-dropdown-active' : ''}`}>
+                            <span className="nav-link-secondary" onClick={() => toggleMobileDropdown('resources')}>Resources <FiChevronDown className="header-caret" /></span>
                             <div className="dropdown-content" style={{ minWidth: '220px', padding: '1.5rem' }}>
-                                <Link to="/blogs" className="mega-link" style={{ fontSize: '0.95rem', marginBottom: '0.8rem' }}>Blogs</Link>
-                                <Link to="/case-studies" className="mega-link" style={{ fontSize: '0.95rem', marginBottom: '0.8rem' }}>Case Studies</Link>
-                                <Link to="/career" className="mega-link" style={{ fontSize: '0.95rem', marginBottom: 0 }}>Career</Link>
+                                <Link to="/blogs" className="mega-link" onClick={() => setIsMobileMenuOpen(false)} style={{ fontSize: '0.95rem', marginBottom: '0.8rem' }}>Blogs</Link>
+                                <Link to="/case-studies" className="mega-link" onClick={() => setIsMobileMenuOpen(false)} style={{ fontSize: '0.95rem', marginBottom: '0.8rem' }}>Case Studies</Link>
+                                <Link to="/career" className="mega-link" onClick={() => setIsMobileMenuOpen(false)} style={{ fontSize: '0.95rem', marginBottom: 0 }}>Career</Link>
                             </div>
+                        </div>
+
+                        <div className="mobile-only-actions">
+                            <a href="tel:+923112601310" className="header-phone">
+                                <FiPhone className="header-phone-icon" />
+                                <span>+92 311 2601310</span>
+                            </a>
+                            <Link to="/contact" className="btn btn-codeifyy-primary header-cta-btn" onClick={() => setIsMobileMenuOpen(false)}>
+                                Contact Us
+                            </Link>
                         </div>
                     </div>
 
-                    <div className="header-right-actions" style={{ display: 'flex', alignItems: 'center', gap: '2rem' }}>
-                        <a href="tel:+6563025700" className="header-phone">
+                    <div className="header-right-actions">
+                        <a href="tel:+923112601310" className="header-phone">
                             <FiPhone className="header-phone-icon" />
                             <span>+92 311 2601310</span>
                         </a>
@@ -195,9 +219,19 @@ const Header = () => {
                         <Link to="/contact" className="btn btn-codeifyy-primary header-cta-btn">
                             Contact Us
                         </Link>
+
+                        <button className="mobile-menu-toggle" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
+                            {isMobileMenuOpen ? <FiX /> : <FiMenu />}
+                        </button>
                     </div>
                 </div>
             </div>
+
+            {/* Mobile Menu Overlay */}
+            <div
+                className={`mobile-menu-overlay ${isMobileMenuOpen ? 'active' : ''}`}
+                onClick={() => setIsMobileMenuOpen(false)}
+            ></div>
         </header>
     );
 };
