@@ -3,6 +3,12 @@
     position: relative;
     background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
     overflow: hidden;
+    padding-top: 6rem;
+    padding-bottom: 4rem;
+}
+
+.hero-row {
+    min-height: 650px;
 }
 
 /* Background Abstract Shape (Optional depth) */
@@ -157,32 +163,204 @@ textarea.form-control-custom {
     box-shadow: none;
 }
 
-/* Responsive */
-@media (max-width: 991px) {
-    .hero-form-card {
-        margin-top: 3rem;
-        padding: 2rem;
+/* --- Responsive Logic (Standard Breakpoints) --- */
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .container {
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+    }
+
+    .hero-section {
+        padding: 4.5rem 0 2rem 0;
+        text-align: left;
+    }
+
+    .hero-row {
+        display: flex !important;
+        flex-direction: column !important;
+        min-height: auto;
+        gap: 0;
+        width: 100%;
+        margin: 0;
+    }
+
+    .hero-label {
+        margin-bottom: 0.5rem;
     }
 
     .hero-title {
-        font-size: 2.75rem;
+        font-size: 1.6rem;
+        line-height: 1.25;
+        margin-bottom: 0.75rem;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        word-break: normal;
+    }
+
+    .hero-description {
+        font-size: 1rem;
+        line-height: 1.6;
+        margin-bottom: 0.75rem;
+    }
+
+    .hero-graphic-wrapper {
+        margin-top: 0.5rem;
+        min-height: 250px;
+        transform: scale(1);
+        transform-origin: center top;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        padding: 0;
+    }
+
+    .code-window {
+        width: 100% !important;
+        max-width: 310px !important;
+        min-width: 280px;
+        transform: none !important;
+        font-size: 0.65rem;
+    }
+
+    .floating-badge {
+        padding: 6px 12px;
+        font-size: 0.7rem;
+    }
+
+    .badge-icon {
+        width: 24px;
+        height: 24px;
+    }
+
+    .badge-security {
+        right: 0;
+        top: -10px;
+    }
+
+    .badge-cloud {
+        left: -10px;
+        bottom: 0;
+    }
+
+    .badge-performance {
+        right: -10px;
+        bottom: 10%;
+    }
+}
+
+/* Specific fix for extreme small devices (340px and down) */
+@media only screen and (max-width: 340px) {
+    .hero-title {
+        font-size: 1.45rem;
+    }
+
+    .hero-graphic-wrapper {
+        transform: scale(0.75);
+        min-height: 240px;
+    }
+}
+
+/* Small devices (up to tablets, 767px and down) */
+@media only screen and (max-width: 767px) {
+    .hero-row {
+        flex-direction: column;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .hero-section {
+        padding: 6.5rem 1.5rem 3.5rem;
+    }
+
+    .hero-row {
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
+        align-items: center;
+        min-height: 500px;
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .hero-graphic-wrapper {
+        width: 100%;
+        margin-top: 0;
+        transform: scale(0.85);
+        min-height: 400px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .code-window {
+        max-width: 440px;
+        transform: rotateY(-3deg) rotateX(1deg);
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    .hero-section {
+        padding: 1.5rem 0 1.5rem;
+    }
+
+    .hero-row {
+        min-height: 600px;
+    }
+
+    .hero-title {
+        font-size: 3rem;
+    }
+
+    .hero-graphic-wrapper {
+        transform: scale(0.95);
+    }
+
+    .code-window {
+        max-width: 500px;
+        transform: rotateY(-5deg) rotateX(2deg);
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    .hero-section {
+        padding: 1.5rem 0 1.5rem;
+    }
+
+    .hero-section .hero-title {
+        font-size: 3.5rem;
+    }
+
+    .hero-section .hero-graphic-wrapper {
+        transform: scale(1);
+    }
+
+    .hero-section .code-window {
+        max-width: 520px;
     }
 }
 
 /* --- Hero Graphic Styles (Code Window) --- */
-.hero-graphic-wrapper {
+.hero-section .hero-graphic-wrapper {
     position: relative;
-    min-height: 600px;
+    min-height: 400px;
     height: auto;
     display: flex;
     align-items: center;
     justify-content: center;
     perspective: 1000px;
-    padding: 2rem 0;
+    width: 100%;
 }
 
 /* Code Window */
-.code-window {
+.hero-section .code-window {
     background: #1e293b;
     border-radius: 12px;
     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
@@ -196,11 +374,11 @@ textarea.form-control-custom {
     position: relative;
 }
 
-.code-window:hover {
+.hero-section .code-window:hover {
     transform: rotateY(0) rotateX(0);
 }
 
-.window-header {
+.hero-section .window-header {
     background: #0f172a;
     padding: 12px 16px;
     display: flex;
@@ -208,25 +386,25 @@ textarea.form-control-custom {
     border-bottom: 1px solid #334155;
 }
 
-.dot {
+.hero-section .dot {
     width: 12px;
     height: 12px;
     border-radius: 50%;
 }
 
-.dot.red {
+.hero-section .dot.red {
     background: #ef4444;
 }
 
-.dot.yellow {
+.hero-section .dot.yellow {
     background: #f59e0b;
 }
 
-.dot.green {
+.hero-section .dot.green {
     background: #10b981;
 }
 
-.window-body {
+.hero-section .window-body {
     padding: 25px;
     padding-bottom: 60px;
     /* Extra padding to clear badges */
@@ -237,38 +415,38 @@ textarea.form-control-custom {
     text-align: left;
 }
 
-.code-line {
+.hero-section .code-line {
     display: block;
 }
 
 /* Syntax Highlighting */
-.c-gray {
+.hero-section .c-gray {
     color: #64748b;
     font-style: italic;
 }
 
-.c-purple {
+.hero-section .c-purple {
     color: #c084fc;
 }
 
-.c-blue {
+.hero-section .c-blue {
     color: #60a5fa;
 }
 
-.c-green {
+.hero-section .c-green {
     color: #4ade80;
 }
 
-.c-yellow {
+.hero-section .c-yellow {
     color: #fcd34d;
 }
 
-.c-white {
+.hero-section .c-white {
     color: #f8fafc;
 }
 
 /* Floating Badges */
-.floating-badge {
+.hero-section .floating-badge {
     position: absolute;
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(8px);
@@ -283,10 +461,10 @@ textarea.form-control-custom {
     font-size: 0.9rem;
     border: 1px solid rgba(255, 255, 255, 0.5);
     z-index: 10;
-    animation: float 4s ease-in-out infinite;
+    animation: float_hero 4s ease-in-out infinite;
 }
 
-.badge-icon {
+.hero-section .badge-icon {
     width: 32px;
     height: 32px;
     border-radius: 50%;
@@ -297,25 +475,25 @@ textarea.form-control-custom {
     font-size: 0.9rem;
 }
 
-.badge-security {
+.hero-section .badge-security {
     top: 5%;
     right: -10px;
     animation-delay: 0s;
 }
 
-.badge-cloud {
+.hero-section .badge-cloud {
     bottom: 10%;
     left: -30px;
     animation-delay: 1.5s;
 }
 
-.badge-performance {
+.hero-section .badge-performance {
     bottom: 25%;
     right: -40px;
     animation-delay: 0.8s;
 }
 
-@keyframes float {
+@keyframes float_hero {
 
     0%,
     100% {
