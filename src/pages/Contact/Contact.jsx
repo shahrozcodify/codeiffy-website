@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaHeadset, FaComments, FaPaperPlane, FaCheckCircle, FaExclamationCircle, FaTimes } from 'react-icons/fa';
-import ReCAPTCHA from 'react-google-recaptcha';
+import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
 import './Contact.css';
 import '../../components/Hero/Hero.css';
 
@@ -24,29 +24,25 @@ const Popup = ({ message, type, onClose }) => {
 };
 
 const Contact = () => {
-    const [captchaValue, setCaptchaValue] = useState(null);
     const [popup, setPopup] = useState({ show: false, message: '', type: 'success' });
-
-    const handleCaptchaChange = (value) => {
-        setCaptchaValue(value);
-    };
+    const { executeRecaptcha } = useGoogleReCaptcha();
 
     const closePopup = () => {
         setPopup({ ...popup, show: false });
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = useCallback(async (e) => {
         e.preventDefault();
-        if (!captchaValue) {
-            setPopup({
-                show: true,
-                message: "Please complete the reCAPTCHA verification to proceed.",
-                type: 'error'
-            });
+
+        if (!executeRecaptcha) {
+            console.log("Execute recaptcha not yet available");
             return;
         }
+
+        const token = await executeRecaptcha('contact_form');
+
         // Proceed with form submission
-        console.log("Form submitted with captcha:", captchaValue);
+        console.log("Form submitted with v3 token:", token);
 
         // Simulate successful submission
         setPopup({
@@ -55,7 +51,7 @@ const Contact = () => {
             type: 'success'
         });
         // Add your real form submission logic here
-    };
+    }, [executeRecaptcha]);
 
     return (
         <div className="contact-page">
@@ -181,12 +177,6 @@ const Contact = () => {
                                 <div className="form-group">
                                     <label className="form-label">How can we help?</label>
                                     <textarea className="form-textarea" placeholder="Tell us more about your needs..."></textarea>
-                                </div>
-                                <div className="form-group" style={{ marginBottom: '20px' }}>
-                                    <ReCAPTCHA
-                                        sitekey="6Lf03nEsAAAAAG2ka1oA9KIVx-mYL2WkPymjVhd1"
-                                        onChange={handleCaptchaChange}
-                                    />
                                 </div>
                                 <button className="btn-submit">Send Message</button>
                             </form>
