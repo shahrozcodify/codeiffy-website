@@ -13,12 +13,26 @@
 
 /* Specific Spacing Overrides for Contact Page */
 .contact-page .hero-section {
+    padding-top: 25px !important;
     padding-bottom: 0 !important;
+}
+
+.contact-page .hero-row {
+    min-height: auto !important;
+    padding-top: 2rem !important;
+    /* Reduced from centered min-height */
+    padding-bottom: 2.5rem !important;
 }
 
 .contact-page .contact-main {
     padding-top: 0 !important;
+    /* padding-bottom: 0 !important; */
 }
+
+/* .contact-page .footer {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+} */
 
 .contact-grid {
     display: grid;
@@ -428,10 +442,67 @@
     text-decoration: underline;
 }
 
-/* Ensure it doesn't overlap important buttons on mobile if needed */
+
+
+/* Responsive Hero Section for Contact Page */
+@media (max-width: 991px) {
+    .contact-page .hero-row {
+        flex-direction: column;
+        text-align: center;
+        gap: 0 !important;
+    }
+
+    .contact-page .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .contact-page .hero-description {
+        margin: 0 auto 2rem;
+    }
+
+    .contact-page .hero-graphic-wrapper {
+        margin: 0 auto;
+        max-width: 100%;
+        transform: scale(0.85);
+    }
+}
+
 @media (max-width: 768px) {
-    .grecaptcha-badge {
-        bottom: 80px !important;
-        /* Move higher on mobile to avoid fixed buttons if any */
+    .contact-page .hero-section {
+        padding-top: 4rem !important;
+        padding-bottom: 0 !important;
+        /* Proper spacing for mobile header */
+    }
+
+    .contact-page .hero-title {
+        font-size: 2.15rem;
+    }
+
+    .contact-page .hero-row {
+        gap: 0 !important;
+    }
+
+    .contact-page .hero-graphic-wrapper {
+        display: none !important;
+    }
+
+    .contact-page .code-window {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 576px) {
+    .contact-page .hero-title {
+        font-size: 1.8rem;
+    }
+
+    .contact-page .hero-graphic-wrapper {
+        display: none !important;
+    }
+
+    .contact-page .floating-badge {
+        padding: 8px 12px;
+        font-size: 0.8rem;
     }
 }
