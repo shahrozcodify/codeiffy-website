@@ -2,12 +2,18 @@ import React, { useState, useEffect } from 'react';
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import { Link } from 'react-router-dom';
-import { FaCode, FaBrain, FaUsers, FaRocket, FaArrowRight, FaCheckCircle, FaLaptopCode, FaChartLine, FaCogs, FaShieldAlt, FaCloud } from 'react-icons/fa';
+import {
+    FaCode, FaBrain, FaUsers, FaRocket, FaArrowRight,
+    FaCheckCircle, FaLaptopCode, FaChartLine, FaCogs,
+    FaShieldAlt, FaCloud, FaSearch, FaDraftingCompass,
+    FaBoxOpen, FaVial, FaHeadset
+} from 'react-icons/fa';
 import ClientLogos from '../../components/ClientLogos/ClientLogos';
 import TechStack from '../../components/TechStack/TechStack';
 import Industries from '../../components/Industries/Industries';
 import CustomerStories from '../../components/CustomerStories/CustomerStories';
 import ArticleCarousel from '../../components/ArticleCarousel/ArticleCarousel';
+import BenefitSection from '../../components/BenefitSection/BenefitSection';
 import CTA from '../../components/cta/CTA';
 import PageSkeleton from '../../components/Skeleton/PageSkeleton';
 import './Services.css';
@@ -33,16 +39,16 @@ const Services = () => {
             <Header />
 
             {/* HERO SECTION */}
-            <section className="hero-section py-5">
+            <section className="hero-section">
                 <div className="container">
-                    <div className="row align-items-center" style={{ minHeight: '500px' }}>
-                        <div className="col-lg-7">
+                    <div className="row align-items-center hero-row">
+                        <div className="col-lg-7 col-md-6">
                             <h1 className="hero-title">
                                 End-to-End <br />
-                                <span style={{ color: 'var(--codeifyy-green)' }}>Technology Services</span>
+                                <span className="text-highlight">Technology Services</span>
                             </h1>
                             <p className="hero-description">
-                                At Codeifyy, we deliver comprehensive technology services designed to help businesses innovate, scale, and operate efficiently.
+                                At Codeifyy, we deliver comprehensive technology services designed to help businesses innovate, scale, and operate efficiently in a digital-first world.
                             </p>
                             <div className="hero-trust-line">
                                 <a href="/contact" className="btn btn-codeifyy-primary rounded-2 fw-bold px-4 py-3">
@@ -50,7 +56,7 @@ const Services = () => {
                                 </a>
                             </div>
                         </div>
-                        <div className="col-lg-5 d-none d-lg-block">
+                        <div className="col-lg-5 col-md-6 d-none d-md-block">
                             <div className="hero-graphic-wrapper">
                                 {/* Base Layer: Code Window */}
                                 <div className="code-window">
@@ -64,7 +70,7 @@ const Services = () => {
                                         <span className="code-line">
                                             <span className="c-purple">const</span> <span className="c-blue">Services</span> = <span className="c-yellow">()</span> <span className="c-purple">=&gt;</span> {'{'}
                                         </span>
-                                        <span className="code-line pl-3" style={{ paddingLeft: '1.5rem' }}>
+                                        <span className="code-line indent">
                                             <span className="c-purple">return</span> <span className="c-green">"Full Lifecycle"</span>;
                                         </span>
                                         <span className="code-line">{'}'}</span>
@@ -78,7 +84,7 @@ const Services = () => {
                                         <span className="code-line">
                                             <span className="c-purple">if</span> (<span className="c-white">growth</span> &gt; <span className="c-yellow">0</span>) {'{'}
                                         </span>
-                                        <span className="code-line pl-3" style={{ paddingLeft: '1.5rem' }}>
+                                        <span className="code-line indent">
                                             <span className="c-blue">scale</span>(<span className="c-green">"Unlimited"</span>);
                                         </span>
                                         <span className="code-line">{'}'}</span>
@@ -87,17 +93,17 @@ const Services = () => {
 
                                 {/* Floating Badges */}
                                 <div className="floating-badge badge-security">
-                                    <div className="badge-icon" style={{ background: '#10b981' }}><FaShieldAlt /></div>
+                                    <div className="badge-icon icon-security"><FaShieldAlt /></div>
                                     <span>Expertise</span>
                                 </div>
 
                                 <div className="floating-badge badge-cloud">
-                                    <div className="badge-icon" style={{ background: '#3b82f6' }}><FaCloud /></div>
+                                    <div className="badge-icon icon-cloud"><FaCloud /></div>
                                     <span>Scalability</span>
                                 </div>
 
                                 <div className="floating-badge badge-performance">
-                                    <div className="badge-icon" style={{ background: '#f59e0b' }}><FaRocket /></div>
+                                    <div className="badge-icon icon-performance"><FaRocket /></div>
                                     <span>Performance</span>
                                 </div>
                             </div>
@@ -107,49 +113,33 @@ const Services = () => {
                 <ClientLogos />
             </section>
 
-            {/* STATS / FLEXIBLE TALENT SECTION */}
-            <section className="section-padding" style={{ background: '#fff' }}>
-                <div className="container">
-                    <div className="flexible-talent-wrapper">
-                        <div className="flexible-content">
-                            <h2>Flexible Talent. <br />Immediate Impact.</h2>
-                            <p className="hero-description">
-                                Codeifyy’s services enable businesses to expand their technical capabilities quickly and efficiently.
-                                We provide the expertise you need, when you need it.
-                            </p>
-                            <ul className="model-features">
-                                <li><FaCheckCircle /> Access top engineering talent</li>
-                                <li><FaCheckCircle /> Scale teams in 48 hours</li>
-                                <li><FaCheckCircle /> Risk-free trial period</li>
-                            </ul>
-                            <a href="/contact" className="btn btn-codeifyy-primary">Let's Connect</a>
-                        </div>
-                        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                            <div className="benefit-cards-grid">
-                                <div className="stat-card animate-up delay-1">
-                                    <div className="stat-value">750+</div>
-                                    <div className="stat-label">IT Professionals</div>
-                                </div>
-                                <div className="stat-card animate-up delay-2">
-                                    <div className="stat-value">500+</div>
-                                    <div className="stat-label">Developers</div>
-                                </div>
-                                <div className="stat-card animate-up delay-3">
-                                    <div className="stat-value">45</div>
-                                    <div className="stat-label">Project Managers</div>
-                                </div>
-                                <div className="stat-card animate-up delay-4">
-                                    <div className="stat-value">Certified</div>
-                                    <div className="stat-label">Platform Experts</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+            {/* BENEFIT SECTION - REPLACING MANUALLY CODED STATS SECTION */}
+            <BenefitSection
+                label="Capabilities & Scale"
+                title={
+                    <>
+                        Flexible Talent. <br />Immediate Impact.
+                    </>
+                }
+                description="Codeifyy’s services enable businesses to expand their technical capabilities quickly and efficiently. We provide the expertise you need, when you need it, ensuring your projects remain on track and high-performing."
+                features={[
+                    <><FaCheckCircle /> Access top 1% engineering talent</>,
+                    <><FaCheckCircle /> Scale high-performing teams in 48 hours</>,
+                    <><FaCheckCircle /> Risk-free 2-week trial period</>
+                ]}
+                buttonText="Let's Connect"
+                buttonLink="/contact"
+                stats={[
+                    { value: "750+", label: "IT Professionals" },
+                    { value: "500+", label: "Developers" },
+                    { value: "45+", label: "Project Managers" },
+                    { value: "Global", label: "Delivery Experts" }
+                ]}
+                showBottomMetrics={false}
+            />
 
             {/* CORE SERVICES SECTION */}
-            <section className="core-services-section">
+            <section className="core-services-section section-padding">
                 <div className="container">
                     <div className="text-center mb-5">
                         <h2 className="section-title">Our Core Services</h2>
@@ -170,7 +160,6 @@ const Services = () => {
                                     <li><span className="bullet-dot">•</span> Enterprise Systems</li>
                                     <li><span className="bullet-dot">•</span> SaaS Platforms</li>
                                     <li><span className="bullet-dot">•</span> API Development & Integration</li>
-                                    <li><span className="bullet-dot">•</span> Cloud-Based Applications</li>
                                 </ul>
                                 <Link to="/services/software-development" className="explore-link">Explore Software Development <FaArrowRight /></Link>
                             </div>
@@ -181,14 +170,13 @@ const Services = () => {
                             <div className="service-overview-card">
                                 <span className="service-number">02</span>
                                 <div className="service-overview-icon"><FaBrain /></div>
-                                <h3 className="service-overview-title">Artificial Intelligence Services</h3>
+                                <h3 className="service-overview-title">Artificial Intelligence</h3>
                                 <p className="service-overview-desc">Intelligent systems that automate processes and enable data-driven decision-making.</p>
                                 <ul className="service-features-list">
                                     <li><span className="bullet-dot">•</span> AI Strategy & Consulting</li>
                                     <li><span className="bullet-dot">•</span> Machine Learning Development</li>
                                     <li><span className="bullet-dot">•</span> Generative AI Integration</li>
                                     <li><span className="bullet-dot">•</span> Chatbots & Virtual Assistants</li>
-                                    <li><span className="bullet-dot">•</span> Computer Vision</li>
                                     <li><span className="bullet-dot">•</span> AI Automation Solutions</li>
                                 </ul>
                                 <Link to="/services/artificial-intelligence" className="explore-link">Explore AI Services <FaArrowRight /></Link>
@@ -203,10 +191,10 @@ const Services = () => {
                                 <h3 className="service-overview-title">Staff Augmentation</h3>
                                 <p className="service-overview-desc">Extend your in-house capabilities with skilled developers and engineers.</p>
                                 <ul className="service-features-list">
-                                    <li><span className="bullet-dot">•</span> IT Staff augmentation</li>
                                     <li><span className="bullet-dot">•</span> Dedicated Development Team</li>
                                     <li><span className="bullet-dot">•</span> Full-Project Outsourcing</li>
-                                    <li><span className="bullet-dot">•</span> Software Outsourcing</li>
+                                    <li><span className="bullet-dot">•</span> On-demand Staff scaling</li>
+                                    <li><span className="bullet-dot">•</span> Remote Engineering talent</li>
                                 </ul>
                                 <Link to="/services/staff-augmentation" className="explore-link">Explore Staff Augmentation <FaArrowRight /></Link>
                             </div>
@@ -221,10 +209,9 @@ const Services = () => {
                                 <p className="service-overview-desc">End-to-end product lifecycle support — from idea validation to deployment and scaling.</p>
                                 <ul className="service-features-list">
                                     <li><span className="bullet-dot">•</span> Product Strategy & Planning</li>
-                                    <li><span className="bullet-dot">•</span> MVP Development</li>
-                                    <li><span className="bullet-dot">•</span> UI/UX Design</li>
-                                    <li><span className="bullet-dot">•</span> Architecture Design</li>
-                                    <li><span className="bullet-dot">•</span> Ongoing Optimization</li>
+                                    <li><span className="bullet-dot">•</span> MVP Development & Launch</li>
+                                    <li><span className="bullet-dot">•</span> UI/UX Experience Design</li>
+                                    <li><span className="bullet-dot">•</span> Modern Architecture Design</li>
                                 </ul>
                                 <Link to="/services/product-development" className="explore-link">Explore Product Engineering <FaArrowRight /></Link>
                             </div>
@@ -234,31 +221,29 @@ const Services = () => {
             </section>
 
             {/* BUSINESS SOLUTIONS SECTION */}
-            <section className="business-solutions-section">
+            <section className="business-solutions-section section-padding">
                 <div className="container">
                     <div className="text-center mb-5">
                         <h2 className="section-title">Business Solutions We Provide</h2>
-                        <p className="section-subtitle">We deliver ready-to-deploy, customizable business systems designed to solve operational challenges and improve efficiency across departments.</p>
+                        <p className="section-subtitle">We deliver ready-to-deploy, customizable business systems designed to solve operational challenges.</p>
                     </div>
 
                     <div className="solution-card-grid">
-                        {/* CRM */}
                         <div className="solution-card">
                             <span className="solution-number">01</span>
-                            <h3 className="solution-title">Customer Relationship Management (CRM)</h3>
+                            <h3 className="solution-title">CRM Systems</h3>
                             <p className="solution-desc">Centralize customer data, streamline sales pipelines, and improve customer retention.</p>
                             <ul className="service-features-list solution-features">
                                 <li><span className="bullet-dot">•</span> Lead & pipeline management</li>
-                                <li><span className="bullet-dot">•</span> Customer tracking</li>
+                                <li><span className="bullet-dot">•</span> Customer tracking & insights</li>
                                 <li><span className="bullet-dot">•</span> Sales automation</li>
                                 <li><span className="bullet-dot">•</span> Reporting & analytics</li>
                             </ul>
                         </div>
 
-                        {/* CMS */}
                         <div className="solution-card">
                             <span className="solution-number">02</span>
-                            <h3 className="solution-title">Content Management System (CMS)</h3>
+                            <h3 className="solution-title">Content Management (CMS)</h3>
                             <p className="solution-desc">Manage your website and digital content without technical complexity.</p>
                             <ul className="service-features-list solution-features">
                                 <li><span className="bullet-dot">•</span> Easy content editing</li>
@@ -270,10 +255,9 @@ const Services = () => {
                             </ul>
                         </div>
 
-                        {/* ERP */}
                         <div className="solution-card">
                             <span className="solution-number">03</span>
-                            <h3 className="solution-title">Enterprise Resource Planning (ERP)</h3>
+                            <h3 className="solution-title">Enterprise ERP</h3>
                             <p className="solution-desc">Integrate core business processes into a single unified platform.</p>
                             <ul className="service-features-list solution-features">
                                 <li><span className="bullet-dot">•</span> Finance & accounting</li>
@@ -284,10 +268,9 @@ const Services = () => {
                             </ul>
                         </div>
 
-                        {/* School Management */}
                         <div className="solution-card">
                             <span className="solution-number">04</span>
-                            <h3 className="solution-title">School Management System</h3>
+                            <h3 className="solution-title">School Management</h3>
                             <p className="solution-desc">Digitize academic and administrative operations for educational institutions.</p>
                             <ul className="service-features-list solution-features">
                                 <li><span className="bullet-dot">•</span> Student information management</li>
@@ -298,10 +281,9 @@ const Services = () => {
                             </ul>
                         </div>
 
-                        {/* Retail & POS */}
                         <div className="solution-card">
                             <span className="solution-number">05</span>
-                            <h3 className="solution-title">Retail & Point of Sale (POS)</h3>
+                            <h3 className="solution-title">Retail & POS</h3>
                             <p className="solution-desc">Manage sales transactions, inventory, and multi-location retail operations efficiently.</p>
                             <ul className="service-features-list solution-features">
                                 <li><span className="bullet-dot">•</span> Billing & invoicing</li>
@@ -322,23 +304,25 @@ const Services = () => {
             <TechStack />
 
             {/* OUR APPROACH */}
-            <section className="services-approach-section">
+            <section className="services-approach-section section-padding">
                 <div className="container">
-                    <h2 className="section-title text-white">Our Approach</h2>
-                    <p className="section-subtitle text-white opacity-75">We follow a structured, transparent delivery process to ensure successful outcomes.</p>
+                    <div className="text-center mb-5">
+                        <h2 className="section-title text-white">Our Strategic Approach</h2>
+                        <p className="section-subtitle text-white opacity-75">We follow a structured, transparent delivery process to ensure successful outcomes.</p>
+                    </div>
 
-                    <div className="approach-timeline">
+                    <div className="services-approach-grid">
                         {[
-                            { step: 1, title: 'Discovery & Strategy', desc: 'Understanding business goals and defining the right technology roadmap.' },
-                            { step: 2, title: 'Design & Architecture', desc: 'Creating scalable, secure system architecture.' },
-                            { step: 3, title: 'Development & Integration', desc: 'Building high-performance solutions aligned with your requirements.' },
-                            { step: 4, title: 'Testing & Deployment', desc: 'Ensuring reliability, security, and seamless integration.' },
-                            { step: 5, title: 'Support & Optimization', desc: 'Continuous monitoring, improvements, and scalability enhancements.' }
+                            { step: 1, title: 'Discovery & Strategy', desc: 'Understanding business goals and defining the technology roadmap.' },
+                            { step: 2, title: 'Design & Architecture', desc: 'Creating scalable, secure, and future-proof system architecture.' },
+                            { step: 3, title: 'Development & Build', desc: 'Building high-performance solutions aligned with your requirements.' },
+                            { step: 4, title: 'Testing & QA', desc: 'Ensuring reliability, security, and seamless deployment.' },
+                            { step: 5, title: 'Support & Scale', desc: 'Continuous monitoring, improvements, and performance enhancements.' }
                         ].map((item, index) => (
-                            <div key={index} className="approach-step">
-                                <div className="services-step-circle">{item.step}</div>
-                                <h4 className="step-title">{item.title}</h4>
-                                <p className="step-desc">{item.desc}</p>
+                            <div key={index} className="approach-card-simple">
+                                <span className="approach-number">0{item.step}</span>
+                                <h3 className="approach-title-simple">{item.title}</h3>
+                                <p className="approach-desc-simple">{item.desc}</p>
                             </div>
                         ))}
                     </div>
@@ -352,13 +336,12 @@ const Services = () => {
             <CustomerStories />
 
             {/* FINAL CTA */}
-            {/* FINAL CTA */}
             <section className="final-cta-section mt-5">
                 <div className="container">
                     <CTA
-                        title="Let’s Build Something Scalable"
-                        text="Whether you need custom development, AI solutions, or a dedicated team — we’re ready to help."
-                        btnText="Talk to Our Experts"
+                        title="Ready to Build Something Scalable?"
+                        text="Whether you need custom development, AI solutions, or a dedicated team — we’re ready to help you accelerate your digital journey."
+                        btnText="Speak with an Expert"
                         link="/contact"
                     />
                 </div>

@@ -3,7 +3,7 @@ import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import {
     FaCheckCircle, FaArrowRight, FaCode, FaUserTie,
-    FaProjectDiagram, FaRocket, FaHandshake, FaShieldAlt, FaChartLine
+    FaProjectDiagram, FaRocket, FaHandshake, FaShieldAlt, FaChartLine, FaUsers
 } from 'react-icons/fa';
 import ClientLogos from '../../components/ClientLogos/ClientLogos';
 import './StaffAugmentation.css';
@@ -12,6 +12,7 @@ import '../../components/Hero/Hero.css'; // Reusing Hero styles
 import '../../components/BenefitSection/BenefitSection.css'; // Reusing Benefit styles for Flexible Talent
 import CustomerStories from '../../components/CustomerStories/CustomerStories';
 import ArticleCarousel from '../../components/ArticleCarousel/ArticleCarousel';
+import BenefitSection from '../../components/BenefitSection/BenefitSection';
 import CTA from '../../components/cta/CTA';
 import PageSkeleton from '../../components/Skeleton/PageSkeleton';
 
@@ -34,10 +35,10 @@ const StaffAugmentation = () => {
             <Header />
 
             {/* HERO SECTION (Custom for Staff Aug) */}
-            <section className="hero-section py-5">
+            <section className="hero-section">
                 <div className="container">
-                    <div className="row align-items-center" style={{ minHeight: '600px' }}>
-                        <div className="col-lg-6 mb-5 mb-lg-0">
+                    <div className="row align-items-center hero-row">
+                        <div className="col-lg-6 col-md-6">
                             <div className="hero-label">Scale Your Engineering Capacity</div>
                             <h1 className="hero-title">
                                 Access Top-Tier Developers <br />
@@ -48,16 +49,12 @@ const StaffAugmentation = () => {
                                 Flexible scaling, immediate impact, and zero hiring overhead.
                             </p>
                             <div className="hero-trust-line">
-                                <a href="/contact" className="btn btn-codeifyy-primary rounded-2 fw-bold">Request Developers</a>
+                                <a href="/contact" className="btn btn-codeifyy-primary rounded-2 fw-bold px-4 py-3">
+                                    Request Developers <FaArrowRight className="ms-2" />
+                                </a>
                             </div>
-                            {/* <div className="hero-trust-line">
-                                <div className="d-flex gap-4">
-                                    <div className="hero-trust-badge"><FaCheckCircle className="trust-check" /> Top 3% Talent</div>
-                                    <div className="hero-trust-badge"><FaCheckCircle className="trust-check" /> Timecloud Aligned</div>
-                                </div>
-                            </div> */}
                         </div>
-                        <div className="col-lg-5 offset-lg-1 d-none d-lg-block">
+                        <div className="col-lg-5 col-md-6 offset-lg-1 d-none d-md-block">
                             {/* Hero Visual: Developer Profile Card */}
                             <div className="profile-visual-wrapper">
                                 <div className="profile-card">
@@ -117,47 +114,30 @@ const StaffAugmentation = () => {
             {/* LOGOS MARQUEE */}
             <ClientLogos />
 
-            {/* FLEXIBLE TALENT SECTION (BenefitSection Style) */}
-            <section className="section-padding" style={{ background: '#fff' }}>
-                <div className="container">
-                    <div className="flexible-talent-wrapper">
-                        <div className="flexible-content">
-                            <h2>Flexible Talent. <br />Immediate Impact.</h2>
-                            <p className="hero-description">
-                                Codeifyy’s Staff Augmentation services enable businesses to expand their technical capabilities quickly and efficiently.
-                                We handle the recruiting, vetting, and payroll—you get the code.
-                            </p>
-                            <ul className="model-features">
-                                <li><FaCheckCircle /> Work within your tools and sprint cycles</li>
-                                <li><FaCheckCircle /> Align with your internal architecture</li>
-                                <li><FaCheckCircle /> Follow your management structure</li>
-                                <li><FaCheckCircle /> Accelerate delivery timelines</li>
-                            </ul>
-                            <a href="/contact" className="btn btn-codeifyy-primary mt-4">Let's Connect</a>
-                        </div>
-                        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                            <div className="benefit-cards-grid">
-                                <div className="stat-card animate-up delay-1">
-                                    <div className="stat-value">30+</div>
-                                    <div className="stat-label">IT Professionals</div>
-                                </div>
-                                <div className="stat-card animate-up delay-2">
-                                    <div className="stat-value">15+</div>
-                                    <div className="stat-label">Countries Served</div>
-                                </div>
-                                <div className="stat-card animate-up delay-3">
-                                    <div className="stat-value">90%</div>
-                                    <div className="stat-label">Retention Rate</div>
-                                </div>
-                                <div className="stat-card animate-up delay-4">
-                                    <div className="stat-value">Certified</div>
-                                    <div className="stat-label">Platform Experts</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+            <BenefitSection
+                label="Scale Your Engineering Capacity"
+                title={
+                    <>
+                        Flexible Talent. <br />Immediate Impact.
+                    </>
+                }
+                description="Codeifyy’s Staff Augmentation services enable businesses to expand their technical capabilities quickly and efficiently. We handle the recruiting, vetting, and payroll—you get the code."
+                features={[
+                    <><FaCheckCircle /> Work within your tools and sprint cycles</>,
+                    <><FaCheckCircle /> Align with your internal architecture</>,
+                    <><FaCheckCircle /> Follow your management structure</>,
+                    <><FaCheckCircle /> Accelerate delivery timelines</>
+                ]}
+                buttonText="Let's Connect"
+                buttonLink="/contact"
+                stats={[
+                    { value: "30+", label: "IT Professionals" },
+                    { value: "15+", label: "Countries Served" },
+                    { value: "90%", label: "Retention Rate" },
+                    { value: "Certified", label: "Platform Experts" }
+                ]}
+                showBottomMetrics={false}
+            />
 
             {/* ENGAGEMENT MODELS */}
             <section className="services-grid-section" id="models">
@@ -258,7 +238,7 @@ const StaffAugmentation = () => {
                     <h2 className="section-title">Our Talent Selection Process</h2>
                     <p className="section-subtitle">Precision Matching for High Performance.</p>
 
-                    <p style={{ textAlign: 'center', marginBottom: '2rem', fontSize: '1.1rem', color: '#475569' }}>
+                    <p className="process-intro">
                         Every engineer undergoes:
                     </p>
 
@@ -280,7 +260,7 @@ const StaffAugmentation = () => {
                         ))}
                     </div>
 
-                    <p style={{ textAlign: 'center', marginTop: '3rem', fontSize: '1.2rem', fontWeight: '600', color: '#1e293b' }}>
+                    <p className="process-outro">
                         We ensure enterprise-grade performance standards before deployment.
                     </p>
                 </div>
@@ -293,8 +273,8 @@ const StaffAugmentation = () => {
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-5 mb-5 mb-lg-0">
-                            <h2 style={{ fontSize: '2.5rem', fontWeight: '800', textTransform: 'uppercase' }}>BENEFITS OF PARTNERING WITH CODEIFYY</h2>
-                            <p className="mt-3 opacity-75" style={{ fontSize: '1.2rem' }}>We operate as a strategic partner — not just a staffing vendor.</p>
+                            <h2 className="section-title text-start text-white">Benefits Of Partnering With Codeifyy</h2>
+                            <p className="section-description text-start text-white">We operate as a strategic partner — not just a staffing vendor.</p>
                         </div>
                         <div className="col-lg-6 offset-lg-1">
                             <div className="row">

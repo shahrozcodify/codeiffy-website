@@ -1,0 +1,237 @@
+.product-development-page {
+    background: var(--background);
+    overflow-x: hidden;
+}
+
+/* Services Grid Section */
+.services-grid-section {
+    padding: 6rem 0;
+    background: #ffffff;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.service-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 20px;
+    padding: 2.5rem;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+    border-color: var(--codeifyy-green);
+}
+
+.service-number {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: #f1f5f9;
+    position: absolute;
+    top: 1rem;
+    right: 2rem;
+    line-height: 1;
+    opacity: 0.5;
+}
+
+.service-content {
+    position: relative;
+    z-index: 1;
+    flex: 1;
+}
+
+.service-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--codeifyy-navy);
+    margin-bottom: 1.25rem;
+    font-family: 'Outfit', sans-serif;
+    padding-right: 3rem;
+}
+
+.service-desc {
+    color: #64748b;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.service-capabilities h5 {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    color: #94a3b8;
+    letter-spacing: 0.1em;
+    margin-bottom: 1.25rem;
+    font-weight: 700;
+}
+
+.service-capabilities ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.85rem;
+}
+
+.service-capabilities li {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: #334155;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.service-capabilities li svg {
+    color: var(--codeifyy-green);
+    font-size: 0.9rem;
+}
+
+/* Why Codeifyy Section */
+.section-padding {
+    padding: 6rem 0;
+}
+
+.bg-light {
+    background-color: #f8fafc !important;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--codeifyy-navy);
+    margin-bottom: 2rem;
+    font-family: 'Outfit', sans-serif;
+    text-align: center;
+}
+
+/* Service Models */
+.service-model-card {
+    transition: all 0.3s ease;
+    border-radius: 24px;
+}
+
+.service-model-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(0, 188, 84, 0.1);
+}
+
+.model-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--codeifyy-navy);
+    margin-bottom: 1.25rem;
+    font-family: 'Outfit', sans-serif;
+}
+
+/* --- Responsive Media Queries --- */
+
+@media (max-width: 1200px) {
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* .hero-section {
+        padding-top: 5rem !important;
+        padding-bottom: 3rem !important;
+    } */
+}
+
+@media (max-width: 992px) {
+    .services-grid-section {
+        padding: 4rem 0;
+    }
+
+    .section-padding {
+        padding: 4rem 0;
+    }
+
+    .service-card {
+        padding: 2rem;
+    }
+
+    .service-title {
+        font-size: 1.35rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .model-title {
+        font-size: 1.75rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .service-card {
+        padding: 1.75rem;
+    }
+
+    .service-number {
+        font-size: 2.5rem;
+        top: 0.75rem;
+        right: 1.5rem;
+    }
+
+    .service-capabilities ul {
+        grid-template-columns: 1fr;
+    }
+
+    /* Responsive hero text handled in index.css */
+
+    .section-title {
+        font-size: 1.75rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .model-title {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    /* Responsive hero text handled in index.css */
+
+    .services-grid-section {
+        padding: 3rem 0;
+    }
+
+    .service-card {
+        border-radius: 16px;
+    }
+
+    .service-title {
+        font-size: 1.25rem;
+    }
+
+    .service-desc {
+        font-size: 0.95rem;
+    }
+
+    .service-capabilities li {
+        font-size: 0.9rem;
+    }
+
+    .section-title {
+        font-size: 1.6rem;
+    }
+}

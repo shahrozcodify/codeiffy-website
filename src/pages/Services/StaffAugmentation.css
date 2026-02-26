@@ -11,16 +11,17 @@
 /* --- Profile Visual Styles (New) --- */
 .profile-visual-wrapper {
     position: relative;
-    padding: 2rem;
+    padding: 1rem;
     perspective: 1000px;
 }
 
 .profile-card {
-    background: white;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
     border-radius: 24px;
-    padding: 2rem;
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
-    border: 1px solid rgba(0, 0, 0, 0.05);
+    padding: 2.25rem;
+    box-shadow: 0 40px 80px -15px rgba(0, 0, 0, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.6);
     position: relative;
     z-index: 2;
     transform: rotateY(-5deg) rotateX(2deg);
@@ -211,19 +212,65 @@
 }
 
 .section-title {
-    font-size: 2.5rem;
+    font-size: 2.75rem;
     font-weight: 800;
-    color: #0f172a;
-    margin-bottom: 1rem;
+    color: var(--codeifyy-navy);
+    margin-bottom: 2rem;
+    font-family: 'Outfit', sans-serif;
     text-align: center;
+    line-height: 1.2;
 }
 
 .section-subtitle {
-    font-size: 1.1rem;
+    font-size: 1.25rem;
     color: #64748b;
     text-align: center;
-    max-width: 700px;
-    margin: 0 auto 1rem;
+    max-width: 800px;
+    margin: 0 auto 1.5rem;
+    line-height: 1.6;
+}
+
+.process-intro {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    font-size: 1.15rem;
+    color: #475569;
+    font-weight: 500;
+}
+
+.process-outro {
+    text-align: center;
+    margin-top: 3.5rem;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--codeifyy-navy);
+}
+
+.section-description {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #475569;
+    margin-top: 1rem;
+    opacity: 0.9;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 4rem;
+}
+
+@media (max-width: 1200px) {
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 .models-grid {
@@ -333,10 +380,18 @@
     border-color: #0f172a;
 }
 
-.btn-model:active {
-    background: #0b1120;
-    /* Darker navy */
-    transform: translateY(0);
+.hero-label {
+    display: inline-block;
+    padding: 0.6rem 1.25rem;
+    background: rgba(34, 197, 94, 0.1);
+    color: var(--codeifyy-green);
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 2rem;
+    font-family: 'Outfit', sans-serif;
 }
 
 /* Selection Process */
@@ -540,34 +595,6 @@
     margin-top: 0.2rem;
 }
 
-/* Comparison / Flexible Talent Section (Benefit Style) */
-.flexible-talent-wrapper {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: center;
-    margin-bottom: 6rem;
-}
-
-.flexible-content h2 {
-    font-size: 2.5rem;
-    font-weight: 800;
-    color: #1e293b;
-    margin-bottom: 1.5rem;
-}
-
-.flexible-image {
-    border-radius: 24px;
-    overflow: hidden;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
-    border: 1px solid #e2e8f0;
-}
-
-.flexible-image img {
-    width: 100%;
-    display: block;
-}
-
 /* Final CTA */
 .final-cta-section {
     padding-bottom: 50px;
@@ -577,11 +604,6 @@
 }
 
 @media (max-width: 991px) {
-    .flexible-talent-wrapper {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-
     .timeline-steps {
         flex-direction: column;
         gap: 2rem;
@@ -605,5 +627,39 @@
 
     .step-dot {
         margin-bottom: 0;
+    }
+}
+
+/* --- Added Responsive Refinements --- */
+@media (max-width: 991px) {
+
+    /* Responsive hero text handled in index.css */
+    .hero-row {
+        /* min-height: auto !important; */
+        padding-top: 1rem;
+        padding-bottom: 3rem;
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 2.25rem;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Responsive hero text handled in index.css */
+
+    .service-card {
+        padding: 2rem 1.5rem;
+    }
+
+    .service-title {
+        font-size: 1.4rem;
+    }
+
+    .process-card {
+        padding: 2rem 1rem;
     }
 }

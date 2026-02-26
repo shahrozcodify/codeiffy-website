@@ -4,7 +4,7 @@ import './Skeleton.css';
 
 const HeroSkeleton = () => {
     return (
-        <section className="hero-section py-5" style={{ minHeight: '650px', display: 'flex', alignItems: 'center' }}>
+        <section className="hero-section" style={{ minHeight: '650px', display: 'flex', alignItems: 'center' }}>
             <div className="container">
                 <div className="row align-items-center">
                     <div className="col-lg-6">

@@ -39,11 +39,11 @@ const WhyChooseCodeifyy = () => {
     return (
         <section className="why-choose-section">
             <div className="container">
-                <div className="text-center animate-up">
-                    <h2 className="section-heading-centered">
+                <div className="why-choose-header animate-up">
+                    <h2 className="why-choose-title">
                         Why Choose <span className="highlight-span">CODEIFYY</span>
                     </h2>
-                    <p style={{ maxWidth: '700px', margin: '0 auto', color: 'var(--text-muted)', fontSize: '1.2rem', marginBottom: '1rem' }}>
+                    <p className="why-choose-description">
                         Partner with a team that values quality, transparency, and results.
                     </p>
                 </div>

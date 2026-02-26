@@ -1,6 +1,6 @@
 /* Codeifyy CRM Unified Header Component - Top tier removed per branding refinement */
 import React, { useState, useEffect, useRef } from 'react';
-import { FiSearch, FiGlobe, FiUser, FiChevronDown, FiPhone, FiMenu, FiX } from 'react-icons/fi';
+import { FiSearch, FiGlobe, FiUser, FiChevronDown, FiPhone, FiMenu, FiX, FiUsers, FiCode, FiPieChart } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
 
 const Header = () => {
@@ -96,68 +96,71 @@ const Header = () => {
                         <Link to="/" className="nav-link-secondary" onClick={() => setIsMobileMenuOpen(false)}>Home</Link>
                         <div className={`nav-item ${activeMobileDropdown === 'services' ? 'mobile-dropdown-active' : ''}`}>
                             <span className="nav-link-secondary" onClick={() => toggleMobileDropdown('services')}>Services <FiChevronDown className="header-caret" /></span>
-                            <div className="dropdown-content mega-menu-small" style={{ width: '800px', display: 'grid', gridTemplateColumns: '1.2fr 1.8fr', padding: 0 }}>
-                                <div className="mega-column" style={{ padding: '2.5rem' }}>
+                            <div className="dropdown-content mega-menu-small">
+                                <div className="mega-column">
                                     <div className="mega-title">Our Expertise</div>
                                     <Link
                                         to="/services/staff-augmentation"
-                                        className="mega-link"
+                                        className={`mega-link-enhanced ${activeService === 'staff-augmentation' ? 'active' : ''}`}
                                         onMouseEnter={() => setActiveService('staff-augmentation')}
-                                    >Staff Augmentation</Link>
+                                    >
+                                        <div className="mega-icon-box"><FiUsers /></div>
+                                        <div className="mega-link-text">
+                                            <span>Staff Augmentation</span>
+                                            <small>Scale your technical team</small>
+                                        </div>
+                                    </Link>
                                     <Link
                                         to="/services/software-development"
-                                        className="mega-link"
+                                        className={`mega-link-enhanced ${activeService === 'software-development' ? 'active' : ''}`}
                                         onMouseEnter={() => setActiveService('software-development')}
-                                    >Software Development</Link>
+                                    >
+                                        <div className="mega-icon-box"><FiCode /></div>
+                                        <div className="mega-link-text">
+                                            <span>Software Development</span>
+                                            <small>Custom enterprise solutions</small>
+                                        </div>
+                                    </Link>
                                     <Link
                                         to="/services/artificial-intelligence"
-                                        className="mega-link"
+                                        className={`mega-link-enhanced ${activeService === 'artificial-intelligence' ? 'active' : ''}`}
                                         onMouseEnter={() => setActiveService('artificial-intelligence')}
-                                    >Artificial Intelligence</Link>
+                                    >
+                                        <div className="mega-icon-box"><FiGlobe /></div>
+                                        <div className="mega-link-text">
+                                            <span>Artificial Intelligence</span>
+                                            <small>Intelligent automation</small>
+                                        </div>
+                                    </Link>
                                     <Link
                                         to="/services/product-development"
-                                        className="mega-link"
+                                        className={`mega-link-enhanced ${activeService === 'product-development' ? 'active' : ''}`}
                                         onMouseEnter={() => setActiveService('product-development')}
-                                    >Product Development</Link>
+                                    >
+                                        <div className="mega-icon-box"><FiPieChart /></div>
+                                        <div className="mega-link-text">
+                                            <span>Product Development</span>
+                                            <small>From concept to market</small>
+                                        </div>
+                                    </Link>
 
-                                    <div style={{ marginTop: '1rem', borderTop: '1px solid #eee', paddingTop: '1.5rem' }}>
-                                        <Link to="/services" className="mega-link" style={{ color: 'var(--codeifyy-green)', fontSize: '0.9rem' }}>View All Services →</Link>
+                                    <div className="mega-footer">
+                                        <Link to="/services" className="mega-view-all">View All Services →</Link>
                                     </div>
                                 </div>
-                                <div className="mega-image-preview" style={{
-                                    background: '#f8fafc',
-                                    padding: '2rem',
-                                    display: 'flex',
-                                    flexDirection: 'column',
-                                    justifyContent: 'center',
-                                    borderLeft: '1px solid #e2e8f0',
-                                    overflow: 'hidden'
-                                }}>
-                                    <div className="preview-image-wrap" style={{
-                                        width: '100%',
-                                        height: '240px',
-                                        borderRadius: '16px',
-                                        overflow: 'hidden',
-                                        marginBottom: '1.5rem',
-                                        boxShadow: '0 10px 25px rgba(0,0,0,0.1)'
-                                    }}>
+                                <div className="mega-image-preview">
+                                    <div className="preview-image-wrap">
                                         <img
                                             src={serviceImages[activeService]}
                                             alt={activeService}
-                                            style={{
-                                                width: '100%',
-                                                height: '100%',
-                                                objectFit: 'cover',
-                                                transition: 'all 0.4s ease'
-                                            }}
                                             key={activeService}
                                             className="animate-fade-in"
                                         />
                                     </div>
-                                    <h4 style={{ textTransform: 'capitalize', fontWeight: '800', marginBottom: '0.5rem', color: 'var(--codeifyy-navy)' }}>
+                                    <h4 className="preview-title">
                                         {activeService.replace(/-/g, ' ')}
                                     </h4>
-                                    <p style={{ fontSize: '0.9rem', color: 'var(--text-muted)', lineHeight: '1.5' }}>
+                                    <p className="preview-desc">
                                         {serviceDescriptions[activeService]}
                                     </p>
                                 </div>

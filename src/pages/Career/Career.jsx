@@ -56,7 +56,7 @@ const Career = () => {
                 {/* HERO SECTION */}
                 <section className="career-hero-section">
                     <div className="container">
-                        <div className="row align-items-center">
+                        <div className="row align-items-center hero-row">
                             <div className="col-lg-7">
                                 <span className="hero-label-premium">Careers at Codeifyy</span>
                                 <h1 className="career-hero-title">

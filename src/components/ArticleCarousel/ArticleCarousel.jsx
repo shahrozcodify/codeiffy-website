@@ -4,104 +4,125 @@ const CarouselRow = ({ title, testimonials }) => {
     const scrollRef = React.useRef(null);
 
     const [currentIndex, setCurrentIndex] = React.useState(0);
+    const [scrollProgress, setScrollProgress] = React.useState(0);
 
     const handleNext = () => {
-        const element = scrollRef.current;
-        if (element && currentIndex < testimonials.length - 1) {
-            const nextIndex = currentIndex + 1;
-            const targetCard = element.children[nextIndex];
-
-            if (targetCard) {
-                // Use manual scrollTo instead of scrollIntoView 
-                // to prevent the entire page from shifting
-                element.scrollTo({
-                    left: targetCard.offsetLeft - element.offsetLeft,
-                    behavior: 'smooth'
-                });
-                setCurrentIndex(nextIndex);
-            }
+        if (currentIndex < testimonials.length - 1) {
+            setCurrentIndex(currentIndex + 1);
         }
     };
 
     const handlePrev = () => {
-        const element = scrollRef.current;
-        if (element && currentIndex > 0) {
-            const prevIndex = currentIndex - 1;
-            const targetCard = element.children[prevIndex];
+        if (currentIndex > 0) {
+            setCurrentIndex(currentIndex - 1);
+        }
+    };
 
-            if (targetCard) {
-                element.scrollTo({
-                    left: targetCard.offsetLeft - element.offsetLeft,
-                    behavior: 'smooth'
-                });
-                setCurrentIndex(prevIndex);
+    const handleScroll = () => {
+        const element = scrollRef.current;
+        if (element) {
+            const maxScroll = element.scrollWidth - element.clientWidth;
+            if (maxScroll > 0) {
+                const percentage = (element.scrollLeft / maxScroll) * 100;
+                setScrollProgress(percentage);
             }
         }
     };
 
+    React.useEffect(() => {
+        const element = scrollRef.current;
+        if (element) {
+            element.addEventListener('scroll', handleScroll);
+            return () => element.removeEventListener('scroll', handleScroll);
+        }
+    }, []);
+
+    React.useEffect(() => {
+        const timer = setTimeout(() => {
+            const element = scrollRef.current;
+            if (element && element.children[currentIndex]) {
+                const targetCard = element.children[currentIndex];
+                const targetPos = targetCard.offsetLeft - (element.clientWidth / 2) + (targetCard.clientWidth / 2);
+
+                element.scrollTo({
+                    left: targetPos,
+                    behavior: 'smooth'
+                });
+            }
+        }, 50); // Small delay to ensure layout is updated
+        return () => clearTimeout(timer);
+    }, [currentIndex, testimonials.length]);
+
+
+
+
     return (
-        <div className="article-row">
-            <div className="article-row-text">
-                <h3>{title}</h3>
-                <p className="article-row-desc">
-                    Discover how we've helped leading global brands and organizations achieve their digital transformation goals.
-                </p>
-            </div>
-            <div className="carousel-wrapper-main" style={{ flex: 1, minWidth: 0 }}>
-                <div className="carousel-container">
-                    <div
-                        className="article-carousel-wrapper"
-                        ref={scrollRef}
-                    >
-                        {testimonials.map((testimonial, index) => (
-                            <div className="article-card testimonial-card" key={index}>
-                                <div className="article-card-accent"></div>
-                                <div className="testimonial-logo-wrapper">
-                                    <img
-                                        src={testimonial.logo}
-                                        alt={`${testimonial.client} Logo`}
-                                        className="testimonial-logo"
-                                    />
+        <div className="carousel-outer-container">
+            <div className="article-row">
+                <div className="article-row-text">
+                    <h3>{title}</h3>
+                    <p className="article-row-desc">
+                        Discover how we've helped leading global brands and organizations achieve their digital transformation goals.
+                    </p>
+                </div>
+                <div className="carousel-wrapper-main" style={{ flex: 1, minWidth: 0 }}>
+                    <div className="carousel-container">
+                        <div
+                            className="article-carousel-wrapper"
+                            ref={scrollRef}
+                        >
+                            {testimonials.map((testimonial, index) => (
+                                <div className="article-card testimonial-card" key={index}>
+                                    <div className="article-card-accent"></div>
+                                    <div className="testimonial-logo-wrapper">
+                                        <img
+                                            src={testimonial.logo}
+                                            alt={`${testimonial.client} Logo`}
+                                            className="testimonial-logo"
+                                        />
+                                    </div>
+                                    <p className="article-card-desc testimonial-text">"{testimonial.text}"</p>
+                                    <div className="testimonial-client-name">{testimonial.client}</div>
                                 </div>
-                                <p className="article-card-desc testimonial-text">"{testimonial.text}"</p>
-                                <div className="testimonial-client-name">{testimonial.client}</div>
-                            </div>
-                        ))}
+                            ))}
+                        </div>
                     </div>
-                </div>
 
-                {/* Progress Bar */}
-                <div className="carousel-scroll-track">
-                    <div
-                        className="carousel-scroll-bar"
-                        style={{
-                            width: `${100 / testimonials.length}%`,
-                            transform: `translateX(${currentIndex * 100}%)`,
-                            transition: 'transform 0.3s ease'
-                        }}
-                    ></div>
-                </div>
+                    {/* Progress Bar */}
+                    <div className="carousel-scroll-track">
+                        <div
+                            className="carousel-scroll-bar"
+                            style={{
+                                width: `${100 / testimonials.length}%`,
+                                transform: `translateX(${scrollProgress * (testimonials.length - 1)}%)`,
+                                transition: 'transform 0.1s ease-out'
+                            }}
 
-                <div className="carousel-controls">
-                    <button
-                        className="carousel-prev-btn"
-                        aria-label="Previous"
-                        onClick={handlePrev}
-                    >
-                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
-                            <polyline points="15 18 9 12 15 6"></polyline>
-                        </svg>
-                    </button>
-                    <button
-                        className="carousel-next-btn"
-                        aria-label="Next"
-                        onClick={handleNext}
-                    >
-                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
-                            <polyline points="9 18 15 12 9 6"></polyline>
-                        </svg>
-                    </button>
+                        ></div>
+                    </div>
+
                 </div>
+            </div>
+
+            <div className="carousel-controls">
+                <button
+                    className="carousel-prev-btn"
+                    aria-label="Previous"
+                    onClick={handlePrev}
+                >
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                        <polyline points="15 18 9 12 15 6"></polyline>
+                    </svg>
+                </button>
+                <button
+                    className="carousel-next-btn"
+                    aria-label="Next"
+                    onClick={handleNext}
+                >
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                </button>
             </div>
         </div>
     );

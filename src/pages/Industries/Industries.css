@@ -4,7 +4,148 @@
     overflow-x: hidden;
 }
 
-/* Reusing global Hero styles */
+.hero-trust-line {
+    margin-bottom: 10px;
+}
+
+/* Hero Section Enhancement */
+/* Hero Row Styles standardized globally */
+
+.text-highlight {
+    color: var(--codeifyy-green);
+}
+
+.hero-graphic-wrapper {
+    position: relative;
+    padding: 2rem;
+}
+
+/* Code Window Styles */
+.code-window {
+    background: #1e1e1e;
+    border-radius: 12px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+    color: #e2e8f0;
+}
+
+.window-header {
+    background: #2d2d2d;
+    padding: 10px 15px;
+    display: flex;
+    gap: 8px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.dot.red {
+    background: #ff5f56;
+}
+
+.dot.yellow {
+    background: #ffbd2e;
+}
+
+.dot.green {
+    background: #27c93f;
+}
+
+.window-body {
+    padding: 20px;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.code-line {
+    display: block;
+}
+
+.code-line.indent {
+    padding-left: 1.5rem;
+}
+
+/* Syntax Highlighting */
+.c-purple {
+    color: #c678dd;
+}
+
+.c-blue {
+    color: #61afef;
+}
+
+.c-yellow {
+    color: #e5c07b;
+}
+
+.c-white {
+    color: #abb2bf;
+}
+
+.c-gray {
+    color: #5c6370;
+}
+
+.c-green {
+    color: #98c379;
+}
+
+/* Floating Badges */
+.floating-badge {
+    position: absolute;
+    background: white;
+    padding: 10px 20px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 700;
+    color: var(--codeifyy-navy);
+    z-index: 5;
+    transition: transform 0.3s ease;
+}
+
+.badge-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.icon-industry {
+    background: #10b981;
+}
+
+.icon-automation {
+    background: #3b82f6;
+}
+
+.icon-efficiency {
+    background: #f59e0b;
+}
+
+.badge-industry {
+    top: -10px;
+    right: -20px;
+}
+
+.badge-automation {
+    top: 50%;
+    left: -40px;
+}
+
+.badge-efficiency {
+    bottom: -10px;
+    right: 20px;
+}
 
 /* Industry Grid Section */
 .industry-grid-section {
@@ -26,6 +167,7 @@
     flex-direction: column;
     position: relative;
     z-index: 1;
+    text-align: left;
 }
 
 .industry-card-detailed:hover {
@@ -99,20 +241,19 @@
 
 .industry-capabilities li {
     display: flex;
-    align-items: flex-start;
-    /* Align top if multi-line */
+    align-items: center;
+    /* Center checkmark with text */
     color: #334155;
     font-size: 0.9rem;
     font-weight: 500;
-    line-height: 1.5;
+    line-height: 1.4;
 }
 
 
 .industry-bullet-icon {
     color: var(--codeifyy-green);
     margin-right: 8px;
-    font-size: 0.9rem;
-    margin-top: 4px;
+    font-size: 1rem;
     flex-shrink: 0;
 }
 
@@ -165,7 +306,7 @@
     padding: 6rem 0;
     background: #0f172a;
     color: #fff;
-    text-align: center;
+    text-align: left;
 }
 
 .industry-approach-grid {
@@ -210,4 +351,81 @@
     font-size: 0.95rem;
     color: #cbd5e1;
     line-height: 1.6;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1200px) {
+    .industry-card-detailed {
+        padding: 2rem;
+    }
+}
+
+@media (max-width: 992px) {
+
+    /* hero row handled globally */
+    .hero-graphic-wrapper {
+        margin-top: 4rem;
+        display: none;
+        /* Hide complex graphic on mid-mobile if too crowded */
+    }
+
+    .industries-page .section-title,
+    .industries-page .section-subtitle {
+        text-align: left !important;
+    }
+
+    .capability-card {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.25rem;
+        line-height: 1.2;
+    }
+
+    .industry-capabilities ul {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+    }
+
+    .industry-card-detailed {
+        padding: 2.5rem 1.5rem;
+    }
+
+    .cross-industry-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .industry-number {
+        font-size: 2.5rem;
+        right: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 1.7rem;
+        line-height: 1.2;
+        margin-bottom: 1.25rem;
+        letter-spacing: -0.01em;
+    }
+
+    .hero-description {
+        font-size: 0.95rem;
+        line-height: 1.5;
+        margin-bottom: 2.25rem;
+        color: #475569;
+    }
+
+
+
+    .industry-approach-grid {
+        gap: 1.5rem;
+    }
+
+    .industry-grid-section {
+        padding: 2.5rem 0;
+    }
 }

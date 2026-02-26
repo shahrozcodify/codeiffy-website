@@ -5,6 +5,7 @@ import Industries from '../../components/Industries/Industries';
 import ArticleCarousel from '../../components/ArticleCarousel/ArticleCarousel';
 import ClientLogos from '../../components/ClientLogos/ClientLogos';
 import CustomerStories from '../../components/CustomerStories/CustomerStories';
+import BenefitSection from '../../components/BenefitSection/BenefitSection';
 import CTA from '../../components/cta/CTA';
 import PageSkeleton from '../../components/Skeleton/PageSkeleton';
 import {
@@ -34,10 +35,10 @@ const AI = () => {
             <Header />
 
             {/* HERO SECTION */}
-            <section className="hero-section py-5">
+            <section className="hero-section">
                 <div className="container">
-                    <div className="row align-items-center" style={{ minHeight: '600px' }}>
-                        <div className="col-lg-7">
+                    <div className="row align-items-center hero-row">
+                        <div className="col-lg-7 col-md-6">
                             <div className="hero-label">Artificial Intelligence Services</div>
                             <h1 className="hero-title">
                                 Transform Your Business with&nbsp;
@@ -52,7 +53,7 @@ const AI = () => {
                                 </a>
                             </div>
                         </div>
-                        <div className="col-lg-5 d-none d-lg-block">
+                        <div className="col-lg-5 col-md-6 d-none d-md-block">
                             <div className="hero-graphic-wrapper">
                                 {/* AI Graphic / Code Window */}
                                 <div className="code-window">
@@ -103,46 +104,29 @@ const AI = () => {
                 <ClientLogos />
             </section>
 
-            {/* STATS / FLEXIBLE TALENT SECTION */}
-            <section className="section-padding" style={{ background: '#fff' }}>
-                <div className="container">
-                    <div className="flexible-talent-wrapper">
-                        <div className="flexible-content">
-                            <h2>AI Expertise. <br />Immediate Impact.</h2>
-                            <p className="hero-description">
-                                Codeifyy’s AI services enable businesses to leverage cutting-edge intelligence quickly and efficiently.
-                                We handle the data strategy, model training, and integration—you get the results.
-                            </p>
-                            <ul className="model-features">
-                                <li><FaCheckCircle /> Access top AI talent</li>
-                                <li><FaCheckCircle /> Scale AI squads in 48 hours</li>
-                                <li><FaCheckCircle /> Risk-free pilot period</li>
-                            </ul>
-                            <a href="/contact" className="btn btn-codeifyy-primary">Let's Connect</a>
-                        </div>
-                        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                            <div className="benefit-cards-grid">
-                                <div className="stat-card animate-up delay-1">
-                                    <div className="stat-value">30+</div>
-                                    <div className="stat-label">IT Professionals</div>
-                                </div>
-                                <div className="stat-card animate-up delay-2">
-                                    <div className="stat-value">15+</div>
-                                    <div className="stat-label">Countries Served</div>
-                                </div>
-                                <div className="stat-card animate-up delay-3">
-                                    <div className="stat-value">90%</div>
-                                    <div className="stat-label">Retention Rate</div>
-                                </div>
-                                <div className="stat-card animate-up delay-4">
-                                    <div className="stat-value">Certified</div>
-                                    <div className="stat-label">Platform Experts</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+            <BenefitSection
+                label="Scale Your Team"
+                title={
+                    <>
+                        AI Expertise. <br />Immediate Impact.
+                    </>
+                }
+                description="Codeifyy’s AI services enable businesses to leverage cutting-edge intelligence quickly and efficiently. We handle the data strategy, model training, and integration—you get the results."
+                features={[
+                    <><FaCheckCircle /> Access top AI talent</>,
+                    <><FaCheckCircle /> Scale AI squads in 48 hours</>,
+                    <><FaCheckCircle /> Risk-free pilot period</>
+                ]}
+                buttonText="Let's Connect"
+                buttonLink="/contact"
+                stats={[
+                    { value: "30+", label: "IT Professionals" },
+                    { value: "15+", label: "Countries Served" },
+                    { value: "90%", label: "Retention Rate" },
+                    { value: "Certified", label: "Platform Experts" }
+                ]}
+                showBottomMetrics={false}
+            />
 
             {/* OUR AI CAPABILITIES */}
             <section className="services-grid-section">
