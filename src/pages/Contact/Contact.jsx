@@ -2,7 +2,9 @@ import React, { useState, useCallback } from 'react';
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaHeadset, FaComments, FaPaperPlane, FaCheckCircle, FaExclamationCircle, FaTimes } from 'react-icons/fa';
-import ReCAPTCHA from 'react-google-recaptcha';
+import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
+import PhoneInput from 'react-phone-input-2';
+import 'react-phone-input-2/lib/style.css';
 import './Contact.css';
 import '../../components/Hero/Hero.css';
 
@@ -194,6 +196,10 @@ const Contact = () => {
                                     <textarea className="form-textarea" placeholder="Tell us more about your needs..." required></textarea>
                                 </div>
                                 <button className="btn-submit">Send Message</button>
+                                <p className="recaptcha-attribution">
+                                    This site is protected by reCAPTCHA and the Google <br />
+                                    <a href="https://policies.google.com/privacy" target="_blank" rel="noreferrer">Privacy Policy</a> and <a href="https://policies.google.com/terms" target="_blank" rel="noreferrer">Terms of Service</a> apply.
+                                </p>
                             </form>
                         </div>
                     </div>

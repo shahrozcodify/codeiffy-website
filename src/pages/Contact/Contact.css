@@ -402,3 +402,36 @@
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(0, 240, 132, 0.3);
 }
+
+/* reCAPTCHA v3 Badge Hiding (Official Method) */
+.grecaptcha-badge {
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+}
+
+.recaptcha-attribution {
+    margin-top: 1rem;
+    font-size: 0.75rem;
+    color: #94a3b8;
+    line-height: 1.4;
+    text-align: center;
+}
+
+.recaptcha-attribution a {
+    color: var(--codeifyy-green);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.recaptcha-attribution a:hover {
+    text-decoration: underline;
+}
+
+/* Ensure it doesn't overlap important buttons on mobile if needed */
+@media (max-width: 768px) {
+    .grecaptcha-badge {
+        bottom: 80px !important;
+        /* Move higher on mobile to avoid fixed buttons if any */
+    }
+}
