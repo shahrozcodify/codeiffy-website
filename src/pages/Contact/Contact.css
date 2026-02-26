@@ -95,10 +95,7 @@
     border-radius: 20px;
     box-shadow: var(--card-shadow);
     border: 1px solid rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s ease,
-        box-shadow 0.3s ease;
-    max-width: 800px;
-    margin-left: auto;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .contact-form-container:hover {
