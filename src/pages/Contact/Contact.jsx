@@ -82,7 +82,7 @@ const Contact = () => {
                                 Our team is here to help you find the right path for your business growth.
                             </p>
                         </div>
-                        <div className="col-lg-5 d-none d-lg-block">
+                        <div className="col-lg-5">
                             <div className="hero-graphic-wrapper">
                                 {/* Contact Graphic / Message Window */}
                                 <div className="code-window">

@@ -9,6 +9,19 @@
     background: var(--background);
 }
 
+/* About Page Hero Section Overrides */
+/* .about-page .hero-section {
+    padding-top: 0rem !important;
+    padding-bottom: 2rem !important;
+}
+
+@media (max-width: 768px) {
+    .about-page .hero-section {
+        padding-top: 5.5rem !important;
+        padding-bottom: 1rem !important;
+    }
+} */
+
 .about-hero-graphic {
     position: relative;
     height: 450px;
