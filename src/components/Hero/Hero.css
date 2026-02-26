@@ -1,14 +1,10 @@
-/* Hero Section Styles */
+/* Hero section inherits global styles from index.css */
 .hero-section {
-    position: relative;
-    background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
-    overflow: hidden;
-    padding-top: 6rem;
-    padding-bottom: 4rem;
+    padding-bottom: 1rem;
 }
 
 .hero-row {
-    min-height: 650px;
+    min-height: 550px;
 }
 
 /* Background Abstract Shape (Optional depth) */
@@ -24,34 +20,7 @@
     pointer-events: none;
 }
 
-/* Typography */
-.hero-label {
-    color: var(--codeifyy-green);
-    font-size: 0.85rem;
-    letter-spacing: 0.15em;
-    font-weight: 700;
-    text-transform: uppercase;
-    margin-bottom: 1.5rem;
-    display: inline-block;
-}
-
-.hero-title {
-    font-family: 'Outfit', sans-serif;
-    font-size: 3.5rem;
-    line-height: 1.15;
-    font-weight: 800;
-    color: #0f172a;
-    margin-bottom: 1.5rem;
-    letter-spacing: -0.03em;
-}
-
-.hero-description {
-    font-size: 1.15rem;
-    line-height: 1.7;
-    color: #475569;
-    max-width: 580px;
-    margin-bottom: 2.5rem;
-}
+/* Typography inherits global styles from index.css */
 
 .hero-trust-badge {
     display: flex;
@@ -165,152 +134,29 @@ textarea.form-control-custom {
 
 /* --- Responsive Logic (Standard Breakpoints) --- */
 
-/* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
-    .container {
-        padding-left: 1.25rem;
-        padding-right: 1.25rem;
-    }
+/* Standard responsive logic handled globally in index.css */
 
-    .hero-section {
-        padding: 4.5rem 0 2rem 0;
-        text-align: left;
-    }
-
-    .hero-row {
-        display: flex !important;
-        flex-direction: column !important;
-        min-height: auto;
-        gap: 0;
-        width: 100%;
-        margin: 0;
-    }
-
-    .hero-label {
-        margin-bottom: 0.5rem;
-    }
-
-    .hero-title {
-        font-size: 1.6rem;
-        line-height: 1.25;
-        margin-bottom: 0.75rem;
-        word-wrap: break-word;
-        overflow-wrap: break-word;
-        word-break: normal;
-    }
-
-    .hero-description {
-        font-size: 1rem;
-        line-height: 1.6;
-        margin-bottom: 0.75rem;
-    }
-
-    .hero-graphic-wrapper {
-        margin-top: 0.5rem;
-        min-height: 250px;
-        transform: scale(1);
-        transform-origin: center top;
-        display: flex;
-        justify-content: center;
-        width: 100%;
-        padding: 0;
-    }
-
-    .code-window {
-        width: 100% !important;
-        max-width: 310px !important;
-        min-width: 280px;
-        transform: none !important;
-        font-size: 0.65rem;
-    }
-
-    .floating-badge {
-        padding: 6px 12px;
-        font-size: 0.7rem;
-    }
-
-    .badge-icon {
-        width: 24px;
-        height: 24px;
-    }
-
-    .badge-security {
-        right: 0;
-        top: -10px;
-    }
-
-    .badge-cloud {
-        left: -10px;
-        bottom: 0;
-    }
-
-    .badge-performance {
-        right: -10px;
-        bottom: 10%;
-    }
-}
-
-/* Specific fix for extreme small devices (340px and down) */
-@media only screen and (max-width: 340px) {
-    .hero-title {
-        font-size: 1.45rem;
-    }
-
-    .hero-graphic-wrapper {
-        transform: scale(0.75);
-        min-height: 240px;
-    }
-}
+/* Extreme small devices logic handled in index.css */
 
 /* Small devices (up to tablets, 767px and down) */
 @media only screen and (max-width: 767px) {
     .hero-row {
         flex-direction: column;
+        min-height: auto;
     }
 }
 
-/* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {
-    .hero-section {
-        padding: 6.5rem 1.5rem 3.5rem;
-    }
-
-    .hero-row {
-        display: flex !important;
-        flex-direction: row !important;
-        flex-wrap: nowrap !important;
-        align-items: center;
-        min-height: 500px;
-    }
-
-    .hero-title {
-        font-size: 2.5rem;
-    }
-
-    .hero-graphic-wrapper {
-        width: 100%;
-        margin-top: 0;
-        transform: scale(0.85);
-        min-height: 400px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .code-window {
-        max-width: 440px;
-        transform: rotateY(-3deg) rotateX(1deg);
-    }
-}
+/* Medium devices logic handled in index.css */
 
 /* Large devices (laptops/desktops, 992px and up) */
+/* Standardized spacing handles via index.css */
 @media only screen and (min-width: 992px) {
     .hero-section {
-        padding: 1.5rem 0 1.5rem;
+        padding-bottom: 1rem;
     }
 
     .hero-row {
-        min-height: 600px;
+        /* min-height: 500px; */
     }
 
     .hero-title {
@@ -329,9 +175,14 @@ textarea.form-control-custom {
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 /* Extra large devices (large laptops and desktops, 1200px and up) */
+/* Standardized spacing handles via index.css */
 @media only screen and (min-width: 1200px) {
     .hero-section {
-        padding: 1.5rem 0 1.5rem;
+        padding-bottom: 1.5rem;
+    }
+
+    .hero-row {
+        min-height: 650px;
     }
 
     .hero-section .hero-title {

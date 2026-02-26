@@ -28,20 +28,19 @@ const About = () => {
     return (
         <div className="about-page">
             <Header />
-            <main style={{ paddingTop: '1rem', background: 'var(--background)' }}>
+            <main className="about-main">
                 {/* HERO SECTION - Matched to Services Style */}
-                <section className="hero-section py-5">
+                <section className="hero-section">
                     <div className="container">
-                        <div className="row align-items-center" style={{ minHeight: '500px' }}>
+                        <div className="row align-items-center hero-row">
                             <div className="col-lg-7">
-                                <div className="hero-label" style={{ color: 'var(--codeifyy-green)', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '1rem' }}>About Codeifyy</div>
-                                <h1 className="hero-title" style={{ fontSize: '3.5rem', fontWeight: '800', color: 'var(--codeifyy-navy)', marginBottom: '1.5rem', lineHeight: 1.2 }}>
+                                <div className="hero-label">About Codeifyy</div>
+                                <h1 className="hero-title">
                                     Your Partner in <br />
-                                    <span style={{ color: 'var(--codeifyy-green)' }}>Intelligent Digital Solutions</span>
+                                    <span className="text-highlight">Intelligent Digital Solutions</span>
                                 </h1>
-                                <p className="hero-description" style={{ fontSize: '1.25rem', color: 'var(--text-muted)', marginBottom: '2rem', maxWidth: '600px' }}>
+                                <p className="hero-description">
                                     Codeifyy is a technology-driven company specializing in scalable software, AI-powered systems, and enterprise digital transformation. We partner with startups, SMEs, and enterprises to design structured, secure, and high-performance technology ecosystems.
-
                                 </p>
                                 <div className="hero-trust-line">
                                     <a href="/contact" className="btn btn-codeifyy-primary rounded-2 fw-bold px-4 py-3">
@@ -52,27 +51,23 @@ const About = () => {
                             <div className="col-lg-5 d-none d-lg-block">
                                 {/* Abstract Graphic: Global Network */}
                                 <div className="about-hero-graphic">
-                                    <div style={{
-                                        width: '100%', height: '100%',
-                                        background: 'radial-gradient(circle at center, rgba(59, 130, 246, 0.05) 0%, rgba(255,255,255,0) 70%)',
-                                        display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative'
-                                    }}>
+                                    <div className="hero-graphic-bg">
                                         {/* Central Hub */}
-                                        <div style={{ position: 'relative', zIndex: 2 }}>
-                                            <FaGlobe style={{ fontSize: '13rem', color: '#cbd5e1', opacity: 0.8, filter: 'drop-shadow(0 0 20px rgba(59, 130, 246, 0.1))' }} />
-                                            <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', width: '90px', height: '90px', background: 'white', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 10px 30px rgba(0,0,0,0.1)' }}>
-                                                <FaNetworkWired style={{ fontSize: '3.5rem', color: 'var(--codeifyy-green)' }} />
+                                        <div className="central-hub">
+                                            <FaGlobe className="globe-icon" />
+                                            <div className="hub-center">
+                                                <FaNetworkWired className="wired-icon" />
                                             </div>
                                         </div>
 
                                         {/* Orbiting Elements */}
-                                        <div style={{ position: 'absolute', top: '15%', right: '5%', background: 'white', padding: '12px 24px', borderRadius: '12px', boxShadow: '0 10px 30px rgba(0,0,0,0.08)', display: 'flex', alignItems: 'center', gap: '10px', fontSize: '0.95rem', fontWeight: '700', color: 'var(--codeifyy-navy)', zIndex: 3 }}>
-                                            <div style={{ width: '32px', height: '32px', background: '#3b82f6', borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white' }}><FaServer /></div>
+                                        <div className="orbit-element orbit-top-right">
+                                            <div className="orbit-icon-bg bg-blue"><FaServer /></div>
                                             Enterprise Grade
                                         </div>
 
-                                        <div style={{ position: 'absolute', bottom: '20%', left: '0%', background: 'white', padding: '12px 24px', borderRadius: '12px', boxShadow: '0 10px 30px rgba(0,0,0,0.08)', display: 'flex', alignItems: 'center', gap: '10px', fontSize: '0.95rem', fontWeight: '700', color: 'var(--codeifyy-navy)', zIndex: 3 }}>
-                                            <div style={{ width: '32px', height: '32px', background: '#10b981', borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white' }}><FaUsers /></div>
+                                        <div className="orbit-element orbit-bottom-left">
+                                            <div className="orbit-icon-bg bg-green"><FaUsers /></div>
                                             Global Talent
                                         </div>
 
@@ -87,7 +82,7 @@ const About = () => {
                         </div>
                     </div>
                 </section>
-                <div style={{ paddingBottom: '2rem' }}>
+                <div className="client-logos-wrapper">
                     <ClientLogos />
                 </div>
 
@@ -251,30 +246,30 @@ const About = () => {
                     <div className="container">
                         <div className="location-flex-container">
                             <div className="location-text">
-                                <h2 className="section-title" style={{ textAlign: 'left' }}>Our Location</h2>
-                                <p className="section-subtitle" style={{ textAlign: 'left', marginBottom: '2rem' }}>
+                                <h2 className="section-title">Our Location</h2>
+                                <p className="section-subtitle">
                                     We serve clients across multiple regions, delivering remote-first collaboration with global standards.
                                 </p>
                                 <div className="headquarter-card">
-                                    <h3 style={{ color: 'var(--codeifyy-green)', marginBottom: '1rem', fontWeight: '700' }}>Headquarter</h3>
+                                    <h3 className="hq-title">Headquarter</h3>
                                     <div className="contact-details">
-                                        <p style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
-                                            <FaMapMarkerAlt style={{ color: 'var(--codeifyy-green)' }} />
+                                        <p className="contact-item">
+                                            <FaMapMarkerAlt className="contact-icon" />
                                             <strong>National Town, Lahore, 05453, Pakistan</strong>
                                         </p>
-                                        <p style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
-                                            <FaPhoneAlt style={{ color: 'var(--codeifyy-green)' }} />
+                                        <p className="contact-item">
+                                            <FaPhoneAlt className="contact-icon" />
                                             +923112601310
                                         </p>
-                                        <p style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                                            <FaEnvelope style={{ color: 'var(--codeifyy-green)' }} />
+                                        <p className="contact-item">
+                                            <FaEnvelope className="contact-icon" />
                                             hello@codeifyy.com
                                         </p>
                                     </div>
                                 </div>
                             </div>
                             {/* Map Embed */}
-                            <div className="map-container" style={{ borderRadius: '24px', overflow: 'hidden', boxShadow: '0 20px 50px rgba(0,0,0,0.1)', height: '400px', width: '100%' }}>
+                            <div className="map-container">
                                 <iframe
                                     width="100%"
                                     height="100%"

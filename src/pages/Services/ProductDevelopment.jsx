@@ -10,9 +10,11 @@ import '../../components/Hero/Hero.css';
 import '../../components/BenefitSection/BenefitSection.css'; // Reusing Benefit styles
 import Industries from '../../components/Industries/Industries';
 import TechStack from '../../components/TechStack/TechStack';
-import CustomerStories from '../../components/CustomerStories/CustomerStories';
 import ArticleCarousel from '../../components/ArticleCarousel/ArticleCarousel';
 import ProductDeliveryApproach from '../../components/ProductDeliveryApproach/ProductDeliveryApproach';
+import './ProductDevelopment.css';
+import CustomerStories from '../../components/CustomerStories/CustomerStories';
+import BenefitSection from '../../components/BenefitSection/BenefitSection';
 import CTA from '../../components/cta/CTA';
 import PageSkeleton from '../../components/Skeleton/PageSkeleton';
 
@@ -85,10 +87,10 @@ const ProductDevelopment = () => {
             <main style={{ background: 'var(--background)' }}>
                 {/* HERO SECTION */}
                 {/* HERO SECTION */}
-                <section className="hero-section py-5">
+                <section className="hero-section">
                     <div className="container">
-                        <div className="row align-items-center" style={{ minHeight: '600px' }}>
-                            <div className="col-lg-7">
+                        <div className="row align-items-center hero-row">
+                            <div className="col-lg-7 col-md-6">
                                 <div className="hero-label">Product Engineering</div>
                                 <h1 className="hero-title">
                                     Full-Cycle Product <br />
@@ -104,7 +106,7 @@ const ProductDevelopment = () => {
                                 </div>
                             </div>
                             {/* Right side graphic: Code Window Visual */}
-                            <div className="col-lg-5 d-none d-lg-block">
+                            <div className="col-lg-5 col-md-6 d-none d-md-block">
                                 <div className="hero-graphic-wrapper">
                                     {/* Base Layer: Code Window */}
                                     <div className="code-window">
@@ -169,48 +171,31 @@ const ProductDevelopment = () => {
                     </div>
                 </div> */}
 
-                {/* STATS / BENEFITS SECTION */}
-                <section className="section-padding bg-white">
-                    <div className="container">
-                        <div className="row align-items-center">
-                            <div className="col-lg-5 mb-4 mb-lg-0">
-                                <h2 style={{ fontSize: '2.5rem', fontWeight: '800', color: 'var(--codeifyy-navy)', lineHeight: 1.2 }}>
-                                    Build Scalable.<br />
-                                    Market-Ready Products.
-                                </h2>
-                                <p className="lead text-muted mt-3">
-                                    Our product development teams bring years of expertise to help you build software that scales with your business.
-                                </p>
-                            </div>
-                            <div className="col-lg-7">
-                                <div className="benefit-cards-grid">
-                                    <div className="stat-card animate-up delay-1">
-                                        <div className="stat-value">30+</div>
-                                        <div className="stat-label">IT Professionals</div>
-                                    </div>
-                                    <div className="stat-card animate-up delay-2">
-                                        <div className="stat-value">15+</div>
-                                        <div className="stat-label">Countries Served</div>
-                                    </div>
-                                    <div className="stat-card animate-up delay-3">
-                                        <div className="stat-value">90%</div>
-                                        <div className="stat-label">Retention Rate</div>
-                                    </div>
-                                    <div className="stat-card animate-up delay-4">
-                                        <div className="stat-value">Certified</div>
-                                        <div className="stat-label">Platform Experts</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
+                <BenefitSection
+                    label="Scale Your Engineering Capacity"
+                    title={
+                        <>
+                            Build Scalable.<br />
+                            Market-Ready Products.
+                        </>
+                    }
+                    description="Our product development teams bring years of expertise to help you build software that scales with your business."
+                    buttonText="Discuss Your Product"
+                    buttonLink="/contact"
+                    stats={[
+                        { value: "30+", label: "IT Professionals" },
+                        { value: "15+", label: "Countries Served" },
+                        { value: "90%", label: "Retention Rate" },
+                        { value: "Certified", label: "Platform Experts" }
+                    ]}
+                    showBottomMetrics={false}
+                />
 
                 {/* OUR PRODUCT DEVELOPMENT SERVICES */}
                 <section className="services-grid-section">
                     <div className="container">
                         <div className="text-center mb-5">
-                            <h2 style={{ fontSize: '2.5rem', fontWeight: '800', color: 'var(--codeifyy-navy)' }}>
+                            <h2 className="section-title">
                                 Our product development services
                             </h2>
                         </div>
@@ -246,7 +231,7 @@ const ProductDevelopment = () => {
                     <div className="container">
                         <div className="row align-items-center">
                             <div className="col-lg-6">
-                                <h2 style={{ fontSize: '2.5rem', fontWeight: '800', marginBottom: '1.5rem' }}>Why Codeifyy For Product Development?</h2>
+                                <h2 className="section-title text-start">Why Codeifyy For Product Development?</h2>
                                 <p className="lead mb-4">We build digital products designed not just to launch — but to lead.</p>
                                 <ul className="list-unstyled" style={{ fontSize: '1.1rem' }}>
                                     <li className="mb-3"><FaCheckCircle className="text-success me-2" /> Business-aligned product strategy</li>
@@ -272,12 +257,12 @@ const ProductDevelopment = () => {
                 <section className="section-padding">
                     <div className="container">
                         <div className="text-center mb-5">
-                            <h2 style={{ fontSize: '2.5rem', fontWeight: '800' }}>Which Service Model Do You Need?</h2>
+                            <h2 className="section-title">Which Service Model Do You Need?</h2>
                         </div>
                         <div className="row g-4">
                             <div className="col-md-6">
-                                <div className="p-5 h-100 rounded-3" style={{ background: '#f0fdf4', border: '1px solid #bbf7d0' }}>
-                                    <h3 style={{ fontSize: '2rem', fontWeight: '700', marginBottom: '1rem' }}>Product Outsourcing</h3>
+                                <div className="service-model-card p-4 p-lg-5 h-100 rounded-4" style={{ background: '#f0fdf4', border: '1px solid #bbf7d0' }}>
+                                    <h3 className="model-title">Product Outsourcing</h3>
                                     <p style={{ fontSize: '1.1rem', color: 'var(--text-muted)', marginBottom: '2rem' }}>
                                         We deliver end-to-end outsourced software product development to help you launch a new solution or enhance products already on the market.
                                     </p>
@@ -285,8 +270,8 @@ const ProductDevelopment = () => {
                                 </div>
                             </div>
                             <div className="col-md-6">
-                                <div className="p-5 h-100 rounded-3" style={{ background: '#f0fdf4', border: '1px solid #bbf7d0' }}>
-                                    <h3 style={{ fontSize: '2rem', fontWeight: '700', marginBottom: '1rem' }}>Team Augmentation</h3>
+                                <div className="service-model-card p-4 p-lg-5 h-100 rounded-4" style={{ background: '#f0fdf4', border: '1px solid #bbf7d0' }}>
+                                    <h3 className="model-title">Team Augmentation</h3>
                                     <p style={{ fontSize: '1.1rem', color: 'var(--text-muted)', marginBottom: '2rem' }}>
                                         We provide competent resources for design, programming, testing, and any other tasks to drive your product development ahead.
                                     </p>

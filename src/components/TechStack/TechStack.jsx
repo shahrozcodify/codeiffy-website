@@ -88,18 +88,18 @@ const TechStack = () => {
     ];
 
     return (
-        <section className="tech-stack-section" style={{ paddingTop: '15px', paddingBottom: '30px', background: 'var(--background)' }}>
+        <section className="tech-stack-section">
             <div className="container">
-                <div className="text-center" style={{ marginBottom: '30px' }}>
-                    <h2 style={{ fontSize: '2.5rem', fontWeight: '800', marginBottom: '1rem', color: 'var(--codeifyy-navy)' }}>
-                        <span style={{ color: 'var(--codeifyy-green)' }}>Technologies</span> We Work With
+                <div className="tech-stack-header">
+                    <h2 className="tech-stack-title">
+                        <span className="highlight-text">Technologies</span> We Work With
                     </h2>
-                    <p style={{ maxWidth: '700px', margin: '0 auto', color: 'var(--text-muted)', fontSize: '1.1rem' }}>
+                    <p className="tech-stack-description">
                         We leverage modern, enterprise-grade technologies to deliver secure and scalable solutions.
                     </p>
                 </div>
 
-                <div className="tech-marquee-wrapper" style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                <div className="tech-marquee-wrapper">
                     <div className="tech-marquee-container">
                         <div className="tech-marquee-track">
                             {/* First set of items */}
@@ -148,10 +148,6 @@ const TechStack = () => {
                         </div>
                     </div>
                 </div>
-
-                {/* <div style={{ textAlign: 'center', marginTop: '3rem' }}>
-                    <a href="#" className="explore-link">Explore More →</a>
-                </div> */}
             </div>
         </section>
     );

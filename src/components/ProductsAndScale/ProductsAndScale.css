@@ -7,56 +7,139 @@
 
 .models-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1.5rem;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
     margin-top: 3rem;
 }
 
-@media (max-width: 1024px) {
+.engagement-models-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.engagement-models-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--codeifyy-navy);
+    margin-bottom: 1rem;
+}
+
+.engagement-models-description {
+    max-width: 700px;
+    margin: 1.5rem auto 3rem;
+    color: var(--text-muted);
+    font-size: 1.125rem;
+    line-height: 1.6;
+}
+
+.engagement-cta {
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+    text-align: center;
+}
+
+@media (max-width: 1200px) {
     .models-grid {
-        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 991px) {
+    .engagement-models-header {
+        text-align: center;
+    }
+
+    .engagement-models-description {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .model-card {
+        padding: 2rem;
     }
 }
 
 @media (max-width: 768px) {
+    .engagement-models-section {
+        padding-top: 40px;
+    }
+
+    .engagement-models-title {
+        font-size: 2rem;
+    }
+
     .models-grid {
         grid-template-columns: repeat(2, 1fr);
-        gap: 0.75rem;
+        gap: 1.25rem;
+        margin-top: 2rem;
+    }
+
+    .engagement-models-description {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+        padding: 0 1rem;
     }
 
     .model-card {
-        padding: 1rem;
+        padding: 1.75rem;
+    }
+
+    .model-title {
+        font-size: 1.2rem;
+    }
+
+    .model-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1.75rem;
+        margin-bottom: 1.25rem;
+    }
+
+    .engagement-cta {
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .models-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .engagement-models-description {
+        font-size: 0.95rem;
+        padding: 0;
+    }
+
+    .model-card {
+        padding: 10px !important;
     }
 
     .model-title {
         font-size: 1.1rem;
     }
-
-    .model-icon {
-        width: 45px;
-        height: 45px;
-        font-size: 1.5rem;
-    }
 }
 
 .model-card {
     background: var(--white);
-    border: 1px solid #f1f5f9;
-    border-radius: 16px;
-    padding: 2.5rem;
-    transition: var(--transition);
+    border: 1px solid rgba(241, 245, 249, 0.8);
+    border-radius: 20px;
+    padding: 2rem;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
     position: relative;
     overflow: hidden;
     display: flex;
     flex-direction: column;
     height: 100%;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 20px -5px rgba(0, 0, 0, 0.05);
 }
 
 .model-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
-    border-color: rgba(0, 188, 84, 0.3);
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.1);
+    border-color: rgba(0, 188, 84, 0.2);
 }
 
 .model-card::before {
@@ -76,20 +159,27 @@
 }
 
 .model-icon {
-    font-size: 2rem;
+    font-size: 2.25rem;
     color: var(--codeifyy-green);
-    margin-bottom: 1.5rem;
-    background: var(--accent-light);
-    width: 60px;
-    height: 60px;
+    margin-bottom: 1.75rem;
+    background: rgba(0, 188, 84, 0.05);
+    width: 64px;
+    height: 64px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 12px;
+    border-radius: 16px;
+    transition: all 0.3s ease;
+}
+
+.model-card:hover .model-icon {
+    background: var(--codeifyy-green);
+    color: var(--white);
+    transform: rotate(-10deg) scale(1.1);
 }
 
 .model-title {
-    font-size: 1.25rem;
+    font-size: 1.35rem;
     font-weight: 700;
     color: var(--codeifyy-navy);
     margin-bottom: 1rem;
@@ -97,7 +187,7 @@
 }
 
 .model-description {
-    font-size: 1rem;
+    font-size: 1.05rem;
     color: var(--text-muted);
     line-height: 1.6;
     flex-grow: 1;

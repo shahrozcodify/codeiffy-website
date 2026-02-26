@@ -7,7 +7,9 @@ const CTOMessage = () => {
         <section className="cto-message-section">
             <div className="container">
                 <div className="cto-header animate-up">
-                    <h2 className="cto-main-title text-center">CTO <span className="highlight-span">Message</span></h2>
+                    <h2 className="cto-main-title">
+                        CTO <span className="highlight-span">Message</span>
+                    </h2>
                 </div>
 
                 <div className="cto-card-wrapper animate-up delay-1">

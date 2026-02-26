@@ -155,24 +155,24 @@ const Industries = () => {
             <Header />
 
             {/* HERO SECTION */}
-            <section className="hero-section py-5">
+            <section className="hero-section">
                 <div className="container">
-                    <div className="row align-items-center" style={{ minHeight: '500px' }}>
-                        <div className="col-lg-7">
+                    <div className="row align-items-center hero-row">
+                        <div className="col-lg-7 col-md-6">
                             <h1 className="hero-title">
                                 Technology Solutions Built for &nbsp;
-                                <span style={{ color: 'var(--codeifyy-green)' }}>Industry-Specific Demands</span>
+                                <span className="text-highlight">Industry-Specific Demands</span>
                             </h1>
                             <p className="hero-description">
                                 We deliver domain-focused digital solutions tailored to the operational, compliance, and scalability requirements of modern industries.
                             </p>
                             <div className="hero-trust-line">
                                 <a href="/contact" className="btn btn-codeifyy-primary rounded-2 fw-bold px-4 py-3">
-                                    Talk to an Expert <FaArrowRight className="ms-2" />
+                                    Talk to an Expert <FaArrowRight />
                                 </a>
                             </div>
                         </div>
-                        <div className="col-lg-5 d-none d-lg-block">
+                        <div className="col-lg-5 col-md-6 d-none d-md-block">
                             <div className="hero-graphic-wrapper">
                                 {/* Base Layer: Code Window */}
                                 <div className="code-window">
@@ -186,8 +186,8 @@ const Industries = () => {
                                         <span className="code-line">
                                             <span className="c-purple">const</span> <span className="c-blue">Industry</span> = <span className="c-yellow">(<span className="c-white">sector</span>)</span> <span className="c-purple">=&gt;</span> {'{'}
                                         </span>
-                                        <span className="code-line pl-3" style={{ paddingLeft: '1.5rem' }}>
-                                            <span style={{ color: '#c084fc' }}>return</span> <span className="c-white">sector</span>.<span className="c-blue">optimize</span>();
+                                        <span className="code-line indent">
+                                            <span className="c-purple">return</span> <span className="c-white">sector</span>.<span className="c-blue">optimize</span>();
                                         </span>
                                         <span className="code-line">{'}'}</span>
                                         <br />
@@ -200,7 +200,7 @@ const Industries = () => {
                                         <span className="code-line">
                                             <span className="c-purple">if</span> (<span className="c-white">efficiency</span> &lt; <span className="c-yellow">100</span>) {'{'}
                                         </span>
-                                        <span className="code-line pl-3" style={{ paddingLeft: '1.5rem' }}>
+                                        <span className="code-line indent">
                                             <span className="c-blue">automate</span>(<span className="c-green">"Workflows"</span>);
                                         </span>
                                         <span className="code-line">{'}'}</span>
@@ -208,18 +208,18 @@ const Industries = () => {
                                 </div>
 
                                 {/* Floating Badges */}
-                                <div className="floating-badge badge-security">
-                                    <div className="badge-icon" style={{ background: '#10b981' }}><FaIndustry /></div>
+                                <div className="floating-badge badge-industry">
+                                    <div className="badge-icon icon-industry"><FaIndustry /></div>
                                     <span>Industry 4.0</span>
                                 </div>
 
-                                <div className="floating-badge badge-cloud">
-                                    <div className="badge-icon" style={{ background: '#3b82f6' }}><FaCogs /></div>
+                                <div className="floating-badge badge-automation">
+                                    <div className="badge-icon icon-automation"><FaCogs /></div>
                                     <span>Automation</span>
                                 </div>
 
-                                <div className="floating-badge badge-performance">
-                                    <div className="badge-icon" style={{ background: '#f59e0b' }}><FaChartLine /></div>
+                                <div className="floating-badge badge-efficiency">
+                                    <div className="badge-icon icon-efficiency"><FaChartLine /></div>
                                     <span>Efficiency</span>
                                 </div>
                             </div>

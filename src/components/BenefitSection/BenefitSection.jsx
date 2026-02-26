@@ -22,11 +22,13 @@ const BenefitSection = ({
         { value: "100+ Projects", desc: "Successfully delivered to global clients" },
         { value: "HQ", desc: "Lahore, Pakistan" }
     ],
-    showBottomMetrics = true
+    showBottomMetrics = true,
+    label = ""
 }) => {
     return (
         <section className="benefit-section">
-            <div className="container" style={{ paddingTop: '5rem' }}>
+            <div className="container">
+                <div className="benefit-label animate-up">{label}</div>
                 {/* Content Wrapper */}
                 <div className="stats-grid-wrapper">
                     {/* Left Column: Text Content */}
@@ -35,19 +37,11 @@ const BenefitSection = ({
                         <p className="benefit-desc">{description}</p>
 
                         {features.length > 0 && (
-                            <ul className="model-features mt-4">
+                            <ul className="model-features">
                                 {features.map((feature, index) => (
                                     <li key={index}>{feature}</li>
                                 ))}
                             </ul>
-                        )}
-
-                        {buttonText && buttonLink && (
-                            <div className="mt-4">
-                                <a href={buttonLink} className="btn btn-codeifyy-primary">
-                                    {buttonText}
-                                </a>
-                            </div>
                         )}
                     </div>
 
@@ -60,11 +54,19 @@ const BenefitSection = ({
                             </div>
                         ))}
                     </div>
+
+                    {buttonText && buttonLink && (
+                        <div className="benefit-cta-wrapper animate-up">
+                            <a href={buttonLink} className="btn btn-codeifyy-primary">
+                                {buttonText}
+                            </a>
+                        </div>
+                    )}
                 </div>
 
                 {/* Bottom Metrics */}
                 {showBottomMetrics && (
-                    <div className="stats-bottom-row animate-up delay-3" style={{ marginTop: '4rem' }}>
+                    <div className="stats-bottom-row animate-up delay-3">
                         {bottomMetrics.map((metric, index) => (
                             <div key={index} className="stat-metric-item">
                                 <div className="stat-metric-value">{metric.value}</div>

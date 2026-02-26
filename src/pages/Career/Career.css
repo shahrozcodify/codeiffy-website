@@ -5,7 +5,7 @@
 
 /* --- Hero Section Refinement --- */
 .career-hero-section {
-    padding: 120px 0 80px 0;
+    padding: 60px 0 20px 0;
     position: relative;
     overflow: hidden;
 }
@@ -34,6 +34,44 @@
     max-width: 650px;
     line-height: 1.7;
     margin-bottom: 2.5rem;
+}
+
+@media (max-width: 1200px) {
+    .career-hero-title {
+        font-size: 3.5rem;
+    }
+}
+
+@media (max-width: 991px) {
+    .career-hero-section {
+        padding-top: 5.5rem !important;
+        text-align: left;
+    }
+
+    .career-hero-title {
+        font-size: 2.75rem;
+    }
+
+    .career-hero-desc {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .career-hero-title {
+        font-size: 2.3rem;
+    }
+
+    .career-hero-desc {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .career-hero-title {
+        font-size: 1.85rem;
+    }
 }
 
 /* Hero Graphic - Reusing Software Dev Pattern */
@@ -280,6 +318,7 @@
     gap: 1.5rem;
     max-width: 1050px;
     margin: 0 auto;
+    padding: 0 1rem;
 }
 
 .role-card-premium {

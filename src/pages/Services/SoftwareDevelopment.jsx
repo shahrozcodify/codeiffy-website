@@ -11,6 +11,7 @@ import {
 import './SoftwareDevelopment.css';
 import '../../components/Hero/Hero.css'; // Reusing Hero styles
 import '../../components/BenefitSection/BenefitSection.css'; // Reusing Benefit Stylings
+import BenefitSection from '../../components/BenefitSection/BenefitSection';
 import ClientLogos from '../../components/ClientLogos/ClientLogos';
 import CustomerStories from '../../components/CustomerStories/CustomerStories';
 import CTA from '../../components/cta/CTA';
@@ -35,10 +36,10 @@ const SoftwareDevelopment = () => {
             <Header />
 
             {/* HERO SECTION */}
-            <section className="hero-section py-5">
+            <section className="hero-section">
                 <div className="container">
-                    <div className="row align-items-center" style={{ minHeight: '600px' }}>
-                        <div className="col-lg-7">
+                    <div className="row align-items-center hero-row">
+                        <div className="col-lg-7 col-md-6">
                             <div className="hero-label">Software Engineering</div>
                             <h1 className="hero-title">
                                 Engineering Software for <br />
@@ -48,13 +49,13 @@ const SoftwareDevelopment = () => {
                                 We design and develop secure, scalable, and future-ready software solutions that solve complex business challenges and drive measurable growth.
                             </p>
                             <div className="hero-trust-line">
-                                <a href="/contact" className="btn btn-codeifyy-primary  rounded-2 fw-bold">
+                                <a href="/contact" className="btn btn-codeifyy-primary rounded-2 fw-bold px-4 py-3">
                                     Schedule a Call <FaArrowRight className="ms-2" />
                                 </a>
                             </div>
                         </div>
                         {/* Right side graphic: Development Ecosystem */}
-                        <div className="col-lg-5 d-none d-lg-block">
+                        <div className="col-lg-5 col-md-6 d-none d-md-block">
                             <div className="hero-graphic-wrapper">
                                 {/* Base Layer: Code Window */}
                                 <div className="code-window">
@@ -111,45 +112,29 @@ const SoftwareDevelopment = () => {
                 <ClientLogos />
             </section>
 
-            {/* FLEXIBLE TALENT CROSS-SELL (Reused from Staff Aug) */}
-            <section className="section-padding" style={{ background: '#fff' }}>
-                <div className="container">
-                    <div className="flexible-talent-wrapper">
-                        <div className="flexible-content">
-                            <h2>Flexible Talent. <br />Immediate Impact.</h2>
-                            <p className="hero-description">
-                                Codeifyy’s Staff Augmentation services enable businesses to expand their technical capabilities quickly and efficiently.
-                            </p>
-                            <ul className="model-features">
-                                <li><FaCheckCircle /> Access top engineering talent</li>
-                                <li><FaCheckCircle /> Scale teams in 48 hours</li>
-                                <li><FaCheckCircle /> Risk-free trial period</li>
-                            </ul>
-                            <a href="/contact" className="btn btn-codeifyy-primary ">Let's Connect</a>
-                        </div>
-                        <div style={{ flex: 1, display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                            <div className="benefit-cards-grid">
-                                <div className="stat-card animate-up delay-1">
-                                    <div className="stat-value">30+</div>
-                                    <div className="stat-label">IT Professionals</div>
-                                </div>
-                                <div className="stat-card animate-up delay-2">
-                                    <div className="stat-value">15+</div>
-                                    <div className="stat-label">Countries Served</div>
-                                </div>
-                                <div className="stat-card animate-up delay-3">
-                                    <div className="stat-value">90%</div>
-                                    <div className="stat-label">Retention Rate</div>
-                                </div>
-                                <div className="stat-card animate-up delay-4">
-                                    <div className="stat-value">Certified</div>
-                                    <div className="stat-label">Platform Experts</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+            <BenefitSection
+                label="Scale Your Engineering Capacity"
+                title={
+                    <>
+                        Flexible Talent. <br />Immediate Impact.
+                    </>
+                }
+                description="Codeifyy’s Staff Augmentation services enable businesses to expand their technical capabilities quickly and efficiently."
+                features={[
+                    <><FaCheckCircle /> Access top engineering talent </>,
+                    <><FaCheckCircle /> Scale teams in 48 hours</>,
+                    <><FaCheckCircle /> Risk-free trial period</>
+                ]}
+                buttonText="Let's Connect"
+                buttonLink="/contact"
+                stats={[
+                    { value: "30+", label: "IT Professionals" },
+                    { value: "15+", label: "Countries Served" },
+                    { value: "90%", label: "Retention Rate" },
+                    { value: "Certified", label: "Platform Experts" }
+                ]}
+                showBottomMetrics={false}
+            />
 
             {/* SERVICES GRID */}
             <section className="services-grid-section">

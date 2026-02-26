@@ -6,10 +6,18 @@
 
 .contact-main {
     padding: 0 0 80px 0;
-    /* Removed top padding as Hero section is separate now */
     background: var(--background);
     position: relative;
     overflow: hidden;
+}
+
+/* Specific Spacing Overrides for Contact Page */
+.contact-page .hero-section {
+    padding-bottom: 0 !important;
+}
+
+.contact-page .contact-main {
+    padding-top: 0 !important;
 }
 
 .contact-grid {
@@ -84,12 +92,13 @@
 .contact-form-container {
     background: #fff;
     padding: 2.5rem;
-    /* Reduced from 4rem/3.5rem */
     border-radius: 20px;
-    /* Slightly reduced radius */
     box-shadow: var(--card-shadow);
     border: 1px solid rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease,
+        box-shadow 0.3s ease;
+    max-width: 800px;
+    margin-left: auto;
 }
 
 .contact-form-container:hover {
@@ -106,7 +115,44 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1.25rem;
-    /* Reduced from 2rem/1.5rem */
+}
+
+/* react-phone-input-2 custom styles */
+.phone-input-container {
+    width: 100% !important;
+}
+
+.phone-input-field {
+    width: 100% !important;
+    height: auto !important;
+    padding: 0.75rem 1rem 0.75rem 3.5rem !important;
+    border-radius: 8px !important;
+    border: 1px solid #e2e8f0 !important;
+    font-size: 0.95rem !important;
+    color: var(--codeifyy-navy) !important;
+    background-color: #fff !important;
+}
+
+.phone-input-button {
+    background: #fff !important;
+    border: 1px solid #e2e8f0 !important;
+    border-radius: 8px 0 0 8px !important;
+    border-right: none !important;
+}
+
+.phone-input-dropdown {
+    border-radius: 8px !important;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1) !important;
+    border: 1px solid #e2e8f0 !important;
+    background-color: #fff !important;
+}
+
+.phone-input-dropdown .search-box {
+    margin: 10px !important;
+    padding: 8px !important;
+    width: calc(100% - 20px) !important;
+    border: 1px solid #e2e8f0 !important;
+    border-radius: 6px !important;
 }
 
 .form-group {
@@ -117,25 +163,20 @@
 .form-label {
     display: block;
     margin-bottom: 0.4rem;
-    /* Reduced from 0.8rem */
     font-weight: 600;
     color: var(--codeifyy-navy);
     font-size: 0.9rem;
-    /* Slightly smaller */
 }
 
 .form-input,
 .form-textarea {
     width: 100%;
     padding: 0.75rem 1rem;
-    /* Reduced from 1.1rem 1.4rem */
     border-radius: 8px;
-    /* Reduced from 12px */
     border: 1px solid #e2e8f0;
-    background: #f8fafc;
+    background: #fff;
     font-family: inherit;
     font-size: 0.95rem;
-    /* Slightly smaller */
     color: var(--codeifyy-navy);
     transition: all 0.2s ease;
 }
@@ -144,7 +185,6 @@
 .form-textarea:focus {
     outline: none;
     border-color: var(--codeifyy-green);
-    background: #fff;
     box-shadow: 0 0 0 4px rgba(0, 240, 132, 0.1);
 }
 
@@ -186,7 +226,7 @@
 @media (max-width: 992px) {
     .contact-grid {
         grid-template-columns: 1fr;
-        gap: 4rem;
+        /* gap: 4rem; */
     }
 
     .contact-header {
@@ -199,12 +239,66 @@
 }
 
 @media (max-width: 768px) {
-    .form-row {
-        grid-template-columns: 1fr;
+    .contact-main {
+        padding-top: 1.5rem;
     }
 
     .contact-form-container {
-        padding: 2rem;
+        padding: 1rem;
+        /* Reduced from 1.25rem */
+        max-width: 100%;
+        width: 100%;
+        margin: 0;
+        border-radius: 12px;
+        /* Slightly smoother for mobile */
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+
+    .form-row-phone {
+        grid-template-columns: 1fr;
+        /* This is redundant now but keeping for safety */
+        gap: 1.25rem;
+    }
+
+    .form-group [style*="margin-bottom: 20px"] {
+        display: flex;
+        justify-content: center;
+    }
+
+    .btn-submit {
+        max-width: 100%;
+        margin-top: 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .contact-main {
+        padding-top: 0 !important;
+        /* Reduced from 1.0rem */
+    }
+
+    .contact-page .container {
+        padding-left: 0.75rem !important;
+        padding-right: 0.75rem !important;
+    }
+
+    .contact-form-container {
+        padding: 0.85rem;
+        /* Extra tight for small screens */
+    }
+
+    .contact-detail-item {
+        gap: 1rem;
+    }
+
+    .contact-icon-box {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
     }
 }
 

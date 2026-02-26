@@ -12,14 +12,14 @@ const Hero = () => {
                     {/* LEFT COLUMN: Value Proposition */}
                     <div className="col-12 col-md-6 mb-3 mb-md-0">
                         {/* Label */}
-                        <div className="hero-label d-none">
+                        <div className="hero-label ">
                             Engineering Excellence
                         </div>
 
                         {/* Main Title */}
                         <h1 className="hero-title">
-                            Software Solutions <span className="d-none d-md-inline"><br /></span>
-                            for <span style={{ color: 'var(--codeifyy-green)' }}>Mission-Critical</span> <span className="d-none d-md-inline"><br /></span>
+                            Software Solutions for <span className="d-none d-md-inline"></span>
+                            <span style={{ color: 'var(--codeifyy-green)' }}>Mission-Critical</span> <span className="d-none d-md-inline"><br /></span>
                             Organizations.
                         </h1>
 
@@ -50,7 +50,7 @@ const Hero = () => {
                     </div>
 
                     {/* RIGHT COLUMN: Code Window Visual */}
-                    <div className="col-12 col-md-5 offset-md-1">
+                    <div className="col-12 col-md-5 offset-md-1 d-none d-md-block">
                         <div className="hero-graphic-wrapper">
                             {/* Base Layer: Code Window */}
                             <div className="code-window">

@@ -34,11 +34,11 @@ const ProductsAndScale = () => {
     return (
         <section className="engagement-models-section">
             <div className="container">
-                <div className="text-center">
-                    <h2 className="section-heading-centered animate-up">
+                <div className="engagement-models-header">
+                    <h2 className="engagement-models-title animate-up">
                         Our Engagement Models
                     </h2>
-                    <p style={{ maxWidth: '700px', margin: '0 auto', color: 'var(--text-muted)', fontSize: '1.1rem', marginTop: '1rem', marginBottom: '2rem' }}>
+                    <p className="engagement-models-description">
                         Flexible collaboration models designed to fit your business needs and goals.
                     </p>
 
@@ -56,7 +56,7 @@ const ProductsAndScale = () => {
                     ))}
 
                 </div>
-                <div className="section-cta-wrapper animate-up delay-1" style={{ marginBottom: '3rem' }}>
+                <div className="section-cta-wrapper engagement-cta animate-up delay-1">
                     <a href="/contact" className="btn btn-codeifyy-primary">
                         Request a Proposal
                     </a>

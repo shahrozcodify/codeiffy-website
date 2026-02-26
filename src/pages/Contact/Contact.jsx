@@ -3,6 +3,8 @@ import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaHeadset, FaComments, FaPaperPlane, FaCheckCircle, FaExclamationCircle, FaTimes } from 'react-icons/fa';
 import ReCAPTCHA from 'react-google-recaptcha';
+import PhoneInput from 'react-phone-input-2';
+import 'react-phone-input-2/lib/style.css';
 import './Contact.css';
 import '../../components/Hero/Hero.css';
 
@@ -70,9 +72,9 @@ const Contact = () => {
             )}
 
             {/* HERO SECTION */}
-            <section className="hero-section py-5">
+            <section className="hero-section">
                 <div className="container">
-                    <div className="row align-items-center" style={{ minHeight: '500px' }}>
+                    <div className="row align-items-center hero-row">
                         <div className="col-lg-7">
                             <div className="hero-label">Contact Us</div>
                             <h1 className="hero-title">
@@ -167,20 +169,35 @@ const Contact = () => {
                                 <div className="form-row">
                                     <div className="form-group">
                                         <label className="form-label">First Name</label>
-                                        <input type="text" className="form-input" placeholder="John" />
+                                        <input type="text" className="form-input" placeholder="John" required />
                                     </div>
                                     <div className="form-group">
-                                        <label className="form-label">Last Name</label>
-                                        <input type="text" className="form-input" placeholder="Doe" />
+                                        <label className="form-label">Work Email</label>
+                                        <input type="email" className="form-input" placeholder="john@company.com" required />
                                     </div>
                                 </div>
+
                                 <div className="form-group">
-                                    <label className="form-label">Work Email</label>
-                                    <input type="email" className="form-input" placeholder="john@company.com" />
+                                    <label className="form-label">Phone Number</label>
+                                    <PhoneInput
+                                        country={'pk'}
+                                        enableSearch={true}
+                                        searchPlaceholder="Search country..."
+                                        inputClass="form-input phone-input-field"
+                                        containerClass="phone-input-container"
+                                        dropdownClass="phone-input-dropdown"
+                                        buttonClass="phone-input-button"
+                                        placeholder="123 456 7890"
+                                        inputProps={{
+                                            name: 'phone',
+                                            required: true,
+                                        }}
+                                    />
                                 </div>
+
                                 <div className="form-group">
                                     <label className="form-label">How can we help?</label>
-                                    <textarea className="form-textarea" placeholder="Tell us more about your needs..."></textarea>
+                                    <textarea className="form-textarea" placeholder="Tell us more about your needs..." required></textarea>
                                 </div>
                                 <div className="form-group" style={{ marginBottom: '20px' }}>
                                     <ReCAPTCHA
