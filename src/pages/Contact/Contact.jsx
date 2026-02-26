@@ -23,9 +23,17 @@ const Popup = ({ message, type, onClose }) => {
     );
 };
 
+const API_URL = import.meta?.env?.VITE_API_URL || '/api';
+
 const Contact = () => {
+    const [formData, setFormData] = useState({ firstName: '', lastName: '', email: '', message: '' });
     const [captchaValue, setCaptchaValue] = useState(null);
+    const [isSubmitting, setIsSubmitting] = useState(false);
     const [popup, setPopup] = useState({ show: false, message: '', type: 'success' });
+
+    const handleChange = (e) => {
+        setFormData({ ...formData, [e.target.name]: e.target.value });
+    };
 
     const handleCaptchaChange = (value) => {
         setCaptchaValue(value);
@@ -35,26 +43,34 @@ const Contact = () => {
         setPopup({ ...popup, show: false });
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         if (!captchaValue) {
-            setPopup({
-                show: true,
-                message: "Please complete the reCAPTCHA verification to proceed.",
-                type: 'error'
-            });
+            setPopup({ show: true, message: "Please complete the reCAPTCHA verification to proceed.", type: 'error' });
             return;
         }
-        // Proceed with form submission
-        console.log("Form submitted with captcha:", captchaValue);
 
-        // Simulate successful submission
-        setPopup({
-            show: true,
-            message: "Thank you! Your message has been sent successfully. We will get back to you soon.",
-            type: 'success'
-        });
-        // Add your real form submission logic here
+        setIsSubmitting(true);
+        try {
+            const res = await fetch(`${API_URL}/contact.php`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ ...formData, captchaToken: captchaValue }),
+            });
+            const data = await res.json();
+
+            if (res.ok) {
+                setPopup({ show: true, message: data.message, type: 'success' });
+                setFormData({ firstName: '', lastName: '', email: '', message: '' });
+                setCaptchaValue(null);
+            } else {
+                setPopup({ show: true, message: data.error || 'Something went wrong.', type: 'error' });
+            }
+        } catch {
+            setPopup({ show: true, message: 'Network error. Please try again later.', type: 'error' });
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     return (
@@ -166,20 +182,20 @@ const Contact = () => {
                                 <div className="form-row">
                                     <div className="form-group">
                                         <label className="form-label">First Name</label>
-                                        <input type="text" className="form-input" placeholder="John" />
+                                        <input type="text" name="firstName" className="form-input" placeholder="John" value={formData.firstName} onChange={handleChange} required />
                                     </div>
                                     <div className="form-group">
                                         <label className="form-label">Last Name</label>
-                                        <input type="text" className="form-input" placeholder="Doe" />
+                                        <input type="text" name="lastName" className="form-input" placeholder="Doe" value={formData.lastName} onChange={handleChange} required />
                                     </div>
                                 </div>
                                 <div className="form-group">
                                     <label className="form-label">Work Email</label>
-                                    <input type="email" className="form-input" placeholder="john@company.com" />
+                                    <input type="email" name="email" className="form-input" placeholder="john@company.com" value={formData.email} onChange={handleChange} required />
                                 </div>
                                 <div className="form-group">
                                     <label className="form-label">How can we help?</label>
-                                    <textarea className="form-textarea" placeholder="Tell us more about your needs..."></textarea>
+                                    <textarea name="message" className="form-textarea" placeholder="Tell us more about your needs..." value={formData.message} onChange={handleChange} required></textarea>
                                 </div>
                                 <div className="form-group" style={{ marginBottom: '20px' }}>
                                     <ReCAPTCHA
@@ -187,7 +203,9 @@ const Contact = () => {
                                         onChange={handleCaptchaChange}
                                     />
                                 </div>
-                                <button className="btn-submit">Send Message</button>
+                                <button className="btn-submit" disabled={isSubmitting}>
+                                    {isSubmitting ? 'Sending...' : 'Send Message'}
+                                </button>
                             </form>
                         </div>
                     </div>
