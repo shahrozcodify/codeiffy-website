@@ -9,6 +9,7 @@ import './CaseStudies.css';
 
 const CaseStudyDetails = () => {
     const { slug } = useParams();
+    const [isExpanded, setIsExpanded] = React.useState(false);
     const study = caseStudies.find(s => s.slug === slug);
 
     // Get suggested case studies (exclude current one, take 3)
@@ -56,7 +57,7 @@ const CaseStudyDetails = () => {
                 }}></div>
 
                 <div className="container" style={{ position: 'relative', zIndex: 1 }}>
-                    <div style={{ marginBottom: '2rem', textAlign: 'left' }}>
+                    <div className="case-details-back-wrapper">
                         <Link to="/casestudy" style={{
                             display: 'inline-flex',
                             alignItems: 'center',
@@ -88,9 +89,7 @@ const CaseStudyDetails = () => {
             </div>
 
             <main>
-                <article className="case-details-container">
-                    {/* Content Sections */}
-
+                <article className={`case-details-container ${!isExpanded ? 'is-truncated' : 'is-expanded'}`}>
                     {/* Content Sections */}
                     <section className="case-details-section">
                         <h2 className="case-details-section-title">About Our Client</h2>
@@ -130,6 +129,17 @@ const CaseStudyDetails = () => {
                             ))}
                         </div>
                     </section>
+
+                    {!isExpanded && (
+                        <div className="read-more-overlay">
+                            <button
+                                className="btn btn-codeifyy-primary"
+                                onClick={() => setIsExpanded(true)}
+                            >
+                                Read Full Case Study
+                            </button>
+                        </div>
+                    )}
                 </article>
             </main>
 
@@ -171,6 +181,23 @@ const CaseStudyDetails = () => {
             </aside>
 
             <Footer />
+
+            {/* Mobile More Overlay */}
+            {suggestedStudies.length > 0 && isExpanded && (
+                <div className="mobile-more-overlay">
+                    <div className="mobile-more-info">
+                        <span className="mobile-more-label">Keep Reading</span>
+                        <span className="mobile-more-title">{suggestedStudies[0].title}</span>
+                    </div>
+                    <Link
+                        to={`/casestudy/${suggestedStudies[0].slug}`}
+                        className="btn btn-codeifyy-primary"
+                        style={{ padding: '0.6rem 1.2rem', fontSize: '0.85rem', display: 'flex', alignItems: 'center', whiteSpace: 'nowrap' }}
+                    >
+                        Next Study <FaArrowRight style={{ marginLeft: '6px' }} />
+                    </Link>
+                </div>
+            )}
         </div>
     );
 };
