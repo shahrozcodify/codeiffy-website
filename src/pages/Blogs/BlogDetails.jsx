@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
+import { FaArrowRight } from 'react-icons/fa';
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import { blogData } from './blogData';
@@ -8,6 +9,7 @@ import './Blogs.css';
 const BlogDetails = () => {
     const { slug } = useParams();
     const navigate = useNavigate();
+    const [isExpanded, setIsExpanded] = useState(false); // Added isExpanded state
     const blog = blogData.find(b => b.slug === slug);
     const [relatedBlogs, setRelatedBlogs] = useState([]);
 
@@ -25,6 +27,7 @@ const BlogDetails = () => {
 
         // Scroll to top when slug changes
         window.scrollTo(0, 0);
+        setIsExpanded(false); // Reset expansion on blog change
     }, [blog, navigate, slug]);
 
     if (!blog) {
@@ -45,11 +48,6 @@ const BlogDetails = () => {
             <Header />
             <main style={{ padding: '120px 0 0 0' }}>
                 <div className="container">
-                    <Link to="/blog" className="back-link">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
-                        Back to Insights
-                    </Link>
-
                     <article>
                         <div className="blog-hero-image-wrapper animate-up">
                             {blog.image ? (
@@ -58,9 +56,16 @@ const BlogDetails = () => {
                                 <div style={{ width: '100%', height: '100%', background: 'linear-gradient(135deg, #0f172a 0%, #334155 100%)' }}></div>
                             )}
                             <div className="blog-hero-overlay">
+                                <div className="blog-back-wrapper">
+                                    <Link to="/blog" className="back-link">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                                        Back to Insights
+                                    </Link>
+                                </div>
                                 <div className="blog-hero-content animate-up delay-1">
+                                    <h1 className="blog-hero-title">{blog.title}</h1>
                                     <div className="blog-hero-meta">
-                                        <span style={{
+                                        <span className="blog-label-badge" style={{
                                             background: 'var(--codeifyy-green)',
                                             color: '#fff',
                                             padding: '0.4rem 1rem',
@@ -76,15 +81,24 @@ const BlogDetails = () => {
                                             {blog.date}
                                         </span>
                                     </div>
-                                    <h1 className="blog-hero-title">{blog.title}</h1>
                                 </div>
                             </div>
                         </div>
 
-                        <div className="blog-content-body animate-up delay-2">
+                        <div className={`blog-content-body animate-up delay-2 ${!isExpanded ? 'is-truncated' : 'is-expanded'}`}>
                             <div className="blog-content-wrapper">
                                 <div dangerouslySetInnerHTML={{ __html: blog.content }} />
                             </div>
+                            {!isExpanded && (
+                                <div className="read-more-overlay">
+                                    <button
+                                        className="btn btn-codeifyy-primary"
+                                        onClick={() => setIsExpanded(true)}
+                                    >
+                                        Read Full Article
+                                    </button>
+                                </div>
+                            )}
                         </div>
 
                         {/* Related Articles Section */}
@@ -137,6 +151,23 @@ const BlogDetails = () => {
                 </div>
             </main>
             <Footer />
+
+            {/* Mobile More Overlay */}
+            {relatedBlogs.length > 0 && isExpanded && (
+                <div className="mobile-more-overlay">
+                    <div className="mobile-more-info">
+                        <span className="mobile-more-label">Keep Reading</span>
+                        <span className="mobile-more-title" style={{ fontSize: '0.9rem', fontWeight: '700', color: 'var(--codeifyy-navy)', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis', maxWidth: '180px', display: 'block' }}>{relatedBlogs[0].title}</span>
+                    </div>
+                    <Link
+                        to={`/blog/${relatedBlogs[0].slug}`}
+                        className="btn btn-codeifyy-primary"
+                        style={{ padding: '0.6rem 1.2rem', fontSize: '0.85rem', display: 'flex', alignItems: 'center', whiteSpace: 'nowrap' }}
+                    >
+                        Next Blog <FaArrowRight style={{ marginLeft: '6px' }} />
+                    </Link>
+                </div>
+            )}
         </div>
     );
 };
