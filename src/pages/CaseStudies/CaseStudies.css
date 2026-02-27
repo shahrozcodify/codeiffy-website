@@ -534,30 +534,9 @@
         }
     }
 
-    .case-details-container.is-truncated {
-        max-height: 500px;
-        overflow: hidden;
-        position: relative;
-    }
 
-    .case-details-container.is-expanded {
-        max-height: none;
-    }
 
-    .read-more-overlay {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        height: 250px;
-        background: linear-gradient(to top, #ffffff 40%, rgba(255, 255, 255, 0) 100%);
-        backdrop-filter: blur(2px);
-        display: flex;
-        justify-content: center;
-        align-items: flex-end;
-        padding-bottom: 3rem;
-        z-index: 10;
-    }
+
 }
 
 @media (min-width: 769px) {
@@ -565,9 +544,7 @@
         max-height: none !important;
     }
 
-    .read-more-overlay {
-        display: none;
-    }
+
 
     .mobile-more-overlay {
         display: none;
