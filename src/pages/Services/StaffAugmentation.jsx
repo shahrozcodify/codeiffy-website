@@ -203,7 +203,7 @@ const StaffAugmentation = () => {
                                     </ul>
                                 </div>
                                 <div className="mt-4 w-100 d-flex justify-content-center">
-                                    <a href="#contact" className="btn-model">Talk to Our Team</a>
+                                    <a href="#contact" className="btn-model">Outsource Our Project</a>
                                 </div>
                             </div>
                         </div>

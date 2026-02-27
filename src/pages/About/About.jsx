@@ -200,13 +200,17 @@ const About = () => {
                             <div className="col-lg-4">
                                 <div className="expertise-col-card">
                                     <span className="expertise-number">01</span>
-                                    <h3><Link to="/services" className="text-decoration-none">Services</Link></h3>
+                                    <h3>Services</h3>
                                     <ul className="expertise-list-styled">
                                         <li><FaCheckCircle /> Software Development</li>
                                         <li><FaCheckCircle /> Artificial Intelligence</li>
                                         <li><FaCheckCircle /> Staff Augmentation</li>
                                         <li><FaCheckCircle /> Product Engineering</li>
                                     </ul>
+                                    <Link to="/services" className="read-more-link">
+                                        Explore More <FaArrowRight />
+                                    </Link>
+
                                 </div>
                             </div>
                             <div className="col-lg-4">
@@ -225,7 +229,7 @@ const About = () => {
                             <div className="col-lg-4">
                                 <div className="expertise-col-card">
                                     <span className="expertise-number">03</span>
-                                    <h3><Link to="/industries" className="text-decoration-none">Industries</Link></h3>
+                                    <h3>Industries</h3>
                                     <ul className="expertise-list-styled">
                                         <li><FaCheckCircle /> Automobile & Manufacturing</li>
                                         <li><FaCheckCircle /> Oil & Gas</li>
@@ -233,6 +237,9 @@ const About = () => {
                                         <li><FaCheckCircle /> Education & Fintech</li>
                                         <li><FaCheckCircle /> Real Estate</li>
                                     </ul>
+                                    <Link to="/industries" className="read-more-link">
+                                        Explore More <FaArrowRight />
+                                    </Link>
                                 </div>
                             </div>
                         </div>
@@ -254,17 +261,19 @@ const About = () => {
                                     <h3 className="hq-title">Headquarter</h3>
                                     <div className="contact-details">
                                         <p className="contact-item">
-                                            <FaMapMarkerAlt className="contact-icon" />
-                                            <strong>National Town, Lahore, 05453, Pakistan</strong>
+                                            <FaEnvelope className="contact-icon" />
+                                            hello@codeifyy.com
                                         </p>
                                         <p className="contact-item">
                                             <FaPhoneAlt className="contact-icon" />
                                             +923112601310
                                         </p>
                                         <p className="contact-item">
-                                            <FaEnvelope className="contact-icon" />
-                                            hello@codeifyy.com
+                                            <FaMapMarkerAlt className="contact-icon" />
+                                            <strong>National Town, Lahore, 05453, Pakistan</strong>
                                         </p>
+
+
                                     </div>
                                 </div>
                             </div>

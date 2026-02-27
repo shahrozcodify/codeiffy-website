@@ -123,7 +123,7 @@ const Services = () => {
                 }
                 description="Codeifyy’s services enable businesses to expand their technical capabilities quickly and efficiently. We provide the expertise you need, when you need it, ensuring your projects remain on track and high-performing."
                 features={[
-                    <><FaCheckCircle /> Access top 1% engineering talent</>,
+                    <><FaCheckCircle /> Access engineering talent</>,
                     <><FaCheckCircle /> Scale high-performing teams in 48 hours</>,
                     <><FaCheckCircle /> Risk-free 2-week trial period</>
                 ]}
@@ -231,7 +231,7 @@ const Services = () => {
                     <div className="solution-card-grid">
                         <div className="solution-card">
                             <span className="solution-number">01</span>
-                            <h3 className="solution-title">CRM Systems</h3>
+                            <h3 className="solution-title">Customer Relationship Management (CRM)</h3>
                             <p className="solution-desc">Centralize customer data, streamline sales pipelines, and improve customer retention.</p>
                             <ul className="service-features-list solution-features">
                                 <li><span className="bullet-dot">•</span> Lead & pipeline management</li>
@@ -257,7 +257,7 @@ const Services = () => {
 
                         <div className="solution-card">
                             <span className="solution-number">03</span>
-                            <h3 className="solution-title">Enterprise ERP</h3>
+                            <h3 className="solution-title">Enterprise Resource Planning (ERP)</h3>
                             <p className="solution-desc">Integrate core business processes into a single unified platform.</p>
                             <ul className="service-features-list solution-features">
                                 <li><span className="bullet-dot">•</span> Finance & accounting</li>
@@ -270,7 +270,7 @@ const Services = () => {
 
                         <div className="solution-card">
                             <span className="solution-number">04</span>
-                            <h3 className="solution-title">School Management</h3>
+                            <h3 className="solution-title">School Management System</h3>
                             <p className="solution-desc">Digitize academic and administrative operations for educational institutions.</p>
                             <ul className="service-features-list solution-features">
                                 <li><span className="bullet-dot">•</span> Student information management</li>
@@ -283,7 +283,7 @@ const Services = () => {
 
                         <div className="solution-card">
                             <span className="solution-number">05</span>
-                            <h3 className="solution-title">Retail & POS</h3>
+                            <h3 className="solution-title">Retail & Point of Sale (POS)</h3>
                             <p className="solution-desc">Manage sales transactions, inventory, and multi-location retail operations efficiently.</p>
                             <ul className="service-features-list solution-features">
                                 <li><span className="bullet-dot">•</span> Billing & invoicing</li>

@@ -9,7 +9,7 @@ import './CaseStudies.css';
 
 const CaseStudyDetails = () => {
     const { slug } = useParams();
-    const [isExpanded, setIsExpanded] = React.useState(false);
+
     const study = caseStudies.find(s => s.slug === slug);
 
     // Get suggested case studies (exclude current one, take 3)
@@ -89,7 +89,7 @@ const CaseStudyDetails = () => {
             </div>
 
             <main>
-                <article className={`case-details-container ${!isExpanded ? 'is-truncated' : 'is-expanded'}`}>
+                <article className="case-details-container">
                     {/* Content Sections */}
                     <section className="case-details-section">
                         <h2 className="case-details-section-title">About Our Client</h2>
@@ -130,16 +130,7 @@ const CaseStudyDetails = () => {
                         </div>
                     </section>
 
-                    {!isExpanded && (
-                        <div className="read-more-overlay">
-                            <button
-                                className="btn btn-codeifyy-primary"
-                                onClick={() => setIsExpanded(true)}
-                            >
-                                Read Full Case Study
-                            </button>
-                        </div>
-                    )}
+
                 </article>
             </main>
 
@@ -183,7 +174,7 @@ const CaseStudyDetails = () => {
             <Footer />
 
             {/* Mobile More Overlay */}
-            {suggestedStudies.length > 0 && isExpanded && (
+            {suggestedStudies.length > 0 && (
                 <div className="mobile-more-overlay">
                     <div className="mobile-more-info">
                         <span className="mobile-more-label">Keep Reading</span>
