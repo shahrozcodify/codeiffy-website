@@ -200,7 +200,7 @@ const Contact = () => {
                             <form className="contact-form" onSubmit={handleSubmit}>
                                 <div className="form-row">
                                     <div className="form-group">
-                                        <label className="form-label">First Name</label>
+                                        <label className="form-label">Name</label>
                                         <input type="text" name="firstName" className="form-input" placeholder="John" value={formData.firstName} onChange={handleChange} required />
                                     </div>
                                     <div className="form-group">
