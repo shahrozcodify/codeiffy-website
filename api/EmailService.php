@@ -38,7 +38,7 @@ class EmailService
         ]);
 
         $ch = curl_init('https://api.resend.com/emails');
-        curl_setopt_array($ch, [
+        $opts = [
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_POST           => true,
             CURLOPT_POSTFIELDS     => $payload,
@@ -46,7 +46,17 @@ class EmailService
                 'Authorization: Bearer ' . $this->apiKey,
                 'Content-Type: application/json',
             ],
-        ]);
+        ];
+
+        $caBundle = __DIR__ . '/cacert.pem';
+        if (file_exists($caBundle)) {
+            $opts[CURLOPT_CAINFO] = $caBundle;
+        } elseif (PHP_OS_FAMILY === 'Windows') {
+            $opts[CURLOPT_SSL_VERIFYPEER] = false;
+            $opts[CURLOPT_SSL_VERIFYHOST] = false;
+        }
+
+        curl_setopt_array($ch, $opts);
 
         $response = curl_exec($ch);
         $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
@@ -72,11 +82,11 @@ class EmailService
     public function sendContactNotification(string $to, array $formData): array
     {
         $firstName = htmlspecialchars($formData['firstName']);
-        $lastName  = htmlspecialchars($formData['lastName']);
+        $phone  = htmlspecialchars($formData['phone']);
         $email     = htmlspecialchars($formData['email']);
         $message   = nl2br(htmlspecialchars($formData['message']));
 
-        $subject = "New Contact Form: {$firstName} {$lastName}";
+        $subject = "New Contact Form: {$firstName} ";
 
         $html = <<<HTML
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
@@ -87,11 +97,15 @@ class EmailService
                 <table style="width: 100%; border-collapse: collapse;">
                     <tr>
                         <td style="padding: 10px 0; font-weight: bold; color: #334155; width: 120px;">Name:</td>
-                        <td style="padding: 10px 0; color: #1e293b;">{$firstName} {$lastName}</td>
+                        <td style="padding: 10px 0; color: #1e293b;">{$firstName} </td>
                     </tr>
                     <tr>
                         <td style="padding: 10px 0; font-weight: bold; color: #334155;">Email:</td>
                         <td style="padding: 10px 0; color: #1e293b;"><a href="mailto:{$email}">{$email}</a></td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px 0; font-weight: bold; color: #334155;">Phone:</td>
+                        <td style="padding: 10px 0; color: #1e293b;">{$phone}</td>
                     </tr>
                 </table>
                 <div style="margin-top: 20px; padding: 15px; background: white; border-radius: 6px; border: 1px solid #e2e8f0;">

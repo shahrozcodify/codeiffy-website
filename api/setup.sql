@@ -2,9 +2,9 @@
 
 CREATE TABLE IF NOT EXISTS contacts (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    first_name VARCHAR(100) NOT NULL,
-    last_name VARCHAR(100) NOT NULL,
-    email VARCHAR(255) NOT NULL,
+    first_name VARCHAR(500) NOT NULL,
+    phone VARCHAR(200) NOT NULL,
+    email VARCHAR(355) NOT NULL,
     message TEXT NOT NULL,
     email_sent TINYINT(1) DEFAULT 0,
     created_at DATETIME DEFAULT CURRENT_TIMESTAMP

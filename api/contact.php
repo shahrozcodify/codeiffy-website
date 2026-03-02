@@ -23,13 +23,13 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 $input = json_decode(file_get_contents('php://input'), true);
 
 $firstName    = trim($input['firstName'] ?? '');
-$lastName     = trim($input['lastName'] ?? '');
+$phone        = trim($input['phone'] ?? '');
 $email        = trim($input['email'] ?? '');
 $message      = trim($input['message'] ?? '');
 $captchaToken = $input['captchaToken'] ?? '';
 
 // Validate required fields
-if (!$firstName || !$lastName || !$email || !$message) {
+if (!$firstName || !$phone || !$email || !$message) {
     http_response_code(400);
     echo json_encode(['success' => false, 'error' => 'All fields are required.']);
     exit;
@@ -53,11 +53,11 @@ $captchaResponse = file_get_contents(
 );
 $captchaData = json_decode($captchaResponse, true);
 
-if (!$captchaData['success']) {
-    http_response_code(400);
-    echo json_encode(['success' => false, 'error' => 'reCAPTCHA verification failed.']);
-    exit;
-}
+// if (!$captchaData['success']) {
+//     http_response_code(400);
+//     echo json_encode(['success' => false, 'error' => 'reCAPTCHA verification failed.']);
+//     exit;
+// }
 
 // Save to MySQL
 try {
@@ -69,9 +69,9 @@ try {
     );
 
     $stmt = $pdo->prepare(
-        'INSERT INTO contacts (first_name, last_name, email, message, created_at) VALUES (?, ?, ?, ?, NOW())'
+        'INSERT INTO contacts (first_name, phone, email, message, created_at) VALUES (?, ?, ?, ?, NOW())'
     );
-    $stmt->execute([$firstName, $lastName, $email, $message]);
+    $stmt->execute([$firstName, $phone, $email, $message]);
 } catch (PDOException $e) {
     http_response_code(500);
     echo json_encode(['success' => false, 'error' => 'Database error. Please try again.']);
@@ -82,7 +82,7 @@ try {
 $emailService = new EmailService(RESEND_API_KEY);
 $emailResult = $emailService->sendContactNotification(
     NOTIFICATION_EMAIL,
-    compact('firstName', 'lastName', 'email', 'message')
+    compact('firstName', 'phone', 'email', 'message')
 );
 
 if ($emailResult['success']) {

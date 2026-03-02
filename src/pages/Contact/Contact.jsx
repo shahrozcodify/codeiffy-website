@@ -28,68 +28,52 @@ const Popup = ({ message, type, onClose }) => {
 const API_URL = import.meta?.env?.VITE_API_URL || '/api';
 
 const Contact = () => {
-    const [formData, setFormData] = useState({ firstName: '', lastName: '', email: '', message: '' });
+    const [formData, setFormData] = useState({ firstName: '', phone: '', email: '', message: '' });
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [popup, setPopup] = useState({ show: false, message: '', type: 'success' });
+    const { executeRecaptcha } = useGoogleReCaptcha();
 
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
-    };
-
-    const handleCaptchaChange = (value) => {
-        setCaptchaValue(value);
     };
 
     const closePopup = () => {
         setPopup({ ...popup, show: false });
     };
 
-    const handleSubmit = async useCallback(async (e) => {
+    const handleSubmit = useCallback(async (e) => {
         e.preventDefault();
 
         if (!executeRecaptcha) {
             console.log("Execute recaptcha not yet available");
-        if (!captchaValue) {
-            setPopup({ show: true, message: "Please complete the reCAPTCHA verification to proceed.", type: 'error' });
             return;
         }
 
         setIsSubmitting(true);
         try {
+            const token = await executeRecaptcha('contact_form');
+
             const res = await fetch(`${API_URL}/contact.php`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ ...formData, captchaToken: captchaValue }),
+                body: JSON.stringify({ ...formData, captchaToken: token }),
             });
+            console.log(res);
             const data = await res.json();
 
             if (res.ok) {
                 setPopup({ show: true, message: data.message, type: 'success' });
-                setFormData({ firstName: '', lastName: '', email: '', message: '' });
-                setCaptchaValue(null);
+                setFormData({ firstName: '', phone: '', email: '', message: '' });
             } else {
                 setPopup({ show: true, message: data.error || 'Something went wrong.', type: 'error' });
             }
-        } catch {
+        } catch (err) {
+            console.error('Contact form error:', err);
             setPopup({ show: true, message: 'Network error. Please try again later.', type: 'error' });
         } finally {
             setIsSubmitting(false);
         }
-    };
-
-        const token = await executeRecaptcha('contact_form');
-
-        // Proceed with form submission
-        console.log("Form submitted with v3 token:", token);
-
-        // Simulate successful submission
-        setPopup({
-            show: true,
-            message: "Thank you! Your message has been sent successfully. We will get back to you soon.",
-            type: 'success'
-        });
-        // Add your real form submission logic here
-    }, [executeRecaptcha]);
+    }, [executeRecaptcha, formData]);
 
     return (
         <div className="contact-page">
@@ -205,7 +189,7 @@ const Contact = () => {
                                     </div>
                                     <div className="form-group">
                                         <label className="form-label">Work Email</label>
-                                        <input type="email" className="form-input" placeholder="john@company.com" required />
+                                        <input type="email" className="form-input" placeholder="john@company.com" name="email" value={formData.email} onChange={handleChange} required />
                                     </div>
                                 </div>
 
@@ -213,6 +197,8 @@ const Contact = () => {
                                     <label className="form-label">Phone Number</label>
                                     <PhoneInput
                                         country={'pk'}
+                                        value={formData.phone}
+                                        onChange={(value) => setFormData((prev) => ({ ...prev, phone: value }))}
                                         enableSearch={true}
                                         searchPlaceholder="Search country..."
                                         inputClass="form-input phone-input-field"
@@ -231,12 +217,12 @@ const Contact = () => {
                                     <label className="form-label">How can we help?</label>
                                     <textarea name="message" className="form-textarea" placeholder="Tell us more about your needs..." value={formData.message} onChange={handleChange} required></textarea>
                                 </div>
-                                <div className="form-group" style={{ marginBottom: '20px' }}>
+                                {/* <div className="form-group" style={{ marginBottom: '20px' }}>
                                     <ReCAPTCHA
                                         sitekey="6Lf03nEsAAAAAG2ka1oA9KIVx-mYL2WkPymjVhd1"
                                         onChange={handleCaptchaChange}
                                     />
-                                </div>
+                                </div> */}
                                 <button className="btn-submit" disabled={isSubmitting}>
                                     {isSubmitting ? 'Sending...' : 'Send Message'}
                                 </button>
