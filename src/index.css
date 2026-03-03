@@ -335,6 +335,27 @@ h4 {
   text-decoration: underline;
 }
 
+/* Active nav link (current page) */
+/* .nav-link-secondary.nav-active {
+  color: var(--codeifyy-green);
+} */
+
+/* Active service sub-link (current page) */
+.mega-link-enhanced.current-page {
+  background: #f0fdf4;
+  border-color: var(--codeifyy-green);
+  border-left: 3px solid var(--codeifyy-green);
+}
+
+.mega-link-enhanced.current-page .mega-icon-box {
+  background: var(--codeifyy-green);
+  color: #fff;
+}
+
+.mega-link-enhanced.current-page .mega-link-text span {
+  color: var(--codeifyy-green);
+}
+
 .header-logo-cloud {
   height: 40px;
 }
@@ -746,12 +767,14 @@ h4 {
 
   .nav-link-secondary {
     width: 100%;
-    padding: 1.1rem 2rem;
-    font-size: 1.05rem;
-    border-bottom: 1px solid #f8fafc;
+    padding: 1.15rem 1.75rem;
+    font-size: 0.95rem;
+    border-bottom: 1px solid #e2e8f0;
     display: block;
-    font-weight: 600;
+    font-weight: 700;
     color: var(--codeifyy-navy);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
   }
 
   .nav-item {
@@ -832,6 +855,31 @@ h4 {
     display: none !important;
   }
 
+  /* Reset hover-based active state on mobile — only current-page should highlight */
+  .mega-link-enhanced.active {
+    background: transparent !important;
+    border-color: transparent !important;
+    transform: none !important;
+  }
+
+  .mega-link-enhanced.active .mega-icon-box {
+    background: #fff !important;
+    color: var(--codeifyy-green) !important;
+    transform: none !important;
+  }
+
+  /* Keep current-page styles on mobile */
+  .mega-link-enhanced.current-page {
+    background: #f0fdf4 !important;
+    border-color: var(--codeifyy-green) !important;
+    border-left: 3px solid var(--codeifyy-green) !important;
+  }
+
+  .mega-link-enhanced.current-page .mega-icon-box {
+    background: var(--codeifyy-green) !important;
+    color: #fff !important;
+  }
+
   .mega-link {
     margin-bottom: 1rem !important;
     font-size: 0.95rem !important;
@@ -858,24 +906,26 @@ h4 {
   .mobile-only-actions {
     display: flex;
     flex-direction: column;
-    padding: 1.5rem;
+    padding: 1.75rem;
     gap: 1.2rem;
     width: 100%;
-    border-top: 1px solid #f1f5f9;
+    border-top: 1px solid #e2e8f0;
     background: #fff;
     margin-top: auto;
   }
 
   .mobile-only-actions .header-phone {
     font-size: 1rem;
-    justify-content: center;
+    justify-content: flex-start;
   }
 
   .mobile-only-actions .header-cta-btn {
-    width: 100%;
+    width: fit-content;
     text-align: center;
-    padding: 0.8rem;
-    font-size: 0.95rem;
+    padding: 0.75rem 2rem;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
   }
 }
 
@@ -900,12 +950,12 @@ h4 {
 
 @media (max-width: 480px) {
   .nav-links-wrap {
-    width: 100%;
+    width: 85%;
   }
 
   .nav-link-secondary {
-    font-size: 0.9rem !important;
-    padding: 1rem 1.5rem !important;
+    font-size: 0.88rem !important;
+    padding: 1.1rem 1.5rem !important;
   }
 
   .mega-link {
@@ -914,12 +964,12 @@ h4 {
   }
 
   .mobile-only-actions .header-phone {
-    font-size: 0.85rem !important;
+    font-size: 0.9rem !important;
   }
 
   .mobile-only-actions .header-cta-btn {
-    padding: 0.7rem !important;
-    font-size: 0.9rem !important;
+    padding: 0.7rem 1.8rem !important;
+    font-size: 0.85rem !important;
   }
 
   .header-logo-cloud {

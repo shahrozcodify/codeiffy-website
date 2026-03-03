@@ -1,9 +1,11 @@
 /* Codeifyy CRM Unified Header Component - Top tier removed per branding refinement */
 import React, { useState, useEffect, useRef } from 'react';
 import { FiSearch, FiGlobe, FiUser, FiChevronDown, FiPhone, FiMenu, FiX, FiUsers, FiCode, FiPieChart } from 'react-icons/fi';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 const Header = () => {
+    const location = useLocation();
+    const currentPath = location.pathname;
     const [isScrolled, setIsScrolled] = useState(false);
     const [showTop, setShowTop] = useState(true);
     const [showRegionMenu, setShowRegionMenu] = useState(false);
@@ -55,7 +57,7 @@ const Header = () => {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
-    const [activeService, setActiveService] = useState('staff-augmentation');
+    const [activeService, setActiveService] = useState(null);
 
     const serviceImages = {
         'staff-augmentation': 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=800',
@@ -93,16 +95,17 @@ const Header = () => {
                                 <FiX />
                             </button>
                         </div>
-                        <Link to="/" className="nav-link-secondary" onClick={() => setIsMobileMenuOpen(false)}>Home</Link>
+                        <Link to="/" className={`nav-link-secondary ${currentPath === '/' ? 'nav-active' : ''}`} onClick={() => setIsMobileMenuOpen(false)}>Home</Link>
                         <div className={`nav-item ${activeMobileDropdown === 'services' ? 'mobile-dropdown-active' : ''}`}>
-                            <span className="nav-link-secondary" onClick={() => toggleMobileDropdown('services')}>Services <FiChevronDown className="header-caret" /></span>
+                            <span className={`nav-link-secondary ${currentPath.startsWith('/services') ? 'nav-active' : ''}`} onClick={() => toggleMobileDropdown('services')}>Services <FiChevronDown className="header-caret" /></span>
                             <div className="dropdown-content mega-menu-small">
                                 <div className="mega-column">
                                     <div className="mega-title">Our Expertise</div>
                                     <Link
                                         to="/services/staff-augmentation"
-                                        className={`mega-link-enhanced ${activeService === 'staff-augmentation' ? 'active' : ''}`}
+                                        className={`mega-link-enhanced ${activeService === 'staff-augmentation' ? 'active' : ''} ${currentPath === '/services/staff-augmentation' ? 'current-page' : ''}`}
                                         onMouseEnter={() => setActiveService('staff-augmentation')}
+                                        onClick={() => setIsMobileMenuOpen(false)}
                                     >
                                         <div className="mega-icon-box"><FiUsers /></div>
                                         <div className="mega-link-text">
@@ -112,8 +115,9 @@ const Header = () => {
                                     </Link>
                                     <Link
                                         to="/services/software-development"
-                                        className={`mega-link-enhanced ${activeService === 'software-development' ? 'active' : ''}`}
+                                        className={`mega-link-enhanced ${activeService === 'software-development' ? 'active' : ''} ${currentPath === '/services/software-development' ? 'current-page' : ''}`}
                                         onMouseEnter={() => setActiveService('software-development')}
+                                        onClick={() => setIsMobileMenuOpen(false)}
                                     >
                                         <div className="mega-icon-box"><FiCode /></div>
                                         <div className="mega-link-text">
@@ -123,8 +127,9 @@ const Header = () => {
                                     </Link>
                                     <Link
                                         to="/services/artificial-intelligence"
-                                        className={`mega-link-enhanced ${activeService === 'artificial-intelligence' ? 'active' : ''}`}
+                                        className={`mega-link-enhanced ${activeService === 'artificial-intelligence' ? 'active' : ''} ${currentPath === '/services/artificial-intelligence' ? 'current-page' : ''}`}
                                         onMouseEnter={() => setActiveService('artificial-intelligence')}
+                                        onClick={() => setIsMobileMenuOpen(false)}
                                     >
                                         <div className="mega-icon-box"><FiGlobe /></div>
                                         <div className="mega-link-text">
@@ -134,8 +139,9 @@ const Header = () => {
                                     </Link>
                                     <Link
                                         to="/services/product-development"
-                                        className={`mega-link-enhanced ${activeService === 'product-development' ? 'active' : ''}`}
+                                        className={`mega-link-enhanced ${activeService === 'product-development' ? 'active' : ''} ${currentPath === '/services/product-development' ? 'current-page' : ''}`}
                                         onMouseEnter={() => setActiveService('product-development')}
+                                        onClick={() => setIsMobileMenuOpen(false)}
                                     >
                                         <div className="mega-icon-box"><FiPieChart /></div>
                                         <div className="mega-link-text">
@@ -149,25 +155,29 @@ const Header = () => {
                                     </div>
                                 </div>
                                 <div className="mega-image-preview">
-                                    <div className="preview-image-wrap">
-                                        <img
-                                            src={serviceImages[activeService]}
-                                            alt={activeService}
-                                            key={activeService}
-                                            className="animate-fade-in"
-                                        />
-                                    </div>
-                                    <h4 className="preview-title">
-                                        {activeService.replace(/-/g, ' ')}
-                                    </h4>
-                                    <p className="preview-desc">
-                                        {serviceDescriptions[activeService]}
-                                    </p>
+                                    {activeService && (
+                                        <>
+                                            <div className="preview-image-wrap">
+                                                <img
+                                                    src={serviceImages[activeService]}
+                                                    alt={activeService}
+                                                    key={activeService}
+                                                    className="animate-fade-in"
+                                                />
+                                            </div>
+                                            <h4 className="preview-title">
+                                                {activeService.replace(/-/g, ' ')}
+                                            </h4>
+                                            <p className="preview-desc">
+                                                {serviceDescriptions[activeService]}
+                                            </p>
+                                        </>
+                                    )}
                                 </div>
                             </div>
                         </div>
-                        <Link to="/about" className="nav-link-secondary" onClick={() => setIsMobileMenuOpen(false)}>About</Link>
-                        <Link to="/industries" className="nav-link-secondary" onClick={() => setIsMobileMenuOpen(false)}>Industries</Link>
+                        <Link to="/about" className={`nav-link-secondary ${currentPath === '/about' ? 'nav-active' : ''}`} onClick={() => setIsMobileMenuOpen(false)}>About</Link>
+                        <Link to="/industries" className={`nav-link-secondary ${currentPath === '/industries' ? 'nav-active' : ''}`} onClick={() => setIsMobileMenuOpen(false)}>Industries</Link>
 
 
                         {/* <div className="nav-item">
@@ -194,7 +204,7 @@ const Header = () => {
                         </div> */}
 
                         <div className={`nav-item ${activeMobileDropdown === 'resources' ? 'mobile-dropdown-active' : ''}`}>
-                            <span className="nav-link-secondary" onClick={() => toggleMobileDropdown('resources')}>Resources <FiChevronDown className="header-caret" /></span>
+                            <span className={`nav-link-secondary ${['/blog', '/casestudy', '/career'].some(p => currentPath.startsWith(p)) ? 'nav-active' : ''}`} onClick={() => toggleMobileDropdown('resources')}>Resources <FiChevronDown className="header-caret" /></span>
                             <div className="dropdown-content" style={{ minWidth: '220px', padding: '1.5rem' }}>
                                 <Link to="/blog" className="mega-link" onClick={() => setIsMobileMenuOpen(false)} style={{ fontSize: '0.95rem', marginBottom: '0.8rem' }}>Blogs</Link>
                                 <Link to="/casestudy" className="mega-link" onClick={() => setIsMobileMenuOpen(false)} style={{ fontSize: '0.95rem', marginBottom: '0.8rem' }}>Case Studies</Link>
