@@ -43,6 +43,15 @@ const BenefitSection = ({
                                 ))}
                             </ul>
                         )}
+
+                        {/* Desktop only: button tight below features list */}
+                        {buttonText && buttonLink && (
+                            <div className="benefit-cta-wrapper benefit-cta-desktop animate-up">
+                                <a href={buttonLink} className="btn btn-codeifyy-primary">
+                                    {buttonText}
+                                </a>
+                            </div>
+                        )}
                     </div>
 
                     {/* Right Column: Cards Grid */}
@@ -55,8 +64,9 @@ const BenefitSection = ({
                         ))}
                     </div>
 
+                    {/* Mobile only: button below stats cards */}
                     {buttonText && buttonLink && (
-                        <div className="benefit-cta-wrapper animate-up">
+                        <div className="benefit-cta-wrapper benefit-cta-mobile animate-up">
                             <a href={buttonLink} className="btn btn-codeifyy-primary">
                                 {buttonText}
                             </a>

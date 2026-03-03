@@ -195,7 +195,7 @@
 
 .philosophy-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 2.5rem;
     margin-top: 4rem;
 }
@@ -204,7 +204,7 @@
     background: #fff;
     border: 1px solid #e2e8f0;
     border-radius: 24px;
-    padding: 3.5rem 2rem;
+    padding: 1.5rem 2rem;
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     position: relative;
     overflow: hidden;
@@ -217,20 +217,26 @@
     border-color: var(--codeifyy-green);
 }
 
+.card-header-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0;
+}
+
 .service-card-premium .card-number {
-    position: absolute;
-    top: 1.5rem;
-    right: 2.5rem;
-    font-size: 4rem;
-    font-weight: 800;
-    color: #f1f5f9;
+    position: static;
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: var(--codeifyy-green);
+    opacity: 0.15;
     line-height: 1;
     z-index: 0;
-    transition: color 0.3s ease;
+    transition: opacity 0.3s ease;
 }
 
 .service-card-premium:hover .card-number {
-    color: rgba(16, 185, 129, 0.08);
+    opacity: 0.25;
 }
 
 .card-icon-box {
@@ -243,7 +249,7 @@
     justify-content: center;
     font-size: 1.8rem;
     color: var(--codeifyy-green);
-    margin-bottom: 2rem;
+    margin-bottom: 0;
     position: relative;
     z-index: 1;
 }
@@ -385,5 +391,9 @@
 
     .philosophy-grid {
         grid-template-columns: 1fr;
+    }
+
+    .service-card-premium .card-number {
+        font-size: 2.5rem;
     }
 }

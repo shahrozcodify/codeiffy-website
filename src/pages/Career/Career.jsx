@@ -113,8 +113,10 @@ const Career = () => {
                         <div className="philosophy-grid">
                             {philosophy.map((item, i) => (
                                 <div key={i} className="service-card-premium">
-                                    <span className="card-number">{(i + 1).toString().padStart(2, '0')}</span>
-                                    <div className="card-icon-box">{item.icon}</div>
+                                    <div className="card-header-flex">
+                                        <div className="card-icon-box">{item.icon}</div>
+                                        <span className="card-number">{(i + 1).toString().padStart(2, '0')}</span>
+                                    </div>
                                     <h3 className="card-title">{item.title}</h3>
                                     <p className="card-desc">{item.desc}</p>
 

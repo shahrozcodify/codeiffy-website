@@ -81,7 +81,8 @@ const CaseStudyDetails = () => {
                             <span>{study.companySize}</span>
                         </div>
                         <div className="case-details-meta-item">
-                            <strong>{study.id === 2 ? 'Business Model' : 'Technologies'}</strong>
+                            <strong>Technologies</strong>
+                            {/* <strong>{study.id === 2 ? 'Business Model' : 'Technologies'}</strong> */}
                             <span>{study.techStack}</span>
                         </div>
                     </div>

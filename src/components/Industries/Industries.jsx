@@ -17,7 +17,7 @@ const Industries = () => {
     ];
 
     return (
-        <section className="industries-section section-padding">
+        <section className="industries-section">
             <div className="container">
                 <div className="industries-header">
                     <h2 className="industries-title animate-up">

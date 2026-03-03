@@ -167,7 +167,7 @@ const SoftwareDevelopment = () => {
                         <div className="service-card">
                             <span className="service-number">02</span>
                             <div className="service-content">
-                                <h3 className="service-title">ERP Software <br /> Development</h3>
+                                <h3 className="service-title">ERP Software Development</h3>
                                 <p className="service-desc">Integrated systems for operational excellence. Unify core business functions into a centralized platform.</p>
                                 <div className="service-capabilities">
                                     <h5>Capabilities</h5>
@@ -220,8 +220,10 @@ const SoftwareDevelopment = () => {
                 </div>
             </section>
 
-            {/* CASE STUDIES LINK IS HANDLED BY REUSED COMPONENTS OR FUTURE SECTIONS - Placeholder here if needed */}
-            <CustomerStories />
+            {/* CASE STUDIES */}
+            <section className="section-padding-md">
+                <CustomerStories />
+            </section>
             {/* ENGAGEMENT MODELS */}
             <section className="engagement-section">
                 <div className="container">
@@ -247,15 +249,19 @@ const SoftwareDevelopment = () => {
             </section>
 
             {/* INTEGRATED: INDUSTRIES */}
-            <Industries />
+            <section className="section-padding-md">
+                <Industries />
+            </section>
 
             {/* INTEGRATED: TESTIMONIALS */}
-            <ArticleCarousel />
+            <section className="section-padding-md">
+                <ArticleCarousel />
+            </section>
 
             {/* INTEGRATED: TECH STACK */}
-            <div className="integrated-tech-stack bg-white">
+            <section className="section-padding-md integrated-tech-stack bg-white">
                 <TechStack />
-            </div>
+            </section>
 
 
             {/* DEVELOPMENT APPROACH */}
@@ -295,7 +301,7 @@ const SoftwareDevelopment = () => {
 
             {/* FINAL CTA */}
             {/* FINAL CTA */}
-            <section className="final-cta-section mt-5" >
+            <section className=" final-cta-section mt-5" >
                 <div className="container">
                     <CTA
                         title="Ready to Build Scalable Software?"

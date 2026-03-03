@@ -138,14 +138,14 @@ const Contact = () => {
                                 <div className="contact-detail-item">
                                     <div className="contact-icon-box"><FaPhoneAlt /></div>
                                     <div className="contact-item-content">
-                                        <h4>Sales Inquiry</h4>
+                                        <h4>Sales</h4>
                                         <p>+92 311 2601310</p>
                                     </div>
                                 </div>
                                 <div className="contact-detail-item">
                                     <div className="contact-icon-box"><FaEnvelope /></div>
                                     <div className="contact-item-content">
-                                        <h4>Email Support</h4>
+                                        <h4>Email</h4>
                                         <p>hello@codeifyy.com</p>
                                     </div>
                                 </div>

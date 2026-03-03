@@ -137,7 +137,6 @@
 }
 
 .model-card:hover {
-    transform: translateY(-8px);
     box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.1);
     border-color: rgba(0, 188, 84, 0.2);
 }
@@ -175,7 +174,6 @@
 .model-card:hover .model-icon {
     background: var(--codeifyy-green);
     color: var(--white);
-    transform: rotate(-10deg) scale(1.1);
 }
 
 .model-title {

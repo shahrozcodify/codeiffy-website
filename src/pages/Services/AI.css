@@ -1,6 +1,11 @@
-.ai-page {
-    background: var(--background);
-    overflow-x: hidden;
+/* Reduced spacing for reusable BenefitSection bullets */
+.ai-page .model-features {
+    gap: 0.5rem !important;
+}
+
+.ai-page .model-features li {
+    font-size: 1.05rem;
+    margin-bottom: 0;
 }
 
 
@@ -8,7 +13,7 @@
 /* Reusing Hero Styles from Hero.css generally */
 
 /* --- Hero Graphic Styles (Specific to this page, could be reused or new graphic) --- */
-.hero-graphic-wrapper {
+.ai-page .hero-graphic-wrapper {
     position: relative;
     height: 500px;
     display: flex;
@@ -19,7 +24,7 @@
 
 /* AI Graphic Placeholder or Style if differernt from Code Window */
 /* Using Code Window style for now as it looks techy */
-.code-window {
+.ai-page .code-window {
     background: #1e293b;
     border-radius: 12px;
     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
@@ -37,7 +42,7 @@
     transform: rotateY(0) rotateX(0);
 }
 
-.window-header {
+.ai-page .window-header {
     background: #0f172a;
     padding: 12px 16px;
     display: flex;
@@ -45,25 +50,25 @@
     border-bottom: 1px solid #334155;
 }
 
-.dot {
+.ai-page .dot {
     width: 12px;
     height: 12px;
     border-radius: 50%;
 }
 
-.dot.red {
+.ai-page .dot.red {
     background: #ef4444;
 }
 
-.dot.yellow {
+.ai-page .dot.yellow {
     background: #f59e0b;
 }
 
-.dot.green {
+.ai-page .dot.green {
     background: #10b981;
 }
 
-.window-body {
+.ai-page .window-body {
     padding: 20px;
     font-family: 'Fira Code', 'Courier New', monospace;
     font-size: 0.9rem;
@@ -71,38 +76,38 @@
     color: #e2e8f0;
 }
 
-.code-line {
+.ai-page .code-line {
     display: block;
 }
 
-.c-gray {
+.ai-page .c-gray {
     color: #64748b;
     font-style: italic;
 }
 
-.c-purple {
+.ai-page .c-purple {
     color: #c084fc;
 }
 
-.c-blue {
+.ai-page .c-blue {
     color: #60a5fa;
 }
 
-.c-green {
+.ai-page .c-green {
     color: #4ade80;
 }
 
-.c-yellow {
+.ai-page .c-yellow {
     color: #fcd34d;
 }
 
-.c-white {
+.ai-page .c-white {
     color: #f8fafc;
 }
 
 
 /* Floating Badges */
-.floating-badge {
+.ai-page .floating-badge {
     position: absolute;
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(8px);
@@ -120,7 +125,7 @@
     animation: float 4s ease-in-out infinite;
 }
 
-.badge-icon {
+.ai-page .badge-icon {
     width: 32px;
     height: 32px;
     border-radius: 50%;
@@ -131,19 +136,19 @@
     font-size: 0.9rem;
 }
 
-.badge-security {
+.ai-page .badge-security {
     top: 10%;
     right: 0;
     animation-delay: 0s;
 }
 
-.badge-cloud {
+.ai-page .badge-cloud {
     bottom: 15%;
     left: -20px;
     animation-delay: 1.5s;
 }
 
-.badge-performance {
+.ai-page .badge-performance {
     bottom: 30%;
     right: -30px;
     animation-delay: 0.8s;
@@ -162,18 +167,19 @@
 }
 
 /* Services Grid Section */
-.services-grid-section {
+.ai-page .services-grid-section {
+    padding-bottom: 4rem;
     background: #fff;
 }
 
-.services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    gap: 2rem;
+.ai-page .services-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 3rem !important;
     margin-top: 4rem;
 }
 
-.service-card {
+.ai-page .service-card {
     background: #fff;
     border: 1px solid #e2e8f0;
     border-radius: 16px;
@@ -183,28 +189,30 @@
     overflow: hidden;
 }
 
-.service-card:hover {
+.ai-page .service-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.02);
     border-color: var(--codeifyy-green);
 }
 
-.service-number {
-    font-size: 3rem;
-    font-weight: 800;
-    color: #f1f5f9;
+/* Highlight service numbers */
+.ai-page .service-number {
+    color: var(--codeifyy-green) !important;
+    opacity: 0.15;
+    font-size: 4.5rem !important;
+    font-weight: 900 !important;
     position: absolute;
-    top: 1rem;
-    right: 2rem;
+    top: 0.5rem !important;
+    right: 1.5rem !important;
     line-height: 1;
 }
 
-.service-content {
+.ai-page .service-content {
     position: relative;
     z-index: 1;
 }
 
-.service-title {
+.ai-page .service-title {
     font-size: 1.75rem;
     font-weight: 700;
     color: #0f172a;
@@ -213,14 +221,14 @@
     padding-right: 3rem;
 }
 
-.service-desc {
+.ai-page .service-desc {
     color: #64748b;
     font-size: 1.05rem;
     line-height: 1.7;
     margin-bottom: 2rem;
 }
 
-.service-capabilities h5 {
+.ai-page .service-capabilities h5 {
     font-size: 0.9rem;
     text-transform: uppercase;
     color: #94a3b8;
@@ -229,18 +237,17 @@
     font-weight: 700;
 }
 
-.service-capabilities ul {
+.ai-page .service-capabilities ul {
     list-style: none;
     padding: 0;
     margin: 0;
     display: grid;
-    grid-template-columns: 1fr;
     /* Keep single column or 2? Usually 1 or 2. SoftwareDev had 2 */
     grid-template-columns: 1fr 1fr;
     gap: 0.75rem;
 }
 
-.service-capabilities li {
+.ai-page .service-capabilities li {
     display: flex;
     align-items: center;
     /**/
@@ -250,36 +257,31 @@
     font-weight: 500;
 }
 
-.service-capabilities li svg {
+.ai-page .service-capabilities li svg {
     color: var(--codeifyy-green);
     font-size: 0.8rem;
 }
 
 /* Challenges and Delivery specifically for AI page if needed slightly different styling */
-.challenges-list li svg {
+.ai-page .challenges-list li svg {
     color: #ef4444;
 }
 
-/* Red check or cross for challenges maybe? Or keep green check */
-/* Actually user provided bullets for challenges: "Unclear AI use cases", etc. Usually challenges are problems. Maybe use a different icon or color? */
-/* But let's stick to standard style unless forced. */
-
-
 /* Engagement Models Section */
-.engagement-section {
+.ai-page .engagement-section {
     padding-top: 1rem;
     padding-bottom: 5rem;
     background: #f8fafc;
 }
 
-.engagement-grid {
+.ai-page .engagement-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
     margin-top: 4rem;
 }
 
-.engagement-card {
+.ai-page .engagement-card {
     background: #fff;
     padding: 2.5rem;
     border-radius: 12px;
@@ -288,28 +290,28 @@
     height: 100%;
 }
 
-.engagement-card h3 {
+.ai-page .engagement-card h3 {
     font-size: 1.25rem;
     font-weight: 700;
     margin-bottom: 1rem;
     color: #0f172a;
 }
 
-.engagement-card p {
+.ai-page .engagement-card p {
     color: #64748b;
     font-size: 0.95rem;
     line-height: 1.6;
 }
 
 /* Development Approach */
-.approach-section {
+.ai-page .approach-section {
     padding: 5rem 0;
     background: #0f172a;
     color: #fff;
     text-align: center;
 }
 
-.approach-steps {
+.ai-page .approach-steps {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 2rem;
@@ -317,7 +319,7 @@
     position: relative;
 }
 
-.approach-step-card {
+.ai-page .approach-step-card {
     background: rgba(255, 255, 255, 0.05);
     padding: 2rem 1rem;
     border-radius: 12px;
@@ -325,27 +327,27 @@
     transition: transform 0.3s;
 }
 
-.approach-step-card:hover {
+.ai-page .approach-step-card:hover {
     transform: translateY(-5px);
     background: rgba(255, 255, 255, 0.08);
     border-color: var(--codeifyy-green);
 }
 
-.step-icon {
+.ai-page .step-icon {
     font-size: 2rem;
     color: var(--codeifyy-green);
     margin-bottom: 1rem;
     display: block;
 }
 
-.step-name {
+.ai-page .step-name {
     font-weight: 700;
     font-size: 1rem;
     color: #fff;
 }
 
 /* Integrated Components Spacing */
-.integrated-tech-stack {
+.ai-page .integrated-tech-stack {
     padding-top: 3rem;
     padding-bottom: 3rem;
     border-bottom: 1px solid #e2e8f0;
@@ -353,15 +355,41 @@
 
 /* Responsive */
 @media (max-width: 991px) {
-    .services-grid {
+    .ai-page .services-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 2rem !important;
+    }
+
+    .ai-page .engagement-grid {
         grid-template-columns: 1fr;
     }
 
-    .engagement-grid {
+    .ai-page .service-capabilities ul {
         grid-template-columns: 1fr;
     }
+}
 
-    .service-capabilities ul {
-        grid-template-columns: 1fr;
+@media (max-width: 768px) {
+    .ai-page .services-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .ai-page .service-number {
+        font-size: 3rem !important;
+        top: 0.5rem !important;
+        right: 1rem !important;
+    }
+
+    .ai-page .approach-step-card {
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        transition: transform 0.3s;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 }

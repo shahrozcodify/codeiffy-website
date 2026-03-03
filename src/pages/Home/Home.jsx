@@ -40,23 +40,31 @@ const Home = () => {
             {/* Core Services */}
             <Features />
             {/* Technologies */}
-            <TechStack />
+            <section className="section-padding-md">
+                <TechStack />
+            </section>
             {/* Engagement Models */}
             <ProductsAndScale />
             {/* Industries */}
-            <Industries />
+            <section className="section-padding-md">
+                <Industries />
+            </section>
             {/* Case Studies */}
-            <CustomerStories />
+            <section className="section-padding-md">
+                <CustomerStories />
+            </section>
             {/* Why Choose Codeifyy */}
             <WhyChooseCodeifyy />
             {/* Testimonials */}
-            <ArticleCarousel />
+            <section className="section-padding-md">
+                <ArticleCarousel />
+            </section>
 
             {/* Delivery Methodology */}
             <NextStep />
             {/* CTO Message */}
             <CTOMessage />
-            <section className="section-padding">
+            <section className="final-cta-section">
                 <div className="container">
                     <CTA />
                 </div>

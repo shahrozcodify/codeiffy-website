@@ -3,24 +3,29 @@
     overflow-x: hidden;
 }
 
+/* Reduced spacing for CTA button in BenefitSection specifically for this page */
+.product-development-page .benefit-desc {
+    margin-bottom: 0.5rem !important;
+}
+
 /* Services Grid Section */
-.services-grid-section {
-    padding: 6rem 0;
+.product-development-page .services-grid-section {
+    padding-bottom: 4rem;
     background: #ffffff;
 }
 
-.services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 2rem;
-    margin-top: 3rem;
+.product-development-page .services-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 3.5rem !important;
+    margin-top: 4rem;
 }
 
-.service-card {
+.product-development-page .service-card {
     background: #ffffff;
     border: 1px solid #e2e8f0;
     border-radius: 20px;
-    padding: 2.5rem;
+    padding: 3rem;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     overflow: hidden;
@@ -29,31 +34,31 @@
     flex-direction: column;
 }
 
-.service-card:hover {
+.product-development-page .service-card:hover {
     transform: translateY(-8px);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
     border-color: var(--codeifyy-green);
 }
 
-.service-number {
-    font-size: 3.5rem;
-    font-weight: 800;
-    color: #f1f5f9;
+.product-development-page .service-number {
     position: absolute;
-    top: 1rem;
-    right: 2rem;
+    color: var(--codeifyy-green) !important;
+    opacity: 0.15;
+    font-size: 4.5rem !important;
+    font-weight: 900 !important;
+    top: 0.5rem !important;
+    right: 1.5rem !important;
     line-height: 1;
-    opacity: 0.5;
 }
 
-.service-content {
+.product-development-page .service-content {
     position: relative;
     z-index: 1;
     flex: 1;
 }
 
-.service-title {
-    font-size: 1.5rem;
+.product-development-page .service-title {
+    font-size: 1.75rem;
     font-weight: 700;
     color: var(--codeifyy-navy);
     margin-bottom: 1.25rem;
@@ -61,15 +66,15 @@
     padding-right: 3rem;
 }
 
-.service-desc {
+.product-development-page .service-desc {
     color: #64748b;
-    font-size: 1rem;
-    line-height: 1.6;
+    font-size: 1.05rem;
+    line-height: 1.7;
     margin-bottom: 2rem;
 }
 
-.service-capabilities h5 {
-    font-size: 0.85rem;
+.product-development-page .service-capabilities h5 {
+    font-size: 0.9rem;
     text-transform: uppercase;
     color: #94a3b8;
     letter-spacing: 0.1em;
@@ -77,16 +82,16 @@
     font-weight: 700;
 }
 
-.service-capabilities ul {
+.product-development-page .service-capabilities ul {
     list-style: none;
     padding: 0;
     margin: 0;
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: 0.85rem;
 }
 
-.service-capabilities li {
+.product-development-page .service-capabilities li {
     display: flex;
     align-items: center;
     gap: 0.75rem;
@@ -95,22 +100,22 @@
     font-weight: 500;
 }
 
-.service-capabilities li svg {
+.product-development-page .service-capabilities li svg {
     color: var(--codeifyy-green);
     font-size: 0.9rem;
 }
 
 /* Why Codeifyy Section */
-.section-padding {
-    padding: 6rem 0;
+.product-development-page .section-padding {
+    padding: 4rem 0;
 }
 
-.bg-light {
+.product-development-page .bg-light {
     background-color: #f8fafc !important;
 }
 
-.section-title {
-    font-size: 2.5rem;
+.product-development-page .section-title {
+    font-size: 2.75rem;
     font-weight: 800;
     color: var(--codeifyy-navy);
     margin-bottom: 2rem;
@@ -119,17 +124,17 @@
 }
 
 /* Service Models */
-.service-model-card {
+.product-development-page .service-model-card {
     transition: all 0.3s ease;
     border-radius: 24px;
 }
 
-.service-model-card:hover {
+.product-development-page .service-model-card:hover {
     transform: translateY(-8px);
     box-shadow: 0 15px 40px rgba(0, 188, 84, 0.1);
 }
 
-.model-title {
+.product-development-page .model-title {
     font-size: 2rem;
     font-weight: 700;
     color: var(--codeifyy-navy);
@@ -139,99 +144,84 @@
 
 /* --- Responsive Media Queries --- */
 
-@media (max-width: 1200px) {
-    .services-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    /* .hero-section {
-        padding-top: 5rem !important;
-        padding-bottom: 3rem !important;
-    } */
-}
-
-@media (max-width: 992px) {
-    .services-grid-section {
+@media (max-width: 991px) {
+    .product-development-page .services-grid-section {
         padding: 4rem 0;
     }
 
-    .section-padding {
+    .product-development-page .services-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 2rem !important;
+    }
+
+    .product-development-page .section-padding {
         padding: 4rem 0;
     }
 
-    .service-card {
-        padding: 2rem;
+    .product-development-page .service-card {
+        padding: 2.5rem;
     }
 
-    .service-title {
-        font-size: 1.35rem;
+    .product-development-page .service-title {
+        font-size: 1.5rem;
     }
 
-    .section-title {
-        font-size: 2rem;
+    .product-development-page .section-title {
+        font-size: 2.25rem;
     }
 
-    .model-title {
+    .product-development-page .model-title {
         font-size: 1.75rem;
     }
 }
 
 @media (max-width: 768px) {
-    .services-grid {
+    .product-development-page .services-grid-section {
+        padding: 3rem 0;
+        margin-bottom: 2rem;
+    }
+
+    .product-development-page .services-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+    }
+
+    .product-development-page .service-card {
+        padding: 2rem;
+    }
+
+    .product-development-page .service-capabilities ul {
         grid-template-columns: 1fr;
-        gap: 1.5rem;
     }
 
-    .service-card {
-        padding: 1.75rem;
-    }
-
-    .service-number {
-        font-size: 2.5rem;
-        top: 0.75rem;
-        right: 1.5rem;
-    }
-
-    .service-capabilities ul {
-        grid-template-columns: 1fr;
-    }
-
-    /* Responsive hero text handled in index.css */
-
-    .section-title {
-        font-size: 1.75rem;
+    .product-development-page .section-title {
+        font-size: 2rem;
         margin-bottom: 1.5rem;
     }
 
-    .model-title {
+    .product-development-page .model-title {
         font-size: 1.5rem;
     }
 }
 
-@media (max-width: 576px) {
-    /* Responsive hero text handled in index.css */
-
-    .services-grid-section {
-        padding: 3rem 0;
+@media (max-width: 480px) {
+    .product-development-page .service-number {
+        font-size: 3rem !important;
+        top: 0.5rem !important;
+        right: 1.5rem !important;
     }
 
-    .service-card {
+    .product-development-page .service-card {
         border-radius: 16px;
+        padding: 1.5rem;
     }
 
-    .service-title {
-        font-size: 1.25rem;
+    .product-development-page .service-title {
+        font-size: 1.35rem;
+        padding-right: 2rem;
     }
 
-    .service-desc {
-        font-size: 0.95rem;
-    }
-
-    .service-capabilities li {
-        font-size: 0.9rem;
-    }
-
-    .section-title {
-        font-size: 1.6rem;
+    .product-development-page .section-title {
+        font-size: 1.75rem;
     }
 }

@@ -231,7 +231,9 @@ const StaffAugmentation = () => {
                 </div>
             </section>
 
-            <ArticleCarousel />
+            <section className="section-padding-md">
+                <ArticleCarousel />
+            </section>
             {/* TALENT SELECTION PROCESS */}
             <section className="process-section">
                 <div className="container">
@@ -269,7 +271,7 @@ const StaffAugmentation = () => {
 
 
             {/* BENEFITS */}
-            <section className="benefits-grid-section">
+            <section className="benefits-grid-section mb-5">
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-5 mb-5 mb-lg-0">
@@ -298,7 +300,9 @@ const StaffAugmentation = () => {
                     </div>
                 </div>
             </section>
-            <CustomerStories />
+            <section className="section-padding-md">
+                <CustomerStories />
+            </section>
             {/* ONBOARDING TIMELINE */}
             <section className="timeline-section">
                 <div className="container">

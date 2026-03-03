@@ -163,7 +163,7 @@ const About = () => {
                 </section>
 
                 {/* CORE VALUES - Grid */}
-                <section className="section-padding bg-white">
+                <section className="pt-2 bg-white">
                     <div className="container">
                         <div className="text-center mb-5">
                             <h2 className="section-title">Our Core Values</h2>
@@ -245,9 +245,15 @@ const About = () => {
                         </div>
                     </div>
                 </section>
-                <TechStack />
+                <section className="section-padding-md">
+                    <TechStack />
+                </section>
+                {/* <section className="section-padding-md"> */}
                 <ArticleCarousel />
+                {/* </section> */}
+                {/* <section className="section-padding-md"> */}
                 <CustomerStories />
+                {/* </section> */}
                 {/* LOCATION SECTION */}
                 <section className="location-section-styled">
                     <div className="container">
@@ -294,13 +300,15 @@ const About = () => {
                 </section>
 
                 {/* Final CTA */}
-                <div className="container">
-                    <CTA
-                        title="Let’s Build the Future Together"
-                        text="At Codeifyy, we don’t just develop software; we engineer intelligent systems that enable sustainable digital growth."
-                        btnText="Talk to Our Experts"
-                    />
-                </div>
+                <section className='final-cta-section'>
+                    <div className="container">
+                        <CTA
+                            title="Let’s Build the Future Together"
+                            text="At Codeifyy, we don’t just develop software; we engineer intelligent systems that enable sustainable digital growth."
+                            btnText="Talk to Our Experts"
+                        />
+                    </div>
+                </section>
             </main>
             <Footer />
         </div>
