@@ -420,13 +420,15 @@
 }
 
 .expertise-number {
-    font-size: 3rem;
-    font-weight: 800;
-    color: #f1f5f9;
     position: absolute;
-    top: 1rem;
-    right: 2rem;
+    top: 0.5rem;
+    right: 1.5rem;
+    font-size: 4.5rem;
+    font-weight: 900;
+    color: var(--codeifyy-green);
+    opacity: 0.15;
     line-height: 1;
+    z-index: 0;
 }
 
 .expertise-col-card:hover {
@@ -606,5 +608,11 @@
     .location-flex-container {
         flex-direction: column;
         text-align: left;
+    }
+
+    .expertise-number {
+        font-size: 3rem;
+        top: 0.5rem;
+        right: 1.5rem;
     }
 }

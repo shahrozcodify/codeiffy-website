@@ -234,11 +234,11 @@ const ProductDevelopment = () => {
                                 <h2 className="section-title text-start">Why Codeifyy For Product Development?</h2>
                                 <p className="lead mb-4">We build digital products designed not just to launch — but to lead.</p>
                                 <ul className="list-unstyled" style={{ fontSize: '1.1rem' }}>
-                                    <li className="mb-3"><FaCheckCircle className="text-success me-2" /> Business-aligned product strategy</li>
-                                    <li className="mb-3"><FaCheckCircle className="text-success me-2" /> Agile engineering excellence</li>
-                                    <li className="mb-3"><FaCheckCircle className="text-success me-2" /> Scalable architecture design</li>
-                                    <li className="mb-3"><FaCheckCircle className="text-success me-2" /> Security-first mindset</li>
-                                    <li className="mb-3"><FaCheckCircle className="text-success me-2" /> Long-term product partnership</li>
+                                    <li className="mb-3"><FaCheckCircle className="me-2" style={{ color: 'var(--codeifyy-green)' }} /> Business-aligned product strategy</li>
+                                    <li className="mb-3"><FaCheckCircle className="me-2" style={{ color: 'var(--codeifyy-green)' }} /> Agile engineering excellence</li>
+                                    <li className="mb-3"><FaCheckCircle className="me-2" style={{ color: 'var(--codeifyy-green)' }} /> Scalable architecture design</li>
+                                    <li className="mb-3"><FaCheckCircle className="me-2" style={{ color: 'var(--codeifyy-green)' }} /> Security-first mindset</li>
+                                    <li className="mb-3"><FaCheckCircle className="me-2" style={{ color: 'var(--codeifyy-green)' }} /> Long-term product partnership</li>
                                 </ul>
                             </div>
                             <div className="col-lg-6">
@@ -283,16 +283,24 @@ const ProductDevelopment = () => {
                 </section>
 
                 {/* INDUSTRY EXPERTISE */}
-                <Industries />
+                <section className="section-padding-md">
+                    <Industries />
+                </section>
 
                 {/* CASE STUDIES */}
-                <CustomerStories />
+                <section className="section-padding-md">
+                    <CustomerStories />
+                </section>
 
                 {/* TECH STACK */}
-                <TechStack />
+                <section className="section-padding-md">
+                    <TechStack />
+                </section>
 
                 {/* TESTIMONIALS */}
-                <ArticleCarousel />
+                <section className="section-padding-md">
+                    <ArticleCarousel />
+                </section>
 
                 {/* DELIVERY APPROACH */}
                 <ProductDeliveryApproach />

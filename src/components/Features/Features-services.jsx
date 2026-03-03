@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import { FaArrowRight } from 'react-icons/fa';
 
 const Features = () => {
     const [activeTab, setActiveTab] = useState(0);
+    const tabsContainerRef = useRef(null);
 
     const services = [
         {
@@ -36,8 +38,27 @@ const Features = () => {
         }
     ];
 
+    const handleNextTab = () => {
+        if (activeTab < services.length - 1) {
+            handleManualClick(activeTab + 1);
+        }
+    };
+
+    const handlePrevTab = () => {
+        if (activeTab > 0) {
+            handleManualClick(activeTab - 1);
+        }
+    };
+
     const handleManualClick = (index) => {
         setActiveTab(index);
+        // On mobile, scroll the clicked tab into view
+        if (window.innerWidth <= 992 && tabsContainerRef.current) {
+            const tabs = tabsContainerRef.current.querySelectorAll('.service-tab-btn');
+            if (tabs[index]) {
+                tabs[index].scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+            }
+        }
     };
 
     return (
@@ -48,20 +69,42 @@ const Features = () => {
                 </div>
 
                 <div className="services-tabs-layout">
-                    {/* Left Sidebar - Tabs */}
-                    <div className="services-sidebar">
-                        {services.map((service, index) => (
+                    {/* Sidebar Tabs Area with Navigation Arrows */}
+                    <div className="services-tabs-wrapper">
+                        {activeTab > 0 && (
                             <button
-                                key={index}
-                                className={`service-tab-btn ${activeTab === index ? 'active' : ''}`}
-                                onClick={() => handleManualClick(index)}
+                                className="nav-arrow-btn prev"
+                                onClick={handlePrevTab}
+                                aria-label="Previous Service"
                             >
-                                <span className="tab-label">{service.category}</span>
-                                {activeTab === index && (
-                                    <div className="tab-indicator-green"></div>
-                                )}
+                                <FaArrowRight />
                             </button>
-                        ))}
+                        )}
+
+                        <div className="services-sidebar" ref={tabsContainerRef}>
+                            {services.map((service, index) => (
+                                <button
+                                    key={index}
+                                    className={`service-tab-btn ${activeTab === index ? 'active' : ''}`}
+                                    onClick={() => handleManualClick(index)}
+                                >
+                                    <span className="tab-label">{service.category}</span>
+                                    {activeTab === index && (
+                                        <div className="tab-indicator-green"></div>
+                                    )}
+                                </button>
+                            ))}
+                        </div>
+
+                        {activeTab < services.length - 1 && (
+                            <button
+                                className="nav-arrow-btn next"
+                                onClick={handleNextTab}
+                                aria-label="Next Service"
+                            >
+                                <FaArrowRight />
+                            </button>
+                        )}
                     </div>
 
                     {/* Right Content - Details */}

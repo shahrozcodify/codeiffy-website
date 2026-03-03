@@ -343,20 +343,26 @@ const Industries = () => {
             </section >
 
             {/* CASE STUDIES */}
-            < CustomerStories />
+            <section className="section-padding-md">
+                < CustomerStories />
+            </section>
 
             {/* TESTIMONIALS */}
-            < ArticleCarousel />
+            <section className="industry-testimonial-section">
+                < ArticleCarousel />
+            </section>
 
             {/* FINAL CTA */}
-            <div className="container mt-5">
-                <CTA
-                    title="Let’s Build a Solution for Your Industry"
-                    text="Whether you operate in a regulated sector or a fast-scaling digital environment, we deliver technology aligned with your industry challenges."
-                    btnText="Discuss Your Industry Needs"
-                    link="/contact"
-                />
-            </div>
+            <section className="final-cta-section">
+                <div className="container">
+                    <CTA
+                        title="Let’s Build a Solution for Your Industry"
+                        text="Whether you operate in a regulated sector or a fast-scaling digital environment, we deliver technology aligned with your industry challenges."
+                        btnText="Discuss Your Industry Needs"
+                        link="/contact"
+                    />
+                </div>
+            </section>
 
             <Footer />
         </div >

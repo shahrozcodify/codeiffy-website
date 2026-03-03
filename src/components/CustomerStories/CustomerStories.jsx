@@ -50,9 +50,9 @@ const CustomerStories = () => {
                 </div>
 
                 <div className="center-btn-wrapper animate-up" style={{ marginTop: '4rem' }}>
-                    <button onClick={() => navigate('/casestudy')} className="btn btn-codeifyy-primary">
+                    <a href="/casestudy" className="btn btn-codeifyy-primary">
                         View All Case Studies
-                    </button>
+                    </a>
                 </div>
             </div>
         </section>

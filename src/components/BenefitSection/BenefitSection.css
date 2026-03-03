@@ -35,7 +35,7 @@
     color: #475569;
     font-weight: 400;
     max-width: 650px;
-    margin-bottom: 1.5rem;
+    margin-bottom: 0.6rem;
 }
 
 .model-features {
@@ -44,7 +44,7 @@
     margin: 0;
     display: flex;
     flex-direction: column;
-    gap: 1.25rem;
+    gap: 0.6rem;
 }
 
 .model-features li {
@@ -55,7 +55,7 @@
     font-weight: 500;
     font-size: 1.1rem;
     text-align: left;
-    margin-bottom: 0.25rem;
+    margin-bottom: 0.1rem;
 }
 
 .model-features li svg {
@@ -81,8 +81,16 @@
 }
 
 .benefit-cta-wrapper {
-    margin-top: 1rem;
-    /* Tightened space under features list on desktop */
+    margin-top: 0.5rem;
+}
+
+/* Desktop: show inline button, hide mobile button */
+.benefit-cta-mobile {
+    display: none;
+}
+
+.benefit-cta-desktop {
+    display: block;
 }
 
 .benefit-cards-grid {
@@ -200,7 +208,7 @@
 
 @media (max-width: 1200px) {
     .stats-grid-wrapper {
-        gap: 3rem;
+        gap: 0rem;
     }
 
     .benefit-main-heading {
@@ -230,13 +238,17 @@
         margin: 0 auto;
     }
 
-    .benefit-cta-wrapper {
+    /* Mobile: hide inline button, show the one after cards */
+    .benefit-cta-desktop {
+        display: none;
+    }
+
+    .benefit-cta-mobile {
         order: 3;
-        margin-top: 2rem;
-        /* Adequate space after cards on mobile */
-        width: 100%;
         display: flex;
         justify-content: center;
+        margin-top: 1.5rem;
+        width: 100%;
     }
 
     .stats-bottom-row {
@@ -263,7 +275,8 @@
 
 @media (max-width: 576px) {
     .benefit-section {
-        padding: 0rem 0;
+        padding: 3rem 0;
+        /* Increased to provide more breathing room */
     }
 
     .stats-bottom-row {
@@ -272,11 +285,6 @@
         padding: 2rem 1.5rem;
         text-align: center;
         margin-top: 3.5rem !important;
-    }
-
-    .services-section-tabs {
-        padding: 0;
-        background: #fff;
     }
 
     .benefit-cards-grid {
@@ -307,13 +315,13 @@
 
     .benefit-desc {
         font-size: 1rem;
-        margin-bottom: 1.5rem;
+        margin-bottom: 0.6rem;
         text-align: left;
     }
 
     .model-features {
-        gap: 0.85rem;
-        margin-bottom: 1.5rem;
+        gap: 0.6rem;
+        margin-bottom: 1rem;
     }
 
     .model-features li {

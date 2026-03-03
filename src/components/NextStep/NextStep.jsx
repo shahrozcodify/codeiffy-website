@@ -42,46 +42,18 @@ const NextStep = () => {
         "Performance optimization"
     ];
 
-    // Scroll Logic
-    useEffect(() => {
-        const handleScroll = () => {
-            if (!scrollSectionRef.current) return;
+    // Phase Navigation Logic
+    const handleNextPhase = () => {
+        if (activeStep < steps.length - 1) {
+            handleStepClick(activeStep + 1);
+        }
+    };
 
-            // Only run logic on desktop/large screens where sticky is active
-            if (window.innerWidth <= 768) return;
-
-            const rect = scrollSectionRef.current.getBoundingClientRect();
-            const sectionTop = rect.top;
-            const sectionHeight = rect.height;
-            const windowHeight = window.innerHeight;
-
-            // Sticky Height is 300vh.
-            // Effective scrollable distance = sectionHeight - windowHeight
-            const scrollableDistance = sectionHeight - windowHeight;
-            const scrolled = -sectionTop;
-
-            if (scrolled < 0) {
-                setActiveStep(0); // Before section
-                return;
-            }
-            if (scrolled > scrollableDistance) {
-                setActiveStep(steps.length - 1); // After section
-                return;
-            }
-
-            const progress = scrolled / scrollableDistance;
-            const stepIndex = Math.min(
-                Math.max(Math.floor(progress * steps.length), 0),
-                steps.length - 1
-            );
-
-            setActiveStep(stepIndex);
-        };
-
-        window.addEventListener('scroll', handleScroll);
-        handleScroll();
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, [steps.length]);
+    const handlePrevPhase = () => {
+        if (activeStep > 0) {
+            handleStepClick(activeStep - 1);
+        }
+    };
 
     const handleStepClick = (index) => {
         setActiveStep(index);
@@ -96,41 +68,61 @@ const NextStep = () => {
 
     return (
         <>
-            {/* STICKY SCROLL SECTION */}
+            {/* METHODOLOGY SECTION */}
             <section
                 className="delivery-methodology-section"
-                ref={scrollSectionRef}
-                style={{ height: '140vh' }}
             >
-                <div className="methodology-sticky-wrapper">
+                <div className="methodology-wrapper">
                     <div className="container">
                         <h2 className="section-heading-centered animate-up" style={{ marginBottom: '2rem' }}>
                             Delivery Methodology
                         </h2>
 
-                        {/* Steps Tabs */}
-                        <div
-                            className="methodology-tabs-container animate-up delay-1"
-                            ref={tabsContainerRef}
-                        >
-                            {steps.map((step, index) => (
-                                <React.Fragment key={index}>
-                                    <div
-                                        className={`methodology-step-tab ${activeStep === index ? 'active' : ''}`}
-                                        onClick={() => handleStepClick(index)}
-                                    >
-                                        <div className="step-circle">
-                                            <span className="methodology-number">{index + 1}</span>
+                        {/* Consolidated Steps Tabs with Navigation Arrows */}
+                        <div className="methodology-tabs-wrapper animate-up delay-1">
+                            {activeStep > 0 && (
+                                <button
+                                    className="nav-arrow-btn prev"
+                                    onClick={handlePrevPhase}
+                                    aria-label="Previous Step"
+                                >
+                                    <FaArrowRight />
+                                </button>
+                            )}
+
+                            <div
+                                className="methodology-tabs-container"
+                                ref={tabsContainerRef}
+                            >
+                                {steps.map((step, index) => (
+                                    <React.Fragment key={index}>
+                                        <div
+                                            className={`methodology-step-tab ${activeStep === index ? 'active' : ''}`}
+                                            onClick={() => handleStepClick(index)}
+                                        >
+                                            <div className="step-circle">
+                                                <span className="methodology-number">{index + 1}</span>
+                                            </div>
+                                            <span className="step-label">{step.title}</span>
                                         </div>
-                                        <span className="step-label">{step.title}</span>
-                                    </div>
-                                    {index < steps.length - 1 && (
-                                        <div className="flow-arrow">
-                                            <FaArrowRight />
-                                        </div>
-                                    )}
-                                </React.Fragment>
-                            ))}
+                                        {index < steps.length - 1 && (
+                                            <div className="flow-arrow">
+                                                <FaArrowRight />
+                                            </div>
+                                        )}
+                                    </React.Fragment>
+                                ))}
+                            </div>
+
+                            {activeStep < steps.length - 1 && (
+                                <button
+                                    className="nav-arrow-btn next"
+                                    onClick={handleNextPhase}
+                                    aria-label="Next Step"
+                                >
+                                    <FaArrowRight />
+                                </button>
+                            )}
                         </div>
 
                         {/* Content Area */}
@@ -143,6 +135,27 @@ const NextStep = () => {
                                 <p className="content-description">
                                     {steps[activeStep].description}
                                 </p>
+
+                                <div className="desktop-only-actions">
+                                    {activeStep > 0 && (
+                                        <button
+                                            className="phase-btn prev-btn"
+                                            onClick={handlePrevPhase}
+                                        >
+                                            <FaArrowRight className="btn-icon rev" /> Previous Phase
+                                        </button>
+                                    )}
+
+                                    {activeStep < steps.length - 1 && (
+                                        <button
+                                            className="phase-btn next-btn"
+                                            onClick={handleNextPhase}
+                                        >
+                                            Next Phase <FaArrowRight className="btn-icon" />
+                                        </button>
+                                    )}
+                                </div>
+
                                 <div className="active-indicator"></div>
                             </div>
                         </div>

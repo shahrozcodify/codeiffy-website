@@ -35,7 +35,7 @@ const ProductsAndScale = () => {
         <section className="engagement-models-section">
             <div className="container">
                 <div className="engagement-models-header">
-                    <h2 className="engagement-models-title animate-up">
+                    <h2 className="engagement-models-title">
                         Our Engagement Models
                     </h2>
                     <p className="engagement-models-description">
@@ -44,7 +44,7 @@ const ProductsAndScale = () => {
 
                 </div>
 
-                <div className="models-grid animate-up delay-2">
+                <div className="models-grid">
                     {engagementModels.map((model) => (
                         <div key={model.id} className="model-card">
                             <div className="model-icon">
@@ -56,7 +56,7 @@ const ProductsAndScale = () => {
                     ))}
 
                 </div>
-                <div className="section-cta-wrapper engagement-cta animate-up delay-1">
+                <div className="section-cta-wrapper engagement-cta">
                     <a href="/contact" className="btn btn-codeifyy-primary">
                         Request a Proposal
                     </a>

@@ -20,6 +20,7 @@
     padding: 2rem;
 }
 
+
 /* Code Window Styles */
 .code-window {
     background: #1e1e1e;
@@ -178,12 +179,12 @@
 
 .industry-number {
     position: absolute;
-    top: 1rem;
-    right: 2rem;
-    font-size: 3rem;
-    font-weight: 800;
-    color: #f1f5f9;
-    /* Subtle gray/white for watermark */
+    top: 0.5rem;
+    right: 1.5rem;
+    font-size: 4.5rem;
+    font-weight: 900;
+    color: var(--codeifyy-green);
+    opacity: 0.15;
     line-height: 1;
     z-index: 0;
 }
@@ -303,10 +304,11 @@
 
 /* Approach Section */
 .industry-approach-section {
-    padding: 6rem 0;
+    padding: 4rem 0;
     background: #0f172a;
     color: #fff;
     text-align: left;
+    margin-bottom: 3rem;
 }
 
 .industry-approach-grid {
@@ -399,7 +401,8 @@
     }
 
     .industry-number {
-        font-size: 2.5rem;
+        font-size: 3rem;
+        top: 0.5rem;
         right: 1.5rem;
     }
 }
@@ -428,4 +431,9 @@
     .industry-grid-section {
         padding: 2.5rem 0;
     }
+}
+
+
+.industry-testimonial-section {
+    margin-bottom: -2rem !important;
 }

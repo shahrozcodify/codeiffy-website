@@ -139,7 +139,7 @@ const Services = () => {
             />
 
             {/* CORE SERVICES SECTION */}
-            <section className="core-services-section section-padding">
+            <section className="core-services-section">
                 <div className="container">
                     <div className="text-center mb-5">
                         <h2 className="section-title">Our Core Services</h2>
@@ -221,7 +221,7 @@ const Services = () => {
             </section>
 
             {/* BUSINESS SOLUTIONS SECTION */}
-            <section className="business-solutions-section section-padding">
+            <section className="business-solutions-section ">
                 <div className="container">
                     <div className="text-center mb-5">
                         <h2 className="section-title">Business Solutions We Provide</h2>
@@ -298,10 +298,14 @@ const Services = () => {
             </section>
 
             {/* INDUSTRIES */}
-            <Industries />
+            <section className="section-padding-md">
+                <Industries />
+            </section>
 
             {/* TECH STACK */}
-            <TechStack />
+            <section className="section-padding-md">
+                <TechStack />
+            </section>
 
             {/* OUR APPROACH */}
             <section className="services-approach-section section-padding">
@@ -330,13 +334,17 @@ const Services = () => {
             </section>
 
             {/* TESTIMONIALS */}
-            <ArticleCarousel />
+            <section className="section-padding-md">
+                <ArticleCarousel />
+            </section>
 
             {/* CASE STUDIES */}
-            <CustomerStories />
+            <section className="section-padding-md">
+                <CustomerStories />
+            </section>
 
             {/* FINAL CTA */}
-            <section className="final-cta-section mt-5">
+            <section className="final-cta-section">
                 <div className="container">
                     <CTA
                         title="Ready to Build Something Scalable?"

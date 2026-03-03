@@ -309,14 +309,20 @@ const AI = () => {
                 </div>
             </section>
             {/* CASE STUDIES */}
-            <CustomerStories />
+            <section className="section-padding-md" style={{ marginBottom: "-4rem" }}>
+                <CustomerStories />
+            </section>
 
             {/* INDUSTRIES SECTION */}
-            <Industries />
+            <section className="section-padding-md">
+                <Industries />
+            </section>
 
 
             {/* TESTIMONIALS */}
-            <ArticleCarousel />
+            <section className="section-padding-md">
+                <ArticleCarousel />
+            </section>
 
             {/* AI IMPLEMENTATION PROCESS */}
             <section className="approach-section">
@@ -341,8 +347,6 @@ const AI = () => {
                     </div>
                 </div>
             </section>
-
-            {/* FINAL CTA */}
             {/* FINAL CTA */}
             <section className="final-cta-section mt-5" >
                 <div className="container">

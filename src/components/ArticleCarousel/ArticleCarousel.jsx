@@ -1,133 +1,5 @@
 import React from 'react';
 
-const CarouselRow = ({ title, testimonials }) => {
-    const scrollRef = React.useRef(null);
-
-    const [currentIndex, setCurrentIndex] = React.useState(0);
-    const [scrollProgress, setScrollProgress] = React.useState(0);
-
-    const handleNext = () => {
-        if (currentIndex < testimonials.length - 1) {
-            setCurrentIndex(currentIndex + 1);
-        }
-    };
-
-    const handlePrev = () => {
-        if (currentIndex > 0) {
-            setCurrentIndex(currentIndex - 1);
-        }
-    };
-
-    const handleScroll = () => {
-        const element = scrollRef.current;
-        if (element) {
-            const maxScroll = element.scrollWidth - element.clientWidth;
-            if (maxScroll > 0) {
-                const percentage = (element.scrollLeft / maxScroll) * 100;
-                setScrollProgress(percentage);
-            }
-        }
-    };
-
-    React.useEffect(() => {
-        const element = scrollRef.current;
-        if (element) {
-            element.addEventListener('scroll', handleScroll);
-            return () => element.removeEventListener('scroll', handleScroll);
-        }
-    }, []);
-
-    React.useEffect(() => {
-        const timer = setTimeout(() => {
-            const element = scrollRef.current;
-            if (element && element.children[currentIndex]) {
-                const targetCard = element.children[currentIndex];
-                const targetPos = targetCard.offsetLeft - (element.clientWidth / 2) + (targetCard.clientWidth / 2);
-
-                element.scrollTo({
-                    left: targetPos,
-                    behavior: 'smooth'
-                });
-            }
-        }, 50); // Small delay to ensure layout is updated
-        return () => clearTimeout(timer);
-    }, [currentIndex, testimonials.length]);
-
-
-
-
-    return (
-        <div className="carousel-outer-container">
-            <div className="article-row">
-                <div className="article-row-text">
-                    <h3>{title}</h3>
-                    <p className="article-row-desc">
-                        Discover how we've helped leading global brands and organizations achieve their digital transformation goals.
-                    </p>
-                </div>
-                <div className="carousel-wrapper-main" style={{ flex: 1, minWidth: 0 }}>
-                    <div className="carousel-container">
-                        <div
-                            className="article-carousel-wrapper"
-                            ref={scrollRef}
-                        >
-                            {testimonials.map((testimonial, index) => (
-                                <div className="article-card testimonial-card" key={index}>
-                                    <div className="article-card-accent"></div>
-                                    <div className="testimonial-logo-wrapper">
-                                        <img
-                                            src={testimonial.logo}
-                                            alt={`${testimonial.client} Logo`}
-                                            className="testimonial-logo"
-                                        />
-                                    </div>
-                                    <p className="article-card-desc testimonial-text">"{testimonial.text}"</p>
-                                    <div className="testimonial-client-name">{testimonial.client}</div>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-
-                    {/* Progress Bar */}
-                    <div className="carousel-scroll-track">
-                        <div
-                            className="carousel-scroll-bar"
-                            style={{
-                                width: `${100 / testimonials.length}%`,
-                                transform: `translateX(${scrollProgress * (testimonials.length - 1)}%)`,
-                                transition: 'transform 0.1s ease-out'
-                            }}
-
-                        ></div>
-                    </div>
-
-                </div>
-            </div>
-
-            <div className="carousel-controls">
-                <button
-                    className="carousel-prev-btn"
-                    aria-label="Previous"
-                    onClick={handlePrev}
-                >
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
-                        <polyline points="15 18 9 12 15 6"></polyline>
-                    </svg>
-                </button>
-                <button
-                    className="carousel-next-btn"
-                    aria-label="Next"
-                    onClick={handleNext}
-                >
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
-                        <polyline points="9 18 15 12 9 6"></polyline>
-                    </svg>
-                </button>
-            </div>
-        </div>
-    );
-};
-
 const ArticleCarousel = () => {
     const testimonials = [
         {
@@ -152,17 +24,130 @@ const ArticleCarousel = () => {
         }
     ];
 
+    const [currentIndex, setCurrentIndex] = React.useState(0);
+    const trackRef = React.useRef(null);
+    const [cardWidth, setCardWidth] = React.useState(0);
+    const [gap, setGap] = React.useState(24); // 1.5rem default
+
+    // Measure card width after mount and on resize
+    React.useEffect(() => {
+        const measure = () => {
+            const track = trackRef.current;
+            if (track && track.children[0]) {
+                const card = track.children[0];
+                const cardRect = card.getBoundingClientRect();
+                setCardWidth(cardRect.width);
+                // gap is 1.5rem = 24px by default; read computed style
+                const computed = getComputedStyle(track);
+                const gapVal = parseFloat(computed.gap || computed.columnGap || '24');
+                setGap(isNaN(gapVal) ? 24 : gapVal);
+            }
+        };
+        measure();
+        window.addEventListener('resize', measure);
+        return () => window.removeEventListener('resize', measure);
+    }, []);
+
+    const handleNext = () => {
+        if (currentIndex < testimonials.length - 1) {
+            setCurrentIndex(prev => prev + 1);
+        }
+    };
+
+    const handlePrev = () => {
+        if (currentIndex > 0) {
+            setCurrentIndex(prev => prev - 1);
+        }
+    };
+
+    const offset = currentIndex * (cardWidth + gap);
+
     return (
-        <section className="article-carousel-section section-padding">
+        <section className="article-carousel-section">
             <div className="container">
                 <h2 className="article-main-heading">
                     What our clients say about us.
                 </h2>
 
-                <CarouselRow
-                    title="Testimonials"
-                    testimonials={testimonials}
-                />
+                <div className="carousel-outer-container">
+                    {/* Left label */}
+                    <div className="article-row">
+                        <div className="article-row-text">
+                            <h3>Testimonials</h3>
+                            <p className="article-row-desc">
+                                Discover how we've helped leading global brands and organizations achieve their digital transformation goals.
+                            </p>
+                        </div>
+
+                        {/* Cards track */}
+                        <div className="carousel-wrapper-main" style={{ flex: 1, minWidth: 0, overflow: 'hidden' }}>
+                            <div
+                                className="article-carousel-track"
+                                ref={trackRef}
+                                style={{
+                                    transform: `translateX(-${offset}px)`,
+                                    transition: 'transform 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+                                    display: 'flex',
+                                    gap: '1.5rem',
+                                    willChange: 'transform',
+                                }}
+                            >
+                                {testimonials.map((testimonial, index) => (
+                                    <div className="article-card testimonial-card" key={index}>
+                                        <div className="article-card-accent"></div>
+                                        <div className="testimonial-logo-wrapper">
+                                            <img
+                                                src={testimonial.logo}
+                                                alt={`${testimonial.client} Logo`}
+                                                className="testimonial-logo"
+                                            />
+                                        </div>
+                                        <p className="article-card-desc testimonial-text">"{testimonial.text}"</p>
+                                        <div className="testimonial-client-name">{testimonial.client}</div>
+                                    </div>
+                                ))}
+                            </div>
+
+                            {/* Progress Bar (desktop only) */}
+                            <div className="carousel-scroll-track">
+                                <div
+                                    className="carousel-scroll-bar"
+                                    style={{
+                                        width: `${100 / testimonials.length}%`,
+                                        transform: `translateX(${currentIndex * 100}%)`,
+                                        transition: 'transform 0.4s cubic-bezier(0.4, 0, 0.2, 1)'
+                                    }}
+                                />
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Navigation Buttons */}
+                    <div className="carousel-controls">
+                        <button
+                            className="carousel-prev-btn"
+                            aria-label="Previous"
+                            onClick={handlePrev}
+                            disabled={currentIndex === 0}
+                            style={{ opacity: currentIndex === 0 ? 0.4 : 1 }}
+                        >
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                                <polyline points="15 18 9 12 15 6"></polyline>
+                            </svg>
+                        </button>
+                        <button
+                            className="carousel-next-btn"
+                            aria-label="Next"
+                            onClick={handleNext}
+                            disabled={currentIndex === testimonials.length - 1}
+                            style={{ opacity: currentIndex === testimonials.length - 1 ? 0.4 : 1 }}
+                        >
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
             </div>
         </section>
     );

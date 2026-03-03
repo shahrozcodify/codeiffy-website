@@ -106,9 +106,19 @@
     background: #f59e0b;
 }
 
+/* Reduced spacing for reusable BenefitSection bullets */
+.services-page .model-features {
+    gap: 0.5rem !important;
+}
+
+.services-page .model-features li {
+    font-size: 1.05rem;
+    margin-bottom: 0;
+}
+
 /* Core Services Section */
 .core-services-section {
-    background: #fff;
+    /* background: #fff; */
 }
 
 .service-overview-card {
@@ -125,12 +135,13 @@
 }
 
 .service-number {
+    color: var(--codeifyy-green) !important;
+    opacity: 0.15;
+    font-size: 4.5rem !important;
+    font-weight: 900 !important;
     position: absolute;
-    top: 1.5rem;
-    right: 2rem;
-    font-size: 3.5rem;
-    font-weight: 800;
-    color: #f1f5f9;
+    top: 0.5rem !important;
+    right: 1.5rem !important;
     line-height: 1;
     z-index: 0;
 }
@@ -224,7 +235,9 @@
 
 /* Business Solutions Section */
 .business-solutions-section {
-    background: #f8fafc;
+    /* background: #f8fafc; */
+    padding-top: 6rem;
+    padding-bottom: 2rem;
 }
 
 .solution-card-grid {
@@ -246,12 +259,15 @@
 }
 
 .solution-number {
+    color: var(--codeifyy-green) !important;
+    opacity: 0.15;
+    font-size: 4.5rem !important;
+    font-weight: 900 !important;
     position: absolute;
-    top: 1.5rem;
-    right: 2rem;
-    font-size: 2.5rem;
-    font-weight: 800;
-    color: #f1f5f9;
+    top: 0.5rem !important;
+    right: 1.5rem !important;
+    line-height: 1;
+    z-index: 0;
 }
 
 .solution-card:hover {

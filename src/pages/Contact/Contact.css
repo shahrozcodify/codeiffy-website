@@ -166,6 +166,11 @@
     border-radius: 6px !important;
 }
 
+/* Hide the magnifying glass emoji icon in the search bar */
+.phone-input-dropdown .search-emoji {
+    display: none !important;
+}
+
 .form-group {
     display: flex;
     flex-direction: column;
