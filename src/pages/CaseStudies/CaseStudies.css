@@ -422,7 +422,7 @@
 
 @media (max-width: 768px) {
     .case-study-banner {
-        padding: 80px 0 40px;
+        padding: 100px 0 40px;
         text-align: left;
     }
 
@@ -494,7 +494,7 @@
         backdrop-filter: blur(10px);
         padding: 1rem 1.5rem;
         box-shadow: 0 -10px 25px rgba(0, 0, 0, 0.1);
-        z-index: 1000;
+        z-index: 900;
         justify-content: space-between;
         align-items: center;
         border-top: 1px solid rgba(0, 188, 84, 0.1);
@@ -553,7 +553,7 @@
 
 @media (max-width: 480px) {
     .case-study-banner {
-        padding: 70px 0 30px;
+        padding: 90px 0 30px;
     }
 
     .case-details-meta-item {
