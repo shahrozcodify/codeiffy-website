@@ -1,10 +1,13 @@
-import React from 'react';
-import Header from '../../components/Header/Header';
-import Footer from '../../components/Footer/Footer';
+import SEO from '../../components/SEO/SEO';
 
 const PrivacyPolicy = () => {
     return (
         <div className="legal-page">
+            <SEO
+                title="Privacy Policy | Codeifyy"
+                description="Learn how Codeifyy collects, uses, and protects your personal data in accordance with global privacy standards."
+                canonical="/privacy-policy"
+            />
             <Header />
             <main style={{ padding: '120px 0 80px 0', background: 'var(--background)' }}>
                 <div className="container" style={{ maxWidth: '800px', margin: '0 auto' }}>

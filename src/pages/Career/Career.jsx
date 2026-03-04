@@ -9,6 +9,8 @@ import {
 } from 'react-icons/fa';
 import './Career.css';
 
+import SEO from '../../components/SEO/SEO';
+
 const Career = () => {
     const [isLoading, setIsLoading] = useState(true);
 

@@ -25,9 +25,19 @@ const Popup = ({ message, type, onClose }) => {
     );
 };
 
+const API_URL = import.meta?.env?.VITE_API_URL || '/api';
+
+import SEO from '../../components/SEO/SEO';
+
 const Contact = () => {
+    const [formData, setFormData] = useState({ firstName: '', phone: '', email: '', message: '' });
+    const [isSubmitting, setIsSubmitting] = useState(false);
     const [popup, setPopup] = useState({ show: false, message: '', type: 'success' });
     const { executeRecaptcha } = useGoogleReCaptcha();
+
+    const handleChange = (e) => {
+        setFormData({ ...formData, [e.target.name]: e.target.value });
+    };
 
     const closePopup = () => {
         setPopup({ ...popup, show: false });
@@ -41,22 +51,39 @@ const Contact = () => {
             return;
         }
 
-        const token = await executeRecaptcha('contact_form');
+        setIsSubmitting(true);
+        try {
+            const token = await executeRecaptcha('contact_form');
 
-        // Proceed with form submission
-        console.log("Form submitted with v3 token:", token);
+            const res = await fetch(`${API_URL}/contact.php`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ ...formData, captchaToken: token }),
+            });
+            console.log(res);
+            const data = await res.json();
 
-        // Simulate successful submission
-        setPopup({
-            show: true,
-            message: "Thank you! Your message has been sent successfully. We will get back to you soon.",
-            type: 'success'
-        });
-        // Add your real form submission logic here
-    }, [executeRecaptcha]);
+            if (res.ok) {
+                setPopup({ show: true, message: data.message, type: 'success' });
+                setFormData({ firstName: '', phone: '', email: '', message: '' });
+            } else {
+                setPopup({ show: true, message: data.error || 'Something went wrong.', type: 'error' });
+            }
+        } catch (err) {
+            console.error('Contact form error:', err);
+            setPopup({ show: true, message: 'Network error. Please try again later.', type: 'error' });
+        } finally {
+            setIsSubmitting(false);
+        }
+    }, [executeRecaptcha, formData]);
 
     return (
         <div className="contact-page">
+            <SEO
+                title="Contact Codeifyy | Let’s Build Something Powerful"
+                description="Connect with Codeifyy to discuss AI development, software projects, or staff augmentation solutions tailored to your business goals."
+                canonical="/contact"
+            />
             <Header />
 
             {popup.show && (
@@ -164,12 +191,12 @@ const Contact = () => {
                             <form className="contact-form" onSubmit={handleSubmit}>
                                 <div className="form-row">
                                     <div className="form-group">
-                                        <label className="form-label">First Name</label>
-                                        <input type="text" className="form-input" placeholder="John" required />
+                                        <label className="form-label">Name</label>
+                                        <input type="text" name="firstName" className="form-input" placeholder="John" value={formData.firstName} onChange={handleChange} required />
                                     </div>
                                     <div className="form-group">
                                         <label className="form-label">Work Email</label>
-                                        <input type="email" className="form-input" placeholder="john@company.com" required />
+                                        <input type="email" className="form-input" placeholder="john@company.com" name="email" value={formData.email} onChange={handleChange} required />
                                     </div>
                                 </div>
 
@@ -177,6 +204,8 @@ const Contact = () => {
                                     <label className="form-label">Phone Number</label>
                                     <PhoneInput
                                         country={'pk'}
+                                        value={formData.phone}
+                                        onChange={(value) => setFormData((prev) => ({ ...prev, phone: value }))}
                                         enableSearch={true}
                                         searchPlaceholder="Search country..."
                                         inputClass="form-input phone-input-field"
@@ -193,9 +222,17 @@ const Contact = () => {
 
                                 <div className="form-group">
                                     <label className="form-label">How can we help?</label>
-                                    <textarea className="form-textarea" placeholder="Tell us more about your needs..." required></textarea>
+                                    <textarea name="message" className="form-textarea" placeholder="Tell us more about your needs..." value={formData.message} onChange={handleChange} required></textarea>
                                 </div>
-                                <button className="btn-submit">Send Message</button>
+                                {/* <div className="form-group" style={{ marginBottom: '20px' }}>
+                                    <ReCAPTCHA
+                                        sitekey="6Lf03nEsAAAAAG2ka1oA9KIVx-mYL2WkPymjVhd1"
+                                        onChange={handleCaptchaChange}
+                                    />
+                                </div> */}
+                                <button className="btn-submit" disabled={isSubmitting}>
+                                    {isSubmitting ? 'Sending...' : 'Send Message'}
+                                </button>
                                 <p className="recaptcha-attribution">
                                     This site is protected by reCAPTCHA and the Google <br />
                                     <a href="https://policies.google.com/privacy" target="_blank" rel="noreferrer">Privacy Policy</a> and <a href="https://policies.google.com/terms" target="_blank" rel="noreferrer">Terms of Service</a> apply.

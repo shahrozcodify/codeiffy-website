@@ -17,6 +17,8 @@ import CustomerStories from '../../components/CustomerStories/CustomerStories';
 import CTA from '../../components/cta/CTA';
 import PageSkeleton from '../../components/Skeleton/PageSkeleton';
 
+import SEO from '../../components/SEO/SEO';
+
 const SoftwareDevelopment = () => {
     const [isLoading, setIsLoading] = useState(true);
 
@@ -33,6 +35,11 @@ const SoftwareDevelopment = () => {
 
     return (
         <div className="software-dev-page">
+            <SEO
+                title="Software Development Services | Codeifyy"
+                description="Codeifyy delivers scalable, secure, and high-performance software solutions tailored to business needs using modern technologies and clean architecture."
+                canonical="/services/software-development"
+            />
             <Header />
 
             {/* HERO SECTION */}

@@ -6,6 +6,8 @@ import BlogCardSkeleton from '../../components/Skeleton/BlogCardSkeleton';
 import { blogData } from './blogData';
 import './Blogs.css';
 
+import SEO from '../../components/SEO/SEO';
+
 const BlogList = () => {
     const [isLoading, setIsLoading] = useState(true);
 
@@ -19,6 +21,11 @@ const BlogList = () => {
 
     return (
         <div className="blogs-page">
+            <SEO
+                title="Blog | Insights on Tech, AI & Business | Codeifyy"
+                description="Explore our latest articles on software development, artificial intelligence, industry trends, and digital transformation strategies."
+                canonical="/blog"
+            />
             <Header />
 
             {/* Premium Page Banner - USA/UK Market Style */}

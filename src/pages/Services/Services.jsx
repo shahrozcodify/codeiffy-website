@@ -20,6 +20,8 @@ import './Services.css';
 import '../../components/Hero/Hero.css';
 import '../../components/BenefitSection/BenefitSection.css';
 
+import SEO from '../../components/SEO/SEO';
+
 const Services = () => {
     const [isLoading, setIsLoading] = useState(true);
 
@@ -36,6 +38,11 @@ const Services = () => {
 
     return (
         <div className="services-page">
+            <SEO
+                title="Software Development Solutions"
+                description="Explore Codeifyy’s AI, bespoke software, staff augmentation, and industry enterprise solutions designed for performance and impact."
+                canonical="/services"
+            />
             <Header />
 
             {/* HERO SECTION */}

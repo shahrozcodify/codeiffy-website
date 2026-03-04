@@ -16,6 +16,8 @@ import BenefitSection from '../../components/BenefitSection/BenefitSection';
 import CTA from '../../components/cta/CTA';
 import PageSkeleton from '../../components/Skeleton/PageSkeleton';
 
+import SEO from '../../components/SEO/SEO';
+
 const StaffAugmentation = () => {
     const [isLoading, setIsLoading] = useState(true);
 
@@ -32,6 +34,11 @@ const StaffAugmentation = () => {
 
     return (
         <div className="staff-aug-page">
+            <SEO
+                title="IT Staff Augmentation Services | Codeifyy"
+                description="Expand your team with Codeifyy’s dedicated developers, engineers, and AI specialists. Flexible staff augmentation solutions built for speed, scalability, and performance."
+                canonical="/services/staff-augmentation"
+            />
             <Header />
 
             {/* HERO SECTION (Custom for Staff Aug) */}

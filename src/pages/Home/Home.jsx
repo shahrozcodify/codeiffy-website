@@ -17,6 +17,8 @@ import Footer from '../../components/Footer/Footer';
 import CTA from '../../components/cta/CTA';
 import PageSkeleton from '../../components/Skeleton/PageSkeleton';
 
+import SEO from '../../components/SEO/SEO';
+
 const Home = () => {
     const [isLoading, setIsLoading] = useState(true);
 
@@ -33,6 +35,11 @@ const Home = () => {
 
     return (
         <div className="home-page">
+            <SEO
+                title="Codeifyy - Global Software Development Company"
+                description="Global software development company trusted by clients across 15+ countries with a 90% retention rate and certified technology expertise."
+                canonical="/"
+            />
             <Header />
             <Hero />
             {/* About & Why Choose */}

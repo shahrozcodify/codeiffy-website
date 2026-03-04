@@ -16,6 +16,8 @@ import './AI.css';
 import '../../components/Hero/Hero.css';
 import '../../components/BenefitSection/BenefitSection.css';
 
+import SEO from '../../components/SEO/SEO';
+
 const AI = () => {
     const [isLoading, setIsLoading] = useState(true);
 
@@ -32,6 +34,11 @@ const AI = () => {
 
     return (
         <div className="ai-page">
+            <SEO
+                title="AI Development Services | Intelligent Systems | Codeifyy"
+                description="We build AI-powered applications, automation systems, and machine learning solutions that enhance decision-making and operational efficiency."
+                canonical="/services/artificial-intelligence"
+            />
             <Header />
 
             {/* HERO SECTION */}

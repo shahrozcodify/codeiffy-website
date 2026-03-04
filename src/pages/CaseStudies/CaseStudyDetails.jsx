@@ -7,6 +7,8 @@ import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 import { caseStudies } from '../../data/caseStudies';
 import './CaseStudies.css';
 
+import SEO from '../../components/SEO/SEO';
+
 const CaseStudyDetails = () => {
     const { slug } = useParams();
 
@@ -40,6 +42,11 @@ const CaseStudyDetails = () => {
 
     return (
         <div className="case-studies-page">
+            <SEO
+                title={`${study.title} | Case Study | Codeifyy`}
+                description={study.challenge.substring(0, 160) + "..."}
+                canonical={`/casestudy/${study.slug}`}
+            />
             <Header />
 
             <div className="case-details-hero-banner" style={{
