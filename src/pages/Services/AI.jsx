@@ -105,7 +105,7 @@ const AI = () => {
             </section>
 
             <BenefitSection
-                label="Scale Your Team"
+                label=""
                 title={
                     <>
                         AI Expertise. <br />Immediate Impact.
@@ -133,7 +133,6 @@ const AI = () => {
                 <div className="container">
                     <div className="text-center mb-5">
                         <h2 className="section-title">Our AI Capabilities</h2>
-                        <p className="section-subtitle">Comprehensive AI solutions to drive your digital transformation.</p>
                     </div>
 
                     <div className="services-grid">
@@ -142,7 +141,7 @@ const AI = () => {
                             <span className="service-number">01</span>
                             <div className="service-content">
                                 <h3 className="service-title">AI Strategy & Consulting</h3>
-                                <p className="service-desc">Successful AI starts with clarity. We help you identify high-impact opportunities and create a structured implementation roadmap.</p>
+                                <p className="service-detail">Successful AI starts with clarity. We help you identify high-impact opportunities and create a structured implementation roadmap.</p>
 
                                 <div className="service-capabilities mb-4">
                                     <h5>Challenges We Solve</h5>
@@ -150,6 +149,8 @@ const AI = () => {
                                         <li><span style={{ fontSize: '1.2rem', lineHeight: 1, marginRight: '4px' }}>•</span> Unclear AI use cases</li>
                                         <li><span style={{ fontSize: '1.2rem', lineHeight: 1, marginRight: '4px' }}>•</span> Poor data readiness</li>
                                         <li><span style={{ fontSize: '1.2rem', lineHeight: 1, marginRight: '4px' }}>•</span> Uncertain ROI expectations</li>
+                                        <li><span style={{ fontSize: '1.2rem', lineHeight: 1, marginRight: '4px' }}>•</span> Misaligned AI investments</li>
+                                        <li><span style={{ fontSize: '1.2rem', lineHeight: 1, marginRight: '4px' }}>•</span> Technology selection confusion</li>
                                     </ul>
                                 </div>
 
@@ -160,6 +161,8 @@ const AI = () => {
                                         <li><FaCheckCircle /> Business use-case identification</li>
                                         <li><FaCheckCircle /> AI implementation roadmap</li>
                                         <li><FaCheckCircle /> Data strategy planning</li>
+                                        <li><FaCheckCircle /> Architecture & technology advisory</li>
+                                        <li><FaCheckCircle /> ROI & feasibility analysis</li>
                                     </ul>
                                 </div>
                             </div>
@@ -170,7 +173,7 @@ const AI = () => {
                             <span className="service-number">02</span>
                             <div className="service-content">
                                 <h3 className="service-title">Machine Learning Development</h3>
-                                <p className="service-desc">We design and develop custom machine learning models that analyze data, recognize patterns, and generate predictive insights.</p>
+                                <p className="service-detail">We design and develop custom machine learning models that analyze data, recognize patterns, and generate predictive insights.</p>
 
                                 <div className="service-capabilities mb-4">
                                     <h5>Challenges We Solve</h5>
@@ -178,6 +181,8 @@ const AI = () => {
                                         <li><span style={{ fontSize: '1.2rem', lineHeight: 1, marginRight: '4px' }}>•</span> Inaccurate forecasting</li>
                                         <li><span style={{ fontSize: '1.2rem', lineHeight: 1, marginRight: '4px' }}>•</span> Manual data analysis</li>
                                         <li><span style={{ fontSize: '1.2rem', lineHeight: 1, marginRight: '4px' }}>•</span> Fraud detection limitations</li>
+                                        <li><span style={{ fontSize: '1.2rem', lineHeight: 1, marginRight: '4px' }}>•</span> Lack of predictive capabilities</li>
+                                        <li><span style={{ fontSize: '1.2rem', lineHeight: 1, marginRight: '4px' }}>•</span> Data underutilization</li>
                                     </ul>
                                 </div>
 
@@ -187,7 +192,9 @@ const AI = () => {
                                         <li><FaCheckCircle /> Predictive analytics models</li>
                                         <li><FaCheckCircle /> Forecasting systems</li>
                                         <li><FaCheckCircle /> Recommendation engines</li>
-                                        <li><FaCheckCircle /> Classification & clustering</li>
+                                        <li><FaCheckCircle /> Classification & clustering models</li>
+                                        <li><FaCheckCircle /> Fraud detection systems</li>
+                                        <li><FaCheckCircle /> Custom ML algorithm development</li>
                                     </ul>
                                 </div>
                             </div>
@@ -198,24 +205,27 @@ const AI = () => {
                             <span className="service-number">03</span>
                             <div className="service-content">
                                 <h3 className="service-title">Generative AI Integration</h3>
-                                <p className="service-desc">We integrate Large Language Models (LLMs) and Generative AI technologies into your applications and workflows.</p>
+                                <p className="service-detail">We integrate Large Language Models (LLMs) and Generative AI technologies into your applications and workflows to enhance productivity and automation.</p>
 
                                 <div className="service-capabilities mb-4">
                                     <h5>Challenges We Solve</h5>
                                     <ul>
                                         <li><span style={{ fontSize: '1.2rem', lineHeight: 1, marginRight: '4px' }}>•</span> Manual content creation</li>
                                         <li><span style={{ fontSize: '1.2rem', lineHeight: 1, marginRight: '4px' }}>•</span> Inefficient document handling</li>
-                                        <li><span style={{ fontSize: '1.2rem', lineHeight: 1, marginRight: '4px' }}>•</span> Limited knowledge access</li>
+                                        <li><span style={{ fontSize: '1.2rem', lineHeight: 1, marginRight: '4px' }}>•</span> Limited internal knowledge access</li>
+                                        <li><span style={{ fontSize: '1.2rem', lineHeight: 1, marginRight: '4px' }}>•</span> Repetitive communication tasks</li>
                                     </ul>
                                 </div>
 
                                 <div className="service-capabilities">
                                     <h5>What We Deliver</h5>
                                     <ul>
-                                        <li><FaCheckCircle /> LLM integration (OpenAI/Custom)</li>
-                                        <li><FaCheckCircle /> AI copilots for teams</li>
+                                        <li><FaCheckCircle /> LLM integration (OpenAI & custom models)</li>
+                                        <li><FaCheckCircle /> AI copilots for internal teams</li>
                                         <li><FaCheckCircle /> Intelligent document processing</li>
-                                        <li><FaCheckCircle /> Knowledge systems</li>
+                                        <li><FaCheckCircle /> Automated content generation systems</li>
+                                        <li><FaCheckCircle /> AI-powered search & knowledge systems</li>
+                                        <li><FaCheckCircle /> Workflow automation using GenAI</li>
                                     </ul>
                                 </div>
                             </div>
@@ -226,14 +236,15 @@ const AI = () => {
                             <span className="service-number">04</span>
                             <div className="service-content">
                                 <h3 className="service-title">AI Chatbots & Virtual Assistants</h3>
-                                <p className="service-desc">We build AI-powered chatbots and virtual assistants that automate customer support, sales engagement, and internal communication.</p>
+                                <p className="service-detail">We build AI-powered chatbots and virtual assistants that automate customer support, sales engagement, and internal communication.</p>
 
                                 <div className="service-capabilities mb-4">
                                     <h5>Challenges We Solve</h5>
                                     <ul>
                                         <li><span style={{ fontSize: '1.2rem', lineHeight: 1, marginRight: '4px' }}>•</span> High support response times</li>
                                         <li><span style={{ fontSize: '1.2rem', lineHeight: 1, marginRight: '4px' }}>•</span> Repetitive customer queries</li>
-                                        <li><span style={{ fontSize: '1.2rem', lineHeight: 1, marginRight: '4px' }}>•</span> Inconsistent service</li>
+                                        <li><span style={{ fontSize: '1.2rem', lineHeight: 1, marginRight: '4px' }}>•</span> Inconsistent service availability</li>
+                                        <li><span style={{ fontSize: '1.2rem', lineHeight: 1, marginRight: '4px' }}>•</span> Overloaded support teams</li>
                                     </ul>
                                 </div>
 
@@ -241,9 +252,11 @@ const AI = () => {
                                     <h5>What We Deliver</h5>
                                     <ul>
                                         <li><FaCheckCircle /> AI customer support bots</li>
-                                        <li><FaCheckCircle /> Sales assistants</li>
+                                        <li><FaCheckCircle /> Sales & lead qualification assistants</li>
                                         <li><FaCheckCircle /> Internal knowledge assistants</li>
-                                        <li><FaCheckCircle /> NLP conversational systems</li>
+                                        <li><FaCheckCircle /> Web, mobile & messaging integrations</li>
+                                        <li><FaCheckCircle /> NLP-driven conversational systems</li>
+                                        <li><FaCheckCircle /> Multi-language capabilities</li>
                                     </ul>
                                 </div>
                             </div>
@@ -254,7 +267,7 @@ const AI = () => {
                             <span className="service-number">05</span>
                             <div className="service-content">
                                 <h3 className="service-title">Natural Language Processing (NLP)</h3>
-                                <p className="service-desc">We implement NLP systems that extract insights from unstructured text and speech data.</p>
+                                <p className="service-detail">We implement NLP systems that extract insights from unstructured text and speech data.</p>
 
                                 <div className="service-capabilities mb-4">
                                     <h5>Challenges We Solve</h5>
@@ -262,6 +275,7 @@ const AI = () => {
                                         <li><span style={{ fontSize: '1.2rem', lineHeight: 1, marginRight: '4px' }}>•</span> Large volumes of unstructured text</li>
                                         <li><span style={{ fontSize: '1.2rem', lineHeight: 1, marginRight: '4px' }}>•</span> Limited sentiment visibility</li>
                                         <li><span style={{ fontSize: '1.2rem', lineHeight: 1, marginRight: '4px' }}>•</span> Manual content analysis</li>
+                                        <li><span style={{ fontSize: '1.2rem', lineHeight: 1, marginRight: '4px' }}>•</span> Language processing inefficiencies</li>
                                     </ul>
                                 </div>
 
@@ -272,6 +286,7 @@ const AI = () => {
                                         <li><FaCheckCircle /> Text classification models</li>
                                         <li><FaCheckCircle /> Speech-to-text integration</li>
                                         <li><FaCheckCircle /> Text summarization tools</li>
+                                        <li><FaCheckCircle /> Multilingual NLP systems</li>
                                     </ul>
                                 </div>
                             </div>
@@ -281,14 +296,15 @@ const AI = () => {
                         <div className="service-card">
                             <span className="service-number">06</span>
                             <div className="service-content">
-                                <h3 className="service-title">AI Automation & Workflows</h3>
-                                <p className="service-desc">We design AI-powered automation systems that reduce repetitive work and improve operational efficiency.</p>
+                                <h3 className="service-title">AI Automation & Intelligent Workflows</h3>
+                                <p className="service-detail">We design AI-powered automation systems that reduce repetitive work and improve operational efficiency.</p>
 
                                 <div className="service-capabilities mb-4">
                                     <h5>Challenges We Solve</h5>
                                     <ul>
                                         <li><span style={{ fontSize: '1.2rem', lineHeight: 1, marginRight: '4px' }}>•</span> Manual data processing</li>
                                         <li><span style={{ fontSize: '1.2rem', lineHeight: 1, marginRight: '4px' }}>•</span> Repetitive administrative tasks</li>
+                                        <li><span style={{ fontSize: '1.2rem', lineHeight: 1, marginRight: '4px' }}>•</span> Slow document verification</li>
                                         <li><span style={{ fontSize: '1.2rem', lineHeight: 1, marginRight: '4px' }}>•</span> Process bottlenecks</li>
                                     </ul>
                                 </div>
@@ -300,6 +316,7 @@ const AI = () => {
                                         <li><FaCheckCircle /> AI-driven workflow systems</li>
                                         <li><FaCheckCircle /> Smart document extraction</li>
                                         <li><FaCheckCircle /> Decision-support engines</li>
+                                        <li><FaCheckCircle /> Cross-system automation integration</li>
                                     </ul>
                                 </div>
                             </div>
@@ -328,22 +345,34 @@ const AI = () => {
             <section className="approach-section">
                 <div className="container">
                     <h2 className="section-title text-white">Our AI Implementation Process</h2>
-                    <p className="section-subtitle opacity-75 text-white">Structured. Scalable. Successful.</p>
+                    <p className="section-subtitle opacity-75 text-white">We follow a structured, scalable approach to ensure successful deployment.</p>
 
                     <div className="approach-steps">
-                        {[
-                            { title: "Discovery & Analysis", icon: <FaSearch />, tooltip: "Identify high-impact use cases" },
-                            { title: "Data Prep", icon: <FaDatabase style={{ fontSize: '2rem', color: 'var(--codeifyy-green)', marginBottom: '1rem', display: 'block' }} />, tooltip: "Assess data quality & pipelines" }, // Using FaDatabase manually as it wasn't in top imports or reuse FaSearch
-                            { title: "Model Dev", icon: <FaBrain style={{ fontSize: '2rem', color: 'var(--codeifyy-green)', marginBottom: '1rem', display: 'block' }} />, tooltip: "Build & train models" },
-                            { title: "Integration", icon: <FaNetworkWired style={{ fontSize: '2rem', color: 'var(--codeifyy-green)', marginBottom: '1rem', display: 'block' }} />, tooltip: "Deploy securely" },
-                            { title: "Monitoring", icon: <FaChartLine />, tooltip: "Optimize performance" }
-                        ].map((step, index) => (
-                            <div key={index} className="approach-step-card">
-                                {step.icon.type === FaSearch || step.icon.type === FaChartLine ? React.cloneElement(step.icon, { className: 'step-icon' }) : step.icon}
-                                <span className="step-name">{step.title}</span>
-                                <div style={{ fontSize: '0.8rem', marginTop: '0.5rem', opacity: 0.8 }}>{step.tooltip}</div>
-                            </div>
-                        ))}
+                        <div className="approach-step-card">
+                            <FaSearch className="step-icon" />
+                            <span className="step-name">Discovery & Business Analysis</span>
+                            <div style={{ fontSize: '0.8rem', marginTop: '0.5rem', opacity: 0.8 }}>We evaluate your operations, identify high-impact use cases, and define measurable objectives.</div>
+                        </div>
+                        <div className="approach-step-card">
+                            <FaDatabase style={{ fontSize: '2rem', color: 'var(--codeifyy-green)', marginBottom: '1rem', display: 'block' }} />
+                            <span className="step-name">Data Assessment & Preparation</span>
+                            <div style={{ fontSize: '0.8rem', marginTop: '0.5rem', opacity: 0.8 }}>We assess data quality, structure pipelines, and prepare datasets for model training.</div>
+                        </div>
+                        <div className="approach-step-card">
+                            <FaBrain style={{ fontSize: '2rem', color: 'var(--codeifyy-green)', marginBottom: '1rem', display: 'block' }} />
+                            <span className="step-name">Model Development & Testing</span>
+                            <div style={{ fontSize: '0.8rem', marginTop: '0.5rem', opacity: 0.8 }}>We build, train, validate, and optimize AI models tailored to your requirements.</div>
+                        </div>
+                        <div className="approach-step-card">
+                            <FaNetworkWired style={{ fontSize: '2rem', color: 'var(--codeifyy-green)', marginBottom: '1rem', display: 'block' }} />
+                            <span className="step-name">Integration & Deployment</span>
+                            <div style={{ fontSize: '0.8rem', marginTop: '0.5rem', opacity: 0.8 }}>We integrate AI solutions into your applications and deploy them securely in cloud or on-premise environments.</div>
+                        </div>
+                        <div className="approach-step-card">
+                            <FaChartLine className="step-icon" />
+                            <span className="step-name">Monitoring & Continuous Improvement</span>
+                            <div style={{ fontSize: '0.8rem', marginTop: '0.5rem', opacity: 0.8 }}>We monitor model performance, retrain when necessary, and continuously optimize for accuracy and efficiency.</div>
+                        </div>
                     </div>
                 </div>
             </section>

@@ -39,14 +39,17 @@ const StaffAugmentation = () => {
                 <div className="container">
                     <div className="row align-items-center hero-row">
                         <div className="col-lg-6 col-md-6">
-                            <div className="hero-label">Scale Your Engineering Capacity</div>
+                            <div className="hero-label">Staff Augmentation Services</div>
                             <h1 className="hero-title">
-                                Access Top-Tier Developers <br />
-                                <span style={{ color: 'var(--codeifyy-green)' }}>To Accelerate</span> Your Roadmap.
+                                Scale Your Engineering <br />
+                                <span style={{ color: 'var(--codeifyy-green)' }}>Capacity</span>
                             </h1>
-                            <p className="hero-description">
+                            {/* <p className="hero-description">
                                 Hire elite engineers, developers, and technical specialists who integrate seamlessly into your team.
                                 Flexible scaling, immediate impact, and zero hiring overhead.
+                            </p> */}
+                            <p className="hero-description">
+                                Access top-tier developers, engineers, and technical specialists who integrate seamlessly into your team and accelerate your roadmap.
                             </p>
                             <div className="hero-trust-line">
                                 <a href="/contact" className="btn btn-codeifyy-primary rounded-2 fw-bold px-4 py-3">
@@ -115,7 +118,7 @@ const StaffAugmentation = () => {
             <ClientLogos />
 
             <BenefitSection
-                label="Scale Your Engineering Capacity"
+                label=""
                 title={
                     <>
                         Flexible Talent. <br />Immediate Impact.
@@ -144,7 +147,6 @@ const StaffAugmentation = () => {
                 <div className="container">
                     <div className="text-center mb-5">
                         <h2 className="section-title">Our Staff Augmentation Models</h2>
-                        <p className="section-subtitle">Choose the engagement model that best fits your project stage and internal capabilities.</p>
                     </div>
 
                     <div className="services-grid">
@@ -153,17 +155,28 @@ const StaffAugmentation = () => {
                             <span className="service-number">01</span>
                             <div className="service-content">
                                 <h3 className="service-title">IT Staff Augmentation</h3>
-                                <p className="service-desc">Skilled professionals integrated into your existing team to fill specific skill gaps or handle peak workloads.</p>
+                                <p className="service-desc">Skilled Professionals Integrated Into Your Team</p>
+                                <p className="service-detail">Strengthen your internal capabilities with experienced developers and technical specialists who seamlessly integrate into your existing workflows.</p>
+                                <div className="service-capabilities">
+                                    <h5>Our engineers:</h5>
+                                    <ul>
+                                        <li><FaCheckCircle /> Work within your tools and sprint cycles</li>
+                                        <li><FaCheckCircle /> Align with your internal architecture</li>
+                                        <li><FaCheckCircle /> Follow your management structure</li>
+                                        <li><FaCheckCircle /> Accelerate delivery timelines</li>
+                                    </ul>
+                                </div>
+                                <p className="service-detail">This model is ideal when you need to fill specific skill gaps or handle temporary workload increases without long-term hiring commitments.</p>
                                 <div className="service-capabilities">
                                     <h5>BEST FOR</h5>
                                     <ul>
                                         <li><FaCheckCircle /> Scaling startups</li>
-                                        <li><FaCheckCircle /> Peak workloads</li>
-                                        <li><FaCheckCircle /> Niche expertise</li>
+                                        <li><FaCheckCircle /> Enterprises managing peak workloads</li>
+                                        <li><FaCheckCircle /> Projects requiring niche expertise</li>
                                     </ul>
                                 </div>
                                 <div className="mt-4 w-100 d-flex justify-content-center">
-                                    <a href="#contact" className="btn-model">Request Staff Augmentation</a>
+                                    <a href="/contact" className="btn-model">Request Staff Augmentation</a>
                                 </div>
                             </div>
                         </div>
@@ -173,17 +186,29 @@ const StaffAugmentation = () => {
                             <span className="service-number">02</span>
                             <div className="service-content">
                                 <h3 className="service-title">Dedicated Development Team</h3>
-                                <p className="service-desc">A full-time, project-focused team (Frontend, Backend, QA, PM) working exclusively on your product.</p>
+                                <p className="service-desc">Full-Time, Project-Focused Teams</p>
+                                <p className="service-detail">Build a fully dedicated engineering team that works exclusively on your product or platform.</p>
+                                <div className="service-capabilities">
+                                    <h5>This model provides:</h5>
+                                    <ul>
+                                        <li><FaCheckCircle /> Frontend & backend engineers</li>
+                                        <li><FaCheckCircle /> QA specialists</li>
+                                        <li><FaCheckCircle /> DevOps support</li>
+                                        <li><FaCheckCircle /> Project management (if required)</li>
+                                    </ul>
+                                </div>
+                                <p className="service-detail">The team operates as an extension of your company, focused solely on achieving your product milestones.</p>
                                 <div className="service-capabilities">
                                     <h5>BEST FOR</h5>
                                     <ul>
-                                        <li><FaCheckCircle /> Long-term dev</li>
+                                        <li><FaCheckCircle /> Long-term product development</li>
                                         <li><FaCheckCircle /> Complex platforms</li>
-                                        <li><FaCheckCircle /> Continuous features</li>
+                                        <li><FaCheckCircle /> Continuous feature expansion</li>
+                                        <li><FaCheckCircle /> Technology-driven startups</li>
                                     </ul>
                                 </div>
                                 <div className="mt-4 w-100 d-flex justify-content-center">
-                                    <a href="#contact" className="btn-model">Request Development Team</a>
+                                    <a href="/contact" className="btn-model">Request Development Team</a>
                                 </div>
                             </div>
                         </div>
@@ -193,17 +218,29 @@ const StaffAugmentation = () => {
                             <span className="service-number">03</span>
                             <div className="service-content">
                                 <h3 className="service-title">Full-Project Outsourcing</h3>
-                                <p className="service-desc">Entrust the entire lifecycle to us. We manage requirements, design, dev, QA, and deployment.</p>
+                                <p className="service-desc">End-to-End Execution with Predictable Outcomes</p>
+                                <p className="service-detail">Entrust your entire project lifecycle to Codeifyy — from discovery to deployment.</p>
+                                <div className="service-capabilities">
+                                    <h5>We manage:</h5>
+                                    <ul>
+                                        <li><FaCheckCircle /> Requirements gathering</li>
+                                        <li><FaCheckCircle /> Architecture design</li>
+                                        <li><FaCheckCircle /> Development</li>
+                                        <li><FaCheckCircle /> Testing & QA</li>
+                                        <li><FaCheckCircle /> Deployment & support</li>
+                                    </ul>
+                                </div>
+                                <p className="service-detail">This approach ensures structured delivery, defined milestones, and predictable quality outcomes.</p>
                                 <div className="service-capabilities">
                                     <h5>BEST FOR</h5>
                                     <ul>
-                                        <li><FaCheckCircle /> No internal tech team</li>
-                                        <li><FaCheckCircle /> Turnkey solutions</li>
-                                        <li><FaCheckCircle /> Defined scope</li>
+                                        <li><FaCheckCircle /> Businesses without internal technical teams</li>
+                                        <li><FaCheckCircle /> Clearly defined project scopes</li>
+                                        <li><FaCheckCircle /> Organizations seeking turnkey solutions</li>
                                     </ul>
                                 </div>
                                 <div className="mt-4 w-100 d-flex justify-content-center">
-                                    <a href="#contact" className="btn-model">Outsource Our Project</a>
+                                    <a href="/contact" className="btn-model">Outsource Your Project</a>
                                 </div>
                             </div>
                         </div>
@@ -213,17 +250,28 @@ const StaffAugmentation = () => {
                             <span className="service-number">04</span>
                             <div className="service-content">
                                 <h3 className="service-title">Software Outsourcing</h3>
-                                <p className="service-desc">Outsource specific components or modernizations while maintaining strategic oversight.</p>
+                                <p className="service-desc">Flexible Custom Software Delivery</p>
+                                <p className="service-detail">Outsource specific software components or entire systems with flexibility, speed, and engineering excellence.</p>
+                                <div className="service-capabilities">
+                                    <h5>We provide:</h5>
+                                    <ul>
+                                        <li><FaCheckCircle /> Custom application development</li>
+                                        <li><FaCheckCircle /> System modernization</li>
+                                        <li><FaCheckCircle /> Feature extensions</li>
+                                        <li><FaCheckCircle /> Integration services</li>
+                                    </ul>
+                                </div>
+                                <p className="service-detail">This model allows businesses to maintain strategic oversight while leveraging external technical strength.</p>
                                 <div className="service-capabilities">
                                     <h5>BEST FOR</h5>
                                     <ul>
-                                        <li><FaCheckCircle /> Cost optimization</li>
-                                        <li><FaCheckCircle /> Digital expansion</li>
-                                        <li><FaCheckCircle /> Legacy modernization</li>
+                                        <li><FaCheckCircle /> Companies optimizing development costs</li>
+                                        <li><FaCheckCircle /> Businesses expanding digital capabilities</li>
+                                        <li><FaCheckCircle /> Enterprises modernizing legacy systems</li>
                                     </ul>
                                 </div>
                                 <div className="mt-4 w-100 d-flex justify-content-center">
-                                    <a href="#contact" className="btn-model">Request Software Outsourcing</a>
+                                    <a href="/contact" className="btn-model">Request Software Outsourcing</a>
                                 </div>
                             </div>
                         </div>
@@ -309,30 +357,26 @@ const StaffAugmentation = () => {
                     <h2 className="section-title">Onboarding Timeline</h2>
                     <p className="section-subtitle">Typical deployment: 1–3 weeks depending on complexity.</p>
 
-                    <div className="timeline-wrapper">
-                        <div className="timeline-track"></div>
-                        <div className="timeline-steps">
-                            <div className="timeline-step">
-                                <div className="step-dot"></div>
-                                <span className="step-label">Analysis</span>
-                            </div>
-                            <div className="timeline-step">
-                                <div className="step-dot"></div>
-                                <span className="step-label">Shortlisting</span>
-                            </div>
-                            <div className="timeline-step">
-                                <div className="step-dot"></div>
-                                <span className="step-label">Interviews</span>
-                            </div>
-                            <div className="timeline-step">
-                                <div className="step-dot"></div>
-                                <span className="step-label">Contract</span>
-                            </div>
-                            <div className="timeline-step">
-                                <div className="step-dot"></div>
-                                <span className="step-label">Integration</span>
-                            </div>
-                        </div>
+                    <div className="arrow-process">
+                        {[
+                            { num: "01", label: "Requirement Analysis" },
+                            { num: "02", label: "Candidate Shortlisting" },
+                            { num: "03", label: "Interview & Selection" },
+                            { num: "04", label: "Contract Finalization" },
+                            { num: "05", label: "Seamless Integration" }
+                        ].map((step, index) => (
+                            <React.Fragment key={index}>
+                                <div className="arrow-step">
+                                    <span className="arrow-step-num">{step.num}</span>
+                                    <span className="arrow-step-label">{step.label}</span>
+                                </div>
+                                {index < 4 && (
+                                    <div className="arrow-connector">
+                                        <FaArrowRight />
+                                    </div>
+                                )}
+                            </React.Fragment>
+                        ))}
                     </div>
                 </div>
             </section>

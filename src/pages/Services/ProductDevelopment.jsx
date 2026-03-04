@@ -7,7 +7,7 @@ import {
 } from 'react-icons/fa';
 import ClientLogos from '../../components/ClientLogos/ClientLogos';
 import '../../components/Hero/Hero.css';
-import '../../components/BenefitSection/BenefitSection.css'; // Reusing Benefit styles
+import '../../components/BenefitSection/BenefitSection.css';
 import Industries from '../../components/Industries/Industries';
 import TechStack from '../../components/TechStack/TechStack';
 import ArticleCarousel from '../../components/ArticleCarousel/ArticleCarousel';
@@ -36,43 +36,68 @@ const ProductDevelopment = () => {
     const services = [
         {
             title: "Development Consulting",
-            description: "Successful products begin with strategic clarity. Our consulting services ensure your vision is technically sound.",
-            capabilities: ["Validate product feasibility", "Define scope and roadmap", "Select optimal tech stack", "Cost & timeline estimation"]
+            subtitle: "Strategic Direction Before Execution",
+            description: "Successful products begin with strategic clarity.",
+            capabilitiesHeading: "Our development consulting services help you:",
+            capabilities: ["Validate product feasibility", "Define product scope and roadmap", "Identify risks and technical constraints", "Select optimal technology stacks", "Plan scalable architecture"],
+            closingLine: "We ensure your product vision is technically sound, strategically aligned, and ready for execution.",
+            bestFor: ["Early-stage product ideas", "Scaling product teams", "Businesses entering new digital markets"]
         },
         {
             title: "Product Development",
-            description: "We build robust product features tailored to your roadmap, from MVP to enterprise solutions.",
-            capabilities: ["MVP development", "Iterative feature expansion", "Secure backend systems", "Cloud-native architecture"]
+            subtitle: "Agile, Scalable, Market-Ready Solutions",
+            description: "We build robust product features and modules tailored to your roadmap and growth objectives.",
+            capabilitiesHeading: "Our approach includes:",
+            capabilities: ["MVP development", "Iterative feature expansion", "Agile sprint-based delivery", "Modular engineering architecture", "Secure and scalable backend systems"],
+            closingLine: "Whether launching a new SaaS platform or expanding an enterprise solution, we ensure predictable, high-quality delivery."
         },
         {
             title: "Product Design",
+            subtitle: "Designing Competitive Digital Experiences",
             description: "We research, define, and shape the product vision before development begins.",
-            capabilities: ["Market & competitor research", "Feature definition", "Concept validation", "User flow mapping"]
+            capabilitiesHeading: "Our product design process includes:",
+            capabilities: ["Market and competitor research", "Product positioning strategy", "Feature definition & prioritization", "Concept validation", "Functional documentation"],
+            closingLine: "We transform ideas into structured product blueprints ready for engineering."
         },
         {
             title: "Architecture Design",
-            description: "Strong architecture determines long-term stability. We design for high availability and growth.",
-            capabilities: ["Multi-tenant architectures", "Microservices frameworks", "Scalable cloud systems", "Database optimization"]
+            subtitle: "Engineering for Scalability & Performance",
+            description: "Strong architecture determines long-term product stability.",
+            capabilitiesHeading: "We design:",
+            capabilities: ["Multi-tenant product architectures", "High-availability systems", "Microservices frameworks", "Secure data infrastructures", "Scalable cloud-native systems"],
+            closingLine: "Every architecture is built to support performance, user growth, and long-term evolution."
         },
         {
             title: "UI & UX Design",
+            subtitle: "User-Centered Interfaces That Drive Adoption",
             description: "We create intuitive, engaging, and conversion-focused product interfaces.",
-            capabilities: ["User journey mapping", "Wireframing & prototyping", "Design systems", "Interactive mockups"]
+            capabilitiesHeading: "Our UI/UX services include:",
+            capabilities: ["User journey mapping", "Wireframing & prototyping", "Interaction design", "Design systems creation", "Usability testing"],
+            closingLine: "We ensure your product is not only functional — but desirable and intuitive."
         },
         {
             title: "API Development",
-            description: "We build robust APIs connecting your product to external systems and services.",
-            capabilities: ["RESTful API development", "Payment & CRM integrations", "Secure authentication", "Third-party connectivity"]
+            subtitle: "Secure, Scalable System Connectivity",
+            description: "We build robust APIs and integration frameworks that connect your product to external systems and services.",
+            capabilitiesHeading: "Our API capabilities include:",
+            capabilities: ["RESTful API development", "Third-party system integration", "Payment gateway integration", "CRM/ERP integrations", "Secure authentication mechanisms"],
+            closingLine: "This ensures smooth interoperability and ecosystem expansion."
         },
         {
-            title: "Testing & QA",
-            description: "Comprehensive testing across all product layers to eliminate vulnerabilities.",
-            capabilities: ["Functional & Performance testing", "Security testing", "Automated testing", "Load balancing checks"]
+            title: "Testing & Quality Assurance",
+            subtitle: "Quality Engineered into Every Release",
+            description: "We conduct comprehensive testing across all product layers.",
+            capabilitiesHeading: "Our QA processes include:",
+            capabilities: ["Functional testing", "Performance testing", "Security testing", "Usability testing", "Automated testing frameworks"],
+            closingLine: "We eliminate vulnerabilities and performance gaps before deployment."
         },
         {
             title: "Support & Maintenance",
-            description: "We ensure your product remains stable, competitive, and future-ready post-launch.",
-            capabilities: ["Performance monitoring", "Updates & bug fixes", "Security patches", "Feature enhancements"]
+            subtitle: "Continuous Optimization for Long-Term Success",
+            description: "Product development doesn't stop at launch.",
+            capabilitiesHeading: "We provide structured post-release support including:",
+            capabilities: ["Performance monitoring", "Proactive updates", "Bug fixes & feature enhancements", "Infrastructure management", "Security patches"],
+            closingLine: "We ensure your product remains stable, competitive, and future-ready."
         }
     ];
 
@@ -91,13 +116,13 @@ const ProductDevelopment = () => {
                     <div className="container">
                         <div className="row align-items-center hero-row">
                             <div className="col-lg-7 col-md-6">
-                                <div className="hero-label">Product Engineering</div>
+                                <div className="hero-label">Product Engineering Services</div>
                                 <h1 className="hero-title">
                                     Full-Cycle Product <br />
                                     <span style={{ color: 'var(--codeifyy-green)' }}>Development</span>
                                 </h1>
                                 <p className="hero-description">
-                                    From idea to MVP to enterprise scale—Codeifyy delivers end-to-end product development services that turn vision into market reality.
+                                    We partner with startups, enterprises, and innovators to design, build, and scale digital products that deliver real user value and measurable business growth.
                                 </p>
                                 <div className="hero-trust-line">
                                     <a href="#contact" className="btn btn-codeifyy-primary rounded-2 fw-bold px-4 py-3">
@@ -172,14 +197,14 @@ const ProductDevelopment = () => {
                 </div> */}
 
                 <BenefitSection
-                    label="Scale Your Engineering Capacity"
+                    label=""
                     title={
                         <>
                             Build Scalable.<br />
                             Market-Ready Products.
                         </>
                     }
-                    description="Our product development teams bring years of expertise to help you build software that scales with your business."
+                    description="At Codeifyy, product development goes beyond coding. We combine product strategy, UX thinking, and scalable engineering to transform ideas into successful digital solutions."
                     buttonText="Discuss Your Product"
                     buttonLink="/contact"
                     stats={[
@@ -196,7 +221,7 @@ const ProductDevelopment = () => {
                     <div className="container">
                         <div className="text-center mb-5">
                             <h2 className="section-title">
-                                Our product development services
+                                Our Product Development Services
                             </h2>
                         </div>
                         <div className="services-grid">
@@ -205,9 +230,10 @@ const ProductDevelopment = () => {
                                     <span className="service-number">{(index + 1).toString().padStart(2, '0')}</span>
                                     <div className="service-content">
                                         <h3 className="service-title">{service.title}</h3>
-                                        <p className="service-desc">{service.description}</p>
+                                        {service.subtitle && <p className="service-desc">{service.subtitle}</p>}
+                                        <p className="service-detail">{service.description}</p>
                                         <div className="service-capabilities">
-                                            <h5>Capabilities</h5>
+                                            <h5>{service.capabilitiesHeading}</h5>
                                             <ul>
                                                 {service.capabilities.map((cap, i) => (
                                                     <li key={i}>
@@ -216,13 +242,24 @@ const ProductDevelopment = () => {
                                                 ))}
                                             </ul>
                                         </div>
+                                        {service.closingLine && <p className="service-detail">{service.closingLine}</p>}
+                                        {service.bestFor && (
+                                            <div className="service-capabilities">
+                                                <h5>BEST FOR</h5>
+                                                <ul>
+                                                    {service.bestFor.map((item, i) => (
+                                                        <li key={i}>
+                                                            <FaCheckCircle /> {item}
+                                                        </li>
+                                                    ))}
+                                                </ul>
+                                            </div>
+                                        )}
                                     </div>
                                 </div>
                             ))}
                         </div>
-                        <div className="text-center mt-5">
-                            <a href="#contact" className="btn btn-codeifyy-primary mb-4 btn-lg">Discuss Your Product</a>
-                        </div>
+
                     </div>
                 </section>
 
@@ -240,7 +277,11 @@ const ProductDevelopment = () => {
                                     <li className="mb-3"><FaCheckCircle className="me-2" style={{ color: 'var(--codeifyy-green)' }} /> Security-first mindset</li>
                                     <li className="mb-3"><FaCheckCircle className="me-2" style={{ color: 'var(--codeifyy-green)' }} /> Long-term product partnership</li>
                                 </ul>
+                                <div className="mt-4">
+                                    <a href="#contact" className="btn btn-codeifyy-primary mb-4 btn-lg">Discuss Your Product</a>
+                                </div>
                             </div>
+
                             <div className="col-lg-6">
                                 {/* Placeholder for an image or graphic if needed, or keeping it clean */}
                                 <div style={{ background: 'var(--codeifyy-navy)', padding: '3rem', borderRadius: '20px', color: 'white', textAlign: 'center' }}>
@@ -266,7 +307,7 @@ const ProductDevelopment = () => {
                                     <p style={{ fontSize: '1.1rem', color: 'var(--text-muted)', marginBottom: '2rem' }}>
                                         We deliver end-to-end outsourced software product development to help you launch a new solution or enhance products already on the market.
                                     </p>
-                                    <a href="#contact" className="btn btn-codeifyy-primary">Outsource Product Development</a>
+                                    <a href="/contact" className="btn btn-codeifyy-primary">Outsource Product Development</a>
                                 </div>
                             </div>
                             <div className="col-md-6">
@@ -275,7 +316,7 @@ const ProductDevelopment = () => {
                                     <p style={{ fontSize: '1.1rem', color: 'var(--text-muted)', marginBottom: '2rem' }}>
                                         We provide competent resources for design, programming, testing, and any other tasks to drive your product development ahead.
                                     </p>
-                                    <a href="#contact" className="btn btn-codeifyy-primary">Hire Your Team</a>
+                                    <a href="/contact" className="btn btn-codeifyy-primary">Hire Your Team</a>
                                 </div>
                             </div>
                         </div>

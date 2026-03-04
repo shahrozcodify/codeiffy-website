@@ -26,14 +26,17 @@ const ArticleCarousel = () => {
 
     const [currentIndex, setCurrentIndex] = React.useState(0);
     const trackRef = React.useRef(null);
+    const wrapperRef = React.useRef(null);
     const [cardWidth, setCardWidth] = React.useState(0);
     const [gap, setGap] = React.useState(24); // 1.5rem default
+    const [visibleCards, setVisibleCards] = React.useState(1);
 
-    // Measure card width after mount and on resize
+    // Measure card width and visible count after mount and on resize
     React.useEffect(() => {
         const measure = () => {
             const track = trackRef.current;
-            if (track && track.children[0]) {
+            const wrapper = wrapperRef.current;
+            if (track && track.children[0] && wrapper) {
                 const card = track.children[0];
                 const cardRect = card.getBoundingClientRect();
                 setCardWidth(cardRect.width);
@@ -41,6 +44,11 @@ const ArticleCarousel = () => {
                 const computed = getComputedStyle(track);
                 const gapVal = parseFloat(computed.gap || computed.columnGap || '24');
                 setGap(isNaN(gapVal) ? 24 : gapVal);
+
+                // Calculate how many full cards fit in the visible area
+                const wrapperWidth = wrapper.getBoundingClientRect().width;
+                const visible = Math.floor((wrapperWidth + gapVal) / (cardRect.width + gapVal));
+                setVisibleCards(Math.max(1, visible));
             }
         };
         measure();
@@ -48,8 +56,11 @@ const ArticleCarousel = () => {
         return () => window.removeEventListener('resize', measure);
     }, []);
 
+    // Max index ensures last card aligns to the right edge
+    const maxIndex = Math.max(0, testimonials.length - visibleCards);
+
     const handleNext = () => {
-        if (currentIndex < testimonials.length - 1) {
+        if (currentIndex < maxIndex) {
             setCurrentIndex(prev => prev + 1);
         }
     };
@@ -60,7 +71,12 @@ const ArticleCarousel = () => {
         }
     };
 
-    const offset = currentIndex * (cardWidth + gap);
+    // Calculate offset: for the last position, align last card to the right edge
+    const wrapperWidth = wrapperRef.current ? wrapperRef.current.getBoundingClientRect().width : 0;
+    const totalTrackWidth = testimonials.length * cardWidth + (testimonials.length - 1) * gap;
+    const maxOffset = Math.max(0, totalTrackWidth - wrapperWidth);
+    const rawOffset = currentIndex * (cardWidth + gap);
+    const offset = Math.min(rawOffset, maxOffset);
 
     return (
         <section className="article-carousel-section">
@@ -80,7 +96,7 @@ const ArticleCarousel = () => {
                         </div>
 
                         {/* Cards track */}
-                        <div className="carousel-wrapper-main" style={{ flex: 1, minWidth: 0, overflow: 'hidden' }}>
+                        <div className="carousel-wrapper-main" ref={wrapperRef} style={{ flex: 1, minWidth: 0, overflow: 'hidden' }}>
                             <div
                                 className="article-carousel-track"
                                 ref={trackRef}
@@ -113,7 +129,7 @@ const ArticleCarousel = () => {
                                 <div
                                     className="carousel-scroll-bar"
                                     style={{
-                                        width: `${100 / testimonials.length}%`,
+                                        width: `${100 / (maxIndex + 1)}%`,
                                         transform: `translateX(${currentIndex * 100}%)`,
                                         transition: 'transform 0.4s cubic-bezier(0.4, 0, 0.2, 1)'
                                     }}
@@ -139,8 +155,8 @@ const ArticleCarousel = () => {
                             className="carousel-next-btn"
                             aria-label="Next"
                             onClick={handleNext}
-                            disabled={currentIndex === testimonials.length - 1}
-                            style={{ opacity: currentIndex === testimonials.length - 1 ? 0.4 : 1 }}
+                            disabled={currentIndex >= maxIndex}
+                            style={{ opacity: currentIndex >= maxIndex ? 0.4 : 1 }}
                         >
                             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
                                 <polyline points="9 18 15 12 9 6"></polyline>
