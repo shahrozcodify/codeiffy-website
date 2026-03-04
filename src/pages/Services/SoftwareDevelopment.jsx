@@ -40,7 +40,7 @@ const SoftwareDevelopment = () => {
                 <div className="container">
                     <div className="row align-items-center hero-row">
                         <div className="col-lg-7 col-md-6">
-                            <div className="hero-label">Software Engineering</div>
+                            <div className="hero-label">Software Engineering Services</div>
                             <h1 className="hero-title">
                                 Engineering Software for <br />
                                 <span style={{ color: 'var(--codeifyy-green)' }}>Modern</span> Businesses.
@@ -113,7 +113,7 @@ const SoftwareDevelopment = () => {
             </section>
 
             <BenefitSection
-                label="Scale Your Engineering Capacity"
+                label=""
                 title={
                     <>
                         Flexible Talent. <br />Immediate Impact.
@@ -141,7 +141,7 @@ const SoftwareDevelopment = () => {
                 <div className="container">
                     <div className="text-center mb-5">
                         <h2 className="section-title">Software Development Services</h2>
-                        <p className="section-subtitle">We build secure, scalable, and high-performance software tailored to your goals.</p>
+                        <p className="section-subtitle">We build secure, scalable, and high-performance software tailored to your goals. Our engineering approach ensures clean architecture, reliable delivery, and products built to evolve with your business.</p>
                     </div>
 
                     <div className="services-grid">
@@ -150,16 +150,18 @@ const SoftwareDevelopment = () => {
                             <span className="service-number">01</span>
                             <div className="service-content">
                                 <h3 className="service-title">Bespoke Software Development</h3>
-                                <p className="service-desc">We develop fully tailored applications aligned with your workflows, industry requirements, and growth goals.</p>
+                                <p className="service-detail">We develop fully tailored applications aligned with your workflows, industry requirements, and growth goals.</p>
                                 <div className="service-capabilities">
-                                    <h5>Capabilities</h5>
+                                    <h5>Our capabilities include:</h5>
                                     <ul>
-                                        <li><FaCheckCircle /> Custom Web Apps</li>
-                                        <li><FaCheckCircle /> Internal Systems</li>
-                                        <li><FaCheckCircle /> SaaS Platforms</li>
-                                        <li><FaCheckCircle /> Workflow Automation</li>
+                                        <li><FaCheckCircle /> Custom web applications</li>
+                                        <li><FaCheckCircle /> Internal business systems</li>
+                                        <li><FaCheckCircle /> SaaS platforms</li>
+                                        <li><FaCheckCircle /> Customer-facing portals</li>
+                                        <li><FaCheckCircle /> Workflow automation systems</li>
                                     </ul>
                                 </div>
+                                <p className="service-detail">Every solution is engineered for scalability, maintainability, and long-term performance.</p>
                             </div>
                         </div>
 
@@ -168,16 +170,19 @@ const SoftwareDevelopment = () => {
                             <span className="service-number">02</span>
                             <div className="service-content">
                                 <h3 className="service-title">ERP Software Development</h3>
-                                <p className="service-desc">Integrated systems for operational excellence. Unify core business functions into a centralized platform.</p>
+                                <p className="service-desc">Integrated Systems for Operational Excellence</p>
+                                <p className="service-detail">We design and develop ERP solutions that unify core business functions into a centralized, streamlined platform.</p>
                                 <div className="service-capabilities">
-                                    <h5>Capabilities</h5>
+                                    <h5>ERP capabilities include:</h5>
                                     <ul>
-                                        <li><FaCheckCircle /> Finance & Accounting</li>
-                                        <li><FaCheckCircle /> Supply Chain Mgmt</li>
-                                        <li><FaCheckCircle /> HR & Payroll</li>
-                                        <li><FaCheckCircle /> Analytics Dashboards</li>
+                                        <li><FaCheckCircle /> Finance & accounting modules</li>
+                                        <li><FaCheckCircle /> Inventory & supply chain management</li>
+                                        <li><FaCheckCircle /> HR & payroll systems</li>
+                                        <li><FaCheckCircle /> CRM integration</li>
+                                        <li><FaCheckCircle /> Reporting & analytics dashboards</li>
                                     </ul>
                                 </div>
+                                <p className="service-detail">Our ERP solutions improve visibility, reduce inefficiencies, and enable data-driven decision-making.</p>
                             </div>
                         </div>
 
@@ -186,16 +191,19 @@ const SoftwareDevelopment = () => {
                             <span className="service-number">03</span>
                             <div className="service-content">
                                 <h3 className="service-title">Cloud Application Development</h3>
-                                <p className="service-desc">Cloud-native systems built for scale. Deliver flexibility, high availability, and global accessibility.</p>
+                                <p className="service-desc">Cloud-Native Systems Built for Scale</p>
+                                <p className="service-detail">We design and deploy cloud-based applications that deliver flexibility, high availability, and global accessibility.</p>
                                 <div className="service-capabilities">
-                                    <h5>Capabilities</h5>
+                                    <h5>Our cloud expertise covers:</h5>
                                     <ul>
-                                        <li><FaCheckCircle /> SaaS Product Dev</li>
-                                        <li><FaCheckCircle /> Cloud-Native Arch</li>
-                                        <li><FaCheckCircle /> Microservices</li>
-                                        <li><FaCheckCircle /> Serverless Solutions</li>
+                                        <li><FaCheckCircle /> SaaS product development</li>
+                                        <li><FaCheckCircle /> Cloud-native architecture</li>
+                                        <li><FaCheckCircle /> Microservices implementation</li>
+                                        <li><FaCheckCircle /> Serverless solutions</li>
+                                        <li><FaCheckCircle /> Secure cloud deployments</li>
                                     </ul>
                                 </div>
+                                <p className="service-detail">Built for performance, elasticity, and long-term cost efficiency.</p>
                             </div>
                         </div>
 
@@ -204,16 +212,19 @@ const SoftwareDevelopment = () => {
                             <span className="service-number">04</span>
                             <div className="service-content">
                                 <h3 className="service-title">Software Modernization</h3>
-                                <p className="service-desc">Transform legacy systems into scalable platforms. Re-architect for improved performance.</p>
+                                <p className="service-desc">Transform Legacy Systems into Scalable Platforms</p>
+                                <p className="service-detail">We help businesses modernize outdated systems and re-architect applications for improved performance and scalability.</p>
                                 <div className="service-capabilities">
-                                    <h5>Capabilities</h5>
+                                    <h5>Modernization services include:</h5>
                                     <ul>
-                                        <li><FaCheckCircle /> Code Refactoring</li>
-                                        <li><FaCheckCircle /> Cloud Migration</li>
-                                        <li><FaCheckCircle /> UI/UX Redesign</li>
-                                        <li><FaCheckCircle /> Security Upgrades</li>
+                                        <li><FaCheckCircle /> Code refactoring</li>
+                                        <li><FaCheckCircle /> Cloud migration</li>
+                                        <li><FaCheckCircle /> UI/UX redesign</li>
+                                        <li><FaCheckCircle /> Monolith-to-microservices transformation</li>
+                                        <li><FaCheckCircle /> Security upgrades</li>
                                     </ul>
                                 </div>
+                                <p className="service-detail">Future-proof your technology investments while minimizing operational disruption.</p>
                             </div>
                         </div>
                     </div>
@@ -228,21 +239,21 @@ const SoftwareDevelopment = () => {
             <section className="engagement-section">
                 <div className="container">
                     <div className="text-center mb-5">
-                        <h2 className="section-title">Engagement Models</h2>
-                        <p className="section-subtitle">Flexible partnership options to match your business needs.</p>
+                        <h2 className="section-title">Engagement Models for Software Development</h2>
+                        <p className="section-subtitle">At Codeifyy, we partner with businesses to design, build, scale, and optimize digital products. From concept validation to post-launch support, we deliver tailored software solutions aligned with your business goals, timelines, and growth plans.</p>
                     </div>
                     <div className="engagement-grid">
                         <div className="engagement-card">
-                            <h3>Full Outsourcing</h3>
-                            <p>We take full ownership of your project lifecycle — from strategy and architecture to deployment and maintenance.</p>
+                            <h3>Full Software Development Outsourcing</h3>
+                            <p>We take full ownership of your project lifecycle — from strategy and architecture to deployment and maintenance. Our cross-functional team handles planning, UI/UX design, development, testing, and delivery under one roof.</p>
                         </div>
                         <div className="engagement-card">
-                            <h3>Dedicated Teams</h3>
-                            <p>We assemble a custom group of developers, designers, and PMs who work exclusively on your product.</p>
+                            <h3>Dedicated Development Teams</h3>
+                            <p>We assemble a custom group of developers, designers, QA engineers, and project managers who work exclusively on your product. The team integrates with your internal workflows, giving you flexibility, scalability, and complete visibility.</p>
                         </div>
                         <div className="engagement-card">
                             <h3>Staff Augmentation</h3>
-                            <p>Strengthen your existing team with specialized expertise. Backend, Frontend, DevOps, or AI experts ready to plug in.</p>
+                            <p>Strengthen your existing team with specialized expertise. Whether you require backend engineers, frontend specialists, mobile app developers, DevOps professionals, or AI experts, we provide skilled professionals ready to plug into your project and accelerate delivery.</p>
                         </div>
                     </div>
                 </div>
@@ -269,23 +280,24 @@ const SoftwareDevelopment = () => {
                 <div className="container">
                     <h2 className="section-title text-white">Our Development Approach</h2>
                     <p className="section-subtitle opacity-75 text-white">Structured. Agile. Results-Driven.</p>
+                    <p className="text-white opacity-75 text-center mb-4">We follow a disciplined engineering lifecycle:</p>
 
                     <div className="approach-steps">
                         <div className="approach-step-card">
                             <FaSearch className="step-icon" />
-                            <span className="step-name">Discovery</span>
+                            <span className="step-name">Discovery & Planning</span>
                         </div>
                         <div className="approach-step-card">
                             <FaPencilRuler className="step-icon" />
-                            <span className="step-name">Architecture</span>
+                            <span className="step-name">Architecture Design</span>
                         </div>
                         <div className="approach-step-card">
                             <FaTasks className="step-icon" />
-                            <span className="step-name">Agile Dev</span>
+                            <span className="step-name">Agile Development</span>
                         </div>
                         <div className="approach-step-card">
                             <FaBug className="step-icon" />
-                            <span className="step-name">QA Testing</span>
+                            <span className="step-name">Quality Assurance</span>
                         </div>
                         <div className="approach-step-card">
                             <FaRocket className="step-icon" />
@@ -293,9 +305,11 @@ const SoftwareDevelopment = () => {
                         </div>
                         <div className="approach-step-card">
                             <FaChartLine className="step-icon" />
-                            <span className="step-name">Optimization</span>
+                            <span className="step-name">Continuous Optimization</span>
                         </div>
                     </div>
+
+                    <p className="text-white opacity-75 text-center mt-4">Every phase is executed with transparency, documentation, and measurable milestones.</p>
                 </div>
             </section>
 
@@ -304,7 +318,7 @@ const SoftwareDevelopment = () => {
             <section className=" final-cta-section mt-5" >
                 <div className="container">
                     <CTA
-                        title="Ready to Build Scalable Software?"
+                        title="Ready to Build Dependable, Scalable Software?"
                         text="Let’s design a solution that supports your long-term growth."
                         btnText="Discuss Your Project"
                         link="/contact"

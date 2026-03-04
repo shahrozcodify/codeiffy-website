@@ -84,10 +84,10 @@ const Footer = () => {
                     <div className="footer-links-col">
                         <h4>About Codeifyy</h4>
                         <ul>
+                            <li><Link to="/blog">Blog <FaExternalLinkAlt className="ext-icon d-none" /></Link></li>
                             <li><Link to="/about">Our Story</Link></li>
                             <li><Link to="/casestudy">Case Studies</Link></li>
                             <li><Link to="/career">Careers</Link></li>
-                            <li><Link to="/blog">Blog <FaExternalLinkAlt className="ext-icon d-none" /></Link></li>
                         </ul>
                     </div>
 

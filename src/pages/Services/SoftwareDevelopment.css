@@ -58,6 +58,52 @@
     background: #fff;
 }
 
+/* Enhanced service-detail paragraphs for Software Development cards */
+.software-dev-page .service-detail {
+    background: #f8fafc;
+    border-left: 3px solid var(--codeifyy-green);
+    padding: 1rem 1.25rem;
+    border-radius: 0 8px 8px 0;
+    color: #475569;
+    font-size: 0.95rem;
+    line-height: 1.75;
+    margin-bottom: 1.5rem;
+    margin-top: 0.5rem;
+}
+
+/* Precise bullet styling for Software Development cards */
+.software-dev-page .service-capabilities {
+    margin-top: 1.5rem;
+}
+
+.software-dev-page .service-capabilities h5 {
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    color: var(--codeifyy-green);
+    margin-bottom: 1.25rem;
+    font-weight: 700;
+}
+
+.software-dev-page .service-capabilities ul {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+.software-dev-page .service-capabilities li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.85rem;
+    font-size: 1.05rem;
+    color: #334155;
+    line-height: 1.4;
+}
+
+.software-dev-page .service-capabilities li svg {
+    font-size: 1.1rem;
+    margin-top: 0.15rem;
+    flex-shrink: 0;
+}
+
 .software-dev-page .services-grid-section {
     padding-bottom: 4rem;
 }
@@ -123,7 +169,14 @@
     color: #64748b;
     font-size: 1.05rem;
     line-height: 1.7;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
+}
+
+.service-detail {
+    color: #475569;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin-bottom: 1.25rem;
 }
 
 .service-capabilities h5 {

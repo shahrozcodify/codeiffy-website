@@ -113,9 +113,9 @@ const Services = () => {
                 <ClientLogos />
             </section>
 
-            {/* BENEFIT SECTION - REPLACING MANUALLY CODED STATS SECTION */}
+            {/* BENEFIT SECTION */}
             <BenefitSection
-                label="Capabilities & Scale"
+                label=""
                 title={
                     <>
                         Flexible Talent. <br />Immediate Impact.
@@ -143,15 +143,17 @@ const Services = () => {
                 <div className="container">
                     <div className="text-center mb-5">
                         <h2 className="section-title">Our Core Services</h2>
-                        <p className="section-subtitle">Scalable technology solutions for modern enterprises.</p>
+                        <p className="section-subtitle"></p>
                     </div>
 
                     <div className="row g-4">
                         {/* Software Development */}
                         <div className="col-lg-6">
                             <div className="service-overview-card">
-                                <span className="service-number">01</span>
-                                <div className="service-overview-icon"><FaCode /></div>
+                                <div className="service-card-header">
+                                    <div className="service-overview-icon"><FaCode /></div>
+                                    <span className="service-number">01</span>
+                                </div>
                                 <h3 className="service-overview-title">Software Development</h3>
                                 <p className="service-overview-desc">Custom-built web, mobile, and enterprise applications designed for scalability and performance.</p>
                                 <ul className="service-features-list">
@@ -160,6 +162,7 @@ const Services = () => {
                                     <li><span className="bullet-dot">•</span> Enterprise Systems</li>
                                     <li><span className="bullet-dot">•</span> SaaS Platforms</li>
                                     <li><span className="bullet-dot">•</span> API Development & Integration</li>
+                                    <li><span className="bullet-dot">•</span> Cloud-Based Applications</li>
                                 </ul>
                                 <Link to="/services/software-development" className="explore-link">Explore Software Development <FaArrowRight /></Link>
                             </div>
@@ -168,15 +171,18 @@ const Services = () => {
                         {/* AI Services */}
                         <div className="col-lg-6">
                             <div className="service-overview-card">
-                                <span className="service-number">02</span>
-                                <div className="service-overview-icon"><FaBrain /></div>
-                                <h3 className="service-overview-title">Artificial Intelligence</h3>
+                                <div className="service-card-header">
+                                    <div className="service-overview-icon"><FaBrain /></div>
+                                    <span className="service-number">02</span>
+                                </div>
+                                <h3 className="service-overview-title">Artificial Intelligence Services</h3>
                                 <p className="service-overview-desc">Intelligent systems that automate processes and enable data-driven decision-making.</p>
                                 <ul className="service-features-list">
                                     <li><span className="bullet-dot">•</span> AI Strategy & Consulting</li>
                                     <li><span className="bullet-dot">•</span> Machine Learning Development</li>
                                     <li><span className="bullet-dot">•</span> Generative AI Integration</li>
                                     <li><span className="bullet-dot">•</span> Chatbots & Virtual Assistants</li>
+                                    <li><span className="bullet-dot">•</span> Computer Vision</li>
                                     <li><span className="bullet-dot">•</span> AI Automation Solutions</li>
                                 </ul>
                                 <Link to="/services/artificial-intelligence" className="explore-link">Explore AI Services <FaArrowRight /></Link>
@@ -186,15 +192,17 @@ const Services = () => {
                         {/* Staff Augmentation */}
                         <div className="col-lg-6">
                             <div className="service-overview-card">
-                                <span className="service-number">03</span>
-                                <div className="service-overview-icon"><FaUsers /></div>
+                                <div className="service-card-header">
+                                    <div className="service-overview-icon"><FaUsers /></div>
+                                    <span className="service-number">03</span>
+                                </div>
                                 <h3 className="service-overview-title">Staff Augmentation</h3>
                                 <p className="service-overview-desc">Extend your in-house capabilities with skilled developers and engineers.</p>
                                 <ul className="service-features-list">
+                                    <li><span className="bullet-dot">•</span> IT Staff Augmentation</li>
                                     <li><span className="bullet-dot">•</span> Dedicated Development Team</li>
                                     <li><span className="bullet-dot">•</span> Full-Project Outsourcing</li>
-                                    <li><span className="bullet-dot">•</span> On-demand Staff scaling</li>
-                                    <li><span className="bullet-dot">•</span> Remote Engineering talent</li>
+                                    <li><span className="bullet-dot">•</span> Software Outsourcing</li>
                                 </ul>
                                 <Link to="/services/staff-augmentation" className="explore-link">Explore Staff Augmentation <FaArrowRight /></Link>
                             </div>
@@ -203,15 +211,18 @@ const Services = () => {
                         {/* Product Engineering */}
                         <div className="col-lg-6">
                             <div className="service-overview-card">
-                                <span className="service-number">04</span>
-                                <div className="service-overview-icon"><FaRocket /></div>
+                                <div className="service-card-header">
+                                    <div className="service-overview-icon"><FaRocket /></div>
+                                    <span className="service-number">04</span>
+                                </div>
                                 <h3 className="service-overview-title">Product Engineering</h3>
                                 <p className="service-overview-desc">End-to-end product lifecycle support — from idea validation to deployment and scaling.</p>
                                 <ul className="service-features-list">
                                     <li><span className="bullet-dot">•</span> Product Strategy & Planning</li>
-                                    <li><span className="bullet-dot">•</span> MVP Development & Launch</li>
-                                    <li><span className="bullet-dot">•</span> UI/UX Experience Design</li>
-                                    <li><span className="bullet-dot">•</span> Modern Architecture Design</li>
+                                    <li><span className="bullet-dot">•</span> MVP Development</li>
+                                    <li><span className="bullet-dot">•</span> UI/UX Design</li>
+                                    <li><span className="bullet-dot">•</span> Architecture Design</li>
+                                    <li><span className="bullet-dot">•</span> Ongoing Optimization</li>
                                 </ul>
                                 <Link to="/services/product-development" className="explore-link">Explore Product Engineering <FaArrowRight /></Link>
                             </div>
@@ -225,7 +236,7 @@ const Services = () => {
                 <div className="container">
                     <div className="text-center mb-5">
                         <h2 className="section-title">Business Solutions We Provide</h2>
-                        <p className="section-subtitle">We deliver ready-to-deploy, customizable business systems designed to solve operational challenges.</p>
+                        <p className="section-subtitle">We deliver ready-to-deploy, customizable business systems designed to solve operational challenges and improve efficiency across departments.</p>
                     </div>
 
                     <div className="solution-card-grid">
@@ -235,7 +246,7 @@ const Services = () => {
                             <p className="solution-desc">Centralize customer data, streamline sales pipelines, and improve customer retention.</p>
                             <ul className="service-features-list solution-features">
                                 <li><span className="bullet-dot">•</span> Lead & pipeline management</li>
-                                <li><span className="bullet-dot">•</span> Customer tracking & insights</li>
+                                <li><span className="bullet-dot">•</span> Customer tracking</li>
                                 <li><span className="bullet-dot">•</span> Sales automation</li>
                                 <li><span className="bullet-dot">•</span> Reporting & analytics</li>
                             </ul>
@@ -243,7 +254,7 @@ const Services = () => {
 
                         <div className="solution-card">
                             <span className="solution-number">02</span>
-                            <h3 className="solution-title">Content Management (CMS)</h3>
+                            <h3 className="solution-title">Content Management System (CMS)</h3>
                             <p className="solution-desc">Manage your website and digital content without technical complexity.</p>
                             <ul className="service-features-list solution-features">
                                 <li><span className="bullet-dot">•</span> Easy content editing</li>

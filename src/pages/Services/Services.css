@@ -134,14 +134,22 @@
     overflow: hidden;
 }
 
+.service-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+
+.service-card-header .service-overview-icon {
+    margin-bottom: 0;
+}
+
 .service-number {
     color: var(--codeifyy-green) !important;
     opacity: 0.15;
     font-size: 4.5rem !important;
     font-weight: 900 !important;
-    position: absolute;
-    top: 0.5rem !important;
-    right: 1.5rem !important;
     line-height: 1;
     z-index: 0;
 }
@@ -164,6 +172,7 @@
     color: var(--codeifyy-green);
     margin-bottom: 2.5rem;
     transition: all 0.3s ease;
+    flex-shrink: 0;
 }
 
 .service-overview-card:hover .service-overview-icon {
@@ -414,8 +423,13 @@
     }
 
     .service-number {
-        font-size: 2.5rem;
-        top: 1rem;
+        font-size: 2.5rem !important;
+    }
+
+    .service-overview-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 1.8rem;
     }
 
     .approach-card-simple {
