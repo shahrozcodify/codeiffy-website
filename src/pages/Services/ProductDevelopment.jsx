@@ -19,6 +19,8 @@ import CTA from '../../components/cta/CTA';
 import PageSkeleton from '../../components/Skeleton/PageSkeleton';
 
 
+import SEO from '../../components/SEO/SEO';
+
 const ProductDevelopment = () => {
     const [isLoading, setIsLoading] = useState(true);
 

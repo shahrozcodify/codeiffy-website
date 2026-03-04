@@ -11,6 +11,8 @@ import ClientLogos from '../../components/ClientLogos/ClientLogos';
 import TechStack from '../../components/TechStack/TechStack';
 import ArticleCarousel from '../../components/ArticleCarousel/ArticleCarousel';
 import CustomerStories from '../../components/CustomerStories/CustomerStories';
+import SEO from '../../components/SEO/SEO';
+
 const About = () => {
     const [isLoading, setIsLoading] = useState(true);
 
@@ -27,6 +29,11 @@ const About = () => {
 
     return (
         <div className="about-page">
+            <SEO
+                title="About Codeifyy | Engineering Excellence & Innovation"
+                description="Learn how Codeifyy delivers intelligent software solutions through disciplined engineering, modern tech stacks, and client-focused execution."
+                canonical="/about"
+            />
             <Header />
             <main className="about-main">
                 {/* HERO SECTION - Matched to Services Style */}

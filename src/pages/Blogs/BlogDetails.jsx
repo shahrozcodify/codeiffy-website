@@ -6,6 +6,8 @@ import Footer from '../../components/Footer/Footer';
 import { blogData } from './blogData';
 import './Blogs.css';
 
+import SEO from '../../components/SEO/SEO';
+
 const BlogDetails = () => {
     const { slug } = useParams();
     const navigate = useNavigate();
@@ -45,6 +47,11 @@ const BlogDetails = () => {
 
     return (
         <div className="blog-details-page">
+            <SEO
+                title={`${blog.title} | Codeifyy Blog`}
+                description={blog.summary.substring(0, 160) + "..."}
+                canonical={`/blog/${blog.slug}`}
+            />
             <Header />
             <main style={{ padding: '120px 0 0 0' }}>
                 <div className="container">

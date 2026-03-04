@@ -8,6 +8,8 @@ import { caseStudies as caseStudiesData } from '../../data/caseStudies';
 import CaseStudyCardSkeleton from '../../components/Skeleton/CaseStudyCardSkeleton';
 import './CaseStudies.css';
 
+import SEO from '../../components/SEO/SEO';
+
 const CaseStudyList = () => {
     const [isLoading, setIsLoading] = useState(true);
 
@@ -23,6 +25,11 @@ const CaseStudyList = () => {
 
     return (
         <div className="case-studies-page">
+            <SEO
+                title="Case Studies | Real-World Digital Impact | Codeifyy"
+                description="Explore Codeifyy’s portfolio of successful projects, from enterprise software to AI-powered transformations and scalable digital solutions."
+                canonical="/case-studies"
+            />
             <Header />
 
             {/* Premium Hero Banner (Simple/Clean Style) */}

@@ -27,6 +27,8 @@ const Popup = ({ message, type, onClose }) => {
 
 const API_URL = import.meta?.env?.VITE_API_URL || '/api';
 
+import SEO from '../../components/SEO/SEO';
+
 const Contact = () => {
     const [formData, setFormData] = useState({ firstName: '', phone: '', email: '', message: '' });
     const [isSubmitting, setIsSubmitting] = useState(false);
@@ -77,6 +79,11 @@ const Contact = () => {
 
     return (
         <div className="contact-page">
+            <SEO
+                title="Contact Codeifyy | Let’s Build Something Powerful"
+                description="Connect with Codeifyy to discuss AI development, software projects, or staff augmentation solutions tailored to your business goals."
+                canonical="/contact"
+            />
             <Header />
 
             {popup.show && (

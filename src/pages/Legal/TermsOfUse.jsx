@@ -1,10 +1,13 @@
-import React from 'react';
-import Header from '../../components/Header/Header';
-import Footer from '../../components/Footer/Footer';
+import SEO from '../../components/SEO/SEO';
 
 const TermsOfUse = () => {
     return (
         <div className="legal-page">
+            <SEO
+                title="Terms of Use | Codeifyy"
+                description="Review the terms and conditions governing the use of Codeifyy’s website and digital services."
+                canonical="/terms-of-use"
+            />
             <Header />
             <main style={{ padding: '120px 0 80px 0', background: 'var(--background)' }}>
                 <div className="container" style={{ maxWidth: '800px', margin: '0 auto' }}>
