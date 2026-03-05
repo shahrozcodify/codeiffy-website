@@ -1,7 +1,7 @@
 import React, { Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import ScrollToTop from './components/ScrollToTop';
-import HeaderSkeleton from './components/Skeleton/HeaderSkeleton';
+
 import './App.css';
 
 // Lazy load pages
@@ -26,7 +26,7 @@ function App() {
   return (
     <Router>
       <ScrollToTop />
-      <Suspense fallback={<HeaderSkeleton />}>
+      <Suspense fallback={null}>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/services" element={<Services />} />

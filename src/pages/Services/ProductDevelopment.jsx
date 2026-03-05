@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import {
@@ -16,24 +16,12 @@ import './ProductDevelopment.css';
 import CustomerStories from '../../components/CustomerStories/CustomerStories';
 import BenefitSection from '../../components/BenefitSection/BenefitSection';
 import CTA from '../../components/cta/CTA';
-import PageSkeleton from '../../components/Skeleton/PageSkeleton';
+
 
 
 import SEO from '../../components/SEO/SEO';
 
 const ProductDevelopment = () => {
-    const [isLoading, setIsLoading] = useState(true);
-
-    useEffect(() => {
-        const timer = setTimeout(() => {
-            setIsLoading(false);
-        }, 1200);
-        return () => clearTimeout(timer);
-    }, []);
-
-    if (isLoading) {
-        return <PageSkeleton includeHeader={true} includeFooter={true} />;
-    }
 
     const services = [
         {

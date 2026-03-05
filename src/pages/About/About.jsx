@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import CTA from '../../components/cta/CTA';
 import BenefitSection from '../../components/BenefitSection/BenefitSection';
-import PageSkeleton from '../../components/Skeleton/PageSkeleton';
+
 import { FaArrowRight, FaUsers, FaCheckCircle, FaSearch, FaRocket, FaLightbulb, FaShieldAlt, FaChartLine, FaGlobe, FaNetworkWired, FaServer, FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from 'react-icons/fa';
 import './About.css';
 import ClientLogos from '../../components/ClientLogos/ClientLogos';
@@ -14,18 +14,6 @@ import CustomerStories from '../../components/CustomerStories/CustomerStories';
 import SEO from '../../components/SEO/SEO';
 
 const About = () => {
-    const [isLoading, setIsLoading] = useState(true);
-
-    useEffect(() => {
-        const timer = setTimeout(() => {
-            setIsLoading(false);
-        }, 1200);
-        return () => clearTimeout(timer);
-    }, []);
-
-    if (isLoading) {
-        return <PageSkeleton includeHeader={true} includeFooter={true} />;
-    }
 
     return (
         <div className="about-page">

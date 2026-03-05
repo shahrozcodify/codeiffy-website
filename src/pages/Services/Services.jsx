@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import { Link } from 'react-router-dom';
@@ -15,7 +15,7 @@ import CustomerStories from '../../components/CustomerStories/CustomerStories';
 import ArticleCarousel from '../../components/ArticleCarousel/ArticleCarousel';
 import BenefitSection from '../../components/BenefitSection/BenefitSection';
 import CTA from '../../components/cta/CTA';
-import PageSkeleton from '../../components/Skeleton/PageSkeleton';
+
 import './Services.css';
 import '../../components/Hero/Hero.css';
 import '../../components/BenefitSection/BenefitSection.css';
@@ -23,18 +23,6 @@ import '../../components/BenefitSection/BenefitSection.css';
 import SEO from '../../components/SEO/SEO';
 
 const Services = () => {
-    const [isLoading, setIsLoading] = useState(true);
-
-    useEffect(() => {
-        const timer = setTimeout(() => {
-            setIsLoading(false);
-        }, 1200);
-        return () => clearTimeout(timer);
-    }, []);
-
-    if (isLoading) {
-        return <PageSkeleton includeHeader={true} includeFooter={true} />;
-    }
 
     return (
         <div className="services-page">
