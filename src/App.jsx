@@ -1,6 +1,7 @@
 import React, { Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import ScrollToTop from './components/ScrollToTop';
+import LoadingBar from './components/LoadingBar/LoadingBar';
 
 import './App.css';
 
@@ -21,10 +22,10 @@ const Contact = lazy(() => import('./pages/Contact/Contact'));
 const Career = lazy(() => import('./pages/Career/Career'));
 const PrivacyPolicy = lazy(() => import('./pages/Legal/PrivacyPolicy'));
 const TermsOfUse = lazy(() => import('./pages/Legal/TermsOfUse'));
-
 function App() {
   return (
     <Router>
+      <LoadingBar />
       <ScrollToTop />
       <Suspense fallback={null}>
         <Routes>
