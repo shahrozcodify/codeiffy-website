@@ -1,11 +1,14 @@
+import React from 'react';
+import Header from '../../components/Header/Header';
+import Footer from '../../components/Footer/Footer';
 import SEO from '../../components/SEO/SEO';
 
 const TermsOfUse = () => {
     return (
         <div className="legal-page">
             <SEO
-                title="Terms of Use | Codeifyy"
-                description="Review the terms and conditions governing the use of Codeifyy’s website and digital services."
+                title="Terms & Conditions | Codeifyy"
+                description="Review Codeifyy's terms and conditions governing the use of our website and services."
                 canonical="/terms-of-use"
             />
             <Header />

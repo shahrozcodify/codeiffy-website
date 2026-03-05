@@ -53,6 +53,11 @@ const Career = () => {
 
     return (
         <div className="career-page">
+            <SEO
+                title="Careers at Codeifyy | Build the Future With Us"
+                description="Join Codeifyy and build intelligent, scalable software solutions. Explore future opportunities in engineering, AI, and digital innovation."
+                canonical="/career"
+            />
             <Header />
             <main>
                 {/* HERO SECTION */}

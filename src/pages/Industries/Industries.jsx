@@ -154,6 +154,11 @@ const Industries = () => {
 
     return (
         <div className="industries-page">
+            <SEO
+                title="Industry Specific Software Solutions - Codeifyy"
+                description="We deliver domain-focused digital solutions tailored to the operational, compliance, and scalability requirements of modern industries."
+                canonical="/industries"
+            />
             <Header />
 
             {/* HERO SECTION */}

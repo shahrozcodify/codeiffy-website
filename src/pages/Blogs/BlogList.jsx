@@ -5,7 +5,6 @@ import Footer from '../../components/Footer/Footer';
 import BlogCardSkeleton from '../../components/Skeleton/BlogCardSkeleton';
 import { blogData } from './blogData';
 import './Blogs.css';
-
 import SEO from '../../components/SEO/SEO';
 
 const BlogList = () => {
@@ -22,8 +21,8 @@ const BlogList = () => {
     return (
         <div className="blogs-page">
             <SEO
-                title="Blog | Insights on Tech, AI & Business | Codeifyy"
-                description="Explore our latest articles on software development, artificial intelligence, industry trends, and digital transformation strategies."
+                title="Blog | Insights & Innovation | Codeifyy"
+                description="Expert perspectives on software, AI, and digital transformation for forward-thinking enterprises."
                 canonical="/blog"
             />
             <Header />

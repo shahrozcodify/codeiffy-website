@@ -1,3 +1,6 @@
+import React from 'react';
+import Header from '../../components/Header/Header';
+import Footer from '../../components/Footer/Footer';
 import SEO from '../../components/SEO/SEO';
 
 const PrivacyPolicy = () => {
@@ -5,7 +8,7 @@ const PrivacyPolicy = () => {
         <div className="legal-page">
             <SEO
                 title="Privacy Policy | Codeifyy"
-                description="Learn how Codeifyy collects, uses, and protects your personal data in accordance with global privacy standards."
+                description="Read Codeifyy's privacy policy to understand how we collect, use, and protect your information."
                 canonical="/privacy-policy"
             />
             <Header />
