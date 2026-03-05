@@ -106,8 +106,11 @@ const ProductDevelopment = () => {
 
     return (
         <div className="product-development-page">
-            {/* <title>Full-Cycle Product Development | Codeifyy</title>
-            <meta name="description" content="From idea to MVP to enterprise scale—Codeifyy delivers end-to-end product development services." /> */}
+            <SEO
+                title="End-to-end Product Development Services | Codeifyy"
+                description="From concept to launch, Codeifyy designs and develops scalable software products with user-focused design and robust engineering foundations."
+                canonical="/services/product-development"
+            />
 
             <Header />
 

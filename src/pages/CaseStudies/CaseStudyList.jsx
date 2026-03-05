@@ -7,7 +7,6 @@ import { FaArrowRight } from 'react-icons/fa';
 import { caseStudies as caseStudiesData } from '../../data/caseStudies';
 import CaseStudyCardSkeleton from '../../components/Skeleton/CaseStudyCardSkeleton';
 import './CaseStudies.css';
-
 import SEO from '../../components/SEO/SEO';
 
 const CaseStudyList = () => {
@@ -26,8 +25,8 @@ const CaseStudyList = () => {
     return (
         <div className="case-studies-page">
             <SEO
-                title="Case Studies | Real-World Digital Impact | Codeifyy"
-                description="Explore Codeifyy’s portfolio of successful projects, from enterprise software to AI-powered transformations and scalable digital solutions."
+                title="Case Studies | Codeifyy"
+                description="Discover how Codeifyy delivers measurable results through AI solutions, web platforms, and enterprise-grade software implementations."
                 canonical="/case-studies"
             />
             <Header />
