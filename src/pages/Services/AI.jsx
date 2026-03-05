@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import Industries from '../../components/Industries/Industries';
@@ -7,7 +7,7 @@ import ClientLogos from '../../components/ClientLogos/ClientLogos';
 import CustomerStories from '../../components/CustomerStories/CustomerStories';
 import BenefitSection from '../../components/BenefitSection/BenefitSection';
 import CTA from '../../components/cta/CTA';
-import PageSkeleton from '../../components/Skeleton/PageSkeleton';
+
 import {
     FaBrain, FaRobot, FaNetworkWired, FaComments, FaSearch, FaCogs,
     FaCheckCircle, FaArrowRight, FaChartLine, FaLightbulb, FaShieldAlt, FaDatabase
@@ -19,18 +19,6 @@ import '../../components/BenefitSection/BenefitSection.css';
 import SEO from '../../components/SEO/SEO';
 
 const AI = () => {
-    const [isLoading, setIsLoading] = useState(true);
-
-    useEffect(() => {
-        const timer = setTimeout(() => {
-            setIsLoading(false);
-        }, 1200);
-        return () => clearTimeout(timer);
-    }, []);
-
-    if (isLoading) {
-        return <PageSkeleton includeHeader={true} includeFooter={true} />;
-    }
 
     return (
         <div className="ai-page">
