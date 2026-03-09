@@ -35,7 +35,7 @@ const SoftwareDevelopment = () => {
                 <div className="container">
                     <div className="row align-items-center hero-row">
                         <div className="col-lg-7 col-md-6">
-                            <div className="hero-label">Software Engineering Services</div>
+                            <div className="hero-label">Software Development Services</div>
                             <h1 className="hero-title">
                                 Engineering Software for <br />
                                 <span style={{ color: 'var(--codeifyy-green)' }}>Modern</span> Businesses.
