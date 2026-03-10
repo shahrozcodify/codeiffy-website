@@ -71,13 +71,30 @@ const Footer = () => {
                     </div>
 
                     {/* Links Columns */}
+                    {/* Links Columns */}
                     <div className="footer-links-col">
-                        <h4>Solutions</h4>
+                        <h4>Services</h4>
                         <ul>
-                            <li><Link to="/services">Services</Link></li>
-                            <li><Link to="/industries">Industries</Link></li>
-                            <li><Link to="/services/staff-augmentation">Staff Augmentation</Link></li>
-                            <li><Link to="/services/software-development">Software Development</Link></li>
+                            <li>
+                                <Link to="/services/staff-augmentation">
+                                    Staff Augmentation
+                                </Link>
+                            </li>
+                            <li>
+                                <Link to="/services/software-development">
+                                    Software Development
+                                </Link>
+                            </li>
+                            <li>
+                                <Link to="/services/artificial-intelligence">
+                                    Artificial Intelligence
+                                </Link>
+                            </li>
+                            <li>
+                                <Link to="/services/product-development">
+                                    Product Development
+                                </Link>
+                            </li>
                         </ul>
                     </div>
 
