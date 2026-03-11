@@ -1,7 +1,22 @@
 .industries-section {
-    padding: 60px 0;
+    padding: 3rem 0;
     background-color: #f8fafc;
     overflow: hidden;
+}
+
+.cross-industry-section {
+    padding: 2rem 0;
+    background: #f1f5f9;
+    position: relative;
+    overflow: hidden;
+}
+
+.industry-approach-section {
+    padding: 4rem 0;
+    background: #0f172a;
+    color: #fff;
+    text-align: left;
+    margin-bottom: 3rem;
 }
 
 .industries-header {
@@ -153,5 +168,130 @@
 
     .industries-title {
         font-size: 1.75rem;
+    }
+}
+
+/* Detailed Industry Card Styles (Imported from pages/Industries) */
+.industry-grid-section {
+    padding: 3rem 0;
+    background: #fff;
+}
+
+.industry-card-detailed {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 3rem;
+    height: 100%;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 1;
+    text-align: left;
+}
+
+.industry-card-detailed:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+    border-color: var(--codeifyy-green);
+}
+
+.industry-number {
+    position: absolute;
+    top: 0.5rem;
+    right: 1.5rem;
+    font-size: 4.5rem;
+    font-weight: 900;
+    color: var(--codeifyy-green);
+    opacity: 0.15;
+    line-height: 1;
+    z-index: 0;
+}
+
+.industry-card-title,
+.industry-card-desc,
+.industry-capabilities,
+.industry-card-footer {
+    position: relative;
+    z-index: 1;
+}
+
+.industry-card-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 1rem;
+    font-family: 'Outfit', sans-serif;
+    padding-right: 3rem;
+}
+
+.industry-card-desc {
+    color: #64748b;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+}
+
+.industry-capabilities {
+    margin-top: auto;
+}
+
+.industry-capabilities h5 {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    color: #94a3b8;
+    letter-spacing: 0.05em;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.industry-capabilities ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.industry-capabilities li {
+    display: flex;
+    align-items: center;
+    color: #334155;
+    font-size: 0.9rem;
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+.industry-bullet-icon {
+    color: var(--codeifyy-green);
+    margin-right: 8px;
+    font-size: 1rem;
+    flex-shrink: 0;
+}
+
+/* Detailed Card Responsive Adjustments */
+@media (max-width: 1200px) {
+    .industry-card-detailed {
+        padding: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .industry-capabilities ul {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+    }
+
+    .industry-card-detailed {
+        padding: 2.5rem 1.5rem;
+    }
+
+    .industry-number {
+        font-size: 3rem;
+        top: 0.5rem;
+        right: 1.5rem;
     }
 }

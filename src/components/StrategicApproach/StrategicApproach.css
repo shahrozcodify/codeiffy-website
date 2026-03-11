@@ -1,0 +1,68 @@
+.services-approach-section {
+    background: #0f172a;
+    color: #fff;
+    padding: 6rem 0;
+}
+
+.services-approach-section .services-approach-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+    margin-top: 4rem;
+}
+
+.services-approach-section .approach-card-simple {
+    text-align: left;
+    padding: 2.5rem;
+    background: rgba(255, 255, 255, 0.04);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    height: 100%;
+}
+
+.services-approach-section .approach-card-simple:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: var(--codeifyy-green);
+    transform: translateY(-5px);
+}
+
+.services-approach-section .approach-number {
+    font-size: 3rem;
+    font-weight: 800;
+    color: rgba(255, 255, 255, 0.1);
+    line-height: 1;
+    margin-bottom: 1.5rem;
+    display: block;
+}
+
+.services-approach-section .approach-title-simple {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 0.75rem;
+}
+
+.services-approach-section .approach-desc-simple {
+    font-size: 0.95rem;
+    color: #cbd5e1;
+    line-height: 1.6;
+}
+
+@media (max-width: 992px) {
+    .services-approach-section .services-approach-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .services-approach-section .services-approach-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .services-approach-section .approach-card-simple {
+        padding: 2rem 1.5rem;
+    }
+}

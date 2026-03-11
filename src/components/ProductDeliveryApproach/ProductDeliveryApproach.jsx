@@ -2,11 +2,11 @@ import React, { useState, useRef } from 'react';
 import '../NextStep/NextStep.css';
 import { FaArrowRight } from 'react-icons/fa';
 
-const ProductDeliveryApproach = () => {
+const ProductDeliveryApproach = ({ data }) => {
     const [activeStep, setActiveStep] = useState(0);
     const tabsContainerRef = useRef(null);
 
-    const steps = [
+    const defaultSteps = [
         {
             title: "Discovery & Research",
             description: "We dive deep into your market, users, and business goals to define a clear product vision. Our team conducts thorough research to ensure we have a crystal-clear understanding of what success looks like for your project."
@@ -32,6 +32,9 @@ const ProductDeliveryApproach = () => {
             description: "The launch is just the beginning. We continuously monitor performance, user behavior, and security metrics. Through regular updates, we ensure your software remains efficient and ahead of the competition."
         }
     ];
+
+    const title = data?.title || "Our Product Delivery Approach";
+    const steps = data?.elements || defaultSteps;
 
     // Phase Navigation Logic
     const handleNextPhase = () => {
@@ -61,9 +64,7 @@ const ProductDeliveryApproach = () => {
         <section className="delivery-methodology-section">
             <div className="methodology-wrapper">
                 <div className="container">
-                    <h2 className="section-heading-centered animate-up" style={{ marginBottom: '2rem' }}>
-                        Our Product Delivery Approach
-                    </h2>
+                    <h2 className="section-heading-centered animate-up" style={{ marginBottom: '2rem' }} dangerouslySetInnerHTML={{ __html: title }} />
 
                     {/* Consolidated Steps Tabs with Navigation Arrows */}
                     <div className="methodology-tabs-wrapper animate-up delay-1">

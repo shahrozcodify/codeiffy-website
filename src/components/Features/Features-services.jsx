@@ -1,42 +1,23 @@
 import React, { useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { FaArrowRight } from 'react-icons/fa';
+import { sharedOffering } from '../../data/pagesContent';
 
-const Features = () => {
+const Features = ({ data }) => {
     const [activeTab, setActiveTab] = useState(0);
     const tabsContainerRef = useRef(null);
 
-    const services = [
-        {
-            category: 'Software Development',
-            title: 'Software Development',
-            desc: 'We design and develop secure, scalable, and high-performance software tailored to your operational and strategic needs.',
-            points: ['Bespoke Software Development', 'ERP Software Development', 'Cloud Application Development', 'Software Modernization'],
-            link: '/services/software-development'
-        },
-        {
-            category: 'Artificial Intelligence',
-            title: 'Intelligent Solutions',
-            desc: 'Harness the power of AI to automate operations and unlock data-driven growth.',
-            points: ['AI Strategy & Consulting', 'Machine Learning Development', 'Generative AI Integration', 'AI Chatbots & Virtual Assistants', 'Natural Language Processing (NLP)', 'AI Automation & Workflows'],
-            link: '/services/artificial-intelligence'
-        },
-        {
-            category: 'Staff Augmentation',
-            title: 'Extend Your Team',
-            desc: 'Scale resources on demand with pre-vetted developers and engineers.',
-            points: ['IT Staff Augmentation', 'Dedicated Development Team', 'Full-Project Outsourcing', 'Software Outsourcing'],
-            link: '/services/staff-augmentation'
-        },
+    const title = data?.title || 'Explore Our <span class="highlight-span">Offering</span>';
 
-        {
-            category: 'Product Development',
-            title: 'Idea to Scale',
-            desc: 'Build market-ready digital products with a focus on user experience and scalability.',
-            points: ['Development Consulting', 'Product Development', 'Product Design', 'Architecture Design', 'UI & UX Design', 'API Development', 'Testing & QA', 'Support & Maintenance'],
-            link: '/services/product-development'
-        }
-    ];
+    const servicesFromAPI = data?.elements?.map(el => ({
+        category: el.title,
+        title: el.title,
+        desc: (el.shortDescription || el.desc || "").replace(/<\/?[^>]+(>|$)/g, ""),
+        points: el.points || [],
+        link: (el.ctaLink || el.ctaLnik || el.link) ? ((el.ctaLink || el.ctaLnik || el.link).startsWith('http') ? (el.ctaLink || el.ctaLnik || el.link) : `/${(el.ctaLink || el.ctaLnik || el.link).replace(/^\//, '')}`) : "/services"
+    })) || [];
+
+    const services = servicesFromAPI.length > 0 ? servicesFromAPI : sharedOffering;
 
     const handleNextTab = () => {
         if (activeTab < services.length - 1) {
@@ -65,7 +46,7 @@ const Features = () => {
         <section className="services-section-tabs">
             <div className="container">
                 <div className="services-intro">
-                    <h2 className="services-heading text-center">Explore Our <span className='highlight-span'>Offering</span></h2>
+                    <h2 className="services-heading text-center" dangerouslySetInnerHTML={{ __html: title }} />
                 </div>
 
                 <div className="services-tabs-layout">
@@ -77,7 +58,7 @@ const Features = () => {
                                 onClick={handlePrevTab}
                                 aria-label="Previous Service"
                             >
-                                <FaArrowRight />
+                                <FaArrowRight style={{ transform: 'rotate(180deg)' }} />
                             </button>
                         )}
 
@@ -111,16 +92,16 @@ const Features = () => {
                     <div className="services-content-area">
                         <div className="service-detail animate-fade-in" key={activeTab}>
                             <h3 className="service-detail-title">{services[activeTab].title}</h3>
-                            <p className="service-detail-desc">
-                                {services[activeTab].desc}
-                            </p>
-                            <ul className="service-detail-list">
-                                {services[activeTab].points.map((point, idx) => (
-                                    <li key={idx} className="service-point">
-                                        {point}
-                                    </li>
-                                ))}
-                            </ul>
+                            <p className="service-detail-desc" dangerouslySetInnerHTML={{ __html: services[activeTab].desc }} />
+                            {services[activeTab].points && services[activeTab].points.length > 0 && (
+                                <ul className="service-detail-list">
+                                    {services[activeTab].points.map((point, idx) => (
+                                        <li key={idx} className="service-point">
+                                            {point}
+                                        </li>
+                                    ))}
+                                </ul>
+                            )}
                             <Link to={services[activeTab].link || '#'} className="service-learn-more">
                                 Learn more <span className="arrow">→</span>
                             </Link>

@@ -3849,3 +3849,19 @@ h4 {
   opacity: 0 !important;
   pointer-events: none !important;
 }
+
+/* Global Highlight Helpers */
+.text-highlight,
+.highlight-text,
+.highlight-span {
+  color: var(--codeifyy-green) !important;
+}
+
+.benefit-main-heading .highlight-span,
+.industries-title .highlight-span,
+.tech-stack-title .highlight-text,
+.services-heading .highlight-span,
+.section-title .highlight-span {
+  color: var(--codeifyy-green);
+  font-weight: inherit;
+}

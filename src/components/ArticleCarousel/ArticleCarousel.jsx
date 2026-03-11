@@ -1,37 +1,24 @@
 import React from 'react';
+import { sharedTestimonials } from '../../data/pagesContent';
 
-const ArticleCarousel = () => {
-    const testimonials = [
-        {
-            client: 'Kia Motors',
-            text: 'Codeifyy streamlined our dealership operations with a centralized CRM that significantly improved lead tracking and sales visibility across teams.',
-            logo: '/clientlogo/image (2).png'
-        },
-        {
-            client: 'Ministry of Malaysia',
-            text: 'Their structured development approach and clear communication ensured smooth project execution. The final solution met our functional expectations and compliance standards.',
-            logo: '/clientlogo/image (4).png'
-        },
-        {
-            client: 'Jetour',
-            text: 'The web platform they developed strengthened our digital presence and simplified customer engagement through a performance-driven architecture.',
-            logo: '/clientlogo/image (3).png'
-        },
-        {
-            client: 'SERP Insight',
-            text: 'Codeifyy built a structured and scalable SEO intelligence system that reduced manual research time and improved our outreach efficiency.',
-            logo: '/clientlogo/image (1).png'
-        }
-    ];
+const ArticleCarousel = ({ data }) => {
+    const title = data?.title || 'What our clients say about us.';
+    const subTitle = data?.subTitle || 'Testimonials';
+    const description = data?.description || "Discover how we've helped leading global brands and organizations achieve their digital transformation goals.";
+
+    const testimonials = (data?.elements || sharedTestimonials).map(el => ({
+        client: el.title,
+        text: el.shortDescription?.replace(/<\/?[^>]+(>|$)/g, '') || '',
+        logo: el.image
+    }));
 
     const [currentIndex, setCurrentIndex] = React.useState(0);
     const trackRef = React.useRef(null);
     const wrapperRef = React.useRef(null);
     const [cardWidth, setCardWidth] = React.useState(0);
-    const [gap, setGap] = React.useState(24); // 1.5rem default
+    const [gap, setGap] = React.useState(24);
     const [visibleCards, setVisibleCards] = React.useState(1);
 
-    // Measure card width and visible count after mount and on resize
     React.useEffect(() => {
         const measure = () => {
             const track = trackRef.current;
@@ -40,12 +27,9 @@ const ArticleCarousel = () => {
                 const card = track.children[0];
                 const cardRect = card.getBoundingClientRect();
                 setCardWidth(cardRect.width);
-                // gap is 1.5rem = 24px by default; read computed style
                 const computed = getComputedStyle(track);
                 const gapVal = parseFloat(computed.gap || computed.columnGap || '24');
                 setGap(isNaN(gapVal) ? 24 : gapVal);
-
-                // Calculate how many full cards fit in the visible area
                 const wrapperWidth = wrapper.getBoundingClientRect().width;
                 const visible = Math.floor((wrapperWidth + gapVal) / (cardRect.width + gapVal));
                 setVisibleCards(Math.max(1, visible));
@@ -54,48 +38,33 @@ const ArticleCarousel = () => {
         measure();
         window.addEventListener('resize', measure);
         return () => window.removeEventListener('resize', measure);
-    }, []);
+    }, [testimonials.length]);
 
-    // Max index ensures last card aligns to the right edge
     const maxIndex = Math.max(0, testimonials.length - visibleCards);
 
-    const handleNext = () => {
-        if (currentIndex < maxIndex) {
-            setCurrentIndex(prev => prev + 1);
-        }
-    };
+    const handleNext = () => { if (currentIndex < maxIndex) setCurrentIndex(prev => prev + 1); };
+    const handlePrev = () => { if (currentIndex > 0) setCurrentIndex(prev => prev - 1); };
 
-    const handlePrev = () => {
-        if (currentIndex > 0) {
-            setCurrentIndex(prev => prev - 1);
-        }
-    };
-
-    // Calculate offset: for the last position, align last card to the right edge
     const wrapperWidth = wrapperRef.current ? wrapperRef.current.getBoundingClientRect().width : 0;
     const totalTrackWidth = testimonials.length * cardWidth + (testimonials.length - 1) * gap;
     const maxOffset = Math.max(0, totalTrackWidth - wrapperWidth);
     const rawOffset = currentIndex * (cardWidth + gap);
     const offset = Math.min(rawOffset, maxOffset);
 
+    if (!testimonials.length) return null;
+
     return (
         <section className="article-carousel-section">
             <div className="container">
-                <h2 className="article-main-heading">
-                    What our clients say about us.
-                </h2>
+                {title && <h2 className="article-main-heading" dangerouslySetInnerHTML={{ __html: title }} />}
 
                 <div className="carousel-outer-container">
-                    {/* Left label */}
                     <div className="article-row">
                         <div className="article-row-text">
-                            <h3>Testimonials</h3>
-                            <p className="article-row-desc">
-                                Discover how we've helped leading global brands and organizations achieve their digital transformation goals.
-                            </p>
+                            {subTitle && <h3>{subTitle}</h3>}
+                            {description && <p className="article-row-desc" dangerouslySetInnerHTML={{ __html: description }} />}
                         </div>
 
-                        {/* Cards track */}
                         <div className="carousel-wrapper-main" ref={wrapperRef} style={{ flex: 1, minWidth: 0, overflow: 'hidden' }}>
                             <div
                                 className="article-carousel-track"
@@ -112,11 +81,13 @@ const ArticleCarousel = () => {
                                     <div className="article-card testimonial-card" key={index}>
                                         <div className="article-card-accent"></div>
                                         <div className="testimonial-logo-wrapper">
-                                            <img
-                                                src={testimonial.logo}
-                                                alt={`${testimonial.client} Logo`}
-                                                className="testimonial-logo"
-                                            />
+                                            {testimonial.logo && (
+                                                <img
+                                                    src={testimonial.logo}
+                                                    alt={`${testimonial.client} Logo`}
+                                                    className="testimonial-logo"
+                                                />
+                                            )}
                                         </div>
                                         <p className="article-card-desc testimonial-text">"{testimonial.text}"</p>
                                         <div className="testimonial-client-name">{testimonial.client}</div>
@@ -124,7 +95,6 @@ const ArticleCarousel = () => {
                                 ))}
                             </div>
 
-                            {/* Progress Bar (desktop only) */}
                             <div className="carousel-scroll-track">
                                 <div
                                     className="carousel-scroll-bar"
@@ -138,7 +108,6 @@ const ArticleCarousel = () => {
                         </div>
                     </div>
 
-                    {/* Navigation Buttons */}
                     <div className="carousel-controls">
                         <button
                             className="carousel-prev-btn"
