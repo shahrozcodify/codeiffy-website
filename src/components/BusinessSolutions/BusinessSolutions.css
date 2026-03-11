@@ -1,0 +1,87 @@
+.business-solutions-section {
+    /* background: #f8fafc; */
+    padding-top: 6rem;
+    padding-bottom: 2rem;
+}
+
+.business-solutions-section .solution-card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+}
+
+.business-solutions-section .solution-card {
+    background: #fff;
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e2e8f0;
+    transition: all 0.3s ease;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.business-solutions-section .solution-number {
+    color: var(--codeifyy-green) !important;
+    opacity: 0.15;
+    font-size: 4.5rem !important;
+    font-weight: 900 !important;
+    position: absolute;
+    top: 0.5rem !important;
+    right: 1.5rem !important;
+    line-height: 1;
+    z-index: 0;
+}
+
+.business-solutions-section .solution-card:hover {
+    border-color: var(--codeifyy-green);
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
+}
+
+.business-solutions-section .solution-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 1rem;
+    padding-right: 3rem;
+}
+
+.business-solutions-section .solution-desc {
+    color: #64748b;
+    margin-bottom: 2rem;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.business-solutions-section .solution-features li {
+    font-size: 0.95rem !important;
+    margin-bottom: 0.75rem !important;
+}
+
+.business-solutions-section  .service-features-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.business-solutions-section  .service-features-list li {
+    display: flex;
+    align-items: flex-start;
+    color: #475569;
+    font-weight: 500;
+}
+
+.business-solutions-section .bullet-dot {
+    font-size: 1.2rem;
+    line-height: 1.2;
+    margin-right: 12px;
+    color: var(--codeifyy-green);
+}
+
+@media (max-width: 768px) {
+    .business-solutions-section .solution-card-grid {
+        grid-template-columns: 1fr;
+    }
+}

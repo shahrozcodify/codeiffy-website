@@ -1,17 +1,12 @@
 import React from 'react';
 import './ClientLogos.css';
 
-const clientLogos = [
-    '/clientlogo/image (1).png',
-    '/clientlogo/image (2).png',
-    '/clientlogo/image (3).png',
-    '/clientlogo/image (4).png',
-    '/clientlogo/image (5).png',
-];
+import { sharedClientLogos } from '../../data/pagesContent';
 
-const ClientLogos = () => {
+const ClientLogos = ({ data }) => {
+    const logos = data?.elements || sharedClientLogos;
     // Duplicate logos to ensure enough content for the marquee scrolling
-    const marqueeLogos = [...clientLogos, ...clientLogos, ...clientLogos, ...clientLogos];
+    const marqueeLogos = [...logos, ...logos, ...logos, ...logos];
 
     return (
         <div className="client-logos-section">

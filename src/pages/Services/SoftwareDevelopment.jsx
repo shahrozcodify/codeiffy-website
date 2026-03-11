@@ -22,7 +22,7 @@ import SEO from '../../components/SEO/SEO';
 const SoftwareDevelopment = () => {
 
     return (
-        <div className="software-dev-page">
+        <div className="software-development-page">
             <SEO
                 title="Software Development Services | Codeifyy"
                 description="Codeifyy delivers scalable, secure, and high-performance software solutions tailored to business needs using modern technologies and clean architecture."
@@ -37,7 +37,7 @@ const SoftwareDevelopment = () => {
                         <div className="col-lg-7 col-md-6">
                             <div className="hero-label">Software Development Services</div>
                             <h1 className="hero-title">
-                                Engineering Software for <br />
+                                Engineering Software for
                                 <span style={{ color: 'var(--codeifyy-green)' }}>Modern</span> Businesses.
                             </h1>
                             <p className="hero-description">

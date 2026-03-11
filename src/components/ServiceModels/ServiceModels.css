@@ -1,0 +1,99 @@
+.service-models-section .section-padding {
+    padding: 4rem 0;
+}
+
+.service-models-section {
+    background: transparent;
+}
+
+.service-models-section .section-title {
+    font-size: 2.75rem;
+    font-weight: 800;
+    color: var(--codeifyy-navy);
+    margin-bottom: 2rem;
+    font-family: 'Outfit', sans-serif;
+    text-align: center;
+}
+
+.service-models-section .service-models-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 3.5rem !important;
+}
+
+.service-models-section .service-model-card {
+    transition: all 0.3s ease;
+    border-radius: 24px;
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.service-models-section .service-model-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(0, 188, 84, 0.1);
+}
+
+.service-models-section .model-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--codeifyy-navy);
+    margin-bottom: 1.25rem;
+    font-family: 'Outfit', sans-serif;
+}
+
+.service-models-section .model-description {
+    font-size: 1.1rem;
+    color: #475569;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+}
+
+.service-models-section .btn-codeifyy-primary {
+    width: fit-content !important;
+}
+
+@media (max-width: 991px) {
+    .service-models-section .section-padding {
+        padding: 4rem 0;
+    }
+    .service-models-section .section-title {
+        font-size: 2.25rem;
+    }
+
+    .service-models-section .model-title {
+        font-size: 1.75rem;
+    }
+    
+    .service-models-section .service-models-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 2rem !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .service-models-section .section-padding {
+        padding: 3rem 0;
+    }
+    .service-models-section .section-title {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .service-models-section .model-title {
+        font-size: 1.5rem;
+    }
+    
+    .service-models-section .service-models-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .service-models-section .section-title {
+        font-size: 1.75rem;
+    }
+}

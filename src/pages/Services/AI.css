@@ -1,9 +1,9 @@
 /* Reduced spacing for reusable BenefitSection bullets */
-.ai-page .model-features {
+.artificial-intelligence-page .model-features {
     gap: 0.5rem !important;
 }
 
-.ai-page .model-features li {
+.artificial-intelligence-page .model-features li {
     font-size: 1.05rem;
     margin-bottom: 0;
 }
@@ -13,7 +13,7 @@
 /* Reusing Hero Styles from Hero.css generally */
 
 /* --- Hero Graphic Styles (Specific to this page, could be reused or new graphic) --- */
-.ai-page .hero-graphic-wrapper {
+.artificial-intelligence-page .hero-graphic-wrapper {
     position: relative;
     height: 500px;
     display: flex;
@@ -24,7 +24,7 @@
 
 /* AI Graphic Placeholder or Style if differernt from Code Window */
 /* Using Code Window style for now as it looks techy */
-.ai-page .code-window {
+.artificial-intelligence-page .code-window {
     background: #1e293b;
     border-radius: 12px;
     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
@@ -38,11 +38,11 @@
     position: relative;
 }
 
-.code-window:hover {
+.artificial-intelligence-page .code-window:hover {
     transform: rotateY(0) rotateX(0);
 }
 
-.ai-page .window-header {
+.artificial-intelligence-page .window-header {
     background: #0f172a;
     padding: 12px 16px;
     display: flex;
@@ -50,25 +50,25 @@
     border-bottom: 1px solid #334155;
 }
 
-.ai-page .dot {
+.artificial-intelligence-page .dot {
     width: 12px;
     height: 12px;
     border-radius: 50%;
 }
 
-.ai-page .dot.red {
+.artificial-intelligence-page .dot.red {
     background: #ef4444;
 }
 
-.ai-page .dot.yellow {
+.artificial-intelligence-page .dot.yellow {
     background: #f59e0b;
 }
 
-.ai-page .dot.green {
+.artificial-intelligence-page .dot.green {
     background: #10b981;
 }
 
-.ai-page .window-body {
+.artificial-intelligence-page .window-body {
     padding: 20px;
     font-family: 'Fira Code', 'Courier New', monospace;
     font-size: 0.9rem;
@@ -76,38 +76,38 @@
     color: #e2e8f0;
 }
 
-.ai-page .code-line {
+.artificial-intelligence-page .code-line {
     display: block;
 }
 
-.ai-page .c-gray {
+.artificial-intelligence-page .c-gray {
     color: #64748b;
     font-style: italic;
 }
 
-.ai-page .c-purple {
+.artificial-intelligence-page .c-purple {
     color: #c084fc;
 }
 
-.ai-page .c-blue {
+.artificial-intelligence-page .c-blue {
     color: #60a5fa;
 }
 
-.ai-page .c-green {
+.artificial-intelligence-page .c-green {
     color: #4ade80;
 }
 
-.ai-page .c-yellow {
+.artificial-intelligence-page .c-yellow {
     color: #fcd34d;
 }
 
-.ai-page .c-white {
+.artificial-intelligence-page .c-white {
     color: #f8fafc;
 }
 
 
 /* Floating Badges */
-.ai-page .floating-badge {
+.artificial-intelligence-page .floating-badge {
     position: absolute;
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(8px);
@@ -125,7 +125,7 @@
     animation: float 4s ease-in-out infinite;
 }
 
-.ai-page .badge-icon {
+.artificial-intelligence-page .badge-icon {
     width: 32px;
     height: 32px;
     border-radius: 50%;
@@ -136,19 +136,19 @@
     font-size: 0.9rem;
 }
 
-.ai-page .badge-security {
+.artificial-intelligence-page .badge-security {
     top: 10%;
     right: 0;
     animation-delay: 0s;
 }
 
-.ai-page .badge-cloud {
+.artificial-intelligence-page .badge-cloud {
     bottom: 15%;
     left: -20px;
     animation-delay: 1.5s;
 }
 
-.ai-page .badge-performance {
+.artificial-intelligence-page .badge-performance {
     bottom: 30%;
     right: -30px;
     animation-delay: 0.8s;
@@ -167,19 +167,19 @@
 }
 
 /* Services Grid Section */
-.ai-page .services-grid-section {
+.artificial-intelligence-page .services-grid-section {
     padding-bottom: 4rem;
     background: #fff;
 }
 
-.ai-page .services-grid {
+.artificial-intelligence-page .services-grid {
     display: grid !important;
     grid-template-columns: repeat(2, 1fr) !important;
     gap: 3rem !important;
     margin-top: 4rem;
 }
 
-.ai-page .service-card {
+.artificial-intelligence-page .service-card {
     background: #fff;
     border: 1px solid #e2e8f0;
     border-radius: 16px;
@@ -189,14 +189,14 @@
     overflow: hidden;
 }
 
-.ai-page .service-card:hover {
+.artificial-intelligence-page .service-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.02);
     border-color: var(--codeifyy-green);
 }
 
 /* Highlight service numbers */
-.ai-page .service-number {
+.artificial-intelligence-page .service-number {
     color: var(--codeifyy-green) !important;
     opacity: 0.15;
     font-size: 4.5rem !important;
@@ -207,12 +207,12 @@
     line-height: 1;
 }
 
-.ai-page .service-content {
+.artificial-intelligence-page .service-content {
     position: relative;
     z-index: 1;
 }
 
-.ai-page .service-title {
+.artificial-intelligence-page .service-title {
     font-size: 1.75rem;
     font-weight: 700;
     color: #0f172a;
@@ -221,14 +221,14 @@
     padding-right: 3rem;
 }
 
-.ai-page .service-desc {
+.artificial-intelligence-page .service-desc {
     color: #64748b;
     font-size: 1.05rem;
     line-height: 1.7;
     margin-bottom: 2rem;
 }
 
-.ai-page .service-capabilities h5 {
+.artificial-intelligence-page .service-capabilities h5 {
     font-size: 0.9rem;
     text-transform: uppercase;
     color: #94a3b8;
@@ -237,7 +237,7 @@
     font-weight: 700;
 }
 
-.ai-page .service-capabilities ul {
+.artificial-intelligence-page .service-capabilities ul {
     list-style: none;
     padding: 0;
     margin: 0;
@@ -247,7 +247,7 @@
     gap: 0.75rem;
 }
 
-.ai-page .service-capabilities li {
+.artificial-intelligence-page .service-capabilities li {
     display: flex;
     align-items: center;
     /**/
@@ -257,31 +257,31 @@
     font-weight: 500;
 }
 
-.ai-page .service-capabilities li svg {
+.artificial-intelligence-page .service-capabilities li svg {
     color: var(--codeifyy-green);
     font-size: 0.8rem;
 }
 
 /* Challenges and Delivery specifically for AI page if needed slightly different styling */
-.ai-page .challenges-list li svg {
+.artificial-intelligence-page .challenges-list li svg {
     color: #ef4444;
 }
 
 /* Engagement Models Section */
-.ai-page .engagement-section {
+.artificial-intelligence-page .engagement-section {
     padding-top: 1rem;
     padding-bottom: 5rem;
     background: #f8fafc;
 }
 
-.ai-page .engagement-grid {
+.artificial-intelligence-page .engagement-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
     margin-top: 4rem;
 }
 
-.ai-page .engagement-card {
+.artificial-intelligence-page .engagement-card {
     background: #fff;
     padding: 2.5rem;
     border-radius: 12px;
@@ -290,28 +290,28 @@
     height: 100%;
 }
 
-.ai-page .engagement-card h3 {
+.artificial-intelligence-page .engagement-card h3 {
     font-size: 1.25rem;
     font-weight: 700;
     margin-bottom: 1rem;
     color: #0f172a;
 }
 
-.ai-page .engagement-card p {
+.artificial-intelligence-page .engagement-card p {
     color: #64748b;
     font-size: 0.95rem;
     line-height: 1.6;
 }
 
 /* Development Approach */
-.ai-page .approach-section {
+.artificial-intelligence-page .approach-section {
     padding: 5rem 0;
     background: #0f172a;
     color: #fff;
     text-align: center;
 }
 
-.ai-page .approach-steps {
+.artificial-intelligence-page .approach-steps {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 2rem;
@@ -319,7 +319,7 @@
     position: relative;
 }
 
-.ai-page .approach-step-card {
+.artificial-intelligence-page .approach-step-card {
     background: rgba(255, 255, 255, 0.05);
     padding: 2rem 1rem;
     border-radius: 12px;
@@ -327,27 +327,27 @@
     transition: transform 0.3s;
 }
 
-.ai-page .approach-step-card:hover {
+.artificial-intelligence-page .approach-step-card:hover {
     transform: translateY(-5px);
     background: rgba(255, 255, 255, 0.08);
     border-color: var(--codeifyy-green);
 }
 
-.ai-page .step-icon {
+.artificial-intelligence-page .step-icon {
     font-size: 2rem;
     color: var(--codeifyy-green);
     margin-bottom: 1rem;
     display: block;
 }
 
-.ai-page .step-name {
+.artificial-intelligence-page .step-name {
     font-weight: 700;
     font-size: 1rem;
     color: #fff;
 }
 
 /* Integrated Components Spacing */
-.ai-page .integrated-tech-stack {
+.artificial-intelligence-page .integrated-tech-stack {
     padding-top: 3rem;
     padding-bottom: 3rem;
     border-bottom: 1px solid #e2e8f0;
@@ -355,35 +355,35 @@
 
 /* Responsive */
 @media (max-width: 991px) {
-    .ai-page .services-grid {
+    .artificial-intelligence-page .services-grid {
         grid-template-columns: repeat(2, 1fr) !important;
         gap: 2rem !important;
     }
 
-    .ai-page .engagement-grid {
+    .artificial-intelligence-page .engagement-grid {
         grid-template-columns: 1fr;
     }
 
-    .ai-page .service-capabilities ul {
+    .artificial-intelligence-page .service-capabilities ul {
         grid-template-columns: 1fr;
     }
 }
 
 @media (max-width: 768px) {
-    .ai-page .services-grid {
+    .artificial-intelligence-page .services-grid {
         grid-template-columns: 1fr !important;
         gap: 1.5rem !important;
     }
 }
 
 @media (max-width: 480px) {
-    .ai-page .service-number {
+    .artificial-intelligence-page .service-number {
         font-size: 3rem !important;
         top: 0.5rem !important;
         right: 1rem !important;
     }
 
-    .ai-page .service-card {
+    .artificial-intelligence-page .service-card {
         background: #fff;
         border: 1px solid #e2e8f0;
         border-radius: 16px;
@@ -393,7 +393,7 @@
         overflow: hidden;
     }
 
-    .ai-page .approach-step-card {
+    .artificial-intelligence-page .approach-step-card {
         background: rgba(255, 255, 255, 0.05);
         border-radius: 12px;
         border: 1px solid rgba(255, 255, 255, 0.1);

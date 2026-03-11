@@ -1,0 +1,70 @@
+.split-content-section {
+    padding: 1.5rem 0;
+}
+
+.split-content-section.flex-row-reverse .row {
+    flex-direction: row-reverse;
+}
+
+.split-content-section .section-title {
+    font-size: 2.75rem;
+    font-weight: 800;
+    color: var(--codeifyy-navy);
+    margin-bottom: 2rem;
+    font-family: 'Outfit', sans-serif;
+}
+
+.split-content-section .list-icon {
+    color: var(--codeifyy-green);
+    font-size: 1.1rem;
+    flex-shrink: 0;
+}
+
+.split-content-section .split-list li {
+    font-size: 1.1rem;
+}
+
+.split-content-section .featured-card {
+    background: var(--codeifyy-navy);
+    padding: 3rem;
+    border-radius: 20px;
+    color: white;
+    text-align: center;
+    transition: all 0.4s ease;
+}
+
+.split-content-section .featured-card h3 {
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.split-content-section .featured-card p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    line-height: 1.6;
+}
+
+.split-content-section .card-icon-wrapper i {
+    color: white;
+}
+
+@media (max-width: 991px) {
+    .split-content-section .section-title {
+        font-size: 2.25rem;
+    }
+    
+    .split-content-section .featured-side {
+        margin-top: 3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .split-content-section .section-title {
+        font-size: 2rem;
+    }
+    
+    .split-content-section .featured-card {
+        padding: 2.5rem;
+    }
+}

@@ -1,68 +1,61 @@
 import React from 'react';
 import './WhyChooseCodeifyy.css';
-import { FaBrain, FaHandshake, FaShieldAlt, FaRocket, FaLayerGroup, FaHeadset } from 'react-icons/fa';
+import {
+    FaBrain, FaHandshake, FaShieldAlt, FaRocket,
+    FaLayerGroup, FaHeadset, FaCheckCircle, FaChartLine, FaUsers
+} from 'react-icons/fa';
 
-const WhyChooseCodeifyy = () => {
-    const reasons = [
-        {
-            icon: <FaBrain />,
-            title: 'Strategic Engineering Approach',
-            desc: 'We align technology decisions with measurable business outcomes.'
-        },
-        {
-            icon: <FaHandshake />,
-            title: 'Flexible Engagement Models',
-            desc: 'Choose from staff augmentation, dedicated teams, or full-cycle project delivery.'
-        },
-        {
-            icon: <FaShieldAlt />,
-            title: 'Quality-Driven Delivery',
-            desc: 'We follow strict coding standards, security best practices, and structured QA processes.'
-        },
-        {
-            icon: <FaRocket />,
-            title: 'Agile & Transparent Execution',
-            desc: 'Iterative development, continuous communication, and milestone-based delivery.'
-        },
-        {
-            icon: <FaLayerGroup />,
-            title: 'Scalable Architecture',
-            desc: 'Our solutions are built to grow with your business — not limit it.'
-        },
-        {
-            icon: <FaHeadset />,
-            title: 'Dedicated Support',
-            desc: 'Post-launch maintenance, updates, and 24/7 monitoring to keep your system performing.'
-        }
-    ];
+import { sharedWhyChoose } from '../../data/pagesContent';
+
+const IconMap = {
+    FaBrain, FaHandshake, FaShieldAlt, FaRocket,
+    FaLayerGroup, FaHeadset, FaCheckCircle, FaChartLine, FaUsers
+};
+
+const WhyChooseCodeifyy = ({ data }) => {
+    const title = data?.title || 'Why Choose <span class="highlight-span">CODEIFYY</span>';
+    const description = data?.description?.replace(/<\/?[^>]+(>|$)/g, '') || 'Partner with a team that values quality, transparency, and results.';
+    const btnText = data?.ctaText || "Let's Get Started";
+    const btnLink = data?.ctaLink || data?.ctaLnik || "/contact";
+    const reasons = data?.elements || sharedWhyChoose;
 
     return (
         <section className="why-choose-section">
             <div className="container">
                 <div className="why-choose-header animate-up">
-                    <h2 className="why-choose-title">
-                        Why Choose <span className="highlight-span">CODEIFYY</span>
-                    </h2>
-                    <p className="why-choose-description">
-                        Partner with a team that values quality, transparency, and results.
-                    </p>
+                    {title && (
+                        <h2
+                            className="why-choose-title"
+                            dangerouslySetInnerHTML={{ __html: title }}
+                        />
+                    )}
+                    {description && (
+                        <p className="why-choose-description">{description}</p>
+                    )}
                 </div>
 
                 <div className="why-choose-grid">
-                    {reasons.map((item, index) => (
-                        <div key={index} className={`why-choose-card animate-up delay-${index + 1}`}>
-                            <div className="why-icon-wrapper">
-                                {item.icon}
+                    {reasons.map((item, index) => {
+                        const Icon = IconMap[item.iconName];
+                        return (
+                            <div key={index} className={`why-choose-card animate-up delay-${index + 1}`}>
+                                <div className="why-icon-wrapper">
+                                    {Icon && <Icon />}
+                                </div>
+                                <h3 className="why-card-title">{item.title}</h3>
+                                <p className="why-card-desc">
+                                    {item.desc || item.shortDescription}
+                                </p>
                             </div>
-                            <h3 className="why-card-title">{item.title}</h3>
-                            <p className="why-card-desc">{item.desc}</p>
-                        </div>
-                    ))}
+                        );
+                    })}
                 </div>
 
-                <div className="center-btn-wrapper animate-up">
-                    <a href="/contact" className="btn btn-codeifyy-primary ">Let's Get Started</a>
-                </div>
+                {btnLink && btnText && (
+                    <div className="center-btn-wrapper animate-up">
+                        <a href={btnLink} className="btn btn-codeifyy-primary">{btnText}</a>
+                    </div>
+                )}
             </div>
         </section>
     );

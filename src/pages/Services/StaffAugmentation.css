@@ -1,21 +1,25 @@
 /* Staff Augmentation Page Styles */
-.staff-aug-page {
+.staff-aug-page,
+.staff-augmentation-page {
     background: var(--background);
     overflow-x: hidden;
 }
 
 /* Reduced spacing for reusable BenefitSection bullets */
-.staff-aug-page .model-features {
+.staff-aug-page .model-features,
+.staff-augmentation-page .model-features {
     gap: 0.75rem !important;
 }
 
-.staff-aug-page .model-features li {
+.staff-aug-page .model-features li,
+.staff-augmentation-page .model-features li {
     font-size: 1.05rem;
     margin-bottom: 0;
 }
 
 /* Enhanced service-detail paragraphs for Staff Augmentation cards */
-.staff-aug-page .service-detail {
+.staff-aug-page .service-detail,
+.staff-augmentation-page .service-detail {
     background: #f8fafc;
     border-left: 3px solid var(--codeifyy-green);
     padding: 1rem 1.25rem;
@@ -28,11 +32,13 @@
 }
 
 /* Precise bullet styling for Staff Augmentation Models section */
-.staff-aug-page .service-capabilities {
+.staff-aug-page .service-capabilities,
+.staff-augmentation-page .service-capabilities {
     margin-top: 1.5rem;
 }
 
-.staff-aug-page .service-capabilities h5 {
+.staff-aug-page .service-capabilities h5,
+.staff-augmentation-page .service-capabilities h5 {
     font-size: 0.85rem;
     letter-spacing: 0.1em;
     color: var(--codeifyy-green);
@@ -40,12 +46,14 @@
     font-weight: 700;
 }
 
-.staff-aug-page .service-capabilities ul {
+.staff-aug-page .service-capabilities ul,
+.staff-augmentation-page .service-capabilities ul {
     grid-template-columns: 1fr;
     gap: 1rem;
 }
 
-.staff-aug-page .service-capabilities li {
+.staff-aug-page .service-capabilities li,
+.staff-augmentation-page .service-capabilities li {
     display: flex;
     align-items: flex-start;
     gap: 0.85rem;
@@ -54,14 +62,16 @@
     line-height: 1.4;
 }
 
-.staff-aug-page .service-capabilities li svg {
+.staff-aug-page .service-capabilities li svg,
+.staff-augmentation-page .service-capabilities li svg {
     font-size: 1.1rem;
     margin-top: 0.15rem;
     flex-shrink: 0;
 }
 
 /* Container for profile card + floating badges */
-.profile-visual-wrapper {
+.staff-aug-page .profile-visual-wrapper,
+.staff-augmentation-page .profile-visual-wrapper {
     position: relative;
     width: 100%;
     max-width: 420px;
@@ -69,7 +79,8 @@
     padding: 1.5rem 0;
 }
 
-.profile-card {
+.staff-aug-page .profile-card,
+.staff-augmentation-page .profile-card {
     background: rgba(255, 255, 255, 0.85);
     backdrop-filter: blur(10px);
     border-radius: 24px;
@@ -84,18 +95,21 @@
     margin: 0 auto;
 }
 
-.profile-card:hover {
+.staff-aug-page .profile-card:hover,
+.staff-augmentation-page .profile-card:hover {
     transform: rotateY(0) rotateX(0);
 }
 
-.profile-header {
+.staff-aug-page .profile-header,
+.staff-augmentation-page .profile-header {
     display: flex;
     align-items: center;
     gap: 1.5rem;
     margin-bottom: 2rem;
 }
 
-.profile-avatar {
+.staff-aug-page .profile-avatar,
+.staff-augmentation-page .profile-avatar {
     width: 80px;
     height: 80px;
     border-radius: 50%;
@@ -106,14 +120,16 @@
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
 
-.profile-avatar img {
+.staff-aug-page .profile-avatar img,
+.staff-augmentation-page .profile-avatar img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
 /* Fallback for no image */
-.profile-avatar-placeholder {
+.staff-aug-page .profile-avatar-placeholder,
+.staff-augmentation-page .profile-avatar-placeholder {
     width: 100%;
     height: 100%;
     background: linear-gradient(135deg, #cbd5e1, #94a3b8);
@@ -124,7 +140,8 @@
     font-size: 2rem;
 }
 
-.profile-info h3 {
+.staff-aug-page .profile-info h3,
+.staff-augmentation-page .profile-info h3 {
     font-size: 1.25rem;
     font-weight: 700;
     color: #1e293b;
@@ -132,7 +149,8 @@
     font-family: 'Outfit', sans-serif;
 }
 
-.profile-role {
+.staff-aug-page .profile-role,
+.staff-augmentation-page .profile-role {
     color: var(--codeifyy-green);
     font-weight: 600;
     font-size: 0.9rem;
@@ -140,7 +158,8 @@
     margin-bottom: 0.25rem;
 }
 
-.profile-status {
+.staff-aug-page .profile-status,
+.staff-augmentation-page .profile-status {
     display: inline-flex;
     align-items: center;
     gap: 6px;
@@ -151,15 +170,16 @@
     border-radius: 20px;
 }
 
-.status-dot {
+.staff-aug-page .status-dot,
+.staff-augmentation-page .status-dot {
     width: 8px;
     height: 8px;
     background: #10b981;
     border-radius: 50%;
-    animation: pulse 2s infinite;
+    animation: staff-pulse 2s infinite;
 }
 
-@keyframes pulse {
+@keyframes staff-pulse {
     0% {
         box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.4);
     }
@@ -173,14 +193,16 @@
     }
 }
 
-.skill-tags {
+.staff-aug-page .skill-tags,
+.staff-augmentation-page .skill-tags {
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
     margin-bottom: 2rem;
 }
 
-.skill-tag {
+.staff-aug-page .skill-tag,
+.staff-augmentation-page .skill-tag {
     background: #f8fafc;
     border: 1px solid #e2e8f0;
     padding: 6px 12px;
@@ -193,7 +215,8 @@
     gap: 6px;
 }
 
-.code-snippet-mini {
+.staff-aug-page .code-snippet-mini,
+.staff-augmentation-page .code-snippet-mini {
     background: #1e293b;
     border-radius: 12px;
     padding: 1.25rem;
@@ -209,7 +232,8 @@
 }
 
 /* Floating Elements (similar to badges but card specific) */
-.floating-card {
+.staff-aug-page .floating-card,
+.staff-augmentation-page .floating-card {
     position: absolute;
     background: white;
     padding: 12px 16px;
@@ -223,7 +247,8 @@
     border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
-.fc-icon {
+.staff-aug-page .fc-icon,
+.staff-augmentation-page .fc-icon {
     width: 36px;
     height: 36px;
     border-radius: 8px;
@@ -235,37 +260,43 @@
     font-size: 1.1rem;
 }
 
-.fc-content div:first-child {
+.staff-aug-page .fc-content div:first-child,
+.staff-augmentation-page .fc-content div:first-child {
     font-weight: 700;
     color: #1e293b;
     font-size: 0.9rem;
 }
 
-.fc-content div:last-child {
+.staff-aug-page .fc-content div:last-child,
+.staff-augmentation-page .fc-content div:last-child {
     font-size: 0.75rem;
     color: #64748b;
 }
 
-.card-verified {
+.staff-aug-page .card-verified,
+.staff-augmentation-page .card-verified {
     top: 0;
     right: 0;
     animation-delay: 0.5s;
 }
 
-.card-experience {
+.staff-aug-page .card-experience,
+.staff-augmentation-page .card-experience {
     bottom: 10%;
     left: 0;
     animation-delay: 1.5s;
 }
 
 /* Engagement Models */
-.models-section {
+.staff-aug-page .models-section,
+.staff-augmentation-page .models-section {
     /* padding: 6rem 0; */
     padding-bottom: 50px;
     background: #fff;
 }
 
-.section-title {
+.staff-aug-page .section-title,
+.staff-augmentation-page .section-title {
     font-size: 2.75rem;
     font-weight: 800;
     color: var(--codeifyy-navy);
@@ -275,8 +306,10 @@
     line-height: 1.2;
 }
 
-.staff-aug-page .services-grid-section {
-    /* padding: 6rem 0; */
+/* Scoped section padding for dynamic renderer consistency */
+.staff-aug-page .services-grid-section,
+.staff-augmentation-page .services-grid-section {
+    padding-top: 1rem;
 }
 
 @media (max-width: 768px) {
@@ -286,7 +319,8 @@
     }
 }
 
-.section-subtitle {
+.staff-aug-page .section-subtitle,
+.staff-augmentation-page .section-subtitle {
     font-size: 1.25rem;
     color: #64748b;
     text-align: center;
@@ -295,7 +329,8 @@
     line-height: 1.6;
 }
 
-.process-intro {
+.staff-aug-page .process-intro,
+.staff-augmentation-page .process-intro {
     text-align: center;
     margin-bottom: 2.5rem;
     font-size: 1.15rem;
@@ -303,7 +338,8 @@
     font-weight: 500;
 }
 
-.process-outro {
+.staff-aug-page .process-outro,
+.staff-augmentation-page .process-outro {
     text-align: center;
     margin-top: 3.5rem;
     font-size: 1.25rem;
@@ -311,7 +347,8 @@
     color: var(--codeifyy-navy);
 }
 
-.section-description {
+.staff-aug-page .section-description,
+.staff-augmentation-page .section-description {
     font-size: 1.2rem;
     line-height: 1.6;
     color: #475569;
@@ -320,7 +357,8 @@
 }
 
 /* Enforce 2x2 grid for engagement models on desktop */
-.staff-aug-page .service-card {
+.staff-aug-page .service-card,
+.staff-augmentation-page .service-card {
     background: #fff;
     border: 1px solid #e2e8f0;
     border-radius: 16px;
@@ -330,7 +368,8 @@
     overflow: hidden;
 }
 
-.staff-aug-page .services-grid {
+.staff-aug-page .services-grid,
+.staff-augmentation-page .services-grid {
     display: grid !important;
     grid-template-columns: repeat(2, 1fr) !important;
     gap: 3.5rem !important;
@@ -338,7 +377,8 @@
 }
 
 /* Highlight model numbers */
-.staff-aug-page .service-number {
+.staff-aug-page .service-number,
+.staff-augmentation-page .service-number {
     position: absolute;
     color: var(--codeifyy-green) !important;
     opacity: 0.15;
@@ -350,7 +390,9 @@
 }
 
 @media (max-width: 991px) {
-    .staff-aug-page .services-grid {
+
+    .staff-aug-page .services-grid,
+    .staff-augmentation-page .services-grid {
         grid-template-columns: repeat(2, 1fr) !important;
         gap: 2rem !important;
     }
@@ -368,14 +410,17 @@
 }
 
 @media (max-width: 768px) {
-    .staff-aug-page .services-grid {
+
+    .staff-aug-page .services-grid,
+    .staff-augmentation-page .services-grid {
         grid-template-columns: 1fr !important;
         gap: 1.5rem !important;
     }
 }
 
 
-.model-card {
+.staff-aug-page .model-card,
+.staff-augmentation-page .model-card {
     background: #fff;
     border: 1px solid #e2e8f0;
     border-radius: 16px;
@@ -386,13 +431,15 @@
     height: 100%;
 }
 
-.model-card:hover {
+.staff-aug-page .model-card:hover,
+.staff-augmentation-page .model-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
     border-color: var(--codeifyy-green);
 }
 
-.model-number {
+.staff-aug-page .model-number,
+.staff-augmentation-page .model-number {
     font-size: 0.9rem;
     font-weight: 700;
     color: var(--codeifyy-green);
@@ -401,7 +448,8 @@
     display: block;
 }
 
-.model-title {
+.staff-aug-page .model-title,
+.staff-augmentation-page .model-title {
     font-size: 1.5rem;
     font-weight: 700;
     color: #1e293b;
@@ -409,34 +457,39 @@
     font-family: 'Outfit', sans-serif;
 }
 
-.model-desc {
+.staff-aug-page .model-desc,
+.staff-augmentation-page .model-desc {
     color: #64748b;
     margin-bottom: 1.5rem;
     line-height: 1.6;
     flex-grow: 1;
 }
 
-.model-features {
+.staff-aug-page .model-features,
+.staff-augmentation-page .model-features {
     list-style: none;
     padding: 0;
-    margin: 0 0 2rem;
+    margin: 0 0 1rem;
 }
 
-.model-features li {
+.staff-aug-page .model-features li,
+.staff-augmentation-page .model-features li {
     display: flex;
     align-items: center;
     gap: 0.75rem;
-    margin-bottom: 0.75rem;
+    /* margin-bottom: 0.75rem; */
     color: #475569;
     font-size: 0.95rem;
 }
 
-.model-features li svg {
+.staff-aug-page .model-features li svg,
+.staff-augmentation-page .model-features li svg {
     color: var(--codeifyy-green);
     flex-shrink: 0;
 }
 
-.model-best-for {
+.staff-aug-page .model-best-for,
+.staff-augmentation-page .model-best-for {
     background: #f8fafc;
     padding: 1rem;
     border-radius: 8px;
@@ -444,13 +497,15 @@
     font-size: 0.9rem;
 }
 
-.model-best-for strong {
+.staff-aug-page .model-best-for strong,
+.staff-augmentation-page .model-best-for strong {
     display: block;
     color: #0f172a;
     margin-bottom: 0.5rem;
 }
 
-.btn-model {
+.staff-aug-page .btn-model,
+.staff-augmentation-page .btn-model {
     width: 100%;
     padding: 0.85rem;
     border: 1px solid #cbd5e1;
@@ -464,13 +519,15 @@
     text-decoration: none;
 }
 
-.btn-model:hover {
+.staff-aug-page .btn-model:hover,
+.staff-augmentation-page .btn-model:hover {
     background: #0f172a;
     color: #fff;
     border-color: #0f172a;
 }
 
-.hero-label {
+.staff-aug-page .hero-label,
+.staff-augmentation-page .hero-label {
     display: inline-block;
     padding: 0.6rem 1.25rem;
     background: rgba(34, 197, 94, 0.1);
@@ -485,12 +542,14 @@
 }
 
 /* Selection Process */
-.process-section {
+.staff-aug-page .process-section,
+.staff-augmentation-page .process-section {
     padding: 2rem 0;
     background: linear-gradient(to bottom, #f8fafc, #fff);
 }
 
-.process-grid {
+.staff-aug-page .process-grid,
+.staff-augmentation-page .process-grid {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 1.5rem;
@@ -499,7 +558,8 @@
 }
 
 /* Connecting Line (Desktop) */
-.process-grid::before {
+.staff-aug-page .process-grid::before,
+.staff-augmentation-page .process-grid::before {
     content: '';
     position: absolute;
     top: 35%;
@@ -510,7 +570,8 @@
     z-index: 0;
 }
 
-.process-card {
+.staff-aug-page .process-card,
+.staff-augmentation-page .process-card {
     background: #fff;
     padding: 2.5rem 1.5rem;
     border-radius: 16px;
@@ -525,13 +586,15 @@
     align-items: center;
 }
 
-.process-card:hover {
+.staff-aug-page .process-card:hover,
+.staff-augmentation-page .process-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
     border-color: rgba(34, 197, 94, 0.2);
 }
 
-.process-card .step-number {
+.staff-aug-page .process-card .step-number,
+.staff-augmentation-page .process-card .step-number {
     font-size: 5rem;
     font-weight: 900;
     color: #e2e8f0;
@@ -544,13 +607,15 @@
     transition: all 0.3s ease;
 }
 
-.process-card:hover .step-number {
+.staff-aug-page .process-card:hover .step-number,
+.staff-augmentation-page .process-card:hover .step-number {
     color: var(--codeifyy-green);
     opacity: 0.1;
     transform: scale(1.1);
 }
 
-.icon-wrapper {
+.staff-aug-page .icon-wrapper,
+.staff-augmentation-page .icon-wrapper {
     width: 70px;
     height: 70px;
     background: #ffffff;
@@ -566,24 +631,28 @@
     z-index: 2;
 }
 
-.process-card:hover .icon-wrapper {
+.staff-aug-page .process-card:hover .icon-wrapper,
+.staff-augmentation-page .process-card:hover .icon-wrapper {
     background: var(--codeifyy-green);
     border-color: var(--codeifyy-green);
     color: #fff;
     transform: scale(1.1) rotate(5deg);
 }
 
-.process-icon {
+.staff-aug-page .process-icon,
+.staff-augmentation-page .process-icon {
     font-size: 1.75rem;
     color: var(--codeifyy-green);
     transition: all 0.3s ease;
 }
 
-.process-card:hover .process-icon {
+.staff-aug-page .process-card:hover .process-icon,
+.staff-augmentation-page .process-card:hover .process-icon {
     color: #fff;
 }
 
-.process-title {
+.staff-aug-page .process-title,
+.staff-augmentation-page .process-title {
     font-weight: 800;
     color: #1e293b;
     margin-bottom: 0;
@@ -609,13 +678,15 @@
 }
 
 /* Timeline */
-.timeline-section {
+.staff-aug-page .timeline-section,
+.staff-augmentation-page .timeline-section {
     background: #fff;
     padding-bottom: 3rem;
 }
 
 /* Arrow Process Flow */
-.arrow-process {
+.staff-aug-page .arrow-process,
+.staff-augmentation-page .arrow-process {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -624,7 +695,8 @@
     flex-wrap: nowrap;
 }
 
-.arrow-step {
+.staff-aug-page .arrow-step,
+.staff-augmentation-page .arrow-step {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -640,13 +712,15 @@
     position: relative;
 }
 
-.arrow-step:hover {
+.staff-aug-page .arrow-step:hover,
+.staff-augmentation-page .arrow-step:hover {
     border-color: var(--codeifyy-green);
     transform: translateY(-4px);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
 }
 
-.arrow-step-num {
+.staff-aug-page .arrow-step-num,
+.staff-augmentation-page .arrow-step-num {
     font-size: 1.75rem;
     font-weight: 900;
     color: var(--codeifyy-green);
@@ -656,18 +730,21 @@
     font-family: 'Outfit', sans-serif;
 }
 
-.arrow-step:hover .arrow-step-num {
+.staff-aug-page .arrow-step:hover .arrow-step-num,
+.staff-augmentation-page .arrow-step:hover .arrow-step-num {
     opacity: 0.5;
 }
 
-.arrow-step-label {
+.staff-aug-page .arrow-step-label,
+.staff-augmentation-page .arrow-step-label {
     font-weight: 700;
     color: #1e293b;
     font-size: 0.95rem;
     line-height: 1.3;
 }
 
-.arrow-connector {
+.staff-aug-page .arrow-connector,
+.staff-augmentation-page .arrow-connector {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -679,32 +756,39 @@
 
 /* Tablet: wrap into rows */
 @media (max-width: 991px) {
-    .arrow-process {
+
+    .staff-aug-page .arrow-process,
+    .staff-augmentation-page .arrow-process {
         flex-wrap: wrap;
         gap: 1rem;
         justify-content: center;
     }
 
-    .arrow-step {
+    .staff-aug-page .arrow-step,
+    .staff-augmentation-page .arrow-step {
         min-width: 140px;
         max-width: 180px;
         padding: 1.5rem 1rem;
     }
 
-    .arrow-connector {
+    .staff-aug-page .arrow-connector,
+    .staff-augmentation-page .arrow-connector {
         padding: 0 0.5rem;
     }
 }
 
 /* Mobile: vertical stack */
 @media (max-width: 600px) {
-    .arrow-process {
+
+    .staff-aug-page .arrow-process,
+    .staff-augmentation-page .arrow-process {
         flex-direction: column;
         gap: 0;
         align-items: center;
     }
 
-    .arrow-step {
+    .staff-aug-page .arrow-step,
+    .staff-augmentation-page .arrow-step {
         width: 100%;
         max-width: 100%;
         min-width: unset;
@@ -715,16 +799,19 @@
         border-radius: 12px;
     }
 
-    .arrow-step-num {
+    .staff-aug-page .arrow-step-num,
+    .staff-augmentation-page .arrow-step-num {
         font-size: 1.5rem;
         margin-bottom: 0;
     }
 
-    .arrow-step-label {
+    .staff-aug-page .arrow-step-label,
+    .staff-augmentation-page .arrow-step-label {
         font-size: 0.9rem;
     }
 
-    .arrow-connector {
+    .staff-aug-page .arrow-connector,
+    .staff-augmentation-page .arrow-connector {
         transform: rotate(90deg);
         padding: 0.4rem 0;
         font-size: 0.9rem;
@@ -732,34 +819,40 @@
 }
 
 /* Benefits Grid */
-.benefits-grid-section {
+.staff-aug-page .benefits-grid-section,
+.staff-augmentation-page .benefits-grid-section {
     padding: 3rem 0;
     background: #0f172a;
     color: #fff;
 }
 
-.benefit-item {
+.staff-aug-page .benefit-item,
+.staff-augmentation-page .benefit-item {
     display: flex;
     align-items: flex-start;
     gap: 1rem;
     margin-bottom: 1.5rem;
 }
 
-.benefit-icon {
+.staff-aug-page .benefit-icon,
+.staff-augmentation-page .benefit-icon {
     color: var(--codeifyy-green);
     font-size: 1.5rem;
     margin-top: 0.2rem;
 }
 
 /* Final CTA */
-.final-cta-section {
+.staff-aug-page .final-cta-section,
+.staff-augmentation-page .final-cta-section {
     padding-bottom: 50px;
     text-align: center;
     background: linear-gradient(135deg, #f8fafc 0%, #fff 100%);
 }
 
 @media (max-width: 480px) {
-    .staff-aug-page .services-grid {
+
+    .staff-aug-page .services-grid,
+    .staff-augmentation-page .services-grid {
         grid-template-columns: 1fr !important;
     }
 }
@@ -768,19 +861,23 @@
 @media (max-width: 991px) {
 
     /* Responsive hero text handled in index.css */
-    .hero-row {
+    .staff-aug-page .hero-row,
+    .staff-augmentation-page .hero-row {
         padding-top: 1rem;
         padding-bottom: 3rem;
         text-align: center;
     }
 
-    .staff-aug-page .hero-section .col-lg-5 {
+    .staff-aug-page .hero-section .col-lg-5,
+    .staff-augmentation-page .hero-section .col-lg-5 {
         margin-top: 2rem;
     }
 }
 
 @media (max-width: 768px) {
-    .section-title {
+
+    .staff-aug-page .section-title,
+    .staff-augmentation-page .section-title {
         font-size: 2.25rem;
     }
 }
@@ -788,15 +885,23 @@
 @media (max-width: 480px) {
     /* Responsive hero text handled in index.css */
 
-    .service-card {
-        padding: 2rem 1.5rem;
-    }
-
-    .service-title {
+    .staff-aug-page .hero-title,
+    .staff-augmentation-page .hero-title {
         font-size: 1.4rem;
     }
 
-    .process-card {
+    .staff-aug-page .service-card,
+    .staff-augmentation-page .service-card {
+        padding: 2rem 1.5rem;
+    }
+
+    .staff-aug-page .service-title,
+    .staff-augmentation-page .service-title {
+        font-size: 1.4rem;
+    }
+
+    .staff-aug-page .process-card,
+    .staff-augmentation-page .process-card {
         padding: 2rem 1rem;
     }
 }

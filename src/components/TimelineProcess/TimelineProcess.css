@@ -1,0 +1,118 @@
+.timeline-section {
+    background: #fff;
+    padding: 4rem 0;
+}
+
+.arrow-process {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    margin-top: 3rem;
+    flex-wrap: nowrap;
+}
+
+.arrow-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+    padding: 2rem 1.5rem;
+    min-width: 160px;
+    flex: 1;
+    max-width: 200px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.arrow-step:hover {
+    border-color: var(--codeifyy-green);
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+}
+
+.arrow-step-num {
+    font-size: 1.75rem;
+    font-weight: 900;
+    color: var(--codeifyy-green);
+    opacity: 0.25;
+    line-height: 1;
+    margin-bottom: 0.75rem;
+    font-family: 'Outfit', sans-serif;
+}
+
+.arrow-step:hover .arrow-step-num {
+    opacity: 0.5;
+}
+
+.arrow-step-label {
+    font-weight: 700;
+    color: #1e293b;
+    font-size: 0.95rem;
+    line-height: 1.3;
+}
+
+.arrow-connector {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 0.75rem;
+    color: var(--codeifyy-green);
+    font-size: 1.1rem;
+    flex-shrink: 0;
+}
+
+@media (max-width: 991px) {
+    .arrow-process {
+        flex-wrap: wrap;
+        gap: 1rem;
+        justify-content: center;
+    }
+
+    .arrow-step {
+        min-width: 140px;
+        max-width: 180px;
+        padding: 1.5rem 1rem;
+    }
+
+    .arrow-connector {
+        padding: 0 0.5rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .arrow-process {
+        flex-direction: column;
+        gap: 0;
+        align-items: center;
+    }
+
+    .arrow-step {
+        width: 100%;
+        max-width: 100%;
+        min-width: unset;
+        flex-direction: row;
+        gap: 1rem;
+        text-align: left;
+        padding: 1.25rem 1.5rem;
+        border-radius: 12px;
+    }
+
+    .arrow-step-num {
+        font-size: 1.5rem;
+        margin-bottom: 0;
+    }
+
+    .arrow-step-label {
+        font-size: 0.9rem;
+    }
+
+    .arrow-connector {
+        transform: rotate(90deg);
+        padding: 0.4rem 0;
+        font-size: 0.9rem;
+    }
+}

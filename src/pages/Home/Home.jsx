@@ -1,69 +1,27 @@
 import React from 'react';
 import Header from '../../components/Header/Header';
-import Hero from '../../components/Hero/Hero';
-import Features from '../../components/Features/Features-services';
-import BenefitSection from '../../components/BenefitSection/BenefitSection';
-import ProductsAndScale from '../../components/ProductsAndScale/ProductsAndScale';
-import CustomerStories from '../../components/CustomerStories/CustomerStories';
-import ArticleCarousel from '../../components/ArticleCarousel/ArticleCarousel';
-import Blog from '../../components/Blog/Blog';
-import NextStep from '../../components/NextStep/NextStep';
-import CTOMessage from '../../components/CTOMessage/CTOMessage';
-import FAQ from '../../components/FAQ/FAQ';
-import TechStack from '../../components/TechStack/TechStack';
-import Industries from '../../components/Industries/Industries';
-import WhyChooseCodeifyy from '../../components/WhyChooseCodeifyy/WhyChooseCodeifyy';
 import Footer from '../../components/Footer/Footer';
-import CTA from '../../components/cta/CTA';
-
 import SEO from '../../components/SEO/SEO';
+import SectionRenderer from '../../components/SectionRenderer/SectionRenderer';
+import { pagesContent } from '../../data/pagesContent';
 
 const Home = () => {
+    const pageData = pagesContent['home'] || {};
+    const sections = pageData.sections || [];
 
     return (
         <div className="home-page">
             <SEO
-                title="Codeifyy - Global Software Development Company"
-                description="Global software development company trusted by clients across 15+ countries with a 90% retention rate and certified technology expertise."
-                canonical="/"
+                title={pageData.title || "Codeifyy - Global Software Development Company"}
+                description={pageData.description || "Global software development company trusted by clients across 15+ countries."}
+                canonical={pageData.canonical || "/"}
             />
             <Header />
-            <Hero />
-            {/* About & Why Choose */}
-            <BenefitSection />
-            {/* Core Services */}
-            <Features />
-            {/* Technologies */}
-            <section className="section-padding-md">
-                <TechStack />
-            </section>
-            {/* Engagement Models */}
-            <ProductsAndScale />
-            {/* Industries */}
-            <section className="section-padding-md">
-                <Industries />
-            </section>
-            {/* Case Studies */}
-            <section className="section-padding-md">
-                <CustomerStories />
-            </section>
-            {/* Why Choose Codeifyy */}
-            <WhyChooseCodeifyy />
-            {/* Testimonials */}
-            <section className="section-padding-md">
-                <ArticleCarousel />
-            </section>
+            
+            <main className="home-main">
+                <SectionRenderer sections={sections} />
+            </main>
 
-            {/* Delivery Methodology */}
-            <NextStep />
-            {/* CTO Message */}
-            <CTOMessage />
-            <section className="final-cta-section">
-                <div className="container">
-                    <CTA />
-                </div>
-            </section>
-            {/* FAQ removed as not in request or can be kept if needed - keeping off for now based on strict flow */}
             <Footer />
         </div>
     );

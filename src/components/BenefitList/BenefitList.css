@@ -1,0 +1,39 @@
+.benefit-list-section {
+    padding: 4rem 0;
+}
+
+.benefit-card {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 2.5rem;
+    height: 100%;
+}
+
+.benefit-card.border-success {
+    border-color: var(--codeifyy-green);
+}
+
+.benefit-card h4 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.bullet-point {
+    font-size: 1.5rem;
+    line-height: 1;
+    color: var(--codeifyy-green);
+}
+
+.benefit-card li {
+    font-size: 1.05rem;
+    color: #475569;
+    line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+    .benefit-card {
+        padding: 1.5rem;
+    }
+}
